@@ -1,0 +1,46 @@
+{
+  "section": "disciplines/notes",
+  "intro": "Опорные конспекты лекций. К некоторым темам приложены ноутбуки с численными экспериментами — их можно запустить в Google Colab.",
+  "items": [
+    {
+      "id": "lecture-04",
+      "kind": "Лекция",
+      "number": 4,
+      "title": "Формула Тейлора",
+      "discipline": "Математический анализ",
+      "course": 1,
+      "semester": 1,
+      "status": "open",
+      "statusLabel": "опубликована",
+      "files": [
+        {
+          "path": "disciplines/notes/lecture-04-taylor.md",
+          "label": "Конспект: формы остаточного члена, опорные разложения",
+          "primary": true
+        },
+        {
+          "path": "disciplines/notes/taylor-series.ipynb",
+          "label": "Численная проверка оценки остатка и графики частичных сумм"
+        }
+      ]
+    },
+    {
+      "id": "lecture-07",
+      "kind": "Лекция",
+      "number": 7,
+      "title": "Собственные значения и собственные векторы",
+      "discipline": "Линейная алгебра",
+      "course": 1,
+      "semester": 1,
+      "status": "open",
+      "statusLabel": "опубликована",
+      "files": [
+        {
+          "path": "disciplines/notes/lecture-07-linear-algebra.md",
+          "label": "Конспект: характеристическое уравнение, диагонализация, приложения",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}

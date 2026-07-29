@@ -1,0 +1,53 @@
+{
+  "section": "activities/spring",
+  "intro": "Организационные материалы творческого сезона: расписание, сценарный план, результаты прошлых лет.",
+  "items": [
+    {
+      "id": "spring-rehearsals",
+      "kind": "Расписание",
+      "title": "Репетиции и контрольные точки сезона",
+      "discipline": "Студвесна",
+      "deadline": "гала-концерт 18 апреля",
+      "status": "open",
+      "statusLabel": "идут репетиции",
+      "files": [
+        {
+          "path": "activities/spring/rehearsal-schedule.md",
+          "label": "Еженедельный график, этапы сезона, организационные правила",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "spring-stage",
+      "kind": "Сценарный план",
+      "title": "Программа «Теорема о среднем»",
+      "discipline": "Студвесна",
+      "deadline": "хронометраж 12 минут",
+      "status": "soon",
+      "statusLabel": "в работе",
+      "files": [
+        {
+          "path": "activities/spring/stage-plan.md",
+          "label": "Эпизоды, свет и звук, реквизит, распределение ролей",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "spring-results",
+      "kind": "Архив",
+      "title": "Результаты выступлений 2022–2025",
+      "discipline": "Студвесна",
+      "status": "done",
+      "statusLabel": "архив",
+      "files": [
+        {
+          "path": "activities/spring/achievements.csv",
+          "label": "Этапы, номинации, названия номеров и занятые места",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}

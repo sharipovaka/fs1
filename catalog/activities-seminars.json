@@ -1,0 +1,54 @@
+{
+  "section": "activities/seminars",
+  "intro": "Расписание заседаний, шаблон тезисов и демонстрационные материалы докладов.",
+  "items": [
+    {
+      "id": "seminar-schedule",
+      "kind": "Расписание",
+      "title": "Заседания весеннего семестра",
+      "discipline": "Научный семинар",
+      "deadline": "среда, 16:30, ауд. 312",
+      "status": "open",
+      "statusLabel": "идёт запись",
+      "files": [
+        {
+          "path": "activities/seminars/seminar-schedule.csv",
+          "label": "Десять заседаний: даты, докладчики, темы, статус",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "seminar-abstract",
+      "kind": "Шаблон",
+      "title": "Тезисы доклада на семинаре",
+      "discipline": "Научный семинар",
+      "deadline": "прислать за неделю до заседания",
+      "status": "open",
+      "statusLabel": "актуален",
+      "files": [
+        {
+          "path": "activities/seminars/abstract-template.tex",
+          "label": "Одностраничный шаблон LaTeX с окружением теорем",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "seminar-demo",
+      "kind": "Материалы доклада",
+      "title": "Разностные схемы: демонстрация",
+      "discipline": "Вычислительная математика",
+      "course": 3,
+      "status": "open",
+      "statusLabel": "опубликованы",
+      "files": [
+        {
+          "path": "activities/seminars/finite-difference-demo.ipynb",
+          "label": "Явная схема, условие устойчивости, наблюдаемый порядок точности",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}

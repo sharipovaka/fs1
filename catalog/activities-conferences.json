@@ -1,0 +1,53 @@
+{
+  "section": "activities/conferences",
+  "intro": "Календарь конференций с дедлайнами подачи тезисов и шаблон для оформления.",
+  "items": [
+    {
+      "id": "conf-calendar",
+      "kind": "Календарь",
+      "title": "Конференции 2026 года",
+      "discipline": "Конференции",
+      "deadline": "ближайший дедлайн — 20 марта",
+      "status": "soon",
+      "statusLabel": "скоро дедлайн",
+      "files": [
+        {
+          "path": "activities/conferences/conferences-2026.csv",
+          "label": "Шесть конференций: даты, место, сроки подачи, оргвзносы",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "conf-cfp",
+      "kind": "Информационное письмо",
+      "title": "XXIV студенческая конференция «Математика и её приложения»",
+      "discipline": "Конференции",
+      "deadline": "тезисы до 20 марта 2026",
+      "status": "open",
+      "statusLabel": "приём открыт",
+      "files": [
+        {
+          "path": "activities/conferences/call-for-papers.md",
+          "label": "Секции, требования к тезисам, регламент, порядок подачи",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "conf-abstract",
+      "kind": "Шаблон",
+      "title": "Тезисы для конференции",
+      "discipline": "Конференции",
+      "status": "open",
+      "statusLabel": "актуален",
+      "files": [
+        {
+          "path": "activities/conferences/conference-abstract-template.tex",
+          "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}

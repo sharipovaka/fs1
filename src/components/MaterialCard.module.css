@@ -1,0 +1,271 @@
+/* Карточка учебного материала со списком файлов. */
+
+.card {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  background: #fff;
+  border: 1px solid var(--dept-border);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: #c6d3e0;
+  box-shadow: var(--dept-shadow-md);
+}
+
+/* Миниатюра скомпилированного шаблона */
+.thumbLink {
+  flex: 0 0 auto;
+  display: block;
+  width: 92px;
+  align-self: flex-start;
+  border: 1px solid var(--dept-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--dept-surface);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.thumbLink:hover {
+  transform: translateY(-2px);
+  border-color: var(--dept-navy-light);
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.headingBlock {
+  min-width: 0;
+}
+
+.kind {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--dept-navy-light);
+}
+
+.title {
+  margin: 0.1rem 0 0;
+  font-size: 1.12rem;
+  line-height: 1.3;
+  color: var(--dept-navy-dark);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.16em 0.6em;
+  border-radius: 999px;
+  background: var(--dept-surface);
+  border: 1px solid var(--dept-border);
+  color: #4a5866;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badgeSection {
+  background: var(--dept-navy-dark);
+  border-color: var(--dept-navy-dark);
+  color: #fff;
+}
+
+.badgeDiscipline {
+  background: var(--dept-navy);
+  border-color: var(--dept-navy);
+  color: #fff;
+}
+
+/* Цвета статусов: приём открыт / скоро дедлайн / закрыт */
+.status_open {
+  background: #e4f4ea;
+  border-color: #b6dfc6;
+  color: #1c6b41;
+}
+
+.status_soon {
+  background: #fdf1dc;
+  border-color: #f2d5a0;
+  color: #8a5b12;
+}
+
+.status_done {
+  background: #eef1f4;
+  border-color: #d8dee5;
+  color: #5c6b7a;
+}
+
+.deadline {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--dept-muted);
+}
+
+.deadline i {
+  margin-right: 0.3rem;
+}
+
+/* --- Файлы --- */
+
+.files {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--dept-border);
+  border-radius: 9px;
+  background: #fdfefe;
+}
+
+/* Основной файл работы выделен — обычно именно его и скачивают */
+.filePrimary {
+  border-color: #bcd0e2;
+  background: #f7fbff;
+}
+
+.fileIcon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--dept-surface);
+  color: var(--dept-navy);
+  font-size: 0.9rem;
+}
+
+.filePrimary .fileIcon {
+  background: var(--dept-navy);
+  color: var(--dept-accent);
+}
+
+.fileInfo {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.fileLabel {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--dept-ink);
+  line-height: 1.35;
+}
+
+.fileMeta {
+  font-size: 0.78rem;
+  color: var(--dept-muted);
+  overflow-wrap: anywhere;
+}
+
+.fileMeta code {
+  font-size: 0.95em;
+  color: #55636f;
+}
+
+.fileActions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.iconAction {
+  display: inline-flex;
+  align-items: center;
+}
+
+.colab {
+  background-color: #f9ab00;
+  border-color: #f9ab00;
+  color: #1f2933;
+  font-weight: 600;
+}
+
+.colab:hover,
+.colab:focus {
+  background-color: #e09600;
+  border-color: #e09600;
+  color: #1f2933;
+}
+
+/* --- Адаптив --- */
+
+@media (max-width: 860px) {
+  .file {
+    flex-wrap: wrap;
+  }
+
+  .fileInfo {
+    flex-basis: calc(100% - 2.7rem);
+  }
+
+  .fileActions {
+    flex-basis: 100%;
+    padding-left: 2.7rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card {
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .thumbLink {
+    width: 76px;
+  }
+
+  /* Подписи кнопок не прячем: «Скачать» — главное действие на сайте */
+  .fileActions {
+    padding-left: 0;
+  }
+}

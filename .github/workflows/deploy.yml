@@ -1,0 +1,89 @@
+# Автоматическая сборка и публикация сайта.
+#
+# Срабатывает на любой push в ветку main — в том числе когда файлы загружены
+# через веб-интерфейс GitHub («Add file → Upload files»). Через 2–4 минуты
+# изменения появляются на https://sharipovaka.github.io/fs1/
+#
+# Что делает:
+#   1. ставит Node, pandoc и TeX Live;
+#   2. собирает предпросмотр (компилирует .tex, конвертирует .md/.ipynb/.csv);
+#   3. пересобирает каталог материалов и сам сайт;
+#   4. публикует папку build в ветку gh-pages.
+#
+# Локальная команда npm run deploy продолжает работать — она делает то же самое
+# со своей машины.
+
+name: Сборка и публикация сайта
+
+on:
+  push:
+    branches: [main]
+  # Кнопка ручного запуска на вкладке Actions
+  workflow_dispatch:
+
+# Право записи нужно, чтобы обновить ветку gh-pages
+permissions:
+  contents: write
+
+# Если пуши идут один за другим, публикуется только последний
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Получение исходников
+        uses: actions/checkout@v4
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Установка зависимостей проекта
+        run: npm ci
+
+      # pandoc — предпросмотр .md и .ipynb, TeX Live — компиляция .tex,
+      # poppler-utils даёт pdftoppm для миниатюр (аналог sips в macOS).
+      - name: Установка pandoc и TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            poppler-utils \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-lang-cyrillic \
+            cm-super
+
+      - name: Сборка предпросмотра
+        run: npm run previews
+
+      # prebuild сам пересоберёт каталог: catalog/ + public/files → catalogIndex.json.
+      # Если работа ссылается на несуществующий файл, шаг упадёт с ошибкой.
+      - name: Сборка сайта
+        run: npm run build
+
+      - name: Публикация в ветку gh-pages
+        run: |
+          cd build
+          touch .nojekyll
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Сборка сайта из ${GITHUB_SHA::7}"
+          git push -q --force \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Итог
+        run: |
+          echo "Сайт обновлён: https://sharipovaka.github.io/fs1/"

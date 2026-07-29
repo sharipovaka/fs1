@@ -1,0 +1,71 @@
+<h1 id="типовой-расчёт-1.-матрицы-определители-и-системы-линейных-уравнений">Типовой расчёт № 1. Матрицы, определители и системы линейных уравнений</h1>
+<p><strong>Линейная алгебра и аналитическая геометрия</strong> · 1 курс, 1 семестр Лаборатория математики ФН1</p>
+<p>Номер варианта совпадает с порядковым номером студента в журнале группы. Числовые данные вариантов — в файле <code>tr-01-varianty.csv</code>.</p>
+<hr />
+<h2 id="задача-1.-действия-с-матрицами">Задача 1. Действия с матрицами</h2>
+<p>Даны матрицы</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>b</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>b</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} a &amp; 1 &amp; 2 \\ 0 &amp; a &amp; -1 \\ 3 &amp; 1 &amp; a \end{pmatrix},\qquad
+B = \begin{pmatrix} 1 &amp; -1 &amp; 0 \\ 2 &amp; b &amp; 1 \\ -1 &amp; 0 &amp; b \end{pmatrix}.</annotation></semantics></math></p>
+<p>Найти <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>B</mi><mo>−</mo><mi>B</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">AB - BA</annotation></semantics></math> и <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>𝖳</mi></msup><mi>A</mi></mrow><annotation encoding="application/x-tex">A^{\mathsf T}A</annotation></semantics></math>.</p>
+<h2 id="задача-2.-определитель">Задача 2. Определитель</h2>
+<p>Вычислить определитель четвёртого порядка, приведя его к треугольному виду:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">∣</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>c</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>c</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>c</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>c</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">∣</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\Delta = \begin{vmatrix}
+c &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; c &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; c &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; c
+\end{vmatrix}.</annotation></semantics></math></p>
+<p>Указать все значения <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>, при которых <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta = 0</annotation></semantics></math>.</p>
+<h2 id="задача-3.-обратная-матрица">Задача 3. Обратная матрица</h2>
+<p>Для матрицы <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> из задачи 1 найти обратную матрицу двумя способами: через союзную матрицу и методом Гаусса — Жордана. Результаты сравнить, выполнить проверку <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">AA^{-1} = E</annotation></semantics></math>.</p>
+<h2 id="задача-4.-ранг-матрицы">Задача 4. Ранг матрицы</h2>
+<p>Найти ранг матрицы в зависимости от параметра <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>λ</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>λ</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">M = \begin{pmatrix}
+1 &amp; 2 &amp; -1 &amp; 3 \\
+2 &amp; \lambda &amp; 1 &amp; 4 \\
+3 &amp; 6 &amp; -3 &amp; \lambda
+\end{pmatrix}.</annotation></semantics></math></p>
+<h2 id="задача-5.-система-линейных-уравнений">Задача 5. Система линейных уравнений</h2>
+<p>Исследовать систему на совместность и решить её методом Гаусса:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>3</mn></msub><mo>+</mo><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mi>p</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>4</mn><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><mn>2</mn><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mi>q</mi><mi>.</mi></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{cases}
+x_1 + 2x_2 - x_3 + x_4 = p, \\
+2x_1 - x_2 + 3x_3 - x_4 = 1, \\
+x_1 - 3x_2 + 4x_3 - 2x_4 = q.
+\end{cases}</annotation></semantics></math></p>
+<p>Если система неопределённая, записать общее решение и указать фундаментальную систему решений однородной системы.</p>
+<h2 id="задача-6.-матричное-уравнение">Задача 6. Матричное уравнение</h2>
+<p>Решить матричное уравнение <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>X</mi><mo>=</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">AX = B</annotation></semantics></math>, где <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> и <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math> — матрицы из задачи 1. Указать условие существования и единственности решения.</p>
+<hr />
+<h2 id="требования-к-оформлению">Требования к оформлению</h2>
+<ul>
+<li>условие каждой задачи переписывается полностью с подставленными числами варианта;</li>
+<li>все преобразования сопровождаются пояснением, какое действие выполняется;</li>
+<li>ответ выделяется отдельной строкой;</li>
+<li>для задач 3 и 5 обязательна проверка полученного результата.</li>
+</ul>
+<h2 id="критерии-оценивания">Критерии оценивания</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Баллы</th>
+<th>За что начисляются</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2</td>
+<td>задача решена верно, преобразования обоснованы</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>верный метод, допущена вычислительная ошибка</td>
+</tr>
+<tr>
+<td style="text-align: right;">0</td>
+<td>метод выбран неверно либо решение отсутствует</td>
+</tr>
+</tbody>
+</table>
+<p>Расчёт зачтён при <strong>8 баллах из 12</strong> и успешной защите.</p>
+<h2 id="сроки">Сроки</h2>
+<p>Выдача — 3-я учебная неделя. Сдача — <strong>до конца 9-й недели</strong>. После срока оценка умножается на 0,8. После начала зачётной недели работы не принимаются.</p>

@@ -26,11 +26,17 @@ function repoPath(relativePath) {
 }
 
 /**
- * Прямая ссылка на скачивание с опубликованного сайта.
+ * Ссылка на любой статический ресурс сайта (путь от корня публикации).
  * BASE_URL — префикс подпапки GitHub Pages (например «/fs1/»).
+ * Используется для файлов предпросмотра: «previews/…/coursework.pdf».
  */
+export function assetUrl(path) {
+  return `${import.meta.env.BASE_URL}${path}`;
+}
+
+/** Прямая ссылка на скачивание файла раздела. */
 export function downloadUrl(relativePath) {
-  return `${import.meta.env.BASE_URL}files/${relativePath}`;
+  return assetUrl(`files/${relativePath}`);
 }
 
 /** Просмотр файла на GitHub (ноутбуки GitHub отрисовывает сам). */

@@ -1,4 +1,4 @@
-/* Приветственная страница: «герой» + плитки разделов. */
+/* Главная страница: сквозной поиск + плитки разделов. */
 
 .home {
   animation: fadeIn 0.25s ease-out;
@@ -19,60 +19,146 @@
   background: linear-gradient(120deg, var(--dept-navy) 0%, var(--dept-navy-light) 100%);
   color: #fff;
   border-radius: var(--dept-radius);
-  padding: 2.25rem 2rem;
-  margin-bottom: 2rem;
+  padding: 2rem 2rem 1.75rem;
+  margin-bottom: 1.75rem;
   box-shadow: var(--dept-shadow-md);
 }
 
 .heroTitle {
   color: #fff;
-  font-size: clamp(1.7rem, 4vw, 2.4rem);
-  margin: 0 0 0.75rem;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin: 0 0 0.6rem;
 }
 
 .heroText {
-  max-width: 62ch;
-  margin: 0 0 1.5rem;
+  max-width: 64ch;
+  margin: 0 0 1.35rem;
   color: rgba(255, 255, 255, 0.86);
-  font-size: 1.02rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
-.heroActions {
+/* --- Строка поиска --- */
+
+.searchWrapper {
+  position: relative;
+  max-width: 640px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1.05rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dept-muted);
+  pointer-events: none;
+}
+
+.search {
+  width: 100%;
+  padding: 0.8rem 2.8rem 0.8rem 2.85rem;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--dept-ink);
+  font-size: 1rem;
+  box-shadow: 0 6px 20px rgba(13, 43, 69, 0.18);
+}
+
+.search::placeholder {
+  color: #97a3b0;
+}
+
+.search:focus {
+  outline: 3px solid var(--dept-accent);
+  outline-offset: 2px;
+}
+
+.searchClear {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--dept-surface);
+  color: var(--dept-muted);
+  cursor: pointer;
+}
+
+.searchClear:hover {
+  background: #e6ebf1;
+  color: var(--dept-navy);
+}
+
+.quick {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
 }
 
-/* Кнопки на тёмном фоне «героя» */
-.heroActions :global(.btn-primary) {
-  --bs-btn-bg: var(--dept-accent);
-  --bs-btn-border-color: var(--dept-accent);
-  --bs-btn-color: var(--dept-navy-dark);
-  --bs-btn-hover-bg: var(--dept-accent-dark);
-  --bs-btn-hover-border-color: var(--dept-accent-dark);
-  --bs-btn-hover-color: var(--dept-navy-dark);
-  font-weight: 600;
+.quickLabel {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 0.2rem;
 }
 
-.heroActions :global(.btn-outline-primary) {
-  --bs-btn-color: #fff;
-  --bs-btn-border-color: rgba(255, 255, 255, 0.6);
-  --bs-btn-hover-bg: rgba(255, 255, 255, 0.14);
-  --bs-btn-hover-border-color: #fff;
-  --bs-btn-hover-color: #fff;
+.quickChip {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background-color 0.14s ease, border-color 0.14s ease;
 }
+
+.quickChip:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+/* --- Результаты поиска --- */
+
+.resultsTitle {
+  font-size: 1.15rem;
+  margin: 0 0 0.9rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.empty {
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--dept-muted);
+  background: #fff;
+  border: 1px dashed var(--dept-border);
+  border-radius: var(--dept-radius);
+}
+
+/* --- Плитки разделов --- */
 
 .group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.85rem;
 }
 
 .groupTitle {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-size: 1.25rem;
-  margin: 0 0 0.9rem;
+  font-size: 1.2rem;
+  margin: 0 0 0.85rem;
 }
 
 .groupIcon {
@@ -82,8 +168,8 @@
 
 .cards {
   display: grid;
-  gap: 0.9rem;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
 }
 
 .card {
@@ -143,6 +229,23 @@
   line-height: 1.45;
 }
 
+.cardCount {
+  display: inline-block;
+  margin-top: 0.45rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  background: var(--dept-surface);
+  color: #4a5866;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.cardCount i {
+  font-size: 0.85em;
+  margin-right: 0.2rem;
+  color: var(--dept-navy-light);
+}
+
 .cardArrow {
   flex: 0 0 auto;
   align-self: center;
@@ -153,4 +256,10 @@
 .card:hover .cardArrow {
   color: var(--dept-navy-light);
   transform: translateX(3px);
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 1.5rem 1.15rem 1.35rem;
+  }
 }

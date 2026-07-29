@@ -1,0 +1,28 @@
+/* Рамка со встроенным HTML-материалом. */
+
+.wrapper {
+  position: relative;
+  background: #fff;
+  border-radius: var(--dept-radius);
+  overflow: hidden;
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  min-height: 240px;
+  border: 0;
+  transition: height 0.15s ease-out;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--dept-muted);
+  font-size: 0.9rem;
+  z-index: 1;
+}

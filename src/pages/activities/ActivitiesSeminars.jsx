@@ -1,15 +1,15 @@
-import IframePage from '../../components/IframePage.jsx';
+import SectionPage from '../../components/SectionPage.jsx';
 import html from '../../content/html/seminars.html?raw';
 
 /** Подраздел «Активности → Семинары» (маршрут /activities/seminars). */
 export default function ActivitiesSeminars() {
   return (
-    <IframePage
+    <SectionPage
       title="Научный семинар лаборатории"
       subtitle="Расписание заседаний, темы докладов и правила участия для студентов и аспирантов."
       icon="fa-solid fa-chalkboard-user"
       html={html}
-      folder="activities/seminars"
+      section="activities/seminars"
     />
   );
 }
