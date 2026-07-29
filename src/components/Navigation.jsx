@@ -64,11 +64,11 @@ export default function Navigation() {
       aria-label="Основная навигация"
     >
       <div className="container">
-        {/* Логотип и название кафедры — ссылка на главную */}
+        {/* Логотип и название лаборатории — ссылка на главную */}
         <Link className={`navbar-brand ${styles.brand}`} to="/">
           <img src={logoSrc} alt="" width="36" height="36" className={styles.logo} />
           <span className={styles.brandText}>
-            <span className={styles.brandTitle}>Кафедра математики</span>
+            <span className={styles.brandTitle}>Лаборатория математики ФН1</span>
             <span className={styles.brandSubtitle}>учебные материалы и активности</span>
           </span>
         </Link>

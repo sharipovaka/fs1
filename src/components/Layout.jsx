@@ -5,7 +5,7 @@ import Navigation from './Navigation.jsx';
 import { findSection } from '../navConfig.js';
 import styles from './Layout.module.css';
 
-const SITE_TITLE = 'Кафедра математики';
+const SITE_TITLE = 'Лаборатория математики ФН1';
 
 /**
  * Общая обёртка страниц: фиксированный навбар, «хлебные крошки»,

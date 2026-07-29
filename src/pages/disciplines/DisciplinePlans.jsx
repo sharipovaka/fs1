@@ -11,6 +11,7 @@ export default function DisciplinePlans() {
       subtitle="Рабочие программы дисциплин, распределение часов и формы контроля по семестрам."
       icon="fa-solid fa-list-check"
       html={html}
+      folder="disciplines/plans"
     />
   );
 }

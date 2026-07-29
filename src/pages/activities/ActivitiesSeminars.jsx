@@ -5,10 +5,11 @@ import html from '../../content/html/seminars.html?raw';
 export default function ActivitiesSeminars() {
   return (
     <IframePage
-      title="Научный семинар кафедры"
+      title="Научный семинар лаборатории"
       subtitle="Расписание заседаний, темы докладов и правила участия для студентов и аспирантов."
       icon="fa-solid fa-chalkboard-user"
       html={html}
+      folder="activities/seminars"
     />
   );
 }

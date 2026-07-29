@@ -9,6 +9,7 @@ export default function ActivitiesReports() {
       subtitle="Требования к докладу и презентации, критерии оценивания и лучшие работы прошлых лет."
       icon="fa-solid fa-microphone-lines"
       html={html}
+      folder="activities/reports"
     />
   );
 }

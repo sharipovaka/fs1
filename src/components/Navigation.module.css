@@ -47,10 +47,20 @@
   color: rgba(255, 255, 255, 0.62);
 }
 
-/* Подзаголовок прячем на узких экранах, чтобы не ломать строку */
-@media (max-width: 400px) {
+/* На узких экранах название длинное — уменьшаем кегль и прячем подзаголовок */
+@media (max-width: 575.98px) {
+  .brandTitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
   .brandSubtitle {
     display: none;
+  }
+
+  .brandTitle {
+    font-size: 0.9rem;
   }
 }
 

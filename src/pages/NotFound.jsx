@@ -9,7 +9,7 @@ export default function NotFound() {
       <p className={styles.code}>404</p>
       <h1 className={styles.title}>Раздел не найден</h1>
       <p className={styles.text}>
-        Похоже, такой страницы на сайте кафедры нет. Возможно, адрес набран с опечаткой
+        Похоже, такой страницы на сайте лаборатории нет. Возможно, адрес набран с опечаткой
         или материал был перемещён — выберите нужный подраздел в меню наверху.
       </p>
       <Link className="btn btn-primary" to="/">

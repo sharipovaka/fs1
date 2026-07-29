@@ -9,6 +9,7 @@ export default function DisciplineTemplates() {
       subtitle="Титульные листы, LaTeX- и Jupyter-заготовки, требования к оформлению отчётов и курсовых."
       icon="fa-solid fa-file-code"
       html={html}
+      folder="disciplines/templates"
     />
   );
 }

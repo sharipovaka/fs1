@@ -9,6 +9,7 @@ export default function DisciplineTasks() {
       subtitle="Типовые расчёты, домашние задания и варианты контрольных работ с указанием сроков сдачи."
       icon="fa-solid fa-square-root-variable"
       html={html}
+      folder="disciplines/tasks"
     />
   );
 }

@@ -6,7 +6,10 @@
   "homepage": "https://sharipovaka.github.io/fs1/",
   "type": "module",
   "scripts": {
+    "files": "node scripts/generate-file-index.mjs",
+    "predev": "npm run files",
     "dev": "vite",
+    "prebuild": "npm run files",
     "build": "vite build",
     "preview": "vite preview",
     "icons": "node scripts/generate-icons.mjs",

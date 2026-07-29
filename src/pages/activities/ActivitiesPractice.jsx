@@ -9,6 +9,7 @@ export default function ActivitiesPractice() {
       subtitle="Учебная и производственная практика: базы практик, сроки, руководители и отчётность."
       icon="fa-solid fa-briefcase"
       html={html}
+      folder="activities/practice"
     />
   );
 }

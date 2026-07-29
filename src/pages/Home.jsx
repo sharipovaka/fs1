@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <section className={styles.hero}>
-        <h1 className={styles.heroTitle}>Кафедра математики</h1>
+        <h1 className={styles.heroTitle}>Лаборатория математики ФН1</h1>
         <p className={styles.heroText}>
           Учебные планы и конспекты, шаблоны работ и задания, практика, семинары, доклады
-          и конференции — все материалы кафедры собраны в одном месте и открываются
+          и конференции — все материалы лаборатории собраны в одном месте и открываются
           без перезагрузки страницы.
         </p>
         <div className={styles.heroActions}>

@@ -1,0 +1,236 @@
+{
+  "activities/conferences": [
+    {
+      "name": "call-for-papers.md",
+      "path": "activities/conferences/call-for-papers.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 4021,
+      "description": "Информационное письмо конференции: секции, требования, порядок подачи"
+    },
+    {
+      "name": "conference-abstract-template.tex",
+      "path": "activities/conferences/conference-abstract-template.tex",
+      "ext": "tex",
+      "kind": "LaTeX",
+      "size": 3482,
+      "description": "Шаблон тезисов для студенческой конференции (LaTeX)"
+    },
+    {
+      "name": "conferences-2026.csv",
+      "path": "activities/conferences/conferences-2026.csv",
+      "ext": "csv",
+      "kind": "CSV-таблица",
+      "size": 1223,
+      "description": "Календарь конференций 2026 года: даты, дедлайны подачи тезисов, оргвзносы"
+    }
+  ],
+  "activities/practice": [
+    {
+      "name": "practice-bases.csv",
+      "path": "activities/practice/practice-bases.csv",
+      "ext": "csv",
+      "kind": "CSV-таблица",
+      "size": 1918,
+      "description": "Базы практики: профиль, количество мест, требования к подготовке"
+    },
+    {
+      "name": "practice-diary.md",
+      "path": "activities/practice/practice-diary.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 2771,
+      "description": "Бланк дневника практики: ежедневные записи, инструктаж, отзыв руководителя"
+    },
+    {
+      "name": "practice-report-template.md",
+      "path": "activities/practice/practice-report-template.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3425,
+      "description": "Шаблон отчёта по практике с пояснениями к каждому разделу"
+    }
+  ],
+  "activities/reports": [
+    {
+      "name": "beamer-presentation.tex",
+      "path": "activities/reports/beamer-presentation.tex",
+      "ext": "tex",
+      "kind": "LaTeX",
+      "size": 4460,
+      "description": "Шаблон презентации в Beamer с фирменной палитрой лаборатории"
+    },
+    {
+      "name": "plots-for-presentation.ipynb",
+      "path": "activities/reports/plots-for-presentation.ipynb",
+      "ext": "ipynb",
+      "kind": "Jupyter Notebook",
+      "size": 6034,
+      "description": "Оформление графиков для доклада: стиль, палитра, экспорт в вектор"
+    },
+    {
+      "name": "report-checklist.md",
+      "path": "activities/reports/report-checklist.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3876,
+      "description": "Чек-лист подготовки доклада: сроки, структура выступления, критерии оценивания"
+    }
+  ],
+  "activities/seminars": [
+    {
+      "name": "abstract-template.tex",
+      "path": "activities/seminars/abstract-template.tex",
+      "ext": "tex",
+      "kind": "LaTeX",
+      "size": 2516,
+      "description": "Шаблон тезисов доклада на семинаре (одна страница, LaTeX)"
+    },
+    {
+      "name": "finite-difference-demo.ipynb",
+      "path": "activities/seminars/finite-difference-demo.ipynb",
+      "ext": "ipynb",
+      "kind": "Jupyter Notebook",
+      "size": 5352,
+      "description": "Демонстрация к докладу: явная разностная схема, условие устойчивости, порядок точности"
+    },
+    {
+      "name": "seminar-schedule.csv",
+      "path": "activities/seminars/seminar-schedule.csv",
+      "ext": "csv",
+      "kind": "CSV-таблица",
+      "size": 1762,
+      "description": "Расписание заседаний научного семинара на весенний семестр"
+    }
+  ],
+  "activities/spring": [
+    {
+      "name": "achievements.csv",
+      "path": "activities/spring/achievements.csv",
+      "ext": "csv",
+      "kind": "CSV-таблица",
+      "size": 1267,
+      "description": "Результаты выступлений на фестивале за 2022–2025 годы"
+    },
+    {
+      "name": "rehearsal-schedule.md",
+      "path": "activities/spring/rehearsal-schedule.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3070,
+      "description": "График репетиций, контрольные точки сезона и организационные правила"
+    },
+    {
+      "name": "stage-plan.md",
+      "path": "activities/spring/stage-plan.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3195,
+      "description": "Сценарный план номера: эпизоды, хронометраж, свет, звук, реквизит"
+    }
+  ],
+  "disciplines/notes": [
+    {
+      "name": "lecture-04-taylor.md",
+      "path": "disciplines/notes/lecture-04-taylor.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 2585,
+      "description": "Конспект лекции: формула Тейлора, формы остаточного члена, опорные разложения"
+    },
+    {
+      "name": "lecture-07-linear-algebra.md",
+      "path": "disciplines/notes/lecture-07-linear-algebra.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3633,
+      "description": "Конспект лекции: собственные значения и векторы, диагонализация симметричных матриц"
+    },
+    {
+      "name": "taylor-series.ipynb",
+      "path": "disciplines/notes/taylor-series.ipynb",
+      "ext": "ipynb",
+      "kind": "Jupyter Notebook",
+      "size": 4482,
+      "description": "Численная проверка оценки остаточного члена и графики частичных сумм ряда Маклорена"
+    }
+  ],
+  "disciplines/plans": [
+    {
+      "name": "kalendarnyj-grafik.md",
+      "path": "disciplines/plans/kalendarnyj-grafik.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 2070,
+      "description": "Календарный график на учебный год: сроки выдачи и сдачи работ, сессии, практика"
+    },
+    {
+      "name": "rpd-matematicheskiy-analiz.md",
+      "path": "disciplines/plans/rpd-matematicheskiy-analiz.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 4493,
+      "description": "Рабочая программа дисциплины: цели, результаты обучения, содержание разделов, фонд оценочных средств"
+    },
+    {
+      "name": "uchebnyj-plan.csv",
+      "path": "disciplines/plans/uchebnyj-plan.csv",
+      "ext": "csv",
+      "kind": "CSV-таблица",
+      "size": 1209,
+      "description": "Распределение дисциплин по семестрам: часы, зачётные единицы, формы контроля"
+    }
+  ],
+  "disciplines/tasks": [
+    {
+      "name": "tr-02-derivatives.ipynb",
+      "path": "disciplines/tasks/tr-02-derivatives.ipynb",
+      "ext": "ipynb",
+      "kind": "Jupyter Notebook",
+      "size": 5186,
+      "description": "Самопроверка решений средствами SymPy: производные, пределы, разложения, экстремумы"
+    },
+    {
+      "name": "tr-02-derivatives.md",
+      "path": "disciplines/tasks/tr-02-derivatives.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3670,
+      "description": "Типовой расчёт № 2 «Производная и её приложения»: шесть задач, критерии, сроки"
+    },
+    {
+      "name": "tr-02-variants.csv",
+      "path": "disciplines/tasks/tr-02-variants.csv",
+      "ext": "csv",
+      "kind": "CSV-таблица",
+      "size": 478,
+      "description": "Параметры 25 вариантов типового расчёта № 2"
+    }
+  ],
+  "disciplines/templates": [
+    {
+      "name": "coursework.tex",
+      "path": "disciplines/templates/coursework.tex",
+      "ext": "tex",
+      "kind": "LaTeX",
+      "size": 4647,
+      "description": "Шаблон курсовой работы в LaTeX: титульный лист, окружения теорем, оглавление, библиография"
+    },
+    {
+      "name": "formatting-requirements.md",
+      "path": "disciplines/templates/formatting-requirements.md",
+      "ext": "md",
+      "kind": "Markdown",
+      "size": 3738,
+      "description": "Требования к оформлению письменных работ и чек-лист самопроверки перед сдачей"
+    },
+    {
+      "name": "report-template.ipynb",
+      "path": "disciplines/templates/report-template.ipynb",
+      "ext": "ipynb",
+      "kind": "Jupyter Notebook",
+      "size": 4606,
+      "description": "Заготовка вычислительного отчёта в Jupyter с обязательной структурой разделов"
+    }
+  ]
+}

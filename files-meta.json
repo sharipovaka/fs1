@@ -1,0 +1,39 @@
+{
+  "_comment": "Описания файлов для панели «Материалы для скачивания». Ключ — путь относительно public/files. Файл без описания попадёт в список без подписи. Читается скриптом scripts/generate-file-index.mjs при сборке.",
+
+  "disciplines/plans/rpd-matematicheskiy-analiz.md": "Рабочая программа дисциплины: цели, результаты обучения, содержание разделов, фонд оценочных средств",
+  "disciplines/plans/uchebnyj-plan.csv": "Распределение дисциплин по семестрам: часы, зачётные единицы, формы контроля",
+  "disciplines/plans/kalendarnyj-grafik.md": "Календарный график на учебный год: сроки выдачи и сдачи работ, сессии, практика",
+
+  "disciplines/notes/lecture-04-taylor.md": "Конспект лекции: формула Тейлора, формы остаточного члена, опорные разложения",
+  "disciplines/notes/taylor-series.ipynb": "Численная проверка оценки остаточного члена и графики частичных сумм ряда Маклорена",
+  "disciplines/notes/lecture-07-linear-algebra.md": "Конспект лекции: собственные значения и векторы, диагонализация симметричных матриц",
+
+  "disciplines/templates/coursework.tex": "Шаблон курсовой работы в LaTeX: титульный лист, окружения теорем, оглавление, библиография",
+  "disciplines/templates/report-template.ipynb": "Заготовка вычислительного отчёта в Jupyter с обязательной структурой разделов",
+  "disciplines/templates/formatting-requirements.md": "Требования к оформлению письменных работ и чек-лист самопроверки перед сдачей",
+
+  "disciplines/tasks/tr-02-derivatives.md": "Типовой расчёт № 2 «Производная и её приложения»: шесть задач, критерии, сроки",
+  "disciplines/tasks/tr-02-variants.csv": "Параметры 25 вариантов типового расчёта № 2",
+  "disciplines/tasks/tr-02-derivatives.ipynb": "Самопроверка решений средствами SymPy: производные, пределы, разложения, экстремумы",
+
+  "activities/practice/practice-report-template.md": "Шаблон отчёта по практике с пояснениями к каждому разделу",
+  "activities/practice/practice-diary.md": "Бланк дневника практики: ежедневные записи, инструктаж, отзыв руководителя",
+  "activities/practice/practice-bases.csv": "Базы практики: профиль, количество мест, требования к подготовке",
+
+  "activities/spring/rehearsal-schedule.md": "График репетиций, контрольные точки сезона и организационные правила",
+  "activities/spring/stage-plan.md": "Сценарный план номера: эпизоды, хронометраж, свет, звук, реквизит",
+  "activities/spring/achievements.csv": "Результаты выступлений на фестивале за 2022–2025 годы",
+
+  "activities/seminars/seminar-schedule.csv": "Расписание заседаний научного семинара на весенний семестр",
+  "activities/seminars/abstract-template.tex": "Шаблон тезисов доклада на семинаре (одна страница, LaTeX)",
+  "activities/seminars/finite-difference-demo.ipynb": "Демонстрация к докладу: явная разностная схема, условие устойчивости, порядок точности",
+
+  "activities/reports/report-checklist.md": "Чек-лист подготовки доклада: сроки, структура выступления, критерии оценивания",
+  "activities/reports/beamer-presentation.tex": "Шаблон презентации в Beamer с фирменной палитрой лаборатории",
+  "activities/reports/plots-for-presentation.ipynb": "Оформление графиков для доклада: стиль, палитра, экспорт в вектор",
+
+  "activities/conferences/conferences-2026.csv": "Календарь конференций 2026 года: даты, дедлайны подачи тезисов, оргвзносы",
+  "activities/conferences/conference-abstract-template.tex": "Шаблон тезисов для студенческой конференции (LaTeX)",
+  "activities/conferences/call-for-papers.md": "Информационное письмо конференции: секции, требования, порядок подачи"
+}

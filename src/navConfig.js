@@ -58,13 +58,13 @@ export const MENU = [
         path: '/activities/spring',
         title: 'Студвесна',
         icon: 'fa-solid fa-guitar',
-        description: 'Творческий фестиваль: направления, репетиции и достижения кафедры.',
+        description: 'Творческий фестиваль: направления, репетиции и достижения лаборатории.',
       },
       {
         path: '/activities/seminars',
         title: 'Семинары',
         icon: 'fa-solid fa-chalkboard-user',
-        description: 'Научный семинар кафедры: расписание заседаний и темы докладов.',
+        description: 'Научный семинар лаборатории: расписание заседаний и темы докладов.',
       },
       {
         path: '/activities/reports',

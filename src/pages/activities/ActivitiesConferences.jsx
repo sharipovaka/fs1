@@ -9,6 +9,7 @@ export default function ActivitiesConferences() {
       subtitle="Предстоящие и прошедшие конференции, дедлайны подачи тезисов и сборники материалов."
       icon="fa-solid fa-globe"
       html={html}
+      folder="activities/conferences"
     />
   );
 }

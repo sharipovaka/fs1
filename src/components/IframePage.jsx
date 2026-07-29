@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { buildSrcDoc } from '../content/buildSrcDoc.js';
+import FileList from './FileList.jsx';
 import styles from './IframePage.module.css';
 
 const MIN_HEIGHT = 320;
@@ -21,9 +22,10 @@ const MIN_HEIGHT = 320;
  * @param {string}  props.subtitle    краткое описание под заголовком
  * @param {string}  props.icon        класс иконки Font Awesome
  * @param {string}  props.html        HTML-код материала (импортируется как строка)
+ * @param {string}  [props.folder]    ключ раздела для панели файлов («disciplines/plans»)
  * @param {boolean} [props.autoHeight=true] подгонять высоту iframe под контент
  */
-export default function IframePage({ title, subtitle, icon, html, autoHeight = true }) {
+export default function IframePage({ title, subtitle, icon, html, folder, autoHeight = true }) {
   const frameRef = useRef(null);
   const observerRef = useRef(null);
 
@@ -119,6 +121,9 @@ export default function IframePage({ title, subtitle, icon, html, autoHeight = t
           referrerPolicy="no-referrer"
         />
       </div>
+
+      {/* Файлы раздела: скачивание, просмотр на GitHub, запуск в Colab */}
+      {folder && <FileList folder={folder} />}
     </article>
   );
 }

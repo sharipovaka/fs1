@@ -1,4 +1,4 @@
-# Сайт кафедры математики — SPA на React
+# Сайт Лаборатории математики ФН1 — SPA на React
 
 Одностраничное приложение с навигацией без перезагрузки страницы. Материалы разделов
 готовятся заранее в виде HTML-файлов и отображаются во встроенном `<iframe srcdoc="…">`.
@@ -28,9 +28,14 @@
 ├── index.html                     # HTML-шаблон + скрипт восстановления пути (GitHub Pages)
 ├── vite.config.js                 # base (publicPath), outDir: build
 ├── package.json                   # homepage, скрипты build/deploy
+├── files-meta.json                # подписи к файлам разделов
 ├── scripts/
-│   └── generate-icons.mjs         # генерация PNG-иконок для PWA (без зависимостей)
+│   ├── generate-icons.mjs         # генерация PNG-иконок для PWA (без зависимостей)
+│   └── generate-file-index.mjs    # сканирование public/files → src/content/filesIndex.json
 ├── public/                        # копируется в build как есть
+│   ├── files/                     # файлы разделов (см. «Файлы разделов» ниже)
+│   │   ├── disciplines/plans, notes, templates, tasks
+│   │   └── activities/practice, spring, seminars, reports, conferences
 │   ├── manifest.json              # PWA-манифест
 │   ├── favicon.svg                # фавиконка
 │   ├── logo.svg                   # логотип в навбаре
@@ -43,10 +48,12 @@
     ├── App.jsx                    # карта маршрутов
     ├── index.css                  # глобальные стили и дизайн-токены
     ├── navConfig.js               # структура меню (единый источник правды)
+    ├── repoConfig.js              # координаты репозитория для ссылок GitHub/Colab
     ├── components/
     │   ├── Layout.jsx / .module.css       # навбар + крошки + контент + подвал
     │   ├── Navigation.jsx / .module.css   # панель навигации с Dropdown
-    │   └── IframePage.jsx / .module.css   # универсальная страница с <iframe srcdoc>
+    │   ├── IframePage.jsx / .module.css   # универсальная страница с <iframe srcdoc>
+    │   └── FileList.jsx / .module.css     # панель файлов раздела
     ├── pages/
     │   ├── Home.jsx / .module.css         # приветственная страница
     │   ├── NotFound.jsx / .module.css     # 404
@@ -63,6 +70,7 @@
     │       └── ActivitiesConferences.jsx
     └── content/
         ├── buildSrcDoc.js         # подготовка HTML к подстановке в srcdoc
+        ├── filesIndex.json        # генерируется автоматически, править вручную не нужно
         └── html/                  # исходные материалы разделов
             ├── plans.html   notes.html   templates.html  tasks.html
             ├── practice.html spring.html seminars.html
@@ -94,8 +102,70 @@ npm install       # установка зависимостей
 npm run dev       # дев-сервер на http://localhost:3000
 npm run build     # production-сборка в папку build/
 npm run preview   # локальный просмотр собранного сайта
+npm run files     # пересобрать индекс файлов разделов
 npm run icons     # перегенерировать PNG-иконки PWA
 ```
+
+`npm run files` выполняется автоматически перед `dev` и `build`
+(через хуки `predev` / `prebuild`), отдельно запускать его обычно не требуется.
+
+## Файлы разделов
+
+У каждого из девяти подразделов есть своя папка внутри `public/files/`,
+имя которой совпадает с маршрутом:
+
+```
+public/files/
+├── disciplines/{plans,notes,templates,tasks}/
+└── activities/{practice,spring,seminars,reports,conferences}/
+```
+
+Под содержимым раздела на сайте выводится панель «Материалы для скачивания».
+Для каждого файла доступны:
+
+| Кнопка | Что делает | Для каких файлов |
+| --- | --- | --- |
+| **Скачать** | прямая ссылка на файл, опубликованный вместе с сайтом (`/fs1/files/…`) | все |
+| **GitHub** | просмотр исходника в репозитории; ноутбуки GitHub отрисовывает сам | все |
+| **Colab** | открывает ноутбук в Google Colab и позволяет запустить код | только `.ipynb` |
+
+### Как добавить файл
+
+1. Положите его в нужную папку, например `public/files/disciplines/tasks/`.
+2. При желании добавьте подпись в `files-meta.json` (ключ — путь относительно
+   `public/files`):
+
+   ```json
+   "disciplines/tasks/tr-03.pdf": "Типовой расчёт № 3: условия и варианты"
+   ```
+
+3. Запустите `npm run dev` или `npm run build` — индекс пересоберётся сам.
+
+Скрипт `scripts/generate-file-index.mjs` сканирует папки, определяет тип и размер
+каждого файла и записывает результат в `src/content/filesIndex.json`. Отдельно
+он предупредит, если в `files-meta.json` остались описания без файлов.
+
+### Откуда берутся ссылки GitHub и Colab
+
+Из `src/repoConfig.js`:
+
+```js
+export const REPO = {
+  owner: 'sharipovaka',
+  name: 'fs1',
+  branch: 'main',
+  filesPath: 'public/files',
+};
+```
+
+> **Важно.** Эти ссылки ведут в **исходный** репозиторий, а не на опубликованный
+> сайт, поэтому ветка `main` с папкой `public/files` должна быть запушена на GitHub
+> (`git push origin main`), а репозиторий — быть публичным: Colab не открывает
+> ноутбуки из приватных репозиториев.
+>
+> Если исходники не публикуются и на GitHub уходит только сборка, поменяйте
+> в `repoConfig.js` `branch` на `'gh-pages'`, а `filesPath` на `'files'` —
+> в ветке `gh-pages` файлы лежат без префикса `public/`.
 
 ## Как добавить или обновить материал раздела
 
@@ -199,6 +269,7 @@ IHDR/IDAT/IEND, поэтому графические библиотеки не 
   внутренней полосы прокрутки нет.
 * **Ссылки внутри материалов** открываются в новой вкладке благодаря
   внедряемому тегу `<base target="_blank">`.
-* **Кнопка «Печать»** печатает только сам материал, без навбара и подвала.
+* **Кнопка «Печать»** печатает только сам материал, без навбара, подвала
+  и панели файлов.
 * Атрибут `sandbox` у `<iframe>` не задан намеренно: содержимое готовим мы сами,
   а общее с родителем происхождение `srcdoc`-документа необходимо для замера высоты.

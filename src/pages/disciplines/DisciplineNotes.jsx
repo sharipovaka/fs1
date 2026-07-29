@@ -12,6 +12,7 @@ export default function DisciplineNotes() {
       subtitle="Лекционные материалы по математическому анализу, линейной алгебре и дифференциальным уравнениям."
       icon="fa-solid fa-pen-nib"
       html={html}
+      folder="disciplines/notes"
     />
   );
 }

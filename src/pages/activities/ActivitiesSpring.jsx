@@ -6,9 +6,10 @@ export default function ActivitiesSpring() {
   return (
     <IframePage
       title="Студенческая весна"
-      subtitle="Творческий фестиваль: направления, график репетиций и достижения команды кафедры."
+      subtitle="Творческий фестиваль: направления, график репетиций и достижения команды лаборатории."
       icon="fa-solid fa-guitar"
       html={html}
+      folder="activities/spring"
     />
   );
 }
