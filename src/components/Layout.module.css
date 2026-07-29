@@ -29,18 +29,18 @@
 }
 
 .breadcrumbs a:hover {
-  color: var(--dept-navy);
+  color: var(--dept-navy-light);
   text-decoration: underline;
 }
 
 .breadcrumbs :global(.breadcrumb-item.active) {
-  color: var(--dept-navy);
+  color: var(--dept-navy-light);
   font-weight: 600;
 }
 
 .footer {
   flex: 0 0 auto;
-  background-color: var(--dept-navy-dark);
+  background-color: var(--dept-brand-from);
   color: rgba(255, 255, 255, 0.8);
   padding: 1.25rem 0;
   font-size: 0.875rem;

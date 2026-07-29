@@ -29,6 +29,12 @@ export const MENU = [
         description: 'Лекционные материалы по математическому анализу, алгебре и уравнениям.',
       },
       {
+        path: '/disciplines/library',
+        title: 'Материалы и литература',
+        icon: 'fa-solid fa-book-bookmark',
+        description: 'Учебники, задачники, справочники и проверенные открытые ресурсы.',
+      },
+      {
         path: '/disciplines/templates',
         title: 'Шаблоны',
         icon: 'fa-solid fa-file-code',
@@ -57,8 +63,8 @@ export const MENU = [
       {
         path: '/activities/spring',
         title: 'Студвесна',
-        icon: 'fa-solid fa-guitar',
-        description: 'Творческий фестиваль: направления, репетиции и достижения лаборатории.',
+        icon: 'fa-solid fa-users-rectangle',
+        description: 'Студенческая научная конференция: секции, тезисы, сроки подачи заявок.',
       },
       {
         path: '/activities/seminars',

@@ -1,7 +1,7 @@
 /* Поиск и фильтры над каталогом раздела. */
 
 .panel {
-  background: #fff;
+  background: var(--dept-card);
   border: 1px solid var(--dept-border);
   border-radius: var(--dept-radius);
   box-shadow: var(--dept-shadow-sm);
@@ -73,8 +73,8 @@
   padding: 0.28rem 0.75rem;
   border: 1px solid var(--dept-border);
   border-radius: 999px;
-  background: #fff;
-  color: #45525f;
+  background: var(--dept-card);
+  color: var(--dept-ink);
   font-size: 0.85rem;
   font-weight: 500;
   line-height: 1.3;
@@ -84,7 +84,7 @@
 
 .chip:hover {
   border-color: var(--dept-navy-light);
-  color: var(--dept-navy);
+  color: var(--dept-navy-light);
 }
 
 .chipActive {

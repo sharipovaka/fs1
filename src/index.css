@@ -1,20 +1,47 @@
 /*
  * Глобальные стили и дизайн-токены приложения.
  * Кастомное оформление компонентов вынесено в CSS-модули (*.module.css),
- * здесь остаются только переменные, сброс и переопределения Bootstrap.
+ * здесь остаются переменные, сброс и переопределения Bootstrap.
+ *
+ * Тема переключается атрибутом data-theme на <html>: значение ставит
+ * ThemeProvider (src/theme.jsx), а до загрузки скриптов — небольшой инлайновый
+ * скрипт в index.html, чтобы не было вспышки светлого фона.
  */
 
-:root {
-  /* Фирменная палитра лаборатории */
-  --dept-navy: #123a5f;
+:root,
+:root[data-theme='light'] {
+  /* Фирменная палитра */
+  --dept-navy: #123a5f; /* фон акцентных элементов, текст на нём белый */
   --dept-navy-dark: #0d2b45;
-  --dept-navy-light: #1d5688;
+  --dept-navy-light: #1d5688; /* текст, иконки, ссылки */
   --dept-accent: #ffc857;
   --dept-accent-dark: #e0a92e;
+
+  /* Поверхности и текст */
   --dept-ink: #1f2933;
   --dept-muted: #667685;
-  --dept-surface: #f5f7fa;
+  --dept-heading: #0d2b45;
+  --dept-surface: #f5f7fa; /* фон страницы */
+  --dept-card: #ffffff; /* фон карточек и панелей */
+  --dept-card-alt: #fdfefe; /* фон вложенных блоков */
+  --dept-card-accent: #f7fbff; /* выделенный вложенный блок */
   --dept-border: #dde3ea;
+  --dept-border-strong: #c6d3e0;
+
+  /* Тёмная шапка и «герой» — одинаковы в обеих темах */
+  --dept-brand-from: #0d2b45;
+  --dept-brand-to: #1d5688;
+
+  /* Метки статусов */
+  --status-open-bg: #e4f4ea;
+  --status-open-border: #b6dfc6;
+  --status-open-fg: #1c6b41;
+  --status-soon-bg: #fdf1dc;
+  --status-soon-border: #f2d5a0;
+  --status-soon-fg: #8a5b12;
+  --status-done-bg: #eef1f4;
+  --status-done-border: #d8dee5;
+  --status-done-fg: #5c6b7a;
 
   --dept-radius: 12px;
   --dept-shadow-sm: 0 1px 2px rgba(18, 58, 95, 0.08);
@@ -22,6 +49,45 @@
 
   /* Высота навбара — используется для отступов и «липкого» подвала */
   --dept-navbar-height: 62px;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  /* Акцентный синий светлее: на тёмном фоне тёмно-синий нечитаем */
+  --dept-navy: #2d6fae;
+  --dept-navy-dark: #1d4f80;
+  --dept-navy-light: #7db8ea;
+  --dept-accent: #ffc857;
+  --dept-accent-dark: #e0a92e;
+
+  --dept-ink: #e3eaf2;
+  --dept-muted: #93a2b1;
+  --dept-heading: #dbe7f3;
+  --dept-surface: #10151b;
+  --dept-card: #1a212a;
+  --dept-card-alt: #1e2732;
+  --dept-card-accent: #1d2b3a;
+  --dept-border: #2c3642;
+  --dept-border-strong: #3d4b5c;
+
+  --dept-brand-from: #0b1f33;
+  --dept-brand-to: #17406a;
+
+  --status-open-bg: #16321f;
+  --status-open-border: #2c5c3b;
+  --status-open-fg: #7fd6a0;
+  --status-soon-bg: #35270f;
+  --status-soon-border: #6b4f1c;
+  --status-soon-fg: #f0c274;
+  --status-done-bg: #232a32;
+  --status-done-border: #39434f;
+  --status-done-fg: #9aa8b6;
+
+  --dept-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --dept-shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+
+  color-scheme: dark;
 }
 
 html,
@@ -37,16 +103,16 @@ body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Заголовки чуть плотнее бутстраповских */
 h1,
 h2,
 h3,
 h4 {
   font-weight: 650;
   letter-spacing: -0.01em;
-  color: var(--dept-navy-dark);
+  color: var(--dept-heading);
 }
 
 a {
@@ -57,6 +123,10 @@ a {
 
 a:hover {
   color: var(--dept-navy);
+}
+
+:root[data-theme='dark'] a:hover {
+  color: var(--dept-accent);
 }
 
 /* Единый видимый фокус для доступности с клавиатуры */
@@ -74,22 +144,38 @@ a:hover {
   --bs-btn-hover-border-color: var(--dept-navy-light);
   --bs-btn-active-bg: var(--dept-navy-dark);
   --bs-btn-active-border-color: var(--dept-navy-dark);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+}
+
+:root[data-theme='dark'] .btn-primary {
+  --bs-btn-hover-bg: #3b83c6;
+  --bs-btn-hover-border-color: #3b83c6;
 }
 
 .btn-outline-primary {
-  --bs-btn-color: var(--dept-navy);
-  --bs-btn-border-color: var(--dept-navy);
+  --bs-btn-color: var(--dept-navy-light);
+  --bs-btn-border-color: var(--dept-border-strong);
   --bs-btn-hover-bg: var(--dept-navy);
   --bs-btn-hover-border-color: var(--dept-navy);
+  --bs-btn-hover-color: #fff;
   --bs-btn-active-bg: var(--dept-navy-dark);
   --bs-btn-active-border-color: var(--dept-navy-dark);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--dept-muted);
+  --bs-btn-border-color: var(--dept-border);
+  --bs-btn-hover-bg: var(--dept-surface);
+  --bs-btn-hover-border-color: var(--dept-border-strong);
+  --bs-btn-hover-color: var(--dept-ink);
 }
 
 .text-brand {
   color: var(--dept-navy) !important;
 }
 
-/* Скрытая подпись для скринридеров (аналог .visually-hidden из Bootstrap) */
+/* Скрытая подпись для скринридеров */
 .sr-only {
   position: absolute;
   width: 1px;

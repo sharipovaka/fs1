@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 
 import App from './App.jsx';
+import { ThemeProvider } from './theme.jsx';
 
 /*
  * basename берётся из import.meta.env.BASE_URL — это значение опции `base`
@@ -20,8 +21,10 @@ const basename = import.meta.env.BASE_URL;
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
-      <App />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter basename={basename}>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>
 );

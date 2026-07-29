@@ -5,9 +5,9 @@ import html from '../../content/html/spring.html?raw';
 export default function ActivitiesSpring() {
   return (
     <SectionPage
-      title="Студенческая весна"
-      subtitle="Творческий фестиваль: направления, график репетиций и достижения команды лаборатории."
-      icon="fa-solid fa-guitar"
+      title="«Студенческая весна»"
+      subtitle="Студенческая научная конференция лаборатории: программа секций, шаблон тезисов и сроки подачи заявок."
+      icon="fa-solid fa-podium"
       html={html}
       section="activities/spring"
     />

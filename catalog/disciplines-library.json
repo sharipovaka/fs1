@@ -1,0 +1,55 @@
+{
+  "section": "disciplines/library",
+  "intro": "Что читать по каждой дисциплине, где искать формулу и какими открытыми ресурсами можно пользоваться.",
+  "items": [
+    {
+      "id": "reading-list",
+      "kind": "Список литературы",
+      "title": "Учебники и задачники по дисциплинам",
+      "discipline": "Все дисциплины",
+      "deadline": "основная и дополнительная литература по шести дисциплинам",
+      "status": "open",
+      "statusLabel": "актуален",
+      "files": [
+        {
+          "path": "disciplines/library/spisok-literatury.md",
+          "label": "Списки по анализу, алгебре, ОДУ, теорверу, численным методам и дискретной математике",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "formula-reference",
+      "kind": "Справочник",
+      "title": "Краткий справочник формул",
+      "discipline": "Все дисциплины",
+      "course": 1,
+      "deadline": "две колонки на одной странице — удобно печатать",
+      "status": "open",
+      "statusLabel": "актуален",
+      "files": [
+        {
+          "path": "disciplines/library/spravochnik-formul.tex",
+          "label": "Производные, интегралы, разложения, матрицы, вероятности, численные методы",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "open-resources",
+      "kind": "Ресурсы",
+      "title": "Открытые библиотеки и онлайн-инструменты",
+      "discipline": "Все дисциплины",
+      "deadline": "15 проверенных ресурсов",
+      "status": "open",
+      "statusLabel": "проверено",
+      "files": [
+        {
+          "path": "disciplines/library/otkrytye-resursy.csv",
+          "label": "Справочники, свободные библиотеки, онлайн-калькуляторы и редакторы LaTeX",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}

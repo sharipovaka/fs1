@@ -1,0 +1,129 @@
+% Краткий справочник формул
+% Лаборатория математики ФН1
+% Компиляция: pdflatex spravochnik-formul.tex
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[left=18mm, right=18mm, top=18mm, bottom=18mm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{array}
+
+\pagestyle{plain}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{8mm}
+
+\newcommand{\block}[1]{\vspace{0.6em}\textbf{#1}\vspace{0.25em}\hrule\vspace{0.5em}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Краткий справочник формул}
+
+  \vspace{0.3em}
+  {\small Лаборатория математики ФН1 · для подготовки к контрольным и экзаменам}
+\end{center}
+
+\vspace{0.8em}
+
+\begin{multicols}{2}
+
+\block{Производные}
+
+\begin{tabular}{@{}ll@{}}
+  $(x^{\alpha})' = \alpha x^{\alpha-1}$ & $(e^x)' = e^x$ \\[2pt]
+  $(a^x)' = a^x\ln a$ & $(\ln x)' = \dfrac{1}{x}$ \\[4pt]
+  $(\sin x)' = \cos x$ & $(\cos x)' = -\sin x$ \\[4pt]
+  $(\operatorname{tg} x)' = \dfrac{1}{\cos^2 x}$ & $(\operatorname{ctg} x)' = -\dfrac{1}{\sin^2 x}$ \\[6pt]
+  $(\arcsin x)' = \dfrac{1}{\sqrt{1-x^2}}$ & $(\operatorname{arctg} x)' = \dfrac{1}{1+x^2}$
+\end{tabular}
+
+\vspace{0.4em}
+Правила: $(uv)' = u'v + uv'$, \quad
+$\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$, \quad
+$\big(f(g)\big)' = f'(g)\,g'$.
+
+\block{Неопределённые интегралы}
+
+\begin{tabular}{@{}ll@{}}
+  $\displaystyle\int x^{\alpha}dx = \frac{x^{\alpha+1}}{\alpha+1}$ & $\alpha \ne -1$ \\[8pt]
+  $\displaystyle\int \frac{dx}{x} = \ln|x|$ & \\[8pt]
+  $\displaystyle\int e^x dx = e^x$ & \\[8pt]
+  $\displaystyle\int \frac{dx}{x^2 + a^2} = \frac{1}{a}\operatorname{arctg}\frac{x}{a}$ & \\[8pt]
+  $\displaystyle\int \frac{dx}{\sqrt{a^2 - x^2}} = \arcsin\frac{x}{a}$ &
+\end{tabular}
+
+\vspace{0.4em}
+По частям: $\displaystyle\int u\,dv = uv - \int v\,du$.
+
+\block{Замечательные пределы}
+
+$\displaystyle\lim_{x\to 0}\frac{\sin x}{x} = 1$, \qquad
+$\displaystyle\lim_{x\to\infty}\left(1 + \frac{1}{x}\right)^{x} = e$.
+
+\block{Разложения при $x \to 0$}
+
+$e^x = 1 + x + \dfrac{x^2}{2!} + \dots$
+
+$\sin x = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dots$
+
+$\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dots$
+
+$\ln(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \dots$
+
+$(1+x)^{\alpha} = 1 + \alpha x + \dfrac{\alpha(\alpha-1)}{2!}x^2 + \dots$
+
+\columnbreak
+
+\block{Матрицы и определители}
+
+$\det(AB) = \det A \cdot \det B$, \quad $\det A^{\mathsf T} = \det A$
+
+$A^{-1} = \dfrac{1}{\det A}\,\widetilde{A}^{\mathsf T}$, \quad $\det A \ne 0$
+
+$(AB)^{-1} = B^{-1}A^{-1}$, \quad $(AB)^{\mathsf T} = B^{\mathsf T}A^{\mathsf T}$
+
+Теорема Кронекера~--- Капелли: система совместна тогда и только тогда,
+когда $\operatorname{rk} A = \operatorname{rk}(A\,|\,b)$.
+
+\block{Собственные значения}
+
+$\det(A - \lambda E) = 0$, \quad
+$\sum \lambda_i = \operatorname{tr} A$, \quad
+$\prod \lambda_i = \det A$.
+
+\block{Теория вероятностей}
+
+$P(A \cup B) = P(A) + P(B) - P(AB)$
+
+$P(A\,|\,B) = \dfrac{P(AB)}{P(B)}$
+
+Полная вероятность: $P(A) = \sum_i P(H_i)P(A\,|\,H_i)$
+
+Байес: $P(H_k\,|\,A) = \dfrac{P(H_k)P(A\,|\,H_k)}{P(A)}$
+
+Бернулли: $P_n(k) = C_n^k p^k q^{n-k}$
+
+$M[X] = \sum x_i p_i$, \quad
+$D[X] = M[X^2] - \big(M[X]\big)^2$
+
+\block{Численные методы}
+
+Метод Ньютона: $x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}$
+
+Формула трапеций: $\displaystyle\int_a^b f\,dx \approx h\left(\frac{f_0 + f_n}{2} + \sum_{i=1}^{n-1} f_i\right)$
+
+Формула Симпсона: погрешность $O(h^4)$
+
+Наблюдаемый порядок: $p = \log_2 \dfrac{\varepsilon_h}{\varepsilon_{h/2}}$
+
+\end{multicols}
+
+\vfill
+{\footnotesize Справочник не заменяет конспект: формулы даны без условий
+применимости. Проверяйте их в основной литературе раздела.}
+
+\end{document}

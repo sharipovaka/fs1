@@ -60,6 +60,7 @@
     ├── navConfig.js               # структура меню (единый источник правды)
     ├── repoConfig.js              # координаты репозитория для ссылок GitHub/Colab
     ├── catalog.js                 # чтение каталога, поиск и фильтрация
+    ├── theme.jsx                  # переключение светлой и тёмной темы
     ├── components/
     │   ├── Layout.jsx / .module.css            # навбар + крошки + контент + подвал
     │   ├── Navigation.jsx / .module.css        # панель навигации с Dropdown
@@ -74,6 +75,7 @@
     │   ├── disciplines/
     │   │   ├── DisciplinePlans.jsx
     │   │   ├── DisciplineNotes.jsx
+    │   │   ├── DisciplineLibrary.jsx
     │   │   ├── DisciplineTemplates.jsx
     │   │   └── DisciplineTasks.jsx
     │   └── activities/
@@ -99,6 +101,7 @@
 | `/disciplines` | редирект на `/disciplines/plans` |
 | `/disciplines/plans` | `DisciplinePlans` |
 | `/disciplines/notes` | `DisciplineNotes` |
+| `/disciplines/library` | `DisciplineLibrary` — материалы и литература |
 | `/disciplines/templates` | `DisciplineTemplates` |
 | `/disciplines/tasks` | `DisciplineTasks` |
 | `/activities` | редирект на `/activities/practice` |
@@ -124,6 +127,28 @@ npm run icons     # перегенерировать PNG-иконки PWA
 `npm run catalog` выполняется автоматически перед `dev` и `build` (хуки `predev` /
 `prebuild`). `npm run previews` запускается вручную — только когда добавлены
 или изменены файлы, для которых нужен предпросмотр.
+
+## Тёмная тема
+
+Кнопка в шапке переключает светлую и тёмную тему. Выбор запоминается
+в `localStorage`; пока пользователь ничего не выбрал, тема следует за системной
+настройкой и меняется вместе с ней.
+
+Как это устроено:
+
+| Слой | Механизм |
+| --- | --- |
+| палитра сайта | переменные в `src/index.css` под `:root[data-theme='dark']` |
+| компоненты Bootstrap | атрибут `data-bs-theme` (штатный тёмный режим 5.3) |
+| состояние | [src/theme.jsx](src/theme.jsx) — `ThemeProvider` и хук `useTheme()` |
+| без вспышки при загрузке | инлайновый скрипт в `index.html` ставит атрибут до бандла |
+| материалы внутри `<iframe>` | тема передаётся в `buildSrcDoc(html, theme)` — отдельный документ не наследует стили родителя |
+
+В модулях используются семантические переменные, а не конкретные цвета:
+`--dept-card` (фон карточек), `--dept-heading` (заголовки), `--dept-brand-from`
+и `--dept-brand-to` (шапка и «герой» — они тёмные в обеих темах),
+`--status-open-*`, `--status-soon-*`, `--status-done-*` (метки сроков).
+Добавляя стили, берите их, иначе элемент не переключится.
 
 ## Каталог материалов
 

@@ -375,28 +375,28 @@
     "fileCount": 3
   },
   "activities/spring": {
-    "intro": "Организационные материалы творческого сезона: расписание, сценарный план, результаты прошлых лет.",
+    "intro": "Студенческая научная конференция лаборатории. Здесь программа, шаблон тезисов и результаты прошлых лет.",
     "items": [
       {
-        "id": "spring-rehearsals",
-        "kind": "Расписание",
-        "title": "Репетиции и контрольные точки сезона",
+        "id": "spring-programma",
+        "kind": "Программа",
+        "title": "Конференция «Студенческая весна» 2026",
         "discipline": "Студвесна",
-        "deadline": "гала-концерт 18 апреля",
+        "deadline": "15–16 апреля 2026, корпус А",
         "status": "open",
-        "statusLabel": "идут репетиции",
+        "statusLabel": "приём заявок открыт",
         "files": [
           {
-            "path": "activities/spring/rehearsal-schedule.md",
-            "name": "rehearsal-schedule.md",
+            "path": "activities/spring/programma.md",
+            "name": "programma.md",
             "ext": "md",
             "format": "Markdown",
-            "size": 3070,
-            "label": "Еженедельный график, этапы сезона, организационные правила",
+            "size": 4968,
+            "label": "Распорядок по дням, пять секций, регламент и порядок подачи заявки",
             "primary": true,
             "preview": {
               "type": "html",
-              "path": "previews/activities/spring/rehearsal-schedule.html"
+              "path": "previews/activities/spring/programma.html"
             }
           }
         ],
@@ -404,50 +404,51 @@
         "thumb": null
       },
       {
-        "id": "spring-stage",
-        "kind": "Сценарный план",
-        "title": "Программа «Теорема о среднем»",
+        "id": "spring-tezisy",
+        "kind": "Шаблон",
+        "title": "Тезисы доклада",
         "discipline": "Студвесна",
-        "deadline": "хронометраж 12 минут",
+        "deadline": "прислать до 20 марта 2026",
         "status": "soon",
-        "statusLabel": "в работе",
+        "statusLabel": "скоро дедлайн",
         "files": [
           {
-            "path": "activities/spring/stage-plan.md",
-            "name": "stage-plan.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 3195,
-            "label": "Эпизоды, свет и звук, реквизит, распределение ролей",
+            "path": "activities/spring/tezisy-shablon.tex",
+            "name": "tezisy-shablon.tex",
+            "ext": "tex",
+            "format": "LaTeX",
+            "size": 3409,
+            "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
             "primary": true,
             "preview": {
-              "type": "html",
-              "path": "previews/activities/spring/stage-plan.html"
+              "type": "pdf",
+              "path": "previews/activities/spring/tezisy-shablon.pdf",
+              "thumb": "previews/activities/spring/tezisy-shablon.png"
             }
           }
         ],
         "hasPreview": true,
-        "thumb": null
+        "thumb": "previews/activities/spring/tezisy-shablon.png"
       },
       {
-        "id": "spring-results",
+        "id": "spring-itogi",
         "kind": "Архив",
-        "title": "Результаты выступлений 2022–2025",
+        "title": "Результаты 2023–2025",
         "discipline": "Студвесна",
         "status": "done",
         "statusLabel": "архив",
         "files": [
           {
-            "path": "activities/spring/achievements.csv",
-            "name": "achievements.csv",
+            "path": "activities/spring/itogi-proshlyh-let.csv",
+            "name": "itogi-proshlyh-let.csv",
             "ext": "csv",
             "format": "CSV-таблица",
-            "size": 1267,
-            "label": "Этапы, номинации, названия номеров и занятые места",
+            "size": 2528,
+            "label": "Темы докладов, секции, курс авторов и занятые места",
             "primary": true,
             "preview": {
               "type": "html",
-              "path": "previews/activities/spring/achievements.html"
+              "path": "previews/activities/spring/itogi-proshlyh-let.html"
             }
           }
         ],
@@ -460,11 +461,110 @@
         "Студвесна"
       ],
       "kinds": [
-        "Расписание",
-        "Сценарный план",
+        "Программа",
+        "Шаблон",
         "Архив"
       ],
       "courses": []
+    },
+    "fileCount": 3
+  },
+  "disciplines/library": {
+    "intro": "Что читать по каждой дисциплине, где искать формулу и какими открытыми ресурсами можно пользоваться.",
+    "items": [
+      {
+        "id": "reading-list",
+        "kind": "Список литературы",
+        "title": "Учебники и задачники по дисциплинам",
+        "discipline": "Все дисциплины",
+        "deadline": "основная и дополнительная литература по шести дисциплинам",
+        "status": "open",
+        "statusLabel": "актуален",
+        "files": [
+          {
+            "path": "disciplines/library/spisok-literatury.md",
+            "name": "spisok-literatury.md",
+            "ext": "md",
+            "format": "Markdown",
+            "size": 5596,
+            "label": "Списки по анализу, алгебре, ОДУ, теорверу, численным методам и дискретной математике",
+            "primary": true,
+            "preview": {
+              "type": "html",
+              "path": "previews/disciplines/library/spisok-literatury.html"
+            }
+          }
+        ],
+        "hasPreview": true,
+        "thumb": null
+      },
+      {
+        "id": "formula-reference",
+        "kind": "Справочник",
+        "title": "Краткий справочник формул",
+        "discipline": "Все дисциплины",
+        "course": 1,
+        "deadline": "две колонки на одной странице — удобно печатать",
+        "status": "open",
+        "statusLabel": "актуален",
+        "files": [
+          {
+            "path": "disciplines/library/spravochnik-formul.tex",
+            "name": "spravochnik-formul.tex",
+            "ext": "tex",
+            "format": "LaTeX",
+            "size": 4242,
+            "label": "Производные, интегралы, разложения, матрицы, вероятности, численные методы",
+            "primary": true,
+            "preview": {
+              "type": "pdf",
+              "path": "previews/disciplines/library/spravochnik-formul.pdf",
+              "thumb": "previews/disciplines/library/spravochnik-formul.png"
+            }
+          }
+        ],
+        "hasPreview": true,
+        "thumb": "previews/disciplines/library/spravochnik-formul.png"
+      },
+      {
+        "id": "open-resources",
+        "kind": "Ресурсы",
+        "title": "Открытые библиотеки и онлайн-инструменты",
+        "discipline": "Все дисциплины",
+        "deadline": "15 проверенных ресурсов",
+        "status": "open",
+        "statusLabel": "проверено",
+        "files": [
+          {
+            "path": "disciplines/library/otkrytye-resursy.csv",
+            "name": "otkrytye-resursy.csv",
+            "ext": "csv",
+            "format": "CSV-таблица",
+            "size": 2493,
+            "label": "Справочники, свободные библиотеки, онлайн-калькуляторы и редакторы LaTeX",
+            "primary": true,
+            "preview": {
+              "type": "html",
+              "path": "previews/disciplines/library/otkrytye-resursy.html"
+            }
+          }
+        ],
+        "hasPreview": true,
+        "thumb": null
+      }
+    ],
+    "filters": {
+      "disciplines": [
+        "Все дисциплины"
+      ],
+      "kinds": [
+        "Список литературы",
+        "Справочник",
+        "Ресурсы"
+      ],
+      "courses": [
+        1
+      ]
     },
     "fileCount": 3
   },

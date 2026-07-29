@@ -4,7 +4,7 @@
   display: flex;
   gap: 1.1rem;
   padding: 1.1rem 1.25rem;
-  background: #fff;
+  background: var(--dept-card);
   border: 1px solid var(--dept-border);
   border-radius: var(--dept-radius);
   box-shadow: var(--dept-shadow-sm);
@@ -12,7 +12,7 @@
 }
 
 .card:hover {
-  border-color: #c6d3e0;
+  border-color: var(--dept-border-strong);
   box-shadow: var(--dept-shadow-md);
 }
 
@@ -70,7 +70,7 @@
   margin: 0.1rem 0 0;
   font-size: 1.12rem;
   line-height: 1.3;
-  color: var(--dept-navy-dark);
+  color: var(--dept-heading);
 }
 
 .badges {
@@ -86,7 +86,7 @@
   border-radius: 999px;
   background: var(--dept-surface);
   border: 1px solid var(--dept-border);
-  color: #4a5866;
+  color: var(--dept-ink);
   font-size: 0.76rem;
   font-weight: 600;
   white-space: nowrap;
@@ -106,21 +106,21 @@
 
 /* Цвета статусов: приём открыт / скоро дедлайн / закрыт */
 .status_open {
-  background: #e4f4ea;
-  border-color: #b6dfc6;
-  color: #1c6b41;
+  background: var(--status-open-bg);
+  border-color: var(--status-open-border);
+  color: var(--status-open-fg);
 }
 
 .status_soon {
-  background: #fdf1dc;
-  border-color: #f2d5a0;
-  color: #8a5b12;
+  background: var(--status-soon-bg);
+  border-color: var(--status-soon-border);
+  color: var(--status-soon-fg);
 }
 
 .status_done {
-  background: #eef1f4;
-  border-color: #d8dee5;
-  color: #5c6b7a;
+  background: var(--status-done-bg);
+  border-color: var(--status-done-border);
+  color: var(--status-done-fg);
 }
 
 .deadline {
@@ -151,13 +151,13 @@
   padding: 0.55rem 0.7rem;
   border: 1px solid var(--dept-border);
   border-radius: 9px;
-  background: #fdfefe;
+  background: var(--dept-card-alt);
 }
 
 /* Основной файл работы выделен — обычно именно его и скачивают */
 .filePrimary {
-  border-color: #bcd0e2;
-  background: #f7fbff;
+  border-color: var(--dept-border-strong);
+  background: var(--dept-card-accent);
 }
 
 .fileIcon {
@@ -168,7 +168,7 @@
   height: 2rem;
   border-radius: 8px;
   background: var(--dept-surface);
-  color: var(--dept-navy);
+  color: var(--dept-navy-light);
   font-size: 0.9rem;
 }
 
@@ -200,7 +200,7 @@
 
 .fileMeta code {
   font-size: 0.95em;
-  color: #55636f;
+  color: var(--dept-muted);
 }
 
 .fileActions {

@@ -69,7 +69,7 @@
   padding: 2rem 1.25rem;
   text-align: center;
   color: var(--dept-muted);
-  background: #fff;
+  background: var(--dept-card);
   border: 1px dashed var(--dept-border);
   border-radius: var(--dept-radius);
 }
@@ -78,7 +78,7 @@
 
 .guide {
   margin-top: 1.5rem;
-  background: #fff;
+  background: var(--dept-card);
   border: 1px solid var(--dept-border);
   border-radius: var(--dept-radius);
   box-shadow: var(--dept-shadow-sm);
@@ -95,7 +95,7 @@
   background: none;
   font: inherit;
   font-weight: 600;
-  color: var(--dept-navy-dark);
+  color: var(--dept-heading);
   text-align: left;
   cursor: pointer;
   transition: background-color 0.14s ease;

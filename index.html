@@ -17,6 +17,30 @@
     <title>Лаборатория математики ФН1</title>
 
     <!--
+      Тема применяется до загрузки бандла, иначе при тёмной теме
+      на долю секунды мелькает светлый фон.
+      Тот же ключ читает и пишет src/theme.jsx.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('fn1-theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.setAttribute('data-bs-theme', theme);
+        } catch (error) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+    <!--
       SPA-роутинг на GitHub Pages.
       GitHub Pages отдаёт статику и не знает про маршруты вида /disciplines/plans,
       поэтому при прямом заходе/обновлении страницы возвращается 404.html.

@@ -2,7 +2,7 @@
 
 .navbar {
   min-height: var(--dept-navbar-height);
-  background: linear-gradient(100deg, var(--dept-navy-dark) 0%, var(--dept-navy) 55%, var(--dept-navy-light) 100%);
+  background: linear-gradient(100deg, var(--dept-brand-from) 0%, var(--dept-navy) 55%, var(--dept-brand-to) 100%);
   box-shadow: 0 2px 12px rgba(13, 43, 69, 0.28);
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
@@ -16,6 +16,51 @@
   gap: 0.65rem;
   padding-top: 0;
   padding-bottom: 0;
+  order: 0;
+}
+
+/*
+ * Порядок элементов навбара.
+ * Узкий экран: логотип | кнопки | меню (переносится на новую строку).
+ * Широкий:     логотип | меню | кнопки (уезжают вправо).
+ */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  order: 1;
+}
+
+.collapse {
+  order: 2;
+}
+
+@media (min-width: 992px) {
+  .controls {
+    order: 3;
+    margin-left: 0.75rem;
+  }
+}
+
+/* Переключатель светлой и тёмной темы */
+.themeButton {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--dept-accent);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.themeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: rotate(-12deg);
 }
 
 .logo {
@@ -133,7 +178,7 @@
 .dropdownItem:hover,
 .dropdownItem:focus {
   background-color: var(--dept-surface);
-  color: var(--dept-navy);
+  color: var(--dept-navy-light);
 }
 
 /* Bootstrap красит .active синим — переопределяем на фирменный цвет */

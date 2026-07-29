@@ -1,0 +1,97 @@
+% Шаблон тезисов для конференции «Студенческая весна»
+% Лаборатория математики ФН1
+% Компиляция: pdflatex tezisy-shablon.tex
+% Объём — 1–2 страницы, включая список литературы
+
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+\setlength{\parindent}{1.25cm}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+
+\begin{document}
+
+\noindent УДК 519.2
+
+\begin{center}
+  {\large\bfseries НАЗВАНИЕ ДОКЛАДА}
+
+  \vspace{0.5em}
+
+  \textit{И.\,О. Фамилия}
+
+  \vspace{0.3em}
+
+  {\small Лаборатория математики ФН1, группа ФН1-11Б\\
+  Научный руководитель: должность, И.\,О. Фамилия\\
+  \texttt{email@example.ru}}
+
+  \vspace{0.4em}
+
+  {\small Секция 3. Вычислительная математика и моделирование}
+\end{center}
+
+\vspace{0.8em}
+
+\noindent\textbf{Ключевые слова:} три--пять терминов через запятую.
+
+\vspace{0.8em}
+
+Во введении двумя-тремя предложениями поясните, к какому классу относится
+задача и почему она интересна. Затем приведите строгую постановку.
+
+Рассматривается задача
+\begin{equation}\label{eq:main}
+  \frac{\partial u}{\partial t} = a^2\frac{\partial^2 u}{\partial x^2} + f(x, t),
+  \qquad 0 < x < L,\ t > 0,
+\end{equation}
+с начальным условием $u(x, 0) = \varphi(x)$ и краевыми условиями
+$u(0, t) = u(L, t) = 0$.
+
+\begin{theorem}
+  Формулировка полученного результата. Условия перечисляются явно.
+\end{theorem}
+
+Кратко опишите идею доказательства либо схему численного метода.
+Для вычислительной работы приведите таблицу или график, подтверждающие
+заявленный порядок точности.
+
+\begin{table}[h]
+  \centering
+  \small
+  \caption{Погрешность и наблюдаемый порядок точности}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Шаг сетки $h$ & Погрешность & Порядок \\
+    \hline
+    $0{,}1$    & $2{,}1\cdot10^{-3}$ & ---      \\
+    $0{,}05$   & $5{,}3\cdot10^{-4}$ & $1{,}99$ \\
+    $0{,}025$  & $1{,}3\cdot10^{-4}$ & $2{,}03$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+В заключение сформулируйте вывод: что получено и как это соотносится
+с известными результатами.
+
+\vspace{0.8em}
+
+\begin{thebibliography}{9}
+  \footnotesize
+  \bibitem{samarskii} \emph{Самарский А.\,А.} Теория разностных схем.~---
+    М.: Наука, 1989.~--- 616~с.
+  \bibitem{article} \emph{Автор А.\,Б.} Название статьи~// Название журнала.~---
+    2025.~--- Т.~11, №~3.~--- С.~40--52.
+\end{thebibliography}
+
+\end{document}

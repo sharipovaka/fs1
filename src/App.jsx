@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound.jsx';
 // Дисциплины
 import DisciplinePlans from './pages/disciplines/DisciplinePlans.jsx';
 import DisciplineNotes from './pages/disciplines/DisciplineNotes.jsx';
+import DisciplineLibrary from './pages/disciplines/DisciplineLibrary.jsx';
 import DisciplineTemplates from './pages/disciplines/DisciplineTemplates.jsx';
 import DisciplineTasks from './pages/disciplines/DisciplineTasks.jsx';
 
@@ -36,6 +37,7 @@ export default function App() {
           <Route index element={<Navigate to="/disciplines/plans" replace />} />
           <Route path="plans" element={<DisciplinePlans />} />
           <Route path="notes" element={<DisciplineNotes />} />
+          <Route path="library" element={<DisciplineLibrary />} />
           <Route path="templates" element={<DisciplineTemplates />} />
           <Route path="tasks" element={<DisciplineTasks />} />
         </Route>

@@ -16,7 +16,7 @@
 }
 
 .hero {
-  background: linear-gradient(120deg, var(--dept-navy) 0%, var(--dept-navy-light) 100%);
+  background: linear-gradient(120deg, var(--dept-brand-from) 0%, var(--dept-brand-to) 100%);
   color: #fff;
   border-radius: var(--dept-radius);
   padding: 2rem 2rem 1.75rem;
@@ -59,14 +59,14 @@
   padding: 0.8rem 2.8rem 0.8rem 2.85rem;
   border: 0;
   border-radius: 999px;
-  background: #fff;
+  background: var(--dept-card);
   color: var(--dept-ink);
   font-size: 1rem;
   box-shadow: 0 6px 20px rgba(13, 43, 69, 0.18);
 }
 
 .search::placeholder {
-  color: #97a3b0;
+  color: var(--dept-muted);
 }
 
 .search:focus {
@@ -91,8 +91,8 @@
 }
 
 .searchClear:hover {
-  background: #e6ebf1;
-  color: var(--dept-navy);
+  background: var(--dept-border);
+  color: var(--dept-navy-light);
 }
 
 .quick {
@@ -142,7 +142,7 @@
   padding: 2rem 1.25rem;
   text-align: center;
   color: var(--dept-muted);
-  background: #fff;
+  background: var(--dept-card);
   border: 1px dashed var(--dept-border);
   border-radius: var(--dept-radius);
 }
@@ -177,7 +177,7 @@
   align-items: flex-start;
   gap: 0.85rem;
   padding: 1rem 1.1rem;
-  background: #fff;
+  background: var(--dept-card);
   border: 1px solid var(--dept-border);
   border-radius: var(--dept-radius);
   box-shadow: var(--dept-shadow-sm);
@@ -201,7 +201,7 @@
   height: 2.4rem;
   border-radius: 10px;
   background: var(--dept-surface);
-  color: var(--dept-navy);
+  color: var(--dept-navy-light);
   font-size: 1rem;
 }
 
@@ -218,7 +218,7 @@
 .cardTitle {
   display: block;
   font-weight: 650;
-  color: var(--dept-navy-dark);
+  color: var(--dept-heading);
   margin-bottom: 0.15rem;
 }
 
@@ -235,7 +235,7 @@
   padding: 0.12rem 0.5rem;
   border-radius: 999px;
   background: var(--dept-surface);
-  color: #4a5866;
+  color: var(--dept-ink);
   font-size: 0.76rem;
   font-weight: 600;
 }

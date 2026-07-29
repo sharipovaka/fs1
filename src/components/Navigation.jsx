@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import { MENU } from '../navConfig.js';
+import { useTheme } from '../theme.jsx';
 import styles from './Navigation.module.css';
 
 /**
@@ -15,6 +16,7 @@ import styles from './Navigation.module.css';
  */
 export default function Navigation() {
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   // Свёрнутое мобильное меню (аналог collapse) и идентификатор раскрытого dropdown.
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -73,20 +75,37 @@ export default function Navigation() {
           </span>
         </Link>
 
-        {/* Кнопка-«бургер» для мобильных экранов */}
-        <button
-          className={`navbar-toggler ${styles.toggler}`}
-          type="button"
-          aria-controls="main-navbar"
-          aria-expanded={!isCollapsed}
-          aria-label="Показать или скрыть меню"
-          onClick={() => {
-            setIsCollapsed((value) => !value);
-            setOpenMenuId(null);
-          }}
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
+        {/*
+          Управление: переключатель темы и «бургер».
+          На широких экранах блок уезжает вправо от меню (см. order в стилях),
+          на узких остаётся рядом с логотипом — тема переключается,
+          не раскрывая меню.
+        */}
+        <div className={styles.controls}>
+          <button
+            type="button"
+            className={styles.themeButton}
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'}
+            title={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
+          >
+            <i className={theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'} aria-hidden="true" />
+          </button>
+
+          <button
+            className={`navbar-toggler ${styles.toggler}`}
+            type="button"
+            aria-controls="main-navbar"
+            aria-expanded={!isCollapsed}
+            aria-label="Показать или скрыть меню"
+            onClick={() => {
+              setIsCollapsed((value) => !value);
+              setOpenMenuId(null);
+            }}
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+        </div>
 
         <div
           id="main-navbar"

@@ -5,7 +5,7 @@
   margin: 3rem auto;
   padding: 2.25rem 2rem;
   text-align: center;
-  background: #fff;
+  background: var(--dept-card);
   border: 1px solid var(--dept-border);
   border-radius: var(--dept-radius);
   box-shadow: var(--dept-shadow-sm);

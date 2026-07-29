@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { buildSrcDoc } from '../content/buildSrcDoc.js';
+import { useTheme } from '../theme.jsx';
 import styles from './MaterialFrame.module.css';
 
 const MIN_HEIGHT = 240;
@@ -22,13 +23,16 @@ const MIN_HEIGHT = 240;
  * @param {number}  [props.maxHeight] ограничение высоты, px (для окна предпросмотра)
  */
 export default function MaterialFrame({ html, title, autoHeight = true, maxHeight }) {
+  // Материал живёт в отдельном документе, стили родителя туда не попадают,
+  // поэтому тему передаём внутрь явно — при переключении srcdoc пересобирается.
+  const { theme } = useTheme();
   const frameRef = useRef(null);
   const observerRef = useRef(null);
 
   const [height, setHeight] = useState(MIN_HEIGHT);
   const [isLoading, setIsLoading] = useState(true);
 
-  const srcDoc = useMemo(() => buildSrcDoc(html), [html]);
+  const srcDoc = useMemo(() => buildSrcDoc(html, theme), [html, theme]);
 
   useEffect(() => {
     setIsLoading(true);

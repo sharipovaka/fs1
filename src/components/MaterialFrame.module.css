@@ -2,7 +2,7 @@
 
 .wrapper {
   position: relative;
-  background: #fff;
+  background: var(--dept-card);
   border-radius: var(--dept-radius);
   overflow: hidden;
 }
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: var(--dept-card);
   color: var(--dept-muted);
   font-size: 0.9rem;
   z-index: 1;
