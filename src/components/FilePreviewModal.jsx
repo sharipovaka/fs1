@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import MaterialFrame from './MaterialFrame.jsx';
 import { assetUrl, colabUrl, downloadUrl, githubUrl } from '../repoConfig.js';
 import styles from './FilePreviewModal.module.css';
+import Icon from './Icon.jsx';
 
 /**
  * Окно предпросмотра файла.
@@ -93,7 +94,7 @@ export default function FilePreviewModal({ file, onClose }) {
 
           <div className={styles.headerActions}>
             <a className="btn btn-sm btn-primary" href={downloadUrl(file.path)} download={file.name}>
-              <i className="fa-solid fa-download me-1" aria-hidden="true" /> Скачать
+              <Icon name="fa-solid fa-download" className="me-1" /> Скачать
             </a>
             {file.ext === 'ipynb' && (
               <a
@@ -102,7 +103,7 @@ export default function FilePreviewModal({ file, onClose }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fa-solid fa-play me-1" aria-hidden="true" /> Colab
+                <Icon name="fa-solid fa-play" className="me-1" /> Colab
               </a>
             )}
             <a
@@ -111,7 +112,7 @@ export default function FilePreviewModal({ file, onClose }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fa-brands fa-github" aria-hidden="true" />
+              <Icon name="fa-brands fa-github" />
               <span className="sr-only">Открыть на GitHub</span>
             </a>
             <button
@@ -121,7 +122,7 @@ export default function FilePreviewModal({ file, onClose }) {
               onClick={onClose}
               aria-label="Закрыть предпросмотр"
             >
-              <i className="fa-solid fa-xmark" aria-hidden="true" />
+              <Icon name="fa-solid fa-xmark" />
             </button>
           </div>
         </header>

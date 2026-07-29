@@ -12,7 +12,7 @@
 | React 18 (функциональные компоненты, хуки) | UI |
 | React Router 6 | Навигация между разделами без перезагрузки |
 | Bootstrap 5 | Адаптивная сетка, Navbar, Dropdown, Container |
-| Font Awesome 6 | Иконки (подключён локально, без CDN) |
+| Font Awesome 6 | Источник иконок — только при сборке, в бандл шрифты не попадают |
 | CSS-модули (`*.module.css`) | Кастомное оформление компонентов |
 | Vite 5 | Дев-сервер и сборка |
 | gh-pages | Публикация на GitHub Pages |
@@ -38,7 +38,8 @@
 ├── scripts/
 │   ├── generate-icons.mjs         # PNG-иконки для PWA (без зависимостей)
 │   ├── generate-previews.mjs      # предпросмотр: pandoc + pdflatex → public/previews
-│   └── generate-catalog.mjs       # catalog/ + public/files → src/content/catalogIndex.json
+│   ├── generate-catalog.mjs       # catalog/ + public/files → src/content/catalogIndex.json
+│   └── generate-icon-set.mjs      # набор SVG-иконок по факту использования
 ├── public/                        # копируется в build как есть
 │   ├── files/                     # сами файлы разделов
 │   │   ├── disciplines/{plans,notes,templates,tasks}/
@@ -61,6 +62,7 @@
     ├── repoConfig.js              # координаты репозитория для ссылок GitHub/Colab
     ├── catalog.js                 # чтение каталога, поиск и фильтрация
     ├── theme.jsx                  # переключение светлой и тёмной темы
+    ├── iconSet.generated.js       # контуры используемых иконок (генерируется)
     ├── components/
     │   ├── Layout.jsx / .module.css            # навбар + крошки + контент + подвал
     │   ├── Navigation.jsx / .module.css        # панель навигации с Dropdown
@@ -121,11 +123,12 @@ npm run build     # production-сборка в папку build/
 npm run preview   # локальный просмотр собранного сайта
 npm run catalog   # пересобрать каталог материалов
 npm run previews  # пересобрать предпросмотр (нужны pandoc и pdflatex)
+npm run icon-set  # пересобрать набор иконок
 npm run icons     # перегенерировать PNG-иконки PWA
 ```
 
-`npm run catalog` выполняется автоматически перед `dev` и `build` (хуки `predev` /
-`prebuild`). `npm run previews` запускается вручную — только когда добавлены
+`npm run catalog` и `npm run icon-set` выполняются автоматически перед `dev`
+и `build` (хуки `predev` / `prebuild`). `npm run previews` запускается вручную — только когда добавлены
 или изменены файлы, для которых нужен предпросмотр.
 
 ## Тёмная тема
@@ -321,6 +324,32 @@ push в `main` и делает всё сам: ставит Node, pandoc и TeX L
 > **Важно.** Они ведут в **исходный** репозиторий, поэтому ветка `main` с папкой
 > `public/files` должна быть запушена на GitHub, а сам репозиторий — публичным:
 > Colab не открывает ноутбуки из приватных репозиториев.
+
+## Иконки
+
+Шрифты Font Awesome в бандл не попадают. Вместо них скрипт
+[scripts/generate-icon-set.mjs](scripts/generate-icon-set.mjs) находит в исходниках
+все имена вида `fa-solid fa-download`, берёт соответствующие SVG из пакета
+и складывает контуры в `src/iconSet.generated.js`. Компонент
+[Icon.jsx](src/components/Icon.jsx) рисует их инлайново.
+
+Зачем: три файла шрифтов весили 302 КБ — две трети первой загрузки, при том что
+сайту нужно 36 иконок из нескольких тысяч.
+
+| | Было (шрифты) | Стало (инлайн) |
+| --- | ---: | ---: |
+| HTML + CSS + JS (сжато) | 149 КБ | 131 КБ |
+| Шрифты | 302 КБ | — |
+| **Первая загрузка** | **451 КБ** | **131 КБ** |
+
+Имена иконок совпадают с классами Font Awesome, поэтому в `navConfig.js`
+и таблицах соответствий ничего менять не нужно.
+
+**Как добавить иконку:** укажите её в коде как `<Icon name="fa-solid fa-star" />`
+и выполните `npm run icon-set` (или просто `npm run build`). Имя должно быть
+записано целиком: строку, собранную из кусков через `${...}`, скрипт не найдёт
+и предупредит об этом. Если такой иконки нет в бесплатном наборе,
+сборка завершится с ошибкой — так, например, нашлась несуществующая `fa-podium`.
 
 ## Публикация на GitHub Pages
 

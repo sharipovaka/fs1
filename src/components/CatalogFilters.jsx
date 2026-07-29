@@ -1,4 +1,5 @@
 import styles from './CatalogFilters.module.css';
+import Icon from './Icon.jsx';
 
 /**
  * Панель поиска и фильтров над каталогом раздела.
@@ -30,7 +31,7 @@ export default function CatalogFilters({ filters, value, onChange, shown, total 
     <div className={styles.panel}>
       <div className={styles.searchRow}>
         <div className={styles.searchWrapper}>
-          <i className={`fa-solid fa-magnifying-glass ${styles.searchIcon}`} aria-hidden="true" />
+          <Icon name="fa-solid fa-magnifying-glass" className={styles.searchIcon} />
           <input
             type="search"
             className={`form-control ${styles.search}`}
@@ -47,7 +48,7 @@ export default function CatalogFilters({ filters, value, onChange, shown, total 
             className={`btn btn-outline-secondary btn-sm ${styles.reset}`}
             onClick={() => onChange({ query: '', discipline: '', course: '', kind: '' })}
           >
-            <i className="fa-solid fa-rotate-left me-1" aria-hidden="true" />
+            <Icon name="fa-solid fa-rotate-left" className="me-1" />
             Сбросить
           </button>
         )}

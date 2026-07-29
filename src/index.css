@@ -175,6 +175,19 @@ a:hover {
   color: var(--dept-navy) !important;
 }
 
+/*
+ * Инлайновая иконка (компонент Icon).
+ * Ведёт себя как шрифтовая: размер от кегля текста, цвет от currentColor.
+ * Ширина вычисляется из viewBox, поэтому широкие иконки не сплющиваются.
+ */
+.app-icon {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
 /* Скрытая подпись для скринридеров */
 .sr-only {
   position: absolute;

@@ -2,10 +2,10 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-// Глобальные библиотеки стилей. Импортируются один раз и попадают в общий бандл,
-// поэтому на GitHub Pages не требуется ни одного внешнего CDN-запроса.
+// Глобальные стили. Иконки не подключаются шрифтом: нужные контуры собираются
+// в src/iconSet.generated.js и рисуются инлайново компонентом Icon —
+// это экономит около 300 КБ на первой загрузке.
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 
 import App from './App.jsx';

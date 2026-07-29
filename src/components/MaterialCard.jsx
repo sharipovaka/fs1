@@ -1,5 +1,6 @@
 import { assetUrl, colabUrl, downloadUrl, githubUrl } from '../repoConfig.js';
 import styles from './MaterialCard.module.css';
+import Icon from './Icon.jsx';
 
 /** Иконка Font Awesome по расширению файла. */
 const ICON_BY_EXT = {
@@ -70,7 +71,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
 
         {item.deadline && (
           <p className={styles.deadline}>
-            <i className="fa-regular fa-clock" aria-hidden="true" /> {item.deadline}
+            <Icon name="fa-regular fa-clock" /> {item.deadline}
           </p>
         )}
 
@@ -78,7 +79,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           {item.files.map((file) => (
             <li key={file.path} className={`${styles.file} ${file.primary ? styles.filePrimary : ''}`}>
               <span className={styles.fileIcon} aria-hidden="true">
-                <i className={ICON_BY_EXT[file.ext] ?? 'fa-solid fa-file'} />
+                <Icon name={ICON_BY_EXT[file.ext] ?? 'fa-solid fa-file'} />
               </span>
 
               <div className={styles.fileInfo}>
@@ -94,7 +95,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
                   href={downloadUrl(file.path)}
                   download={file.name}
                 >
-                  <i className="fa-solid fa-download" aria-hidden="true" />
+                  <Icon name="fa-solid fa-download" />
                   <span>Скачать</span>
                 </a>
 
@@ -104,7 +105,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
                     className={`btn btn-sm btn-outline-secondary ${styles.action}`}
                     onClick={() => onPreview(file)}
                   >
-                    <i className="fa-regular fa-eye" aria-hidden="true" />
+                    <Icon name="fa-regular fa-eye" />
                     <span>Просмотр</span>
                   </button>
                 )}
@@ -117,7 +118,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
                     rel="noopener noreferrer"
                     title="Открыть и запустить в Google Colab"
                   >
-                    <i className="fa-solid fa-play" aria-hidden="true" />
+                    <Icon name="fa-solid fa-play" />
                     <span>Colab</span>
                   </a>
                 )}
@@ -129,7 +130,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
                   rel="noopener noreferrer"
                   title="Открыть на GitHub"
                 >
-                  <i className="fa-brands fa-github" aria-hidden="true" />
+                  <Icon name="fa-brands fa-github" />
                   <span className="sr-only">Открыть {file.name} на GitHub</span>
                 </a>
               </div>

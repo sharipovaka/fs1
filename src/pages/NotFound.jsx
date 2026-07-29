@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import styles from './NotFound.module.css';
+import Icon from '../components/Icon.jsx';
 
 /** Страница для несуществующих маршрутов. */
 export default function NotFound() {
@@ -13,7 +14,7 @@ export default function NotFound() {
         или материал был перемещён — выберите нужный подраздел в меню наверху.
       </p>
       <Link className="btn btn-primary" to="/">
-        <i className="fa-solid fa-house me-2" aria-hidden="true" />
+        <Icon name="fa-solid fa-house" className="me-2" />
         На главную
       </Link>
     </div>

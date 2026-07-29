@@ -4,6 +4,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
 import { findSection } from '../navConfig.js';
 import styles from './Layout.module.css';
+import Icon from './Icon.jsx';
 
 const SITE_TITLE = 'Лаборатория математики ФН1';
 
@@ -38,7 +39,7 @@ export default function Layout() {
               <ol className="breadcrumb mb-0">
                 <li className="breadcrumb-item">
                   <Link to="/">
-                    <i className="fa-solid fa-house" aria-hidden="true" /> Главная
+                    <Icon name="fa-solid fa-house" /> Главная
                   </Link>
                 </li>
                 <li className="breadcrumb-item">{section.groupTitle}</li>
@@ -57,7 +58,7 @@ export default function Layout() {
         <div className="container">
           <div className={styles.footerRow}>
             <p className="mb-0">
-              <i className="fa-solid fa-square-root-variable me-2" aria-hidden="true" />
+              <Icon name="fa-solid fa-square-root-variable" className="me-2" />
               {SITE_TITLE} · учебные материалы и активности
             </p>
             <p className="mb-0 text-white-50">

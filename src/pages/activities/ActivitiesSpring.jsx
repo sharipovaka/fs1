@@ -7,7 +7,7 @@ export default function ActivitiesSpring() {
     <SectionPage
       title="«Студенческая весна»"
       subtitle="Студенческая научная конференция лаборатории: программа секций, шаблон тезисов и сроки подачи заявок."
-      icon="fa-solid fa-podium"
+      icon="fa-solid fa-users-rectangle"
       html={html}
       section="activities/spring"
     />

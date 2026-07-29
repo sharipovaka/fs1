@@ -7,6 +7,7 @@ import MaterialFrame from './MaterialFrame.jsx';
 import { filterItems, getSection } from '../catalog.js';
 import { githubFolderUrl } from '../repoConfig.js';
 import styles from './SectionPage.module.css';
+import Icon from './Icon.jsx';
 
 const EMPTY_FILTER = { query: '', discipline: '', course: '', kind: '' };
 
@@ -38,7 +39,7 @@ export default function SectionPage({ title, subtitle, icon, section, html }) {
       <header className={styles.header}>
         <div>
           <h1 className={styles.title}>
-            {icon && <i className={`${icon} ${styles.titleIcon}`} aria-hidden="true" />}
+            {icon && <Icon name={icon} className={styles.titleIcon} />}
             {title}
           </h1>
           <p className={styles.subtitle}>{data.intro || subtitle}</p>
@@ -50,7 +51,7 @@ export default function SectionPage({ title, subtitle, icon, section, html }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-brands fa-github" aria-hidden="true" /> Папка раздела на GitHub
+          <Icon name="fa-brands fa-github" /> Папка раздела на GitHub
         </a>
       </header>
 
@@ -87,9 +88,11 @@ export default function SectionPage({ title, subtitle, icon, section, html }) {
             onClick={() => setGuideOpen((open) => !open)}
             aria-expanded={isGuideOpen}
           >
-            <i
-              className={`fa-solid fa-chevron-${isGuideOpen ? 'down' : 'right'} ${styles.guideChevron}`}
-              aria-hidden="true"
+            {/* Имя иконки указывается целиком: по этим строкам сборщик
+                собирает набор SVG (scripts/generate-icon-set.mjs) */}
+            <Icon
+              name={isGuideOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right'}
+              className={styles.guideChevron}
             />
             <span>Методические указания к разделу</span>
             <span className={styles.guideHint}>

@@ -6,6 +6,7 @@ import MaterialCard from '../components/MaterialCard.jsx';
 import { filterItems, getAllMaterials, getFileCount } from '../catalog.js';
 import { MENU } from '../navConfig.js';
 import styles from './Home.module.css';
+import Icon from '../components/Icon.jsx';
 
 /** Подсказки под строкой поиска — самые частые запросы. */
 const QUICK_QUERIES = [
@@ -52,7 +53,7 @@ export default function Home() {
         </p>
 
         <div className={styles.searchWrapper}>
-          <i className={`fa-solid fa-magnifying-glass ${styles.searchIcon}`} aria-hidden="true" />
+          <Icon name="fa-solid fa-magnifying-glass" className={styles.searchIcon} />
           <input
             type="search"
             className={styles.search}
@@ -68,7 +69,7 @@ export default function Home() {
               onClick={() => setQuery('')}
               aria-label="Очистить поиск"
             >
-              <i className="fa-solid fa-xmark" aria-hidden="true" />
+              <Icon name="fa-solid fa-xmark" />
             </button>
           )}
         </div>
@@ -112,7 +113,7 @@ export default function Home() {
         MENU.map((group) => (
           <section key={group.id} className={styles.group}>
             <h2 className={styles.groupTitle}>
-              <i className={`${group.icon} ${styles.groupIcon}`} aria-hidden="true" />
+              <Icon name={group.icon} className={styles.groupIcon} />
               {group.title}
             </h2>
 
@@ -122,19 +123,19 @@ export default function Home() {
                 return (
                   <Link key={item.path} to={item.path} className={styles.card}>
                     <span className={styles.cardIcon}>
-                      <i className={item.icon} aria-hidden="true" />
+                      <Icon name={item.icon} />
                     </span>
                     <span className={styles.cardBody}>
                       <span className={styles.cardTitle}>{item.title}</span>
                       <span className={styles.cardText}>{item.description}</span>
                       {count > 0 && (
                         <span className={styles.cardCount}>
-                          <i className="fa-solid fa-download" aria-hidden="true" /> {count}{' '}
+                          <Icon name="fa-solid fa-download" /> {count}{' '}
                           {count === 1 ? 'файл' : count < 5 ? 'файла' : 'файлов'}
                         </span>
                       )}
                     </span>
-                    <i className={`fa-solid fa-arrow-right ${styles.cardArrow}`} aria-hidden="true" />
+                    <Icon name="fa-solid fa-arrow-right" className={styles.cardArrow} />
                   </Link>
                 );
               })}

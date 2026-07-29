@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { MENU } from '../navConfig.js';
 import { useTheme } from '../theme.jsx';
 import styles from './Navigation.module.css';
+import Icon from './Icon.jsx';
 
 /**
  * Верхняя навигационная панель: логотип слева, справа — два выпадающих меню
@@ -89,7 +90,7 @@ export default function Navigation() {
             aria-label={theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'}
             title={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
           >
-            <i className={theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'} aria-hidden="true" />
+            <Icon name={theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'} />
           </button>
 
           <button
@@ -129,7 +130,7 @@ export default function Navigation() {
                     aria-haspopup="true"
                     onClick={() => toggleMenu(group.id)}
                   >
-                    <i className={`${group.icon} ${styles.navIcon}`} aria-hidden="true" />
+                    <Icon name={group.icon} className={styles.navIcon} />
                     {group.title}
                   </button>
 
@@ -149,7 +150,7 @@ export default function Navigation() {
                             }`
                           }
                         >
-                          <i className={`${item.icon} ${styles.dropdownIcon}`} aria-hidden="true" />
+                          <Icon name={item.icon} className={styles.dropdownIcon} />
                           <span>{item.title}</span>
                         </NavLink>
                       </li>
