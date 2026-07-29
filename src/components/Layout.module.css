@@ -1,0 +1,55 @@
+/* Каркас страницы: «липкий» подвал и отступ под фиксированный навбар. */
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 0 auto;
+  /* Навбар зафиксирован (fixed-top), поэтому контент отодвигаем вниз */
+  padding-top: calc(var(--dept-navbar-height) + 1.25rem);
+  padding-bottom: 2.5rem;
+}
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumbs :global(.breadcrumb-item) + :global(.breadcrumb-item)::before {
+  content: '/';
+  color: var(--dept-muted);
+}
+
+.breadcrumbs a {
+  color: var(--dept-muted);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--dept-navy);
+  text-decoration: underline;
+}
+
+.breadcrumbs :global(.breadcrumb-item.active) {
+  color: var(--dept-navy);
+  font-weight: 600;
+}
+
+.footer {
+  flex: 0 0 auto;
+  background-color: var(--dept-navy-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 1.25rem 0;
+  font-size: 0.875rem;
+}
+
+.footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}

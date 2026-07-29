@@ -1,0 +1,179 @@
+/* Кастомное оформление навигационной панели (CSS-модуль). */
+
+.navbar {
+  min-height: var(--dept-navbar-height);
+  background: linear-gradient(100deg, var(--dept-navy-dark) 0%, var(--dept-navy) 55%, var(--dept-navy-light) 100%);
+  box-shadow: 0 2px 12px rgba(13, 43, 69, 0.28);
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+/* --- Логотип и название --- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logo {
+  flex: 0 0 auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.brand:hover .logo {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brandTitle {
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.brandSubtitle {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* Подзаголовок прячем на узких экранах, чтобы не ломать строку */
+@media (max-width: 400px) {
+  .brandSubtitle {
+    display: none;
+  }
+}
+
+.toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Пункты меню верхнего уровня --- */
+
+.navItem {
+  position: relative;
+}
+
+/* Пункт меню — это <button>, поэтому сбрасываем его собственное оформление */
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+/* Активная группа (открыт один из её подразделов) */
+.navLinkActive {
+  color: var(--dept-accent) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navIcon {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* --- Выпадающее меню --- */
+
+.dropdownMenu {
+  border: 1px solid var(--dept-border);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-md);
+  padding: 0.4rem;
+  margin-top: 0.45rem;
+  min-width: 15rem;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  color: var(--dept-ink);
+  font-weight: 500;
+}
+
+.dropdownItem:hover,
+.dropdownItem:focus {
+  background-color: var(--dept-surface);
+  color: var(--dept-navy);
+}
+
+/* Bootstrap красит .active синим — переопределяем на фирменный цвет */
+.dropdownItemActive,
+.dropdownItemActive:hover,
+.dropdownItemActive:focus {
+  background-color: var(--dept-navy) !important;
+  color: #fff !important;
+}
+
+.dropdownIcon {
+  width: 1.15rem;
+  text-align: center;
+  color: var(--dept-navy-light);
+  font-size: 0.9em;
+}
+
+.dropdownItemActive .dropdownIcon {
+  color: var(--dept-accent);
+}
+
+/* На мобильных меню раскрывается «в поток», без плавающей панели */
+@media (max-width: 991.98px) {
+  .collapse {
+    padding-top: 0.5rem;
+  }
+
+  .navLink {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dropdownMenu {
+    box-shadow: none;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.07);
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .dropdownItem {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .dropdownItem:hover,
+  .dropdownItem:focus {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #fff;
+  }
+
+  .dropdownIcon {
+    color: var(--dept-accent);
+  }
+}

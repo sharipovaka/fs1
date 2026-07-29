@@ -1,0 +1,115 @@
+/*
+ * Глобальные стили и дизайн-токены приложения.
+ * Кастомное оформление компонентов вынесено в CSS-модули (*.module.css),
+ * здесь остаются только переменные, сброс и переопределения Bootstrap.
+ */
+
+:root {
+  /* Фирменная палитра кафедры */
+  --dept-navy: #123a5f;
+  --dept-navy-dark: #0d2b45;
+  --dept-navy-light: #1d5688;
+  --dept-accent: #ffc857;
+  --dept-accent-dark: #e0a92e;
+  --dept-ink: #1f2933;
+  --dept-muted: #667685;
+  --dept-surface: #f5f7fa;
+  --dept-border: #dde3ea;
+
+  --dept-radius: 12px;
+  --dept-shadow-sm: 0 1px 2px rgba(18, 58, 95, 0.08);
+  --dept-shadow-md: 0 6px 20px rgba(18, 58, 95, 0.1);
+
+  /* Высота навбара — используется для отступов и «липкого» подвала */
+  --dept-navbar-height: 62px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--dept-ink);
+  background-color: var(--dept-surface);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Заголовки чуть плотнее бутстраповских */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--dept-navy-dark);
+}
+
+a {
+  color: var(--dept-navy-light);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--dept-navy);
+}
+
+/* Единый видимый фокус для доступности с клавиатуры */
+:focus-visible {
+  outline: 3px solid var(--dept-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Переопределения Bootstrap под палитру кафедры */
+.btn-primary {
+  --bs-btn-bg: var(--dept-navy);
+  --bs-btn-border-color: var(--dept-navy);
+  --bs-btn-hover-bg: var(--dept-navy-light);
+  --bs-btn-hover-border-color: var(--dept-navy-light);
+  --bs-btn-active-bg: var(--dept-navy-dark);
+  --bs-btn-active-border-color: var(--dept-navy-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--dept-navy);
+  --bs-btn-border-color: var(--dept-navy);
+  --bs-btn-hover-bg: var(--dept-navy);
+  --bs-btn-hover-border-color: var(--dept-navy);
+  --bs-btn-active-bg: var(--dept-navy-dark);
+  --bs-btn-active-border-color: var(--dept-navy-dark);
+}
+
+.text-brand {
+  color: var(--dept-navy) !important;
+}
+
+/* Скрытая подпись для скринридеров (аналог .visually-hidden из Bootstrap) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Уважение к системной настройке «уменьшить движение» */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

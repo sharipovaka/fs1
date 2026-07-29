@@ -1,0 +1,98 @@
+/* Оформление страницы-подраздела с встроенным материалом. */
+
+.page {
+  animation: fadeIn 0.22s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.titleIcon {
+  color: var(--dept-navy-light);
+  font-size: 0.9em;
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--dept-muted);
+  font-size: 0.95rem;
+  max-width: 70ch;
+}
+
+.printButton {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Рамка вокруг iframe стилизована как «лист документа» */
+.frameWrapper {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--dept-border);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-md);
+  overflow: hidden;
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+  /* Высоту задаёт inline-стиль: она вычисляется по реальному содержимому */
+  transition: height 0.15s ease-out;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--dept-muted);
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+/* При печати прячем всё, кроме содержимого материала */
+@media print {
+  .header,
+  .loader {
+    display: none !important;
+  }
+
+  .frameWrapper {
+    border: 0;
+    box-shadow: none;
+  }
+}
