@@ -48,21 +48,38 @@ const SIPS = which('sips');
 const PDFTOPPM = which('pdftoppm');
 
 /**
- * Делает PNG-миниатюру первой страницы PDF доступным в системе инструментом.
+ * Делает PNG-миниатюру первой страницы PDF.
+ *
+ * Целая страница A4, ужатая до ширины карточки, превращается в белый
+ * прямоугольник: текст на такой миниатюре не читается. Поэтому берём верхнюю
+ * часть страницы — там заголовок, набранный крупно, и по нему документ узнаётся.
+ *
+ * Высота обрезки задаётся с запасом: pdftoppm сам укорачивает её до реальной
+ * высоты страницы, поэтому широкие слайды Beamer остаются целиком.
+ *
  * @returns {boolean} удалось ли создать файл
  */
 function makeThumbnail(pdfPath, pngPath) {
+  const target = pngPath.replace(/\.png$/, ''); // -singlefile добавит расширение сам
+
   try {
+    if (PDFTOPPM) {
+      execFileSync(
+        PDFTOPPM,
+        // prettier-ignore
+        ['-png', '-singlefile',
+         '-scale-to-x', '500', '-scale-to-y', '-1',
+         '-x', '0', '-y', '0', '-W', '500', '-H', '340',
+         pdfPath, target],
+        { stdio: 'pipe' }
+      );
+      return existsSync(pngPath);
+    }
+
+    // Запасной вариант для macOS без poppler: страница целиком, без обрезки
     if (SIPS) {
       execFileSync(SIPS, ['-s', 'format', 'png', '-Z', '900', pdfPath, '--out', pngPath], { stdio: 'pipe' });
       return true;
-    }
-    if (PDFTOPPM) {
-      // -singlefile добавляет расширение сам, поэтому передаём путь без «.png»
-      execFileSync(PDFTOPPM, ['-png', '-singlefile', '-scale-to', '900', pdfPath, pngPath.replace(/\.png$/, '')], {
-        stdio: 'pipe',
-      });
-      return existsSync(pngPath);
     }
   } catch {
     /* обработается ниже */

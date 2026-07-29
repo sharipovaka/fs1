@@ -16,11 +16,11 @@
   box-shadow: var(--dept-shadow-md);
 }
 
-/* Миниатюра скомпилированного шаблона */
+/* Миниатюра: верхняя часть скомпилированной страницы */
 .thumbLink {
   flex: 0 0 auto;
   display: block;
-  width: 92px;
+  width: 132px;
   align-self: flex-start;
   border: 1px solid var(--dept-border);
   border-radius: 8px;
@@ -261,11 +261,22 @@
   }
 
   .thumbLink {
-    width: 76px;
+    width: 108px;
   }
 
   /* Подписи кнопок не прячем: «Скачать» — главное действие на сайте */
   .fileActions {
     padding-left: 0;
   }
+}
+
+/* Ссылка на исходник LaTeX рядом со сведениями о файле */
+.sourceLink {
+  color: var(--dept-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sourceLink:hover {
+  color: var(--dept-navy-light);
 }

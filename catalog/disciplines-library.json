@@ -31,7 +31,8 @@
         {
           "path": "disciplines/library/spravochnik-formul.tex",
           "label": "Производные, интегралы, разложения, матрицы, вероятности, численные методы",
-          "primary": true
+          "primary": true,
+          "download": "pdf"
         }
       ]
     },

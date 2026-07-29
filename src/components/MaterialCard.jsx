@@ -85,18 +85,29 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
               <div className={styles.fileInfo}>
                 {file.label && <span className={styles.fileLabel}>{file.label}</span>}
                 <span className={styles.fileMeta}>
-                  <code>{file.name}</code> · {file.format} · {formatSize(file.size)}
+                  <code>{file.download.name}</code> · {file.download.format} ·{' '}
+                  {formatSize(file.download.size)}
+                  {/* Условия набраны в LaTeX: студент получает PDF,
+                      исходник доступен отдельной ссылкой */}
+                  {file.download.compiled && (
+                    <>
+                      {' · '}
+                      <a className={styles.sourceLink} href={downloadUrl(file.path)} download={file.name}>
+                        исходник {file.format}
+                      </a>
+                    </>
+                  )}
                 </span>
               </div>
 
               <div className={styles.fileActions}>
                 <a
                   className={`btn btn-sm ${file.primary ? 'btn-primary' : 'btn-outline-primary'} ${styles.action}`}
-                  href={downloadUrl(file.path)}
-                  download={file.name}
+                  href={assetUrl(file.download.path)}
+                  download={file.download.name}
                 >
                   <Icon name="fa-solid fa-download" />
-                  <span>Скачать</span>
+                  <span>{file.download.compiled ? 'Скачать PDF' : 'Скачать'}</span>
                 </a>
 
                 {file.preview && (

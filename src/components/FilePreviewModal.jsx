@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import MaterialFrame from './MaterialFrame.jsx';
-import { assetUrl, colabUrl, downloadUrl, githubUrl } from '../repoConfig.js';
+import { assetUrl, colabUrl, githubUrl } from '../repoConfig.js';
 import styles from './FilePreviewModal.module.css';
 import Icon from './Icon.jsx';
 
@@ -88,13 +88,18 @@ export default function FilePreviewModal({ file, onClose }) {
             <span className={styles.fileName}>{file.name}</span>
             <span className={styles.fileMeta}>
               {file.label ? `${file.label} · ` : ''}
-              {file.format}
+              {file.download.format}
             </span>
           </div>
 
           <div className={styles.headerActions}>
-            <a className="btn btn-sm btn-primary" href={downloadUrl(file.path)} download={file.name}>
-              <Icon name="fa-solid fa-download" className="me-1" /> Скачать
+            <a
+              className="btn btn-sm btn-primary"
+              href={assetUrl(file.download.path)}
+              download={file.download.name}
+            >
+              <Icon name="fa-solid fa-download" className="me-1" />{' '}
+              {file.download.compiled ? 'Скачать PDF' : 'Скачать'}
             </a>
             {file.ext === 'ipynb' && (
               <a

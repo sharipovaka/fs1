@@ -164,6 +164,47 @@ function findPreview(relPath) {
   return null;
 }
 
+/**
+ * Имена файлов LaTeX, которые студент скачивает готовым PDF.
+ *
+ * Условия задач читают, а не редактируют, поэтому им нужен PDF.
+ * Шаблонам наоборот: из PDF курсовую не сделаешь — там скачивается исходник.
+ * Правило можно переопределить в catalog/*.json полем "download": "pdf" | "source".
+ */
+const PDF_BY_NAME = /(usloviya|zadanie|bilety|zadachi)/i;
+
+/**
+ * Что именно скачивает студент.
+ *
+ * Для условий типовых расчётов это скомпилированный PDF: он открывается
+ * в любом браузере и на телефоне. Сам .tex остаётся доступен отдельной
+ * ссылкой — он нужен преподавателям и тем, кто хочет переиспользовать вёрстку.
+ */
+function describeDownload(relPath, ext, preview, sourceSize, prefer) {
+  const name = relPath.split('/').pop();
+
+  const wantsPdf = prefer ? prefer === 'pdf' : PDF_BY_NAME.test(name);
+
+  if (ext === '.tex' && wantsPdf && preview?.type === 'pdf') {
+    const pdfFull = join(ROOT, 'public', preview.path);
+    return {
+      path: preview.path,
+      name: name.replace(/\.tex$/i, '.pdf'),
+      format: 'PDF',
+      size: existsSync(pdfFull) ? statSync(pdfFull).size : 0,
+      compiled: true,
+    };
+  }
+
+  return {
+    path: `files/${relPath}`,
+    name,
+    format: FORMAT_BY_EXT[ext] ?? ext.replace('.', '').toUpperCase(),
+    size: sourceSize,
+    compiled: false,
+  };
+}
+
 /** Дополняет запись о файле данными с диска. */
 function describeFile(entry, extra = {}) {
   const relPath = typeof entry === 'string' ? entry : entry.path;
@@ -177,16 +218,19 @@ function describeFile(entry, extra = {}) {
 
   const ext = extname(relPath).toLowerCase();
   const manual = typeof entry === 'string' ? {} : entry;
+  const size = statSync(full).size;
+  const preview = findPreview(relPath);
 
   return {
     path: relPath,
     name: relPath.split('/').pop(),
     ext: ext.replace('.', ''),
     format: FORMAT_BY_EXT[ext] ?? ext.replace('.', '').toUpperCase(),
-    size: statSync(full).size,
+    size,
     label: manual.label ?? extra.label ?? '',
     primary: Boolean(manual.primary ?? extra.primary),
-    preview: findPreview(relPath),
+    preview,
+    download: describeDownload(relPath, ext, preview, size, manual.download),
   };
 }
 
