@@ -280,3 +280,8 @@
 .sourceLink:hover {
   color: var(--dept-navy-light);
 }
+
+/* Пояснение к сроку: «12-я учебная неделя» рядом с датой */
+.deadlineNote {
+  color: var(--dept-muted);
+}

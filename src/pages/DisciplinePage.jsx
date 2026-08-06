@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
+import DisciplineSummary from '../components/DisciplineSummary.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import SectionHero from '../components/SectionHero.jsx';
 import { DISCIPLINES, getDiscipline } from '../catalog.js';
@@ -38,18 +39,8 @@ export default function DisciplinePage() {
 
       {hasMaterials ? (
         <>
-          {/* Быстрый переход к блоку: на длинной странице это удобнее прокрутки */}
-          {discipline.groups.length > 1 && (
-            <nav className={styles.anchors} aria-label="Разделы дисциплины">
-              {discipline.groups.map((group) => (
-                <a key={group.type} className={styles.anchor} href={`#${group.type}`}>
-                  <Icon name={group.icon} className={styles.anchorIcon} />
-                  {group.title}
-                  <span className={styles.anchorCount}>{group.fileCount}</span>
-                </a>
-              ))}
-            </nav>
-          )}
+          {/* Сводка: что за курс, что на странице и когда ближайший срок */}
+          <DisciplineSummary discipline={discipline} />
 
           {discipline.groups.map((group) => (
             <section key={group.type} id={group.type} className={styles.group}>

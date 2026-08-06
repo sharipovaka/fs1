@@ -294,6 +294,9 @@ function collectFolder(folderRel) {
         course: entry.meta.course,
         semester: entry.meta.semester,
         deadline: entry.meta.deadline ?? '',
+        // Дата сдачи в формате ГГГГ-ММ-ДД: по ней сайт сам считает,
+        // сколько осталось, и подставляет метку статуса.
+        due: entry.meta.due ?? '',
         status: entry.meta.status ?? '',
         statusLabel: entry.meta.statusLabel ?? '',
         files: entry.files,

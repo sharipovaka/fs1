@@ -1,0 +1,229 @@
+/* Сводка в начале страницы дисциплины: три колонки. */
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0;
+  margin-bottom: 1.75rem;
+  background: var(--dept-card);
+  border: 1px solid var(--dept-border);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-sm);
+  overflow: hidden;
+}
+
+.column {
+  padding: 1.05rem 1.2rem 1.1rem;
+  border-right: 1px solid var(--dept-border);
+}
+
+.column:last-child {
+  border-right: 0;
+}
+
+.columnTitle {
+  margin: 0 0 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--dept-muted);
+}
+
+.plain {
+  margin: 0;
+  color: var(--dept-muted);
+  font-size: 0.9rem;
+}
+
+/* --- Коротко --- */
+
+.facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.fact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--dept-ink);
+}
+
+.factIcon {
+  color: var(--dept-navy-light);
+  font-size: 0.9em;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.7rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--dept-border);
+  font-size: 0.88rem;
+  color: var(--dept-muted);
+}
+
+/* --- Что на странице --- */
+
+.contents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contentLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.28rem 0.4rem;
+  margin: 0 -0.4rem;
+  border-radius: 7px;
+  color: var(--dept-ink);
+  text-decoration: none;
+  font-size: 0.93rem;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.contentLink:hover {
+  background: var(--dept-card-accent);
+  color: var(--dept-navy-light);
+}
+
+.contentIcon {
+  color: var(--dept-navy-light);
+  font-size: 0.9em;
+}
+
+.contentTitle {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.contentCount {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: var(--dept-surface);
+  color: var(--dept-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* --- Сроки --- */
+
+.nearest {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--dept-border);
+  background: var(--dept-surface);
+}
+
+.due_open {
+  background: var(--status-open-bg);
+  border-color: var(--status-open-border);
+}
+
+.due_soon {
+  background: var(--status-soon-bg);
+  border-color: var(--status-soon-border);
+}
+
+.due_done {
+  background: var(--status-done-bg);
+  border-color: var(--status-done-border);
+}
+
+.nearestLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--dept-muted);
+}
+
+.nearestWork {
+  font-weight: 650;
+  color: var(--dept-heading);
+}
+
+.nearestDate {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--dept-ink);
+}
+
+.nearestLeft {
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.due_open .nearestLeft {
+  color: var(--status-open-fg);
+}
+
+.due_soon .nearestLeft {
+  color: var(--status-soon-fg);
+}
+
+.due_done .nearestLeft {
+  color: var(--status-done-fg);
+}
+
+.rest {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.restItem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.5rem;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--dept-muted);
+}
+
+.restWork {
+  color: var(--dept-ink);
+}
+
+.restDate {
+  white-space: nowrap;
+}
+
+/* На узких экранах колонки становятся строками */
+@media (max-width: 767.98px) {
+  .column {
+    border-right: 0;
+    border-bottom: 1px solid var(--dept-border);
+  }
+
+  .column:last-child {
+    border-bottom: 0;
+  }
+}

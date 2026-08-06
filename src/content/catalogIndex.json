@@ -14,9 +14,9 @@
     },
     {
       "id": "library",
-      "title": "Материалы и литература",
+      "title": "Учебники и методички",
       "icon": "fa-solid fa-book-bookmark",
-      "description": "Учебники, задачники, справочники и полезные ссылки."
+      "description": "Что читать по курсу и методические указания кафедры."
     },
     {
       "id": "templates",
@@ -39,6 +39,9 @@
       "icon": "fa-solid fa-infinity",
       "meta": "1 курс · 1–2 семестры · экзамен",
       "description": "Пределы, дифференциальное и интегральное исчисление, ряды, функции нескольких переменных. Базовый курс, на который опираются почти все дисциплины кафедры.",
+      "course": "1 курс",
+      "semester": "1–2 семестры",
+      "control": "экзамен",
       "groups": [
         {
           "type": "plans",
@@ -51,6 +54,7 @@
               "kind": "Рабочая программа",
               "title": "Математический анализ",
               "deadline": "утверждена на 2025/26 учебный год",
+              "due": "",
               "status": "open",
               "statusLabel": "действует",
               "files": [
@@ -93,6 +97,7 @@
               "number": 4,
               "title": "Формула Тейлора",
               "deadline": "",
+              "due": "",
               "status": "open",
               "statusLabel": "опубликована",
               "files": [
@@ -125,6 +130,7 @@
               "kind": "Ноутбук",
               "title": "Численный эксперимент к лекции 4",
               "deadline": "",
+              "due": "",
               "status": "open",
               "statusLabel": "опубликован",
               "files": [
@@ -156,6 +162,82 @@
           "fileCount": 2
         },
         {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-calculus-library-metodichka-ryady",
+              "kind": "Методические указания",
+              "title": "Числовые ряды: исследование на сходимость",
+              "deadline": "",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/library/metodichka-ryady.tex",
+                  "name": "metodichka-ryady.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 3484,
+                  "label": "Схема проверки признаков, типичные ошибки, разобранный пример",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/calculus/library/metodichka-ryady.pdf",
+                    "thumb": "previews/disciplines/calculus/library/metodichka-ryady.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/calculus/library/metodichka-ryady.pdf",
+                    "name": "metodichka-ryady.pdf",
+                    "format": "PDF",
+                    "size": 152081,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/library/metodichka-ryady.png"
+            },
+            {
+              "id": "disciplines-calculus-library-uchebniki",
+              "kind": "Список литературы",
+              "title": "Что читать по курсу",
+              "deadline": "основные и дополнительные источники по разделам",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/library/uchebniki.md",
+                  "name": "uchebniki.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2635,
+                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/library/uchebniki.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/library/uchebniki.md",
+                    "name": "uchebniki.md",
+                    "format": "Markdown",
+                    "size": 2635,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
+        {
           "type": "tasks",
           "title": "Задания",
           "icon": "fa-solid fa-square-root-variable",
@@ -168,9 +250,10 @@
               "title": "Пределы и непрерывность",
               "course": 1,
               "semester": 1,
-              "deadline": "сдать до конца 6-й недели",
-              "status": "done",
-              "statusLabel": "приём закрыт",
+              "deadline": "6-я учебная неделя",
+              "due": "2026-10-14",
+              "status": "",
+              "statusLabel": "",
               "files": [
                 {
                   "path": "disciplines/calculus/tasks/tr-01-usloviya.tex",
@@ -224,9 +307,10 @@
               "title": "Производная и её приложения",
               "course": 1,
               "semester": 1,
-              "deadline": "сдать до конца 12-й недели",
-              "status": "open",
-              "statusLabel": "приём открыт",
+              "deadline": "12-я учебная неделя",
+              "due": "2026-11-25",
+              "status": "",
+              "statusLabel": "",
               "files": [
                 {
                   "path": "disciplines/calculus/tasks/tr-02-usloviya.tex",
@@ -297,7 +381,7 @@
           "fileCount": 5
         }
       ],
-      "fileCount": 8
+      "fileCount": 10
     },
     {
       "id": "linear-algebra",
@@ -306,6 +390,9 @@
       "icon": "fa-solid fa-vector-square",
       "meta": "1 курс · 1 семестр · экзамен",
       "description": "Матрицы и определители, системы линейных уравнений, линейные пространства и операторы, квадратичные формы, аналитическая геометрия.",
+      "course": "1 курс",
+      "semester": "1 семестр",
+      "control": "экзамен",
       "groups": [
         {
           "type": "notes",
@@ -319,6 +406,7 @@
               "number": 7,
               "title": "Собственные значения и собственные векторы",
               "deadline": "",
+              "due": "",
               "status": "open",
               "statusLabel": "опубликована",
               "files": [
@@ -350,6 +438,82 @@
           "fileCount": 1
         },
         {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-linear-algebra-library-metodichka-slau",
+              "kind": "Методические указания",
+              "title": "Метод Гаусса: решение систем линейных уравнений",
+              "deadline": "",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/library/metodichka-slau.tex",
+                  "name": "metodichka-slau.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 3619,
+                  "label": "Порядок действий, разбор случаев с параметром, что проверять",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/linear-algebra/library/metodichka-slau.pdf",
+                    "thumb": "previews/disciplines/linear-algebra/library/metodichka-slau.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/linear-algebra/library/metodichka-slau.pdf",
+                    "name": "metodichka-slau.pdf",
+                    "format": "PDF",
+                    "size": 103290,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/linear-algebra/library/metodichka-slau.png"
+            },
+            {
+              "id": "disciplines-linear-algebra-library-uchebniki",
+              "kind": "Список литературы",
+              "title": "Что читать по курсу",
+              "deadline": "основные и дополнительные источники по разделам",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/library/uchebniki.md",
+                  "name": "uchebniki.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2413,
+                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/linear-algebra/library/uchebniki.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/linear-algebra/library/uchebniki.md",
+                    "name": "uchebniki.md",
+                    "format": "Markdown",
+                    "size": 2413,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
+        {
           "type": "tasks",
           "title": "Задания",
           "icon": "fa-solid fa-square-root-variable",
@@ -362,9 +526,10 @@
               "title": "Матрицы, определители и системы линейных уравнений",
               "course": 1,
               "semester": 1,
-              "deadline": "сдать до конца 9-й недели",
-              "status": "open",
-              "statusLabel": "приём открыт",
+              "deadline": "9-я учебная неделя",
+              "due": "2026-11-05",
+              "status": "",
+              "statusLabel": "",
               "files": [
                 {
                   "path": "disciplines/linear-algebra/tasks/tr-01-usloviya.tex",
@@ -418,9 +583,10 @@
               "title": "Линейные пространства и операторы",
               "course": 1,
               "semester": 1,
-              "deadline": "сдать до конца 15-й недели",
-              "status": "soon",
-              "statusLabel": "скоро дедлайн",
+              "deadline": "15-я учебная неделя",
+              "due": "2026-12-17",
+              "status": "",
+              "statusLabel": "",
               "files": [
                 {
                   "path": "disciplines/linear-algebra/tasks/tr-02-usloviya.tex",
@@ -471,7 +637,7 @@
           "fileCount": 4
         }
       ],
-      "fileCount": 5
+      "fileCount": 7
     },
     {
       "id": "discrete-math",
@@ -480,7 +646,86 @@
       "icon": "fa-solid fa-circle-nodes",
       "meta": "1 курс · 2 семестр · зачёт",
       "description": "Множества и отношения, комбинаторика, теория графов, булевы функции. Основа для курсов программирования и алгоритмов.",
+      "course": "1 курс",
+      "semester": "2 семестр",
+      "control": "зачёт",
       "groups": [
+        {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-discrete-math-library-metodichka-grafy",
+              "kind": "Методические указания",
+              "title": "Графы: обход и характеристики",
+              "deadline": "",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/discrete-math/library/metodichka-grafy.tex",
+                  "name": "metodichka-grafy.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 3130,
+                  "label": "Что проверять в задаче, как оформлять решение, типичные ошибки",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/discrete-math/library/metodichka-grafy.pdf",
+                    "thumb": "previews/disciplines/discrete-math/library/metodichka-grafy.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/discrete-math/library/metodichka-grafy.pdf",
+                    "name": "metodichka-grafy.pdf",
+                    "format": "PDF",
+                    "size": 104435,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/discrete-math/library/metodichka-grafy.png"
+            },
+            {
+              "id": "disciplines-discrete-math-library-uchebniki",
+              "kind": "Список литературы",
+              "title": "Что читать по курсу",
+              "deadline": "основные и дополнительные источники по разделам",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/discrete-math/library/uchebniki.md",
+                  "name": "uchebniki.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 1940,
+                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/discrete-math/library/uchebniki.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/discrete-math/library/uchebniki.md",
+                    "name": "uchebniki.md",
+                    "format": "Markdown",
+                    "size": 1940,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
         {
           "type": "tasks",
           "title": "Задания",
@@ -494,9 +739,10 @@
               "title": "Множества, отношения, графы",
               "course": 1,
               "semester": 2,
-              "deadline": "сдать до конца 10-й недели",
-              "status": "open",
-              "statusLabel": "приём открыт",
+              "deadline": "10-я учебная неделя",
+              "due": "2027-04-15",
+              "status": "",
+              "statusLabel": "",
               "files": [
                 {
                   "path": "disciplines/discrete-math/tasks/tr-01-usloviya.tex",
@@ -547,7 +793,7 @@
           "fileCount": 2
         }
       ],
-      "fileCount": 2
+      "fileCount": 4
     },
     {
       "id": "teorver",
@@ -556,7 +802,86 @@
       "icon": "fa-solid fa-dice-five",
       "meta": "2 курс · 4 семестр · экзамен",
       "description": "Случайные события и величины, распределения, предельные теоремы, основы математической статистики и обработки данных.",
+      "course": "2 курс",
+      "semester": "4 семестр",
+      "control": "экзамен",
       "groups": [
+        {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-teorver-library-metodichka-sluchainye-velichiny",
+              "kind": "Методические указания",
+              "title": "Случайные величины: как не ошибиться в модели",
+              "deadline": "",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/teorver/library/metodichka-sluchainye-velichiny.tex",
+                  "name": "metodichka-sluchainye-velichiny.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 3354,
+                  "label": "С чего начинать задачу, дискретный и непрерывный случай, ошибки",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/teorver/library/metodichka-sluchainye-velichiny.pdf",
+                    "thumb": "previews/disciplines/teorver/library/metodichka-sluchainye-velichiny.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/teorver/library/metodichka-sluchainye-velichiny.pdf",
+                    "name": "metodichka-sluchainye-velichiny.pdf",
+                    "format": "PDF",
+                    "size": 140846,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/teorver/library/metodichka-sluchainye-velichiny.png"
+            },
+            {
+              "id": "disciplines-teorver-library-uchebniki",
+              "kind": "Список литературы",
+              "title": "Что читать по курсу",
+              "deadline": "основные и дополнительные источники по разделам",
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/teorver/library/uchebniki.md",
+                  "name": "uchebniki.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2234,
+                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/teorver/library/uchebniki.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/teorver/library/uchebniki.md",
+                    "name": "uchebniki.md",
+                    "format": "Markdown",
+                    "size": 2234,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
         {
           "type": "tasks",
           "title": "Задания",
@@ -570,9 +895,10 @@
               "title": "Случайные события и вероятность",
               "course": 2,
               "semester": 4,
-              "deadline": "сдать до конца 9-й недели",
-              "status": "open",
-              "statusLabel": "приём открыт",
+              "deadline": "9-я учебная неделя",
+              "due": "2027-04-08",
+              "status": "",
+              "statusLabel": "",
               "files": [
                 {
                   "path": "disciplines/teorver/tasks/tr-01-usloviya.tex",
@@ -623,7 +949,7 @@
           "fileCount": 2
         }
       ],
-      "fileCount": 2
+      "fileCount": 4
     },
     {
       "id": "common",
@@ -632,6 +958,9 @@
       "icon": "fa-solid fa-folder-open",
       "meta": "для всех дисциплин",
       "description": "То, что нужно независимо от предмета: учебный план, календарный график, шаблоны курсовых и отчётов, требования к оформлению, справочники и открытые ресурсы.",
+      "course": "",
+      "semester": "",
+      "control": "",
       "groups": [
         {
           "type": "plans",
@@ -644,6 +973,7 @@
               "kind": "Календарный график",
               "title": "График учебного процесса 2025/26",
               "deadline": "осенний и весенний семестры",
+              "due": "",
               "status": "open",
               "statusLabel": "действует",
               "files": [
@@ -676,6 +1006,7 @@
               "kind": "Учебный план",
               "title": "Распределение дисциплин по семестрам",
               "deadline": "прикладная математика и информатика, бакалавриат",
+              "due": "",
               "status": "open",
               "statusLabel": "действует",
               "files": [
@@ -708,15 +1039,16 @@
         },
         {
           "type": "library",
-          "title": "Материалы и литература",
+          "title": "Учебники и методички",
           "icon": "fa-solid fa-book-bookmark",
-          "description": "Учебники, задачники, справочники и полезные ссылки.",
+          "description": "Что читать по курсу и методические указания кафедры.",
           "items": [
             {
               "id": "disciplines-common-library-otkrytye-resursy",
               "kind": "Ресурсы",
               "title": "Открытые библиотеки и онлайн-инструменты",
               "deadline": "15 проверенных ресурсов",
+              "due": "",
               "status": "open",
               "statusLabel": "проверено",
               "files": [
@@ -749,6 +1081,7 @@
               "kind": "Список литературы",
               "title": "Учебники и задачники по дисциплинам",
               "deadline": "основная и дополнительная литература по шести дисциплинам",
+              "due": "",
               "status": "open",
               "statusLabel": "актуален",
               "files": [
@@ -781,6 +1114,7 @@
               "kind": "Справочник",
               "title": "Краткий справочник формул",
               "deadline": "две колонки на одной странице — удобно печатать",
+              "due": "",
               "status": "open",
               "statusLabel": "актуален",
               "files": [
@@ -823,6 +1157,7 @@
               "kind": "Шаблон",
               "title": "Курсовая работа (LaTeX)",
               "deadline": "",
+              "due": "",
               "status": "open",
               "statusLabel": "актуален",
               "files": [
@@ -856,6 +1191,7 @@
               "kind": "Требования",
               "title": "Требования к оформлению работ",
               "deadline": "",
+              "due": "",
               "status": "open",
               "statusLabel": "актуальны",
               "files": [
@@ -888,6 +1224,7 @@
               "kind": "Шаблон",
               "title": "Вычислительный отчёт (Jupyter)",
               "deadline": "",
+              "due": "",
               "status": "open",
               "statusLabel": "актуален",
               "files": [
@@ -935,6 +1272,7 @@
           "kind": "Шаблон",
           "title": "Отчёт по практике",
           "deadline": "сдать в течение недели после окончания",
+          "due": "",
           "status": "open",
           "statusLabel": "актуален",
           "files": [
@@ -987,6 +1325,7 @@
           "kind": "Справочник",
           "title": "Базы практики",
           "deadline": "выбрать за месяц до начала",
+          "due": "",
           "status": "soon",
           "statusLabel": "идёт распределение",
           "files": [
@@ -1029,6 +1368,7 @@
           "kind": "Архив",
           "title": "Результаты 2023–2025",
           "deadline": "",
+          "due": "",
           "status": "done",
           "statusLabel": "архив",
           "files": [
@@ -1061,6 +1401,7 @@
           "kind": "Программа",
           "title": "Конференция «Студенческая весна» 2026",
           "deadline": "15–16 апреля 2026, корпус А",
+          "due": "",
           "status": "open",
           "statusLabel": "приём заявок открыт",
           "files": [
@@ -1093,6 +1434,7 @@
           "kind": "Шаблон",
           "title": "Тезисы доклада",
           "deadline": "прислать до 20 марта 2026",
+          "due": "",
           "status": "soon",
           "statusLabel": "скоро дедлайн",
           "files": [
@@ -1136,6 +1478,7 @@
           "kind": "Шаблон",
           "title": "Тезисы доклада на семинаре",
           "deadline": "прислать за неделю до заседания",
+          "due": "",
           "status": "open",
           "statusLabel": "актуален",
           "files": [
@@ -1169,6 +1512,7 @@
           "kind": "Аннотации",
           "title": "Аннотации докладов семестра",
           "deadline": "осенний семестр 2026/27",
+          "due": "",
           "status": "open",
           "statusLabel": "актуальны",
           "files": [
@@ -1202,6 +1546,7 @@
           "kind": "Материалы доклада",
           "title": "Разностные схемы: демонстрация",
           "deadline": "",
+          "due": "",
           "status": "open",
           "statusLabel": "опубликованы",
           "files": [
@@ -1244,6 +1589,7 @@
           "kind": "Шаблон",
           "title": "Презентация в Beamer",
           "deadline": "",
+          "due": "",
           "status": "open",
           "statusLabel": "актуален",
           "files": [
@@ -1277,6 +1623,7 @@
           "kind": "Материалы",
           "title": "Графики для доклада",
           "deadline": "",
+          "due": "",
           "status": "open",
           "statusLabel": "опубликованы",
           "files": [
@@ -1309,6 +1656,7 @@
           "kind": "Чек-лист",
           "title": "Подготовка доклада",
           "deadline": "начать за две недели",
+          "due": "",
           "status": "open",
           "statusLabel": "актуален",
           "files": [
@@ -1351,6 +1699,7 @@
           "kind": "Информационное письмо",
           "title": "XXIV студенческая конференция «Математика и её приложения»",
           "deadline": "тезисы до 20 марта 2026",
+          "due": "",
           "status": "open",
           "statusLabel": "приём открыт",
           "files": [
@@ -1383,6 +1732,7 @@
           "kind": "Шаблон",
           "title": "Тезисы для конференции",
           "deadline": "",
+          "due": "",
           "status": "open",
           "statusLabel": "актуален",
           "files": [
@@ -1416,6 +1766,7 @@
           "kind": "Календарь",
           "title": "Конференции 2026 года",
           "deadline": "ближайший дедлайн — 20 марта",
+          "due": "",
           "status": "soon",
           "statusLabel": "скоро дедлайн",
           "files": [
@@ -1460,6 +1811,7 @@
           "kind": "Статья",
           "title": "Методический семинар на кафедре «Высшая математика»",
           "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
+          "due": "",
           "status": "open",
           "statusLabel": "опубликована",
           "files": [
@@ -1492,6 +1844,7 @@
           "kind": "Статья",
           "title": "Преподаватели кафедры на фронтах Великой Отечественной войны",
           "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
+          "due": "",
           "status": "open",
           "statusLabel": "опубликована",
           "files": [
@@ -1524,7 +1877,7 @@
     }
   ],
   "totals": {
-    "files": 42,
-    "items": 34
+    "files": 50,
+    "items": 42
   }
 }

@@ -1,4 +1,5 @@
 import { assetUrl, colabUrl, downloadUrl, githubUrl } from '../repoConfig.js';
+import { describeDue } from '../deadlines.js';
 import styles from './MaterialCard.module.css';
 import Icon from './Icon.jsx';
 
@@ -37,6 +38,12 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
   // Заголовок вида «Типовой расчёт № 1»
   const heading = item.number ? `${item.kind} № ${item.number}` : item.kind;
 
+  // Если у работы указана дата сдачи, метка и срок считаются по ней:
+  // преподавателю достаточно вписать дату, статус обновляется сам.
+  const due = item.due ? describeDue(item.due) : null;
+  const status = due?.status ?? item.status;
+  const statusLabel = due?.label ?? item.statusLabel;
+
   return (
     <article className={styles.card} id={item.id}>
       {item.thumb && (
@@ -63,15 +70,17 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
             {item.discipline && <span className={`${styles.badge} ${styles.badgeDiscipline}`}>{item.discipline}</span>}
             {item.course && <span className={styles.badge}>{item.course} курс</span>}
             {item.semester && <span className={styles.badge}>{item.semester} семестр</span>}
-            {item.statusLabel && (
-              <span className={`${styles.badge} ${styles[`status_${item.status}`] ?? ''}`}>{item.statusLabel}</span>
+            {statusLabel && (
+              <span className={`${styles.badge} ${styles[`status_${status}`] ?? ''}`}>{statusLabel}</span>
             )}
           </div>
         </header>
 
-        {item.deadline && (
+        {(due || item.deadline) && (
           <p className={styles.deadline}>
-            <Icon name="fa-regular fa-clock" /> {item.deadline}
+            <Icon name="fa-regular fa-clock" />{' '}
+            {due ? `сдать до ${due.date}` : item.deadline}
+            {due && item.deadline && <span className={styles.deadlineNote}> · {item.deadline}</span>}
           </p>
         )}
 
