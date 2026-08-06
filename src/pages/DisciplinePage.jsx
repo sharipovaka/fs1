@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Navigate, useLocation, useParams } from 'react-router-dom';
 
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
@@ -13,20 +13,37 @@ import styles from './DisciplinePage.module.css';
 /**
  * Страница дисциплины — основная страница сайта.
  *
- * Всё содержимое дисциплины на одной странице: описание, затем блоки
- * «Планы», «Конспекты», «Материалы и литература», «Шаблоны», «Задания».
- * Пустые блоки не показываются, поэтому страница не выглядит перегруженной.
- * Наверху — ссылки-якоря, чтобы сразу перейти к нужному блоку.
+ * Слева боковая панель с разделами, справа открытый раздел: описание
+ * и карточки материалов со скачиванием, просмотром и Colab. Одновременно
+ * показывается только один раздел, поэтому страница остаётся короткой.
+ *
+ * Какой раздел открыт, определяет адрес: /disciplines/calculus#tasks.
+ * Без якоря открывается первый раздел.
  */
 export default function DisciplinePage() {
   const { id } = useParams();
+  const { hash } = useLocation();
   const discipline = getDiscipline(id);
   const [previewFile, setPreviewFile] = useState(null);
+  const previousType = useRef(null);
+
+  // Якорь из адреса; если такого раздела нет — открываем первый
+  const requested = decodeURIComponent(hash.replace('#', ''));
+  const activeGroup = discipline
+    ? discipline.groups.find((group) => group.type === requested) ?? discipline.groups[0]
+    : null;
+
+  // При переключении раздела возвращаем к началу: иначе, если страница была
+  // прокручена, новый раздел откроется где-то выше видимой области.
+  // Хук объявлен до выхода по редиректу — их число не должно меняться между рендерами.
+  useEffect(() => {
+    const type = activeGroup?.type ?? null;
+    if (previousType.current && previousType.current !== type) window.scrollTo(0, 0);
+    previousType.current = type;
+  }, [activeGroup?.type]);
 
   // Неизвестная дисциплина — отправляем на первую, чтобы не показывать 404
   if (!discipline) return <Navigate to={`/disciplines/${DISCIPLINES[0].id}`} replace />;
-
-  const hasMaterials = discipline.groups.length > 0;
 
   return (
     <div className={styles.page}>
@@ -38,32 +55,32 @@ export default function DisciplinePage() {
         fileCount={discipline.fileCount}
       />
 
-      {hasMaterials ? (
-        // Слева навигация по блокам, справа сами материалы
+      {activeGroup ? (
+        // Слева навигация по разделам, справа открытый раздел
         <div className={styles.layout}>
-          <DisciplineSidebar discipline={discipline} />
+          <DisciplineSidebar discipline={discipline} activeType={activeGroup.type} />
 
           <div className={styles.content}>
             {/* Сводка: коротко о курсе и ближайший срок сдачи */}
             <DisciplineSummary discipline={discipline} />
 
-            {discipline.groups.map((group) => (
-              <section key={group.type} id={group.type} className={styles.group}>
-                <div className={styles.groupHeader}>
-                  <h2 className={styles.groupTitle}>
-                    <Icon name={group.icon} className={styles.groupIcon} />
-                    {group.title}
-                  </h2>
-                  {group.description && <p className={styles.groupDescription}>{group.description}</p>}
-                </div>
+            <section className={styles.group}>
+              <div className={styles.groupHeader}>
+                <h2 className={styles.groupTitle}>
+                  <Icon name={activeGroup.icon} className={styles.groupIcon} />
+                  {activeGroup.title}
+                </h2>
+                {activeGroup.description && (
+                  <p className={styles.groupDescription}>{activeGroup.description}</p>
+                )}
+              </div>
 
-                <div className={styles.cards}>
-                  {group.items.map((item) => (
-                    <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
-                  ))}
-                </div>
-              </section>
-            ))}
+              <div className={styles.cards}>
+                {activeGroup.items.map((item) => (
+                  <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
+                ))}
+              </div>
+            </section>
           </div>
         </div>
       ) : (
