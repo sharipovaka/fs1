@@ -1,0 +1,113 @@
+/* Страница дисциплины: блоки материалов друг за другом. */
+
+.page {
+  animation: fadeIn 0.22s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Якорные ссылки на блоки --- */
+
+.anchors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--dept-border);
+  border-radius: 999px;
+  background: var(--dept-card);
+  color: var(--dept-ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.14s ease, color 0.14s ease, background-color 0.14s ease;
+}
+
+.anchor:hover {
+  border-color: var(--dept-navy-light);
+  color: var(--dept-navy-light);
+  background: var(--dept-card-accent);
+}
+
+.anchorIcon {
+  color: var(--dept-navy-light);
+  font-size: 0.9em;
+}
+
+.anchorCount {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--dept-surface);
+  color: var(--dept-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* --- Блок материалов --- */
+
+.group {
+  margin-bottom: 2rem;
+  /* Чтобы заголовок не прятался под фиксированным навбаром при переходе по якорю */
+  scroll-margin-top: calc(var(--dept-navbar-height) + 1rem);
+}
+
+.groupHeader {
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--dept-border);
+}
+
+.groupTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.groupIcon {
+  color: var(--dept-navy-light);
+  font-size: 0.85em;
+}
+
+.groupDescription {
+  margin: 0.35rem 0 0;
+  color: var(--dept-muted);
+  font-size: 0.92rem;
+  max-width: 80ch;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.empty {
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  color: var(--dept-muted);
+  background: var(--dept-card);
+  border: 1px dashed var(--dept-border);
+  border-radius: var(--dept-radius);
+}

@@ -1,0 +1,39 @@
+{
+  "_comment": "Описания материалов этой папки. Всё необязательно.",
+  "items": {
+    "conferences-2026": {
+      "kind": "Календарь",
+      "title": "Конференции 2026 года",
+      "deadline": "ближайший дедлайн — 20 марта",
+      "status": "soon",
+      "statusLabel": "скоро дедлайн"
+    },
+    "call-for-papers": {
+      "kind": "Информационное письмо",
+      "title": "XXIV студенческая конференция «Математика и её приложения»",
+      "deadline": "тезисы до 20 марта 2026",
+      "status": "open",
+      "statusLabel": "приём открыт"
+    },
+    "conference-abstract-template": {
+      "kind": "Шаблон",
+      "title": "Тезисы для конференции",
+      "status": "open",
+      "statusLabel": "актуален"
+    }
+  },
+  "files": {
+    "conferences-2026.csv": {
+      "label": "Шесть конференций: даты, место, сроки подачи, оргвзносы",
+      "primary": true
+    },
+    "call-for-papers.md": {
+      "label": "Секции, требования к тезисам, регламент, порядок подачи",
+      "primary": true
+    },
+    "conference-abstract-template.tex": {
+      "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
+      "primary": true
+    }
+  }
+}

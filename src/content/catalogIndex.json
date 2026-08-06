@@ -1,1428 +1,1530 @@
 {
-  "activities/conferences": {
-    "intro": "Календарь конференций с дедлайнами подачи тезисов и шаблон для оформления.",
-    "items": [
-      {
-        "id": "conf-calendar",
-        "kind": "Календарь",
-        "title": "Конференции 2026 года",
-        "discipline": "Конференции",
-        "deadline": "ближайший дедлайн — 20 марта",
-        "status": "soon",
-        "statusLabel": "скоро дедлайн",
-        "files": [
-          {
-            "path": "activities/conferences/conferences-2026.csv",
-            "name": "conferences-2026.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 1223,
-            "label": "Шесть конференций: даты, место, сроки подачи, оргвзносы",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/conferences/conferences-2026.html"
-            },
-            "download": {
-              "path": "files/activities/conferences/conferences-2026.csv",
-              "name": "conferences-2026.csv",
-              "format": "CSV-таблица",
-              "size": 1223,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "conf-cfp",
-        "kind": "Информационное письмо",
-        "title": "XXIV студенческая конференция «Математика и её приложения»",
-        "discipline": "Конференции",
-        "deadline": "тезисы до 20 марта 2026",
-        "status": "open",
-        "statusLabel": "приём открыт",
-        "files": [
-          {
-            "path": "activities/conferences/call-for-papers.md",
-            "name": "call-for-papers.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 4021,
-            "label": "Секции, требования к тезисам, регламент, порядок подачи",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/conferences/call-for-papers.html"
-            },
-            "download": {
-              "path": "files/activities/conferences/call-for-papers.md",
-              "name": "call-for-papers.md",
-              "format": "Markdown",
-              "size": 4021,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "conf-abstract",
-        "kind": "Шаблон",
-        "title": "Тезисы для конференции",
-        "discipline": "Конференции",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "activities/conferences/conference-abstract-template.tex",
-            "name": "conference-abstract-template.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 3482,
-            "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/activities/conferences/conference-abstract-template.pdf",
-              "thumb": "previews/activities/conferences/conference-abstract-template.png"
-            },
-            "download": {
-              "path": "files/activities/conferences/conference-abstract-template.tex",
-              "name": "conference-abstract-template.tex",
-              "format": "LaTeX",
-              "size": 3482,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/activities/conferences/conference-abstract-template.png"
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Конференции"
-      ],
-      "kinds": [
-        "Календарь",
-        "Информационное письмо",
-        "Шаблон"
-      ],
-      "courses": []
+  "types": [
+    {
+      "id": "plans",
+      "title": "Планы",
+      "icon": "fa-solid fa-list-check",
+      "description": "Рабочая программа, распределение часов и формы контроля."
     },
-    "fileCount": 3
-  },
-  "activities/practice": {
-    "intro": "Документы, которые понадобятся до, во время и после практики.",
-    "items": [
-      {
-        "id": "practice-report",
-        "kind": "Шаблон",
-        "title": "Отчёт по практике",
-        "discipline": "Все виды практики",
-        "course": 2,
-        "deadline": "сдать в течение недели после окончания",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "activities/practice/practice-report-template.md",
-            "name": "practice-report-template.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 3425,
-            "label": "Шаблон отчёта с пояснениями к каждому разделу",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/practice/practice-report-template.html"
+    {
+      "id": "notes",
+      "title": "Конспекты",
+      "icon": "fa-solid fa-pen-nib",
+      "description": "Опорные конспекты лекций и материалы к ним."
+    },
+    {
+      "id": "library",
+      "title": "Материалы и литература",
+      "icon": "fa-solid fa-book-bookmark",
+      "description": "Учебники, задачники, справочники и полезные ссылки."
+    },
+    {
+      "id": "templates",
+      "title": "Шаблоны",
+      "icon": "fa-solid fa-file-code",
+      "description": "Заготовки работ и требования к оформлению."
+    },
+    {
+      "id": "tasks",
+      "title": "Задания",
+      "icon": "fa-solid fa-square-root-variable",
+      "description": "Условия типовых расчётов, варианты и материалы для самопроверки."
+    }
+  ],
+  "disciplines": [
+    {
+      "id": "calculus",
+      "title": "Математический анализ",
+      "short": "Матанализ",
+      "icon": "fa-solid fa-infinity",
+      "meta": "1 курс · 1–2 семестры · экзамен",
+      "description": "Пределы, дифференциальное и интегральное исчисление, ряды, функции нескольких переменных. Базовый курс, на который опираются почти все дисциплины кафедры.",
+      "groups": [
+        {
+          "type": "plans",
+          "title": "Планы",
+          "icon": "fa-solid fa-list-check",
+          "description": "Рабочая программа, распределение часов и формы контроля.",
+          "items": [
+            {
+              "id": "disciplines-calculus-plans-rpd-matematicheskiy-analiz",
+              "kind": "Рабочая программа",
+              "title": "Математический анализ",
+              "deadline": "утверждена на 2025/26 учебный год",
+              "status": "open",
+              "statusLabel": "действует",
+              "files": [
+                {
+                  "path": "disciplines/calculus/plans/rpd-matematicheskiy-analiz.md",
+                  "name": "rpd-matematicheskiy-analiz.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 4493,
+                  "label": "Цели, результаты обучения, содержание разделов, фонд оценочных средств",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/plans/rpd-matematicheskiy-analiz.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/plans/rpd-matematicheskiy-analiz.md",
+                    "name": "rpd-matematicheskiy-analiz.md",
+                    "format": "Markdown",
+                    "size": 4493,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 1
+        },
+        {
+          "type": "notes",
+          "title": "Конспекты",
+          "icon": "fa-solid fa-pen-nib",
+          "description": "Опорные конспекты лекций и материалы к ним.",
+          "items": [
+            {
+              "id": "disciplines-calculus-notes-lecture-04",
+              "kind": "Лекция",
+              "number": 4,
+              "title": "Формула Тейлора",
+              "deadline": "",
+              "status": "open",
+              "statusLabel": "опубликована",
+              "files": [
+                {
+                  "path": "disciplines/calculus/notes/lecture-04-taylor.md",
+                  "name": "lecture-04-taylor.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2585,
+                  "label": "Конспект: формы остаточного члена, опорные разложения",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/notes/lecture-04-taylor.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/notes/lecture-04-taylor.md",
+                    "name": "lecture-04-taylor.md",
+                    "format": "Markdown",
+                    "size": 2585,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
             },
-            "download": {
-              "path": "files/activities/practice/practice-report-template.md",
+            {
+              "id": "disciplines-calculus-notes-taylor-series",
+              "kind": "Ноутбук",
+              "title": "Численный эксперимент к лекции 4",
+              "deadline": "",
+              "status": "open",
+              "statusLabel": "опубликован",
+              "files": [
+                {
+                  "path": "disciplines/calculus/notes/taylor-series.ipynb",
+                  "name": "taylor-series.ipynb",
+                  "ext": "ipynb",
+                  "format": "Jupyter Notebook",
+                  "size": 4482,
+                  "label": "Проверка оценки остатка и графики частичных сумм",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/notes/taylor-series.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/notes/taylor-series.ipynb",
+                    "name": "taylor-series.ipynb",
+                    "format": "Jupyter Notebook",
+                    "size": 4482,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-calculus-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Пределы и непрерывность",
+              "course": 1,
+              "semester": 1,
+              "deadline": "сдать до конца 6-й недели",
+              "status": "done",
+              "statusLabel": "приём закрыт",
+              "files": [
+                {
+                  "path": "disciplines/calculus/tasks/tr-01-usloviya.tex",
+                  "name": "tr-01-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4464,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/calculus/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/calculus/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/calculus/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 193388,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/calculus/tasks/tr-01-varianty.csv",
+                  "name": "tr-01-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 429,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/tasks/tr-01-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/tasks/tr-01-varianty.csv",
+                    "name": "tr-01-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 429,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/tasks/tr-01-usloviya.png"
+            },
+            {
+              "id": "disciplines-calculus-tasks-tr-02",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "Производная и её приложения",
+              "course": 1,
+              "semester": 1,
+              "deadline": "сдать до конца 12-й недели",
+              "status": "open",
+              "statusLabel": "приём открыт",
+              "files": [
+                {
+                  "path": "disciplines/calculus/tasks/tr-02-usloviya.tex",
+                  "name": "tr-02-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4327,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/calculus/tasks/tr-02-usloviya.pdf",
+                    "thumb": "previews/disciplines/calculus/tasks/tr-02-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/calculus/tasks/tr-02-usloviya.pdf",
+                    "name": "tr-02-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 177671,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/calculus/tasks/tr-02-varianty.csv",
+                  "name": "tr-02-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 478,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/tasks/tr-02-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/tasks/tr-02-varianty.csv",
+                    "name": "tr-02-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 478,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/calculus/tasks/tr-02-samoproverka.ipynb",
+                  "name": "tr-02-samoproverka.ipynb",
+                  "ext": "ipynb",
+                  "format": "Jupyter Notebook",
+                  "size": 5186,
+                  "label": "Самопроверка выкладок в SymPy",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/tasks/tr-02-samoproverka.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/tasks/tr-02-samoproverka.ipynb",
+                    "name": "tr-02-samoproverka.ipynb",
+                    "format": "Jupyter Notebook",
+                    "size": 5186,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/tasks/tr-02-usloviya.png"
+            }
+          ],
+          "fileCount": 5
+        }
+      ],
+      "fileCount": 8
+    },
+    {
+      "id": "linear-algebra",
+      "title": "Линейная алгебра",
+      "short": "Линал",
+      "icon": "fa-solid fa-vector-square",
+      "meta": "1 курс · 1 семестр · экзамен",
+      "description": "Матрицы и определители, системы линейных уравнений, линейные пространства и операторы, квадратичные формы, аналитическая геометрия.",
+      "groups": [
+        {
+          "type": "notes",
+          "title": "Конспекты",
+          "icon": "fa-solid fa-pen-nib",
+          "description": "Опорные конспекты лекций и материалы к ним.",
+          "items": [
+            {
+              "id": "disciplines-linear-algebra-notes-lecture-07",
+              "kind": "Лекция",
+              "number": 7,
+              "title": "Собственные значения и собственные векторы",
+              "deadline": "",
+              "status": "open",
+              "statusLabel": "опубликована",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/notes/lecture-07-linear-algebra.md",
+                  "name": "lecture-07-linear-algebra.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 3633,
+                  "label": "Конспект: характеристическое уравнение, диагонализация, приложения",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/linear-algebra/notes/lecture-07-linear-algebra.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/linear-algebra/notes/lecture-07-linear-algebra.md",
+                    "name": "lecture-07-linear-algebra.md",
+                    "format": "Markdown",
+                    "size": 3633,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 1
+        },
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Матрицы, определители и системы линейных уравнений",
+              "course": 1,
+              "semester": 1,
+              "deadline": "сдать до конца 9-й недели",
+              "status": "open",
+              "statusLabel": "приём открыт",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/tasks/tr-01-usloviya.tex",
+                  "name": "tr-01-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4853,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/linear-algebra/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/linear-algebra/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/linear-algebra/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 186123,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/linear-algebra/tasks/tr-01-varianty.csv",
+                  "name": "tr-01-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 524,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/linear-algebra/tasks/tr-01-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/linear-algebra/tasks/tr-01-varianty.csv",
+                    "name": "tr-01-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 524,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/linear-algebra/tasks/tr-01-usloviya.png"
+            },
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-02",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "Линейные пространства и операторы",
+              "course": 1,
+              "semester": 1,
+              "deadline": "сдать до конца 15-й недели",
+              "status": "soon",
+              "statusLabel": "скоро дедлайн",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/tasks/tr-02-usloviya.tex",
+                  "name": "tr-02-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4612,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/linear-algebra/tasks/tr-02-usloviya.pdf",
+                    "thumb": "previews/disciplines/linear-algebra/tasks/tr-02-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/linear-algebra/tasks/tr-02-usloviya.pdf",
+                    "name": "tr-02-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 177250,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/linear-algebra/tasks/tr-02-varianty.csv",
+                  "name": "tr-02-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 441,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/linear-algebra/tasks/tr-02-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/linear-algebra/tasks/tr-02-varianty.csv",
+                    "name": "tr-02-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 441,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/linear-algebra/tasks/tr-02-usloviya.png"
+            }
+          ],
+          "fileCount": 4
+        }
+      ],
+      "fileCount": 5
+    },
+    {
+      "id": "discrete-math",
+      "title": "Дискретная математика",
+      "short": "Дискретка",
+      "icon": "fa-solid fa-circle-nodes",
+      "meta": "1 курс · 2 семестр · зачёт",
+      "description": "Множества и отношения, комбинаторика, теория графов, булевы функции. Основа для курсов программирования и алгоритмов.",
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-discrete-math-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Множества, отношения, графы",
+              "course": 1,
+              "semester": 2,
+              "deadline": "сдать до конца 10-й недели",
+              "status": "open",
+              "statusLabel": "приём открыт",
+              "files": [
+                {
+                  "path": "disciplines/discrete-math/tasks/tr-01-usloviya.tex",
+                  "name": "tr-01-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 5264,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 168635,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/discrete-math/tasks/tr-01-varianty.csv",
+                  "name": "tr-01-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 741,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/discrete-math/tasks/tr-01-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/discrete-math/tasks/tr-01-varianty.csv",
+                    "name": "tr-01-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 741,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.png"
+            }
+          ],
+          "fileCount": 2
+        }
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "teorver",
+      "title": "Теория вероятностей",
+      "short": "Теорвер",
+      "icon": "fa-solid fa-dice-five",
+      "meta": "2 курс · 4 семестр · экзамен",
+      "description": "Случайные события и величины, распределения, предельные теоремы, основы математической статистики и обработки данных.",
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-teorver-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Случайные события и вероятность",
+              "course": 2,
+              "semester": 4,
+              "deadline": "сдать до конца 9-й недели",
+              "status": "open",
+              "statusLabel": "приём открыт",
+              "files": [
+                {
+                  "path": "disciplines/teorver/tasks/tr-01-usloviya.tex",
+                  "name": "tr-01-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 5261,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/teorver/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/teorver/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/teorver/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 179631,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/teorver/tasks/tr-01-varianty.csv",
+                  "name": "tr-01-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 1504,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/teorver/tasks/tr-01-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/teorver/tasks/tr-01-varianty.csv",
+                    "name": "tr-01-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 1504,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/teorver/tasks/tr-01-usloviya.png"
+            }
+          ],
+          "fileCount": 2
+        }
+      ],
+      "fileCount": 2
+    },
+    {
+      "id": "common",
+      "title": "Общие материалы",
+      "short": "Общее",
+      "icon": "fa-solid fa-folder-open",
+      "meta": "для всех дисциплин",
+      "description": "То, что нужно независимо от предмета: учебный план, календарный график, шаблоны курсовых и отчётов, требования к оформлению, справочники и открытые ресурсы.",
+      "groups": [
+        {
+          "type": "plans",
+          "title": "Планы",
+          "icon": "fa-solid fa-list-check",
+          "description": "Рабочая программа, распределение часов и формы контроля.",
+          "items": [
+            {
+              "id": "disciplines-common-plans-kalendarnyj-grafik",
+              "kind": "Календарный график",
+              "title": "График учебного процесса 2025/26",
+              "deadline": "осенний и весенний семестры",
+              "status": "open",
+              "statusLabel": "действует",
+              "files": [
+                {
+                  "path": "disciplines/common/plans/kalendarnyj-grafik.md",
+                  "name": "kalendarnyj-grafik.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2070,
+                  "label": "Сроки выдачи и сдачи работ, контрольные, сессии, практика",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/plans/kalendarnyj-grafik.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/plans/kalendarnyj-grafik.md",
+                    "name": "kalendarnyj-grafik.md",
+                    "format": "Markdown",
+                    "size": 2070,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-common-plans-uchebnyj-plan",
+              "kind": "Учебный план",
+              "title": "Распределение дисциплин по семестрам",
+              "deadline": "прикладная математика и информатика, бакалавриат",
+              "status": "open",
+              "statusLabel": "действует",
+              "files": [
+                {
+                  "path": "disciplines/common/plans/uchebnyj-plan.csv",
+                  "name": "uchebnyj-plan.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 1209,
+                  "label": "Часы, зачётные единицы и формы контроля по 12 дисциплинам",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/plans/uchebnyj-plan.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/plans/uchebnyj-plan.csv",
+                    "name": "uchebnyj-plan.csv",
+                    "format": "CSV-таблица",
+                    "size": 1209,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
+        {
+          "type": "library",
+          "title": "Материалы и литература",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Учебники, задачники, справочники и полезные ссылки.",
+          "items": [
+            {
+              "id": "disciplines-common-library-otkrytye-resursy",
+              "kind": "Ресурсы",
+              "title": "Открытые библиотеки и онлайн-инструменты",
+              "deadline": "15 проверенных ресурсов",
+              "status": "open",
+              "statusLabel": "проверено",
+              "files": [
+                {
+                  "path": "disciplines/common/library/otkrytye-resursy.csv",
+                  "name": "otkrytye-resursy.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 2493,
+                  "label": "Справочники, свободные библиотеки, онлайн-калькуляторы и редакторы LaTeX",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/library/otkrytye-resursy.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/library/otkrytye-resursy.csv",
+                    "name": "otkrytye-resursy.csv",
+                    "format": "CSV-таблица",
+                    "size": 2493,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-common-library-spisok-literatury",
+              "kind": "Список литературы",
+              "title": "Учебники и задачники по дисциплинам",
+              "deadline": "основная и дополнительная литература по шести дисциплинам",
+              "status": "open",
+              "statusLabel": "актуален",
+              "files": [
+                {
+                  "path": "disciplines/common/library/spisok-literatury.md",
+                  "name": "spisok-literatury.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 5596,
+                  "label": "Списки по анализу, алгебре, ОДУ, теорверу, численным методам и дискретной математике",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/library/spisok-literatury.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/library/spisok-literatury.md",
+                    "name": "spisok-literatury.md",
+                    "format": "Markdown",
+                    "size": 5596,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-common-library-spravochnik-formul",
+              "kind": "Справочник",
+              "title": "Краткий справочник формул",
+              "deadline": "две колонки на одной странице — удобно печатать",
+              "status": "open",
+              "statusLabel": "актуален",
+              "files": [
+                {
+                  "path": "disciplines/common/library/spravochnik-formul.tex",
+                  "name": "spravochnik-formul.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4242,
+                  "label": "Производные, интегралы, разложения, матрицы, вероятности, численные методы",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/common/library/spravochnik-formul.pdf",
+                    "thumb": "previews/disciplines/common/library/spravochnik-formul.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/common/library/spravochnik-formul.pdf",
+                    "name": "spravochnik-formul.pdf",
+                    "format": "PDF",
+                    "size": 164258,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/common/library/spravochnik-formul.png"
+            }
+          ],
+          "fileCount": 3
+        },
+        {
+          "type": "templates",
+          "title": "Шаблоны",
+          "icon": "fa-solid fa-file-code",
+          "description": "Заготовки работ и требования к оформлению.",
+          "items": [
+            {
+              "id": "disciplines-common-templates-coursework",
+              "kind": "Шаблон",
+              "title": "Курсовая работа (LaTeX)",
+              "deadline": "",
+              "status": "open",
+              "statusLabel": "актуален",
+              "files": [
+                {
+                  "path": "disciplines/common/templates/coursework.tex",
+                  "name": "coursework.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4647,
+                  "label": "Исходник LaTeX: титульный лист, окружения теорем, оглавление, библиография",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/common/templates/coursework.pdf",
+                    "thumb": "previews/disciplines/common/templates/coursework.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/templates/coursework.tex",
+                    "name": "coursework.tex",
+                    "format": "LaTeX",
+                    "size": 4647,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/common/templates/coursework.png"
+            },
+            {
+              "id": "disciplines-common-templates-formatting-requirements",
+              "kind": "Требования",
+              "title": "Требования к оформлению работ",
+              "deadline": "",
+              "status": "open",
+              "statusLabel": "актуальны",
+              "files": [
+                {
+                  "path": "disciplines/common/templates/formatting-requirements.md",
+                  "name": "formatting-requirements.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 3738,
+                  "label": "Параметры страницы, формулы, рисунки, список литературы, чек-лист",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/templates/formatting-requirements.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/templates/formatting-requirements.md",
+                    "name": "formatting-requirements.md",
+                    "format": "Markdown",
+                    "size": 3738,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-common-templates-report-template",
+              "kind": "Шаблон",
+              "title": "Вычислительный отчёт (Jupyter)",
+              "deadline": "",
+              "status": "open",
+              "statusLabel": "актуален",
+              "files": [
+                {
+                  "path": "disciplines/common/templates/report-template.ipynb",
+                  "name": "report-template.ipynb",
+                  "ext": "ipynb",
+                  "format": "Jupyter Notebook",
+                  "size": 4606,
+                  "label": "Заготовка ноутбука с обязательной структурой разделов",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/templates/report-template.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/templates/report-template.ipynb",
+                    "name": "report-template.ipynb",
+                    "format": "Jupyter Notebook",
+                    "size": 4606,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 3
+        }
+      ],
+      "fileCount": 8
+    }
+  ],
+  "activities": [
+    {
+      "id": "practice",
+      "title": "Практика",
+      "icon": "fa-solid fa-briefcase",
+      "description": "Учебная, производственная и преддипломная практика: базы, сроки, отчётность.",
+      "menuHint": "Базы практики, шаблон отчёта и бланк дневника.",
+      "items": [
+        {
+          "id": "activities-practice-practice-report",
+          "kind": "Шаблон",
+          "title": "Отчёт по практике",
+          "deadline": "сдать в течение недели после окончания",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/practice/practice-report-template.md",
               "name": "practice-report-template.md",
+              "ext": "md",
               "format": "Markdown",
               "size": 3425,
-              "compiled": false
-            }
-          },
-          {
-            "path": "activities/practice/practice-diary.md",
-            "name": "practice-diary.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 2771,
-            "label": "Бланк дневника: ежедневные записи, инструктаж, отзыв",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/practice/practice-diary.html"
+              "label": "Шаблон отчёта с пояснениями к каждому разделу",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/practice/practice-report-template.html"
+              },
+              "download": {
+                "path": "files/activities/practice/practice-report-template.md",
+                "name": "practice-report-template.md",
+                "format": "Markdown",
+                "size": 3425,
+                "compiled": false
+              }
             },
-            "download": {
-              "path": "files/activities/practice/practice-diary.md",
+            {
+              "path": "activities/practice/practice-diary.md",
               "name": "practice-diary.md",
+              "ext": "md",
               "format": "Markdown",
               "size": 2771,
-              "compiled": false
+              "label": "Бланк дневника: ежедневные записи, инструктаж, отзыв",
+              "primary": false,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/practice/practice-diary.html"
+              },
+              "download": {
+                "path": "files/activities/practice/practice-diary.md",
+                "name": "practice-diary.md",
+                "format": "Markdown",
+                "size": 2771,
+                "compiled": false
+              }
             }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "practice-bases",
-        "kind": "Справочник",
-        "title": "Базы практики",
-        "discipline": "Все виды практики",
-        "deadline": "выбрать за месяц до начала",
-        "status": "soon",
-        "statusLabel": "идёт распределение",
-        "files": [
-          {
-            "path": "activities/practice/practice-bases.csv",
-            "name": "practice-bases.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 1918,
-            "label": "Организации, профиль, число мест и требования к подготовке",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/practice/practice-bases.html"
-            },
-            "download": {
-              "path": "files/activities/practice/practice-bases.csv",
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "activities-practice-practice-bases",
+          "kind": "Справочник",
+          "title": "Базы практики",
+          "deadline": "выбрать за месяц до начала",
+          "status": "soon",
+          "statusLabel": "идёт распределение",
+          "files": [
+            {
+              "path": "activities/practice/practice-bases.csv",
               "name": "practice-bases.csv",
+              "ext": "csv",
               "format": "CSV-таблица",
               "size": 1918,
-              "compiled": false
+              "label": "Организации, профиль, число мест и требования к подготовке",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/practice/practice-bases.html"
+              },
+              "download": {
+                "path": "files/activities/practice/practice-bases.csv",
+                "name": "practice-bases.csv",
+                "format": "CSV-таблица",
+                "size": 1918,
+                "compiled": false
+              }
             }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Все виды практики"
+          ],
+          "hasPreview": true,
+          "thumb": null
+        }
       ],
-      "kinds": [
-        "Шаблон",
-        "Справочник"
-      ],
-      "courses": [
-        2
-      ]
+      "fileCount": 3
     },
-    "fileCount": 3
-  },
-  "activities/reports": {
-    "intro": "Всё, что нужно для подготовки доклада: чек-лист, шаблон презентации и оформление графиков.",
-    "items": [
-      {
-        "id": "report-checklist",
-        "kind": "Чек-лист",
-        "title": "Подготовка доклада",
-        "discipline": "Доклады",
-        "deadline": "начать за две недели",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "activities/reports/report-checklist.md",
-            "name": "report-checklist.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 3876,
-            "label": "Сроки, структура выступления по слайдам, критерии оценивания",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/reports/report-checklist.html"
-            },
-            "download": {
-              "path": "files/activities/reports/report-checklist.md",
-              "name": "report-checklist.md",
-              "format": "Markdown",
-              "size": 3876,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "beamer",
-        "kind": "Шаблон",
-        "title": "Презентация в Beamer",
-        "discipline": "Доклады",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "activities/reports/beamer-presentation.tex",
-            "name": "beamer-presentation.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4460,
-            "label": "Готовая структура слайдов в фирменных цветах лаборатории",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/activities/reports/beamer-presentation.pdf",
-              "thumb": "previews/activities/reports/beamer-presentation.png"
-            },
-            "download": {
-              "path": "files/activities/reports/beamer-presentation.tex",
-              "name": "beamer-presentation.tex",
-              "format": "LaTeX",
-              "size": 4460,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/activities/reports/beamer-presentation.png"
-      },
-      {
-        "id": "plots",
-        "kind": "Материалы",
-        "title": "Графики для доклада",
-        "discipline": "Доклады",
-        "course": 3,
-        "status": "open",
-        "statusLabel": "опубликованы",
-        "files": [
-          {
-            "path": "activities/reports/plots-for-presentation.ipynb",
-            "name": "plots-for-presentation.ipynb",
-            "ext": "ipynb",
-            "format": "Jupyter Notebook",
-            "size": 6034,
-            "label": "Стиль, палитра, логарифмические шкалы, экспорт в вектор",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/reports/plots-for-presentation.html"
-            },
-            "download": {
-              "path": "files/activities/reports/plots-for-presentation.ipynb",
-              "name": "plots-for-presentation.ipynb",
-              "format": "Jupyter Notebook",
-              "size": 6034,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Доклады"
-      ],
-      "kinds": [
-        "Чек-лист",
-        "Шаблон",
-        "Материалы"
-      ],
-      "courses": [
-        3
-      ]
-    },
-    "fileCount": 3
-  },
-  "activities/seminars": {
-    "intro": "Расписание заседаний, шаблон тезисов и демонстрационные материалы докладов.",
-    "items": [
-      {
-        "id": "seminar-schedule",
-        "kind": "Расписание",
-        "title": "Заседания весеннего семестра",
-        "discipline": "Научный семинар",
-        "deadline": "среда, 16:30, ауд. 312",
-        "status": "open",
-        "statusLabel": "идёт запись",
-        "files": [
-          {
-            "path": "activities/seminars/seminar-schedule.csv",
-            "name": "seminar-schedule.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 1762,
-            "label": "Десять заседаний: даты, докладчики, темы, статус",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/seminars/seminar-schedule.html"
-            },
-            "download": {
-              "path": "files/activities/seminars/seminar-schedule.csv",
-              "name": "seminar-schedule.csv",
-              "format": "CSV-таблица",
-              "size": 1762,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "seminar-abstract",
-        "kind": "Шаблон",
-        "title": "Тезисы доклада на семинаре",
-        "discipline": "Научный семинар",
-        "deadline": "прислать за неделю до заседания",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "activities/seminars/abstract-template.tex",
-            "name": "abstract-template.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 2516,
-            "label": "Одностраничный шаблон LaTeX с окружением теорем",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/activities/seminars/abstract-template.pdf",
-              "thumb": "previews/activities/seminars/abstract-template.png"
-            },
-            "download": {
-              "path": "files/activities/seminars/abstract-template.tex",
-              "name": "abstract-template.tex",
-              "format": "LaTeX",
-              "size": 2516,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/activities/seminars/abstract-template.png"
-      },
-      {
-        "id": "seminar-demo",
-        "kind": "Материалы доклада",
-        "title": "Разностные схемы: демонстрация",
-        "discipline": "Вычислительная математика",
-        "course": 3,
-        "status": "open",
-        "statusLabel": "опубликованы",
-        "files": [
-          {
-            "path": "activities/seminars/finite-difference-demo.ipynb",
-            "name": "finite-difference-demo.ipynb",
-            "ext": "ipynb",
-            "format": "Jupyter Notebook",
-            "size": 5352,
-            "label": "Явная схема, условие устойчивости, наблюдаемый порядок точности",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/seminars/finite-difference-demo.html"
-            },
-            "download": {
-              "path": "files/activities/seminars/finite-difference-demo.ipynb",
-              "name": "finite-difference-demo.ipynb",
-              "format": "Jupyter Notebook",
-              "size": 5352,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Научный семинар",
-        "Вычислительная математика"
-      ],
-      "kinds": [
-        "Расписание",
-        "Шаблон",
-        "Материалы доклада"
-      ],
-      "courses": [
-        3
-      ]
-    },
-    "fileCount": 3
-  },
-  "activities/spring": {
-    "intro": "Студенческая научная конференция лаборатории. Здесь программа, шаблон тезисов и результаты прошлых лет.",
-    "items": [
-      {
-        "id": "spring-programma",
-        "kind": "Программа",
-        "title": "Конференция «Студенческая весна» 2026",
-        "discipline": "Студвесна",
-        "deadline": "15–16 апреля 2026, корпус А",
-        "status": "open",
-        "statusLabel": "приём заявок открыт",
-        "files": [
-          {
-            "path": "activities/spring/programma.md",
-            "name": "programma.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 4968,
-            "label": "Распорядок по дням, пять секций, регламент и порядок подачи заявки",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/spring/programma.html"
-            },
-            "download": {
-              "path": "files/activities/spring/programma.md",
-              "name": "programma.md",
-              "format": "Markdown",
-              "size": 4968,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "spring-tezisy",
-        "kind": "Шаблон",
-        "title": "Тезисы доклада",
-        "discipline": "Студвесна",
-        "deadline": "прислать до 20 марта 2026",
-        "status": "soon",
-        "statusLabel": "скоро дедлайн",
-        "files": [
-          {
-            "path": "activities/spring/tezisy-shablon.tex",
-            "name": "tezisy-shablon.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 3409,
-            "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/activities/spring/tezisy-shablon.pdf",
-              "thumb": "previews/activities/spring/tezisy-shablon.png"
-            },
-            "download": {
-              "path": "files/activities/spring/tezisy-shablon.tex",
-              "name": "tezisy-shablon.tex",
-              "format": "LaTeX",
-              "size": 3409,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/activities/spring/tezisy-shablon.png"
-      },
-      {
-        "id": "spring-itogi",
-        "kind": "Архив",
-        "title": "Результаты 2023–2025",
-        "discipline": "Студвесна",
-        "status": "done",
-        "statusLabel": "архив",
-        "files": [
-          {
-            "path": "activities/spring/itogi-proshlyh-let.csv",
-            "name": "itogi-proshlyh-let.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 2528,
-            "label": "Темы докладов, секции, курс авторов и занятые места",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/activities/spring/itogi-proshlyh-let.html"
-            },
-            "download": {
-              "path": "files/activities/spring/itogi-proshlyh-let.csv",
+    {
+      "id": "spring",
+      "title": "Студвесна",
+      "icon": "fa-solid fa-users-rectangle",
+      "description": "Студенческая научная конференция лаборатории: программа секций, шаблон тезисов, сроки подачи заявок.",
+      "menuHint": "Научная конференция: секции, тезисы, сроки.",
+      "items": [
+        {
+          "id": "activities-spring-itogi-proshlyh-let",
+          "kind": "Архив",
+          "title": "Результаты 2023–2025",
+          "deadline": "",
+          "status": "done",
+          "statusLabel": "архив",
+          "files": [
+            {
+              "path": "activities/spring/itogi-proshlyh-let.csv",
               "name": "itogi-proshlyh-let.csv",
+              "ext": "csv",
               "format": "CSV-таблица",
               "size": 2528,
-              "compiled": false
+              "label": "Темы докладов, секции, курс авторов и занятые места",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/spring/itogi-proshlyh-let.html"
+              },
+              "download": {
+                "path": "files/activities/spring/itogi-proshlyh-let.csv",
+                "name": "itogi-proshlyh-let.csv",
+                "format": "CSV-таблица",
+                "size": 2528,
+                "compiled": false
+              }
             }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Студвесна"
-      ],
-      "kinds": [
-        "Программа",
-        "Шаблон",
-        "Архив"
-      ],
-      "courses": []
-    },
-    "fileCount": 3
-  },
-  "disciplines/library": {
-    "intro": "Что читать по каждой дисциплине, где искать формулу и какими открытыми ресурсами можно пользоваться.",
-    "items": [
-      {
-        "id": "reading-list",
-        "kind": "Список литературы",
-        "title": "Учебники и задачники по дисциплинам",
-        "discipline": "Все дисциплины",
-        "deadline": "основная и дополнительная литература по шести дисциплинам",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "disciplines/library/spisok-literatury.md",
-            "name": "spisok-literatury.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 5596,
-            "label": "Списки по анализу, алгебре, ОДУ, теорверу, численным методам и дискретной математике",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/library/spisok-literatury.html"
-            },
-            "download": {
-              "path": "files/disciplines/library/spisok-literatury.md",
-              "name": "spisok-literatury.md",
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "activities-spring-programma",
+          "kind": "Программа",
+          "title": "Конференция «Студенческая весна» 2026",
+          "deadline": "15–16 апреля 2026, корпус А",
+          "status": "open",
+          "statusLabel": "приём заявок открыт",
+          "files": [
+            {
+              "path": "activities/spring/programma.md",
+              "name": "programma.md",
+              "ext": "md",
               "format": "Markdown",
-              "size": 5596,
-              "compiled": false
+              "size": 4968,
+              "label": "Распорядок по дням, пять секций, регламент и порядок подачи заявки",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/spring/programma.html"
+              },
+              "download": {
+                "path": "files/activities/spring/programma.md",
+                "name": "programma.md",
+                "format": "Markdown",
+                "size": 4968,
+                "compiled": false
+              }
             }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "formula-reference",
-        "kind": "Справочник",
-        "title": "Краткий справочник формул",
-        "discipline": "Все дисциплины",
-        "course": 1,
-        "deadline": "две колонки на одной странице — удобно печатать",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "disciplines/library/spravochnik-formul.tex",
-            "name": "spravochnik-formul.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4242,
-            "label": "Производные, интегралы, разложения, матрицы, вероятности, численные методы",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/library/spravochnik-formul.pdf",
-              "thumb": "previews/disciplines/library/spravochnik-formul.png"
-            },
-            "download": {
-              "path": "previews/disciplines/library/spravochnik-formul.pdf",
-              "name": "spravochnik-formul.pdf",
-              "format": "PDF",
-              "size": 164258,
-              "compiled": true
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/library/spravochnik-formul.png"
-      },
-      {
-        "id": "open-resources",
-        "kind": "Ресурсы",
-        "title": "Открытые библиотеки и онлайн-инструменты",
-        "discipline": "Все дисциплины",
-        "deadline": "15 проверенных ресурсов",
-        "status": "open",
-        "statusLabel": "проверено",
-        "files": [
-          {
-            "path": "disciplines/library/otkrytye-resursy.csv",
-            "name": "otkrytye-resursy.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 2493,
-            "label": "Справочники, свободные библиотеки, онлайн-калькуляторы и редакторы LaTeX",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/library/otkrytye-resursy.html"
-            },
-            "download": {
-              "path": "files/disciplines/library/otkrytye-resursy.csv",
-              "name": "otkrytye-resursy.csv",
-              "format": "CSV-таблица",
-              "size": 2493,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Все дисциплины"
-      ],
-      "kinds": [
-        "Список литературы",
-        "Справочник",
-        "Ресурсы"
-      ],
-      "courses": [
-        1
-      ]
-    },
-    "fileCount": 3
-  },
-  "disciplines/notes": {
-    "intro": "Опорные конспекты лекций. К некоторым темам приложены ноутбуки с численными экспериментами — их можно запустить в Google Colab.",
-    "items": [
-      {
-        "id": "lecture-04",
-        "kind": "Лекция",
-        "number": 4,
-        "title": "Формула Тейлора",
-        "discipline": "Математический анализ",
-        "course": 1,
-        "semester": 1,
-        "status": "open",
-        "statusLabel": "опубликована",
-        "files": [
-          {
-            "path": "disciplines/notes/lecture-04-taylor.md",
-            "name": "lecture-04-taylor.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 2585,
-            "label": "Конспект: формы остаточного члена, опорные разложения",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/notes/lecture-04-taylor.html"
-            },
-            "download": {
-              "path": "files/disciplines/notes/lecture-04-taylor.md",
-              "name": "lecture-04-taylor.md",
-              "format": "Markdown",
-              "size": 2585,
-              "compiled": false
-            }
-          },
-          {
-            "path": "disciplines/notes/taylor-series.ipynb",
-            "name": "taylor-series.ipynb",
-            "ext": "ipynb",
-            "format": "Jupyter Notebook",
-            "size": 4482,
-            "label": "Численная проверка оценки остатка и графики частичных сумм",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/notes/taylor-series.html"
-            },
-            "download": {
-              "path": "files/disciplines/notes/taylor-series.ipynb",
-              "name": "taylor-series.ipynb",
-              "format": "Jupyter Notebook",
-              "size": 4482,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "lecture-07",
-        "kind": "Лекция",
-        "number": 7,
-        "title": "Собственные значения и собственные векторы",
-        "discipline": "Линейная алгебра",
-        "course": 1,
-        "semester": 1,
-        "status": "open",
-        "statusLabel": "опубликована",
-        "files": [
-          {
-            "path": "disciplines/notes/lecture-07-linear-algebra.md",
-            "name": "lecture-07-linear-algebra.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 3633,
-            "label": "Конспект: характеристическое уравнение, диагонализация, приложения",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/notes/lecture-07-linear-algebra.html"
-            },
-            "download": {
-              "path": "files/disciplines/notes/lecture-07-linear-algebra.md",
-              "name": "lecture-07-linear-algebra.md",
-              "format": "Markdown",
-              "size": 3633,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Математический анализ",
-        "Линейная алгебра"
-      ],
-      "kinds": [
-        "Лекция"
-      ],
-      "courses": [
-        1
-      ]
-    },
-    "fileCount": 3
-  },
-  "disciplines/plans": {
-    "intro": "Рабочие программы, распределение часов и календарный график учебного процесса.",
-    "items": [
-      {
-        "id": "rpd-calculus",
-        "kind": "Рабочая программа",
-        "title": "Математический анализ",
-        "discipline": "Математический анализ",
-        "course": 1,
-        "semester": 1,
-        "deadline": "утверждена на 2025/26 учебный год",
-        "status": "open",
-        "statusLabel": "действует",
-        "files": [
-          {
-            "path": "disciplines/plans/rpd-matematicheskiy-analiz.md",
-            "name": "rpd-matematicheskiy-analiz.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 4493,
-            "label": "Цели, результаты обучения, содержание разделов, ФОС",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/plans/rpd-matematicheskiy-analiz.html"
-            },
-            "download": {
-              "path": "files/disciplines/plans/rpd-matematicheskiy-analiz.md",
-              "name": "rpd-matematicheskiy-analiz.md",
-              "format": "Markdown",
-              "size": 4493,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "curriculum",
-        "kind": "Учебный план",
-        "title": "Распределение дисциплин по семестрам",
-        "discipline": "Все дисциплины",
-        "deadline": "прикладная математика и информатика, бакалавриат",
-        "status": "open",
-        "statusLabel": "действует",
-        "files": [
-          {
-            "path": "disciplines/plans/uchebnyj-plan.csv",
-            "name": "uchebnyj-plan.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 1209,
-            "label": "Часы, зачётные единицы и формы контроля по 12 дисциплинам",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/plans/uchebnyj-plan.html"
-            },
-            "download": {
-              "path": "files/disciplines/plans/uchebnyj-plan.csv",
-              "name": "uchebnyj-plan.csv",
-              "format": "CSV-таблица",
-              "size": 1209,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "schedule",
-        "kind": "Календарный график",
-        "title": "График учебного процесса 2025/26",
-        "discipline": "Все дисциплины",
-        "deadline": "осенний и весенний семестры",
-        "status": "open",
-        "statusLabel": "действует",
-        "files": [
-          {
-            "path": "disciplines/plans/kalendarnyj-grafik.md",
-            "name": "kalendarnyj-grafik.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 2070,
-            "label": "Сроки выдачи и сдачи работ, контрольные, сессии, практика",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/plans/kalendarnyj-grafik.html"
-            },
-            "download": {
-              "path": "files/disciplines/plans/kalendarnyj-grafik.md",
-              "name": "kalendarnyj-grafik.md",
-              "format": "Markdown",
-              "size": 2070,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Математический анализ",
-        "Все дисциплины"
-      ],
-      "kinds": [
-        "Рабочая программа",
-        "Учебный план",
-        "Календарный график"
-      ],
-      "courses": [
-        1
-      ]
-    },
-    "fileCount": 3
-  },
-  "disciplines/tasks": {
-    "intro": "Выберите свою дисциплину и номер работы — условия, варианты и материалы для самопроверки скачиваются одним щелчком.",
-    "items": [
-      {
-        "id": "la-tr-01",
-        "kind": "Типовой расчёт",
-        "number": 1,
-        "title": "Матрицы, определители и системы линейных уравнений",
-        "discipline": "Линейная алгебра",
-        "course": 1,
-        "semester": 1,
-        "deadline": "сдать до конца 9-й недели",
-        "status": "open",
-        "statusLabel": "приём открыт",
-        "files": [
-          {
-            "path": "disciplines/tasks/linear-algebra/tr-01-usloviya.tex",
-            "name": "tr-01-usloviya.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4853,
-            "label": "Условия задач: шесть заданий, требования, критерии и сроки",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/tasks/linear-algebra/tr-01-usloviya.pdf",
-              "thumb": "previews/disciplines/tasks/linear-algebra/tr-01-usloviya.png"
-            },
-            "download": {
-              "path": "previews/disciplines/tasks/linear-algebra/tr-01-usloviya.pdf",
-              "name": "tr-01-usloviya.pdf",
-              "format": "PDF",
-              "size": 186123,
-              "compiled": true
-            }
-          },
-          {
-            "path": "disciplines/tasks/linear-algebra/tr-01-varianty.csv",
-            "name": "tr-01-varianty.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 524,
-            "label": "Данные 25 вариантов",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/linear-algebra/tr-01-varianty.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/linear-algebra/tr-01-varianty.csv",
-              "name": "tr-01-varianty.csv",
-              "format": "CSV-таблица",
-              "size": 524,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/tasks/linear-algebra/tr-01-usloviya.png"
-      },
-      {
-        "id": "la-tr-02",
-        "kind": "Типовой расчёт",
-        "number": 2,
-        "title": "Линейные пространства и операторы",
-        "discipline": "Линейная алгебра",
-        "course": 1,
-        "semester": 1,
-        "deadline": "сдать до конца 15-й недели",
-        "status": "soon",
-        "statusLabel": "скоро дедлайн",
-        "files": [
-          {
-            "path": "disciplines/tasks/linear-algebra/tr-02-usloviya.tex",
-            "name": "tr-02-usloviya.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4612,
-            "label": "Условия задач: шесть заданий, требования, критерии и сроки",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/tasks/linear-algebra/tr-02-usloviya.pdf",
-              "thumb": "previews/disciplines/tasks/linear-algebra/tr-02-usloviya.png"
-            },
-            "download": {
-              "path": "previews/disciplines/tasks/linear-algebra/tr-02-usloviya.pdf",
-              "name": "tr-02-usloviya.pdf",
-              "format": "PDF",
-              "size": 177250,
-              "compiled": true
-            }
-          },
-          {
-            "path": "disciplines/tasks/linear-algebra/tr-02-varianty.csv",
-            "name": "tr-02-varianty.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 441,
-            "label": "Данные 25 вариантов",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/linear-algebra/tr-02-varianty.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/linear-algebra/tr-02-varianty.csv",
-              "name": "tr-02-varianty.csv",
-              "format": "CSV-таблица",
-              "size": 441,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/tasks/linear-algebra/tr-02-usloviya.png"
-      },
-      {
-        "id": "ma-tr-01",
-        "kind": "Типовой расчёт",
-        "number": 1,
-        "title": "Пределы и непрерывность",
-        "discipline": "Математический анализ",
-        "course": 1,
-        "semester": 1,
-        "deadline": "сдать до конца 6-й недели",
-        "status": "done",
-        "statusLabel": "приём закрыт",
-        "files": [
-          {
-            "path": "disciplines/tasks/calculus/tr-01-usloviya.tex",
-            "name": "tr-01-usloviya.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4464,
-            "label": "Условия задач: шесть заданий, требования, критерии и сроки",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/tasks/calculus/tr-01-usloviya.pdf",
-              "thumb": "previews/disciplines/tasks/calculus/tr-01-usloviya.png"
-            },
-            "download": {
-              "path": "previews/disciplines/tasks/calculus/tr-01-usloviya.pdf",
-              "name": "tr-01-usloviya.pdf",
-              "format": "PDF",
-              "size": 193388,
-              "compiled": true
-            }
-          },
-          {
-            "path": "disciplines/tasks/calculus/tr-01-varianty.csv",
-            "name": "tr-01-varianty.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 429,
-            "label": "Данные 25 вариантов",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/calculus/tr-01-varianty.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/calculus/tr-01-varianty.csv",
-              "name": "tr-01-varianty.csv",
-              "format": "CSV-таблица",
-              "size": 429,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/tasks/calculus/tr-01-usloviya.png"
-      },
-      {
-        "id": "ma-tr-02",
-        "kind": "Типовой расчёт",
-        "number": 2,
-        "title": "Производная и её приложения",
-        "discipline": "Математический анализ",
-        "course": 1,
-        "semester": 1,
-        "deadline": "сдать до конца 12-й недели",
-        "status": "open",
-        "statusLabel": "приём открыт",
-        "files": [
-          {
-            "path": "disciplines/tasks/calculus/tr-02-usloviya.tex",
-            "name": "tr-02-usloviya.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4327,
-            "label": "Условия задач: шесть заданий, требования, критерии и сроки",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/tasks/calculus/tr-02-usloviya.pdf",
-              "thumb": "previews/disciplines/tasks/calculus/tr-02-usloviya.png"
-            },
-            "download": {
-              "path": "previews/disciplines/tasks/calculus/tr-02-usloviya.pdf",
-              "name": "tr-02-usloviya.pdf",
-              "format": "PDF",
-              "size": 177671,
-              "compiled": true
-            }
-          },
-          {
-            "path": "disciplines/tasks/calculus/tr-02-varianty.csv",
-            "name": "tr-02-varianty.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 478,
-            "label": "Данные 25 вариантов",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/calculus/tr-02-varianty.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/calculus/tr-02-varianty.csv",
-              "name": "tr-02-varianty.csv",
-              "format": "CSV-таблица",
-              "size": 478,
-              "compiled": false
-            }
-          },
-          {
-            "path": "disciplines/tasks/calculus/tr-02-samoproverka.ipynb",
-            "name": "tr-02-samoproverka.ipynb",
-            "ext": "ipynb",
-            "format": "Jupyter Notebook",
-            "size": 5186,
-            "label": "Самопроверка в SymPy",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/calculus/tr-02-samoproverka.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/calculus/tr-02-samoproverka.ipynb",
-              "name": "tr-02-samoproverka.ipynb",
-              "format": "Jupyter Notebook",
-              "size": 5186,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/tasks/calculus/tr-02-usloviya.png"
-      },
-      {
-        "id": "dm-tr-01",
-        "kind": "Типовой расчёт",
-        "number": 1,
-        "title": "Множества, отношения, графы",
-        "discipline": "Дискретная математика",
-        "course": 1,
-        "semester": 2,
-        "deadline": "сдать до конца 10-й недели",
-        "status": "open",
-        "statusLabel": "приём открыт",
-        "files": [
-          {
-            "path": "disciplines/tasks/discrete-math/tr-01-usloviya.tex",
-            "name": "tr-01-usloviya.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 5264,
-            "label": "Условия задач: шесть заданий, требования, критерии и сроки",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/tasks/discrete-math/tr-01-usloviya.pdf",
-              "thumb": "previews/disciplines/tasks/discrete-math/tr-01-usloviya.png"
-            },
-            "download": {
-              "path": "previews/disciplines/tasks/discrete-math/tr-01-usloviya.pdf",
-              "name": "tr-01-usloviya.pdf",
-              "format": "PDF",
-              "size": 168635,
-              "compiled": true
-            }
-          },
-          {
-            "path": "disciplines/tasks/discrete-math/tr-01-varianty.csv",
-            "name": "tr-01-varianty.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 741,
-            "label": "Данные 25 вариантов",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/discrete-math/tr-01-varianty.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/discrete-math/tr-01-varianty.csv",
-              "name": "tr-01-varianty.csv",
-              "format": "CSV-таблица",
-              "size": 741,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/tasks/discrete-math/tr-01-usloviya.png"
-      },
-      {
-        "id": "auto-disciplines-tasks-teorver-tr-01",
-        "kind": "Типовой расчёт",
-        "number": 1,
-        "title": "Случайные события и вероятность",
-        "discipline": "Теория вероятностей",
-        "course": 2,
-        "semester": 4,
-        "deadline": "сдать до конца 9-й недели",
-        "status": "open",
-        "statusLabel": "приём открыт",
-        "files": [
-          {
-            "path": "disciplines/tasks/teorver/tr-01-usloviya.tex",
-            "name": "tr-01-usloviya.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 5261,
-            "label": "Условия задач",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/tasks/teorver/tr-01-usloviya.pdf",
-              "thumb": "previews/disciplines/tasks/teorver/tr-01-usloviya.png"
-            },
-            "download": {
-              "path": "previews/disciplines/tasks/teorver/tr-01-usloviya.pdf",
-              "name": "tr-01-usloviya.pdf",
-              "format": "PDF",
-              "size": 179631,
-              "compiled": true
-            }
-          },
-          {
-            "path": "disciplines/tasks/teorver/tr-01-varianty.csv",
-            "name": "tr-01-varianty.csv",
-            "ext": "csv",
-            "format": "CSV-таблица",
-            "size": 1504,
-            "label": "Данные вариантов",
-            "primary": false,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/tasks/teorver/tr-01-varianty.html"
-            },
-            "download": {
-              "path": "files/disciplines/tasks/teorver/tr-01-varianty.csv",
-              "name": "tr-01-varianty.csv",
-              "format": "CSV-таблица",
-              "size": 1504,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/tasks/teorver/tr-01-usloviya.png"
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Линейная алгебра",
-        "Математический анализ",
-        "Дискретная математика",
-        "Теория вероятностей"
-      ],
-      "kinds": [
-        "Типовой расчёт"
-      ],
-      "courses": [
-        1,
-        2
-      ]
-    },
-    "fileCount": 13
-  },
-  "disciplines/templates": {
-    "intro": "Готовые заготовки для работ. У шаблонов LaTeX доступен предпросмотр — можно увидеть, как выглядит скомпилированный документ, не устанавливая TeX.",
-    "items": [
-      {
-        "id": "coursework",
-        "kind": "Шаблон",
-        "title": "Курсовая работа (LaTeX)",
-        "discipline": "Все дисциплины",
-        "course": 3,
-        "deadline": "актуальная редакция",
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "disciplines/templates/coursework.tex",
-            "name": "coursework.tex",
-            "ext": "tex",
-            "format": "LaTeX",
-            "size": 4647,
-            "label": "Исходник LaTeX с титульным листом и окружениями теорем",
-            "primary": true,
-            "preview": {
-              "type": "pdf",
-              "path": "previews/disciplines/templates/coursework.pdf",
-              "thumb": "previews/disciplines/templates/coursework.png"
-            },
-            "download": {
-              "path": "files/disciplines/templates/coursework.tex",
-              "name": "coursework.tex",
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "activities-spring-tezisy-shablon",
+          "kind": "Шаблон",
+          "title": "Тезисы доклада",
+          "deadline": "прислать до 20 марта 2026",
+          "status": "soon",
+          "statusLabel": "скоро дедлайн",
+          "files": [
+            {
+              "path": "activities/spring/tezisy-shablon.tex",
+              "name": "tezisy-shablon.tex",
+              "ext": "tex",
               "format": "LaTeX",
-              "size": 4647,
-              "compiled": false
+              "size": 3409,
+              "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "previews/activities/spring/tezisy-shablon.pdf",
+                "thumb": "previews/activities/spring/tezisy-shablon.png"
+              },
+              "download": {
+                "path": "files/activities/spring/tezisy-shablon.tex",
+                "name": "tezisy-shablon.tex",
+                "format": "LaTeX",
+                "size": 3409,
+                "compiled": false
+              }
             }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": "previews/disciplines/templates/coursework.png"
-      },
-      {
-        "id": "report-notebook",
-        "kind": "Шаблон",
-        "title": "Вычислительный отчёт (Jupyter)",
-        "discipline": "Численные методы",
-        "course": 3,
-        "status": "open",
-        "statusLabel": "актуален",
-        "files": [
-          {
-            "path": "disciplines/templates/report-template.ipynb",
-            "name": "report-template.ipynb",
-            "ext": "ipynb",
-            "format": "Jupyter Notebook",
-            "size": 4606,
-            "label": "Заготовка ноутбука с обязательной структурой разделов",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/templates/report-template.html"
-            },
-            "download": {
-              "path": "files/disciplines/templates/report-template.ipynb",
-              "name": "report-template.ipynb",
-              "format": "Jupyter Notebook",
-              "size": 4606,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      },
-      {
-        "id": "formatting",
-        "kind": "Требования",
-        "title": "Требования к оформлению работ",
-        "discipline": "Все дисциплины",
-        "status": "open",
-        "statusLabel": "актуальны",
-        "files": [
-          {
-            "path": "disciplines/templates/formatting-requirements.md",
-            "name": "formatting-requirements.md",
-            "ext": "md",
-            "format": "Markdown",
-            "size": 3738,
-            "label": "Параметры страницы, формулы, рисунки, список литературы, чек-лист",
-            "primary": true,
-            "preview": {
-              "type": "html",
-              "path": "previews/disciplines/templates/formatting-requirements.html"
-            },
-            "download": {
-              "path": "files/disciplines/templates/formatting-requirements.md",
-              "name": "formatting-requirements.md",
-              "format": "Markdown",
-              "size": 3738,
-              "compiled": false
-            }
-          }
-        ],
-        "hasPreview": true,
-        "thumb": null
-      }
-    ],
-    "filters": {
-      "disciplines": [
-        "Все дисциплины",
-        "Численные методы"
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/spring/tezisy-shablon.png"
+        }
       ],
-      "kinds": [
-        "Шаблон",
-        "Требования"
-      ],
-      "courses": [
-        3
-      ]
+      "fileCount": 3
     },
-    "fileCount": 3
+    {
+      "id": "seminars",
+      "title": "Семинары",
+      "icon": "fa-solid fa-chalkboard-user",
+      "description": "Научный семинар лаборатории. Заседания проходят по средам в 16:30 в аудитории 312. Участие свободное — приходите послушать или выступить.",
+      "menuHint": "Расписание заседаний и аннотации докладов.",
+      "items": [
+        {
+          "id": "activities-seminars-abstract-template",
+          "kind": "Шаблон",
+          "title": "Тезисы доклада на семинаре",
+          "deadline": "прислать за неделю до заседания",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/seminars/abstract-template.tex",
+              "name": "abstract-template.tex",
+              "ext": "tex",
+              "format": "LaTeX",
+              "size": 2516,
+              "label": "Одностраничный шаблон LaTeX с окружением теорем",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "previews/activities/seminars/abstract-template.pdf",
+                "thumb": "previews/activities/seminars/abstract-template.png"
+              },
+              "download": {
+                "path": "files/activities/seminars/abstract-template.tex",
+                "name": "abstract-template.tex",
+                "format": "LaTeX",
+                "size": 2516,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/seminars/abstract-template.png"
+        },
+        {
+          "id": "activities-seminars-annotacii-dokladov",
+          "kind": "Аннотации",
+          "title": "Аннотации докладов семестра",
+          "deadline": "осенний семестр 2026/27",
+          "status": "open",
+          "statusLabel": "актуальны",
+          "files": [
+            {
+              "path": "activities/seminars/annotacii-dokladov.tex",
+              "name": "annotacii-dokladov.tex",
+              "ext": "tex",
+              "format": "LaTeX",
+              "size": 6913,
+              "label": "О чём будет каждое заседание: тема, что разбираем, что нужно знать заранее",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "previews/activities/seminars/annotacii-dokladov.pdf",
+                "thumb": "previews/activities/seminars/annotacii-dokladov.png"
+              },
+              "download": {
+                "path": "previews/activities/seminars/annotacii-dokladov.pdf",
+                "name": "annotacii-dokladov.pdf",
+                "format": "PDF",
+                "size": 129710,
+                "compiled": true
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/seminars/annotacii-dokladov.png"
+        },
+        {
+          "id": "activities-seminars-finite-difference-demo",
+          "kind": "Материалы доклада",
+          "title": "Разностные схемы: демонстрация",
+          "deadline": "",
+          "status": "open",
+          "statusLabel": "опубликованы",
+          "files": [
+            {
+              "path": "activities/seminars/finite-difference-demo.ipynb",
+              "name": "finite-difference-demo.ipynb",
+              "ext": "ipynb",
+              "format": "Jupyter Notebook",
+              "size": 5352,
+              "label": "Явная схема, условие устойчивости, наблюдаемый порядок точности",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/seminars/finite-difference-demo.html"
+              },
+              "download": {
+                "path": "files/activities/seminars/finite-difference-demo.ipynb",
+                "name": "finite-difference-demo.ipynb",
+                "format": "Jupyter Notebook",
+                "size": 5352,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        }
+      ],
+      "fileCount": 3
+    },
+    {
+      "id": "reports",
+      "title": "Доклады",
+      "icon": "fa-solid fa-microphone-lines",
+      "description": "Как подготовить студенческий доклад: структура выступления, оформление слайдов, критерии оценивания.",
+      "menuHint": "Чек-лист, шаблон презентации, оформление графиков.",
+      "items": [
+        {
+          "id": "activities-reports-beamer-presentation",
+          "kind": "Шаблон",
+          "title": "Презентация в Beamer",
+          "deadline": "",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/reports/beamer-presentation.tex",
+              "name": "beamer-presentation.tex",
+              "ext": "tex",
+              "format": "LaTeX",
+              "size": 4460,
+              "label": "Готовая структура слайдов в фирменных цветах лаборатории",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "previews/activities/reports/beamer-presentation.pdf",
+                "thumb": "previews/activities/reports/beamer-presentation.png"
+              },
+              "download": {
+                "path": "files/activities/reports/beamer-presentation.tex",
+                "name": "beamer-presentation.tex",
+                "format": "LaTeX",
+                "size": 4460,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/reports/beamer-presentation.png"
+        },
+        {
+          "id": "activities-reports-plots-for-presentation",
+          "kind": "Материалы",
+          "title": "Графики для доклада",
+          "deadline": "",
+          "status": "open",
+          "statusLabel": "опубликованы",
+          "files": [
+            {
+              "path": "activities/reports/plots-for-presentation.ipynb",
+              "name": "plots-for-presentation.ipynb",
+              "ext": "ipynb",
+              "format": "Jupyter Notebook",
+              "size": 6034,
+              "label": "Стиль, палитра, логарифмические шкалы, экспорт в вектор",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/reports/plots-for-presentation.html"
+              },
+              "download": {
+                "path": "files/activities/reports/plots-for-presentation.ipynb",
+                "name": "plots-for-presentation.ipynb",
+                "format": "Jupyter Notebook",
+                "size": 6034,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "activities-reports-report-checklist",
+          "kind": "Чек-лист",
+          "title": "Подготовка доклада",
+          "deadline": "начать за две недели",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/reports/report-checklist.md",
+              "name": "report-checklist.md",
+              "ext": "md",
+              "format": "Markdown",
+              "size": 3876,
+              "label": "Сроки, структура выступления по слайдам, критерии оценивания",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/reports/report-checklist.html"
+              },
+              "download": {
+                "path": "files/activities/reports/report-checklist.md",
+                "name": "report-checklist.md",
+                "format": "Markdown",
+                "size": 3876,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        }
+      ],
+      "fileCount": 3
+    },
+    {
+      "id": "conferences",
+      "title": "Конференции",
+      "icon": "fa-solid fa-globe",
+      "description": "Внешние конференции, куда лаборатория направляет участников: даты, дедлайны подачи тезисов, требования оргкомитетов.",
+      "menuHint": "Календарь конференций и шаблон тезисов.",
+      "items": [
+        {
+          "id": "activities-conferences-call-for-papers",
+          "kind": "Информационное письмо",
+          "title": "XXIV студенческая конференция «Математика и её приложения»",
+          "deadline": "тезисы до 20 марта 2026",
+          "status": "open",
+          "statusLabel": "приём открыт",
+          "files": [
+            {
+              "path": "activities/conferences/call-for-papers.md",
+              "name": "call-for-papers.md",
+              "ext": "md",
+              "format": "Markdown",
+              "size": 4021,
+              "label": "Секции, требования к тезисам, регламент, порядок подачи",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/conferences/call-for-papers.html"
+              },
+              "download": {
+                "path": "files/activities/conferences/call-for-papers.md",
+                "name": "call-for-papers.md",
+                "format": "Markdown",
+                "size": 4021,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "activities-conferences-conference-abstract-template",
+          "kind": "Шаблон",
+          "title": "Тезисы для конференции",
+          "deadline": "",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/conferences/conference-abstract-template.tex",
+              "name": "conference-abstract-template.tex",
+              "ext": "tex",
+              "format": "LaTeX",
+              "size": 3482,
+              "label": "Шаблон LaTeX на 1–2 страницы по требованиям оргкомитета",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "previews/activities/conferences/conference-abstract-template.pdf",
+                "thumb": "previews/activities/conferences/conference-abstract-template.png"
+              },
+              "download": {
+                "path": "files/activities/conferences/conference-abstract-template.tex",
+                "name": "conference-abstract-template.tex",
+                "format": "LaTeX",
+                "size": 3482,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/conferences/conference-abstract-template.png"
+        },
+        {
+          "id": "activities-conferences-conferences-2026",
+          "kind": "Календарь",
+          "title": "Конференции 2026 года",
+          "deadline": "ближайший дедлайн — 20 марта",
+          "status": "soon",
+          "statusLabel": "скоро дедлайн",
+          "files": [
+            {
+              "path": "activities/conferences/conferences-2026.csv",
+              "name": "conferences-2026.csv",
+              "ext": "csv",
+              "format": "CSV-таблица",
+              "size": 1223,
+              "label": "Шесть конференций: даты, место, сроки подачи, оргвзносы",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/conferences/conferences-2026.html"
+              },
+              "download": {
+                "path": "files/activities/conferences/conferences-2026.csv",
+                "name": "conferences-2026.csv",
+                "format": "CSV-таблица",
+                "size": 1223,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        }
+      ],
+      "fileCount": 3
+    }
+  ],
+  "about": [
+    {
+      "id": "history",
+      "title": "История кафедры",
+      "icon": "fa-solid fa-landmark",
+      "description": "Кафедра «Высшая математика» ведёт свою историю с 1868 года. Здесь собраны опубликованные статьи о её преподавателях и традициях.",
+      "menuHint": "Статьи о преподавателях и традициях кафедры.",
+      "items": [
+        {
+          "id": "about-history-metodicheskiy-seminar-2018",
+          "kind": "Статья",
+          "title": "Методический семинар на кафедре «Высшая математика»",
+          "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
+          "status": "open",
+          "statusLabel": "опубликована",
+          "files": [
+            {
+              "path": "about/history/metodicheskiy-seminar-2018.pdf",
+              "name": "metodicheskiy-seminar-2018.pdf",
+              "ext": "pdf",
+              "format": "PDF",
+              "size": 876097,
+              "label": "Работа семинара в 1960–1980-е годы: темы докладов, участники, вклад в методику",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "files/about/history/metodicheskiy-seminar-2018.pdf"
+              },
+              "download": {
+                "path": "files/about/history/metodicheskiy-seminar-2018.pdf",
+                "name": "metodicheskiy-seminar-2018.pdf",
+                "format": "PDF",
+                "size": 876097,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "about-history-prepodavateli-frontoviki-2018",
+          "kind": "Статья",
+          "title": "Преподаватели кафедры на фронтах Великой Отечественной войны",
+          "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
+          "status": "open",
+          "statusLabel": "опубликована",
+          "files": [
+            {
+              "path": "about/history/prepodavateli-frontoviki-2018.pdf",
+              "name": "prepodavateli-frontoviki-2018.pdf",
+              "ext": "pdf",
+              "format": "PDF",
+              "size": 975143,
+              "label": "Фронтовые биографии преподавателей кафедры и их научный путь",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "files/about/history/prepodavateli-frontoviki-2018.pdf"
+              },
+              "download": {
+                "path": "files/about/history/prepodavateli-frontoviki-2018.pdf",
+                "name": "prepodavateli-frontoviki-2018.pdf",
+                "format": "PDF",
+                "size": 975143,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        }
+      ],
+      "fileCount": 2
+    }
+  ],
+  "totals": {
+    "files": 42,
+    "items": 34
   }
 }

@@ -1,20 +1,17 @@
 /**
  * Сборка каталога материалов для сайта.
  *
- * На входе:
- *   catalog/*.json      — описания работ (необязательные, для точных формулировок)
- *   catalog/disciplines.json — как называть дисциплину по имени папки
- *   public/files/**     — сами файлы
- *   public/previews/**  — предпросмотр, созданный scripts/generate-previews.mjs
+ * Структура папок повторяет структуру сайта:
  *
- * На выходе:
- *   src/content/catalogIndex.json — готовые данные для интерфейса.
+ *   public/files/disciplines/<дисциплина>/<тип>/файлы   → страница дисциплины
+ *   public/files/activities/<раздел>/файлы              → раздел «Активности»
+ *   public/files/about/<раздел>/файлы                   → раздел «О лаборатории»
  *
- * Файлы, не описанные вручную, распознаются автоматически по именам папок
- * и файлов, поэтому достаточно загрузить папку в репозиторий — работа появится
- * на сайте сама. Уточнить название и срок сдачи можно необязательным файлом
- * _meta.json, положенным в ту же папку.
+ * Названия дисциплин, порядок блоков и описания задаются в catalog/site.json.
+ * Описания конкретных работ — в необязательном _meta.json рядом с файлами.
+ * Всё, что не описано, распознаётся по именам файлов.
  *
+ * Результат: src/content/catalogIndex.json
  * Запуск: npm run catalog
  */
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
@@ -22,15 +19,15 @@ import { basename, dirname, extname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CATALOG_DIR = join(ROOT, 'catalog');
+const SITE_FILE = join(ROOT, 'catalog', 'site.json');
 const FILES_DIR = join(ROOT, 'public', 'files');
 const PREVIEWS_DIR = join(ROOT, 'public', 'previews');
 const OUT_FILE = join(ROOT, 'src', 'content', 'catalogIndex.json');
+const SEMINARS_SRC = join(ROOT, 'catalog', 'seminars.json');
+const SEMINARS_OUT = join(ROOT, 'src', 'content', 'seminars.json');
 
-/** Служебный файл с уточнениями, сам в списки не попадает. */
 const META_FILE_NAME = '_meta.json';
 
-/** Человекочитаемые названия форматов. */
 const FORMAT_BY_EXT = {
   '.ipynb': 'Jupyter Notebook',
   '.md': 'Markdown',
@@ -44,10 +41,7 @@ const FORMAT_BY_EXT = {
   '.zip': 'Архив',
 };
 
-/**
- * Тип работы по началу имени файла: «tr-01-usloviya.tex» → «Типовой расчёт № 1».
- * Порядок влияет на сортировку работ внутри дисциплины.
- */
+/** Тип работы по началу имени файла: «tr-01-usloviya.tex» → «Типовой расчёт № 1». */
 const KIND_BY_CODE = {
   lecture: 'Лекция',
   tr: 'Типовой расчёт',
@@ -60,10 +54,7 @@ const KIND_BY_CODE = {
 };
 const KIND_ORDER = Object.keys(KIND_BY_CODE);
 
-/**
- * Назначение файла по концу имени: «tr-01-usloviya.tex» → «Условия задач».
- * primary — файл, который скачивают в первую очередь; он выделен в карточке.
- */
+/** Назначение файла по концу имени: «tr-01-usloviya.tex» → «Условия задач». */
 const ROLE_BY_SUFFIX = {
   usloviya: { label: 'Условия задач', primary: true, order: 0 },
   zadanie: { label: 'Задание', primary: true, order: 0 },
@@ -77,6 +68,9 @@ const ROLE_BY_SUFFIX = {
   konspekt: { label: 'Конспект', primary: true, order: 0 },
   slides: { label: 'Слайды', order: 1 },
 };
+
+/** Файлы LaTeX, которые студент скачивает готовым PDF (а не исходником). */
+const PDF_BY_NAME = /(usloviya|zadanie|bilety|zadachi)/i;
 
 let problems = 0;
 
@@ -92,28 +86,28 @@ function readJson(path, fallback = null) {
   }
 }
 
-function walk(dir) {
+/** Файлы каталога без служебных и скрытых. */
+function listFiles(dir) {
   if (!existsSync(dir)) return [];
-  const result = [];
-  for (const name of readdirSync(dir).sort()) {
-    if (name.startsWith('.')) continue;
-    const full = join(dir, name);
-    if (statSync(full).isDirectory()) result.push(...walk(full));
-    else if (name !== META_FILE_NAME) result.push(full);
-  }
-  return result;
+  return readdirSync(dir)
+    .filter((name) => !name.startsWith('.') && name !== META_FILE_NAME)
+    .filter((name) => statSync(join(dir, name)).isFile())
+    .sort();
 }
 
-/** «numerical-methods» → «Numerical methods» — запасной вариант для имён без словаря. */
-function prettify(folderName) {
-  const text = folderName.replace(/[-_]+/g, ' ').trim();
+function listDirs(dir) {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((name) => !name.startsWith('.'))
+    .filter((name) => statSync(join(dir, name)).isDirectory())
+    .sort();
+}
+
+function prettify(name) {
+  const text = name.replace(/[-_]+/g, ' ').trim();
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-/**
- * Разбор имени файла по соглашению.
- * «tr-01-usloviya.tex» → работа «tr-01», тип «tr», номер 1, назначение «usloviya».
- */
 function parseFileName(fileName) {
   const base = fileName.slice(0, fileName.length - extname(fileName).length);
   const match = base.match(/^([a-zA-Zа-яёА-ЯЁ]+)[-_](\d+)(?:[-_](.+))?$/);
@@ -129,12 +123,9 @@ function parseFileName(fileName) {
       };
     }
   }
-
-  // Имя не по соглашению — файл становится самостоятельным материалом
   return { groupKey: base, code: null, number: null, suffix: '' };
 }
 
-/** Назначение файла: подпись и признак основного. */
 function describeRole(suffix, fileName) {
   for (const [key, role] of Object.entries(ROLE_BY_SUFFIX)) {
     if (suffix.includes(key)) return role;
@@ -142,7 +133,7 @@ function describeRole(suffix, fileName) {
   return { label: prettify(basename(fileName, extname(fileName))), order: 9 };
 }
 
-/** Ищет предпросмотр для файла: PDF (для .tex), HTML (для .md/.ipynb/.csv) или сам PDF. */
+/** Предпросмотр: PDF (для .tex), HTML (для .md/.ipynb/.csv) либо сам PDF. */
 function findPreview(relPath) {
   const withoutExt = relPath.slice(0, -extname(relPath).length);
 
@@ -164,25 +155,9 @@ function findPreview(relPath) {
   return null;
 }
 
-/**
- * Имена файлов LaTeX, которые студент скачивает готовым PDF.
- *
- * Условия задач читают, а не редактируют, поэтому им нужен PDF.
- * Шаблонам наоборот: из PDF курсовую не сделаешь — там скачивается исходник.
- * Правило можно переопределить в catalog/*.json полем "download": "pdf" | "source".
- */
-const PDF_BY_NAME = /(usloviya|zadanie|bilety|zadachi)/i;
-
-/**
- * Что именно скачивает студент.
- *
- * Для условий типовых расчётов это скомпилированный PDF: он открывается
- * в любом браузере и на телефоне. Сам .tex остаётся доступен отдельной
- * ссылкой — он нужен преподавателям и тем, кто хочет переиспользовать вёрстку.
- */
+/** Что скачивается по кнопке: готовый PDF для условий, исходник для шаблонов. */
 function describeDownload(relPath, ext, preview, sourceSize, prefer) {
   const name = relPath.split('/').pop();
-
   const wantsPdf = prefer ? prefer === 'pdf' : PDF_BY_NAME.test(name);
 
   if (ext === '.tex' && wantsPdf && preview?.type === 'pdf') {
@@ -205,19 +180,16 @@ function describeDownload(relPath, ext, preview, sourceSize, prefer) {
   };
 }
 
-/** Дополняет запись о файле данными с диска. */
-function describeFile(entry, extra = {}) {
-  const relPath = typeof entry === 'string' ? entry : entry.path;
+/** Полное описание файла: размер, формат, предпросмотр, цель скачивания. */
+function describeFile(relPath, fileMeta = {}, role = {}) {
   const full = join(FILES_DIR, relPath);
-
   if (!existsSync(full)) {
-    console.error(`  ОШИБКА: файл описан в каталоге, но отсутствует — ${relPath}`);
+    console.error(`  ОШИБКА: файл не найден — ${relPath}`);
     problems += 1;
     return null;
   }
 
   const ext = extname(relPath).toLowerCase();
-  const manual = typeof entry === 'string' ? {} : entry;
   const size = statSync(full).size;
   const preview = findPreview(relPath);
 
@@ -227,23 +199,13 @@ function describeFile(entry, extra = {}) {
     ext: ext.replace('.', ''),
     format: FORMAT_BY_EXT[ext] ?? ext.replace('.', '').toUpperCase(),
     size,
-    label: manual.label ?? extra.label ?? '',
-    primary: Boolean(manual.primary ?? extra.primary),
+    label: fileMeta.label ?? role.label ?? '',
+    primary: Boolean(fileMeta.primary ?? role.primary),
     preview,
-    download: describeDownload(relPath, ext, preview, size, manual.download),
+    download: describeDownload(relPath, ext, preview, size, fileMeta.download),
   };
 }
 
-function uniqueValues(items, field) {
-  const seen = [];
-  for (const item of items) {
-    const value = item[field];
-    if (value !== undefined && value !== null && value !== '' && !seen.includes(value)) seen.push(value);
-  }
-  return seen;
-}
-
-/** Проставляет вычисляемые поля материала. */
 function finalizeItem(item) {
   return {
     ...item,
@@ -252,153 +214,194 @@ function finalizeItem(item) {
   };
 }
 
-/* --- 1. Описанные вручную материалы --- */
+/**
+ * Собирает материалы одной папки.
+ *
+ * Сначала берутся работы, для которых в _meta.json явно перечислены файлы,
+ * затем остальные файлы группируются по именам: «tr-01-usloviya» и
+ * «tr-01-varianty» попадают в одну работу «Типовой расчёт № 1».
+ */
+function collectFolder(folderRel) {
+  const dir = join(FILES_DIR, folderRel);
+  const meta = readJson(join(dir, META_FILE_NAME), {}) ?? {};
+  const files = listFiles(dir);
+  const used = new Set();
+  const items = [];
 
-if (!existsSync(CATALOG_DIR)) {
-  console.error(`Папка ${relative(ROOT, CATALOG_DIR)} не найдена`);
+  // 1. Работы с явно перечисленными файлами
+  for (const [key, itemMeta] of Object.entries(meta.items ?? {})) {
+    if (!Array.isArray(itemMeta.files)) continue;
+
+    const collected = itemMeta.files
+      .map((name) => {
+        used.add(name);
+        const parsed = parseFileName(name);
+        return describeFile(`${folderRel}/${name}`, meta.files?.[name] ?? {}, describeRole(parsed.suffix, name));
+      })
+      .filter(Boolean);
+
+    if (!collected.length) continue;
+    if (!collected.some((f) => f.primary)) collected[0].primary = true;
+
+    items.push({ key, meta: itemMeta, files: collected, order: -1, number: itemMeta.number ?? null });
+  }
+
+  // 2. Остальные файлы — группировка по соглашению об именах
+  const groups = new Map();
+  for (const name of files) {
+    if (used.has(name)) continue;
+    const parsed = parseFileName(name);
+    if (!groups.has(parsed.groupKey)) groups.set(parsed.groupKey, { parsed, names: [] });
+    groups.get(parsed.groupKey).names.push(name);
+  }
+
+  for (const [key, group] of groups) {
+    const collected = group.names
+      .map((name) => {
+        const parsed = parseFileName(name);
+        const role = describeRole(parsed.suffix, name);
+        const described = describeFile(`${folderRel}/${name}`, meta.files?.[name] ?? {}, role);
+        return described ? { ...described, order: role.order ?? 9 } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.order - b.order)
+      .map(({ order, ...file }) => file);
+
+    if (!collected.length) continue;
+    if (!collected.some((f) => f.primary)) collected[0].primary = true;
+
+    items.push({
+      key,
+      meta: meta.items?.[key] ?? {},
+      files: collected,
+      // Работы с распознанным типом (tr-01, lecture-04) идут первыми
+      // и по возрастанию номера, остальные материалы — следом.
+      order: group.parsed.code ? KIND_ORDER.indexOf(group.parsed.code) : 99,
+      number: group.parsed.number,
+      code: group.parsed.code,
+    });
+  }
+
+  // 3. Приводим к виду, который ждёт интерфейс
+  const result = items
+    .sort((a, b) => a.order - b.order || (a.number ?? 0) - (b.number ?? 0) || a.key.localeCompare(b.key, 'ru'))
+    .map((entry) =>
+      finalizeItem({
+        id: `${folderRel}/${entry.key}`.replace(/[^\w-]+/g, '-'),
+        kind: entry.meta.kind ?? (entry.code ? KIND_BY_CODE[entry.code] : 'Материал'),
+        number: entry.meta.number ?? entry.number ?? undefined,
+        title: entry.meta.title ?? entry.files[0].label,
+        course: entry.meta.course,
+        semester: entry.meta.semester,
+        deadline: entry.meta.deadline ?? '',
+        status: entry.meta.status ?? '',
+        statusLabel: entry.meta.statusLabel ?? '',
+        files: entry.files,
+      })
+    );
+
+  return { items: result, description: meta.description ?? '' };
+}
+
+/* --- основной проход --- */
+
+const site = readJson(SITE_FILE);
+if (!site) {
+  console.error(`Не удалось прочитать ${relative(ROOT, SITE_FILE)}`);
   process.exit(1);
 }
 
-const disciplineNames = readJson(join(CATALOG_DIR, 'disciplines.json'), {});
-const index = {};
-const referenced = new Set();
-
-for (const fileName of readdirSync(CATALOG_DIR).filter((n) => n.endsWith('.json')).sort()) {
-  if (fileName === 'disciplines.json') continue;
-
-  const source = readJson(join(CATALOG_DIR, fileName));
-  if (!source?.section) {
-    console.error(`  ОШИБКА: в ${fileName} не указано поле "section"`);
-    problems += 1;
-    continue;
-  }
-
-  const items = (source.items ?? []).map((item) => {
-    const files = (item.files ?? []).map((entry) => describeFile(entry)).filter(Boolean);
-    files.forEach((file) => referenced.add(file.path));
-    return finalizeItem({ ...item, files });
-  });
-
-  index[source.section] = { intro: source.intro ?? '', items, filters: null, fileCount: 0 };
-}
-
-/* --- 2. Автоматическое распознавание остальных файлов --- */
-
-// Раскладываем нераспознанные файлы по «раздел → папка → работа»
-const auto = new Map();
-
-for (const full of walk(FILES_DIR)) {
-  const relPath = relative(FILES_DIR, full).split(/[\\/]/).join('/');
-  if (referenced.has(relPath)) continue;
-
-  const parts = relPath.split('/');
-  const section = parts.slice(0, 2).join('/');
-
-  if (!index[section]) {
-    console.warn(`  файл вне известных разделов, пропущен: ${relPath}`);
-    continue;
-  }
-
-  // Папка дисциплины внутри раздела (может отсутствовать, если файл лежит прямо в разделе)
-  const folder = parts.length > 3 ? parts[2] : '';
-  const fileName = parts[parts.length - 1];
-  const parsed = parseFileName(fileName);
-
-  const bucketKey = `${section}|${folder}|${parsed.groupKey}`;
-  if (!auto.has(bucketKey)) auto.set(bucketKey, { section, folder, parsed, files: [] });
-  auto.get(bucketKey).files.push({ relPath, fileName, parsed });
-}
-
-let autoCount = 0;
-
-for (const bucket of auto.values()) {
-  const { section, folder, parsed } = bucket;
-
-  // Уточнения из _meta.json той же папки — необязательны
-  const metaPath = folder
-    ? join(FILES_DIR, section, folder, META_FILE_NAME)
-    : join(FILES_DIR, section, META_FILE_NAME);
-  const meta = readJson(metaPath, {}) ?? {};
-  const itemMeta = meta.items?.[parsed.groupKey] ?? {};
-
-  const files = bucket.files
-    .map((entry) => {
-      const role = describeRole(entry.parsed.suffix, entry.fileName);
-      const fileMeta = meta.files?.[entry.fileName] ?? {};
-      const described = describeFile({ path: entry.relPath, ...fileMeta }, role);
-      return described ? { ...described, order: role.order ?? 9 } : null;
-    })
-    .filter(Boolean)
-    .sort((a, b) => a.order - b.order);
-
-  if (!files.length) continue;
-
-  // Если основной файл не определился, делаем основным первый
-  if (!files.some((file) => file.primary)) files[0].primary = true;
-
-  const discipline =
-    itemMeta.discipline ?? meta.discipline ?? (folder ? disciplineNames[folder] ?? prettify(folder) : '');
-
-  const item = finalizeItem({
-    id: `auto-${section}-${folder}-${parsed.groupKey}`.replace(/[^\w-]+/g, '-'),
-    kind: itemMeta.kind ?? (parsed.code ? KIND_BY_CODE[parsed.code] : 'Материал'),
-    number: itemMeta.number ?? parsed.number ?? undefined,
-    title: itemMeta.title ?? files[0].label,
-    discipline,
-    course: itemMeta.course ?? meta.course,
-    semester: itemMeta.semester ?? meta.semester,
-    deadline: itemMeta.deadline ?? '',
-    status: itemMeta.status ?? '',
-    statusLabel: itemMeta.statusLabel ?? '',
-    files: files.map(({ order, ...file }) => file),
-    // Служебные поля для сортировки
-    _order: KIND_ORDER.indexOf(parsed.code ?? ''),
-    _folder: folder,
-  });
-
-  index[section].items.push(item);
-  autoCount += 1;
-}
-
-/* --- 3. Сортировка, фильтры, запись --- */
-
-let totalItems = 0;
+const known = new Set();
 let totalFiles = 0;
+let totalItems = 0;
 
-for (const [section, data] of Object.entries(index)) {
-  // Описанные вручную идут первыми, распознанные — следом,
-  // сгруппированные по дисциплине и упорядоченные по типу и номеру работы.
-  const manual = data.items.filter((item) => !item.id.startsWith('auto-'));
-  const detected = data.items
-    .filter((item) => item.id.startsWith('auto-'))
-    .sort(
-      (a, b) =>
-        String(a._folder).localeCompare(String(b._folder), 'ru') ||
-        a._order - b._order ||
-        (a.number ?? 0) - (b.number ?? 0) ||
-        String(a.title).localeCompare(String(b.title), 'ru')
-    )
-    .map(({ _order, _folder, ...item }) => item);
+/** Дисциплины: внутри каждой — блоки по типам материалов. */
+const disciplines = site.disciplines.map((discipline) => {
+  const groups = [];
+  let fileCount = 0;
 
-  data.items = [...manual, ...detected];
-  data.fileCount = data.items.reduce((sum, item) => sum + item.files.length, 0);
-  data.filters = {
-    disciplines: uniqueValues(data.items, 'discipline'),
-    kinds: uniqueValues(data.items, 'kind'),
-    courses: uniqueValues(data.items, 'course').sort((a, b) => a - b),
-  };
+  for (const type of site.types) {
+    const folderRel = `disciplines/${discipline.id}/${type.id}`;
+    if (!existsSync(join(FILES_DIR, folderRel))) continue;
 
-  totalItems += data.items.length;
-  totalFiles += data.fileCount;
+    const { items, description } = collectFolder(folderRel);
+    if (!items.length) continue;
 
-  if (data.items.length === 0) console.warn(`  раздел без материалов: ${section}`);
+    items.forEach((item) => item.files.forEach((f) => known.add(f.path)));
+    const count = items.reduce((sum, item) => sum + item.files.length, 0);
+    fileCount += count;
+    totalItems += items.length;
+
+    groups.push({
+      type: type.id,
+      title: type.title,
+      icon: type.icon,
+      description: description || type.description,
+      items,
+      fileCount: count,
+    });
+  }
+
+  totalFiles += fileCount;
+  return { ...discipline, groups, fileCount };
+});
+
+/** Плоские разделы: активности и «О лаборатории». */
+function buildFlatSections(list, prefix) {
+  return list.map((section) => {
+    const folderRel = `${prefix}/${section.id}`;
+    const { items, description } = existsSync(join(FILES_DIR, folderRel))
+      ? collectFolder(folderRel)
+      : { items: [], description: '' };
+
+    items.forEach((item) => item.files.forEach((f) => known.add(f.path)));
+    const fileCount = items.reduce((sum, item) => sum + item.files.length, 0);
+    totalFiles += fileCount;
+    totalItems += items.length;
+
+    return { ...section, description: description || section.description, items, fileCount };
+  });
 }
 
-writeFileSync(OUT_FILE, `${JSON.stringify(index, null, 2)}\n`, 'utf8');
+const activities = buildFlatSections(site.activities, 'activities');
+const about = buildFlatSections(site.about, 'about');
+
+/* Предупреждаем о файлах, которые лежат вне известных разделов */
+function walkAll(dir, base = dir) {
+  if (!existsSync(dir)) return [];
+  const result = [];
+  for (const name of readdirSync(dir)) {
+    if (name.startsWith('.') || name === META_FILE_NAME) continue;
+    const full = join(dir, name);
+    if (statSync(full).isDirectory()) result.push(...walkAll(full, base));
+    else result.push(relative(base, full).split(/[\\/]/).join('/'));
+  }
+  return result;
+}
+
+for (const path of walkAll(FILES_DIR)) {
+  if (known.has(path)) continue;
+  console.warn(`  файл вне структуры сайта, на страницы не попадёт: ${path}`);
+}
+
+writeFileSync(
+  OUT_FILE,
+  `${JSON.stringify({ types: site.types, disciplines, activities, about, totals: { files: totalFiles, items: totalItems } }, null, 2)}\n`,
+  'utf8'
+);
+
+// Расписание семинара кладём рядом с каталогом, чтобы страница импортировала
+// его как обычные данные и не зависела от расположения папки catalog/.
+const seminars = readJson(SEMINARS_SRC);
+if (seminars) {
+  writeFileSync(SEMINARS_OUT, `${JSON.stringify(seminars, null, 2)}\n`, 'utf8');
+} else {
+  console.warn('  расписание семинаров не найдено — страница покажет пустую таблицу');
+}
 
 console.log(
-  `Каталог собран: ${totalItems} материалов (${autoCount} распознано автоматически), ` +
-    `${totalFiles} файлов в ${Object.keys(index).length} разделах → ${relative(ROOT, OUT_FILE)}`
+  `Каталог собран: ${disciplines.length} дисциплин, ${activities.length + about.length} прочих разделов, ` +
+    `${totalItems} материалов, ${totalFiles} файлов → ${relative(ROOT, OUT_FILE)}`
 );
 
 if (problems) {

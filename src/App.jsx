@@ -3,56 +3,43 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import NotFound from './pages/NotFound.jsx';
-
-// Дисциплины
-import DisciplinePlans from './pages/disciplines/DisciplinePlans.jsx';
-import DisciplineNotes from './pages/disciplines/DisciplineNotes.jsx';
-import DisciplineLibrary from './pages/disciplines/DisciplineLibrary.jsx';
-import DisciplineTemplates from './pages/disciplines/DisciplineTemplates.jsx';
-import DisciplineTasks from './pages/disciplines/DisciplineTasks.jsx';
-
-// Активности
-import ActivitiesPractice from './pages/activities/ActivitiesPractice.jsx';
-import ActivitiesSpring from './pages/activities/ActivitiesSpring.jsx';
-import ActivitiesSeminars from './pages/activities/ActivitiesSeminars.jsx';
-import ActivitiesReports from './pages/activities/ActivitiesReports.jsx';
-import ActivitiesConferences from './pages/activities/ActivitiesConferences.jsx';
+import DisciplinePage from './pages/DisciplinePage.jsx';
+import ActivityPage from './pages/ActivityPage.jsx';
+import SeminarsPage from './pages/SeminarsPage.jsx';
+import HistoryPage from './pages/HistoryPage.jsx';
+import { ACTIVITIES, DISCIPLINES } from './catalog.js';
 
 /**
- * Корневой компонент приложения: описывает карту маршрутов.
- * Layout — общая обёртка (навбар + контейнер + подвал), внутрь которой
- * через <Outlet /> подставляется компонент текущего подраздела.
- * Переключение разделов происходит без перезагрузки страницы.
+ * Карта маршрутов.
+ *
+ * Дисциплины и активности обслуживаются одним компонентом каждая:
+ * идентификатор берётся из адреса, содержимое — из каталога. Поэтому новая
+ * дисциплина, добавленная в catalog/site.json, работает без правок кода.
+ * Исключение — семинары: у них своя страница с расписанием.
  */
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* Приветственная страница на корневом пути */}
         <Route index element={<Home />} />
 
-        {/* Раздел «Дисциплины» */}
         <Route path="disciplines">
-          {/* /disciplines без подраздела — переадресация на первый пункт меню */}
-          <Route index element={<Navigate to="/disciplines/plans" replace />} />
-          <Route path="plans" element={<DisciplinePlans />} />
-          <Route path="notes" element={<DisciplineNotes />} />
-          <Route path="library" element={<DisciplineLibrary />} />
-          <Route path="templates" element={<DisciplineTemplates />} />
-          <Route path="tasks" element={<DisciplineTasks />} />
+          <Route index element={<Navigate to={`/disciplines/${DISCIPLINES[0].id}`} replace />} />
+          <Route path=":id" element={<DisciplinePage />} />
         </Route>
 
-        {/* Раздел «Активности» */}
         <Route path="activities">
-          <Route index element={<Navigate to="/activities/practice" replace />} />
-          <Route path="practice" element={<ActivitiesPractice />} />
-          <Route path="spring" element={<ActivitiesSpring />} />
-          <Route path="seminars" element={<ActivitiesSeminars />} />
-          <Route path="reports" element={<ActivitiesReports />} />
-          <Route path="conferences" element={<ActivitiesConferences />} />
+          <Route index element={<Navigate to={`/activities/${ACTIVITIES[0].id}`} replace />} />
+          {/* Частный случай объявлен до общего, иначе его перехватит :id */}
+          <Route path="seminars" element={<SeminarsPage />} />
+          <Route path=":id" element={<ActivityPage />} />
         </Route>
 
-        {/* Любой неизвестный адрес */}
+        <Route path="about">
+          <Route index element={<Navigate to="/about/history" replace />} />
+          <Route path="history" element={<HistoryPage />} />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

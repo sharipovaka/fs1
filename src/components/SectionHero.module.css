@@ -1,0 +1,85 @@
+/* Единая шапка раздела. */
+
+.hero {
+  background: linear-gradient(120deg, var(--dept-brand-from) 0%, var(--dept-brand-to) 100%);
+  color: #fff;
+  border-radius: var(--dept-radius);
+  padding: 1.5rem 1.75rem 1.35rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--dept-shadow-md);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.iconBox {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--dept-accent);
+  font-size: 1.3rem;
+}
+
+.titleText {
+  min-width: 0;
+}
+
+.title {
+  color: #fff;
+  margin: 0;
+  font-size: clamp(1.4rem, 3.2vw, 1.9rem);
+  line-height: 1.2;
+}
+
+.meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.description {
+  margin: 0.9rem 0 0;
+  max-width: 78ch;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 1rem;
+}
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 1.25rem 1.1rem 1.15rem;
+  }
+
+  .iconBox {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.1rem;
+  }
+}

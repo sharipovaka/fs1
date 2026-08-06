@@ -1,0 +1,36 @@
+{
+  "_comment": "Описания материалов этой папки. Всё необязательно.",
+  "items": {
+    "practice-report": {
+      "kind": "Шаблон",
+      "title": "Отчёт по практике",
+      "deadline": "сдать в течение недели после окончания",
+      "status": "open",
+      "statusLabel": "актуален",
+      "files": [
+        "practice-report-template.md",
+        "practice-diary.md"
+      ]
+    },
+    "practice-bases": {
+      "kind": "Справочник",
+      "title": "Базы практики",
+      "deadline": "выбрать за месяц до начала",
+      "status": "soon",
+      "statusLabel": "идёт распределение"
+    }
+  },
+  "files": {
+    "practice-report-template.md": {
+      "label": "Шаблон отчёта с пояснениями к каждому разделу",
+      "primary": true
+    },
+    "practice-diary.md": {
+      "label": "Бланк дневника: ежедневные записи, инструктаж, отзыв"
+    },
+    "practice-bases.csv": {
+      "label": "Организации, профиль, число мест и требования к подготовке",
+      "primary": true
+    }
+  }
+}

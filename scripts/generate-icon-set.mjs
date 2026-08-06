@@ -21,6 +21,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC_DIR = join(ROOT, 'src');
+const CATALOG_DIR = join(ROOT, 'catalog');
 const SVG_DIR = join(ROOT, 'node_modules', '@fortawesome', 'fontawesome-free', 'svgs');
 const OUT_FILE = join(ROOT, 'src', 'iconSet.generated.js');
 
@@ -33,14 +34,15 @@ function walk(dir) {
     if (name.startsWith('.') || name === 'node_modules') continue;
     const full = join(dir, name);
     if (statSync(full).isDirectory()) result.push(...walk(full));
-    else if (/\.(jsx?|tsx?)$/.test(name)) result.push(full);
+    else if (/\.(jsx?|tsx?|json)$/.test(name)) result.push(full);
   }
   return result;
 }
 
-// 1. Ищем в исходниках все упоминания иконок
+// 1. Ищем упоминания иконок в коде и в конфигурации каталога:
+// иконки дисциплин и разделов задаются в catalog/site.json, а не в JSX.
 const used = new Set();
-for (const file of walk(SRC_DIR)) {
+for (const file of [...walk(SRC_DIR), ...walk(CATALOG_DIR)]) {
   const text = readFileSync(file, 'utf8');
   for (const match of text.matchAll(/fa-(solid|regular|brands)\s+fa-([a-z0-9-]+)/g)) {
     const [, style, name] = match;

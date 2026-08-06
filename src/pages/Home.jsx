@@ -2,28 +2,20 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
-import MaterialCard from '../components/MaterialCard.jsx';
-import { filterItems, getAllMaterials, getFileCount } from '../catalog.js';
-import { MENU } from '../navConfig.js';
-import styles from './Home.module.css';
 import Icon from '../components/Icon.jsx';
+import MaterialCard from '../components/MaterialCard.jsx';
+import { ABOUT, ACTIVITIES, DISCIPLINES, TOTALS, filterItems, getAllMaterials } from '../catalog.js';
+import styles from './Home.module.css';
 
 /** Подсказки под строкой поиска — самые частые запросы. */
-const QUICK_QUERIES = [
-  'типовой расчёт',
-  'линейная алгебра',
-  'математический анализ',
-  'шаблон',
-  'практика',
-];
+const QUICK_QUERIES = ['типовой расчёт', 'линейная алгебра', 'конспект', 'шаблон', 'практика'];
 
 /**
  * Главная страница.
  *
- * Основной сценарий сайта — найти и скачать файл, поэтому наверху стоит
- * сквозной поиск сразу по всем разделам: первокурсник вводит «линейная
- * алгебра» и видит нужный типовой расчёт, не заходя в меню.
- * Пока строка поиска пуста, показываются плитки разделов.
+ * Наверху — сквозной поиск по всем материалам: студент вводит «линейная
+ * алгебра» и сразу видит нужную работу. Ниже — дисциплины крупными
+ * карточками, затем активности и раздел о лаборатории.
  */
 export default function Home() {
   const [query, setQuery] = useState('');
@@ -35,11 +27,6 @@ export default function Home() {
     [allMaterials, query]
   );
 
-  const totalFiles = useMemo(
-    () => allMaterials.reduce((sum, item) => sum + item.files.length, 0),
-    [allMaterials]
-  );
-
   const isSearching = query.trim().length > 0;
 
   return (
@@ -47,8 +34,8 @@ export default function Home() {
       <section className={styles.hero}>
         <h1 className={styles.heroTitle}>Лаборатория математики ФН1</h1>
         <p className={styles.heroText}>
-          Учебные материалы лаборатории: условия типовых расчётов, конспекты лекций,
-          шаблоны работ и документы по практике. Всего доступно {totalFiles} файлов —
+          Учебные материалы по дисциплинам кафедры: планы, конспекты, литература,
+          шаблоны работ и условия типовых расчётов. Всего {TOTALS.files} файлов —
           найдите нужный и скачайте.
         </p>
 
@@ -86,17 +73,15 @@ export default function Home() {
 
       {isSearching ? (
         <section>
-          <h2 className={styles.resultsTitle}>
-            {results.length > 0
-              ? `Найдено материалов: ${results.length}`
-              : 'Ничего не найдено'}
+          <h2 className={styles.blockTitle}>
+            {results.length > 0 ? `Найдено материалов: ${results.length}` : 'Ничего не найдено'}
           </h2>
 
           {results.length > 0 ? (
             <div className={styles.results}>
               {results.map((item) => (
                 <MaterialCard
-                  key={`${item.sectionKey}-${item.id}`}
+                  key={item.id}
                   item={item}
                   onPreview={setPreviewFile}
                   sectionLabel={item.sectionTitle}
@@ -110,38 +95,78 @@ export default function Home() {
           )}
         </section>
       ) : (
-        MENU.map((group) => (
-          <section key={group.id} className={styles.group}>
-            <h2 className={styles.groupTitle}>
-              <Icon name={group.icon} className={styles.groupIcon} />
-              {group.title}
-            </h2>
+        <>
+          {/* Дисциплины — главный вход на сайт, поэтому карточки крупные */}
+          <section className={styles.block}>
+            <h2 className={styles.blockTitle}>Дисциплины</h2>
+            <p className={styles.blockHint}>
+              Внутри каждой дисциплины на одной странице собраны планы, конспекты,
+              литература, шаблоны и задания.
+            </p>
 
-            <div className={styles.cards}>
-              {group.items.map((item) => {
-                const count = getFileCount(item.path.replace(/^\//, ''));
-                return (
-                  <Link key={item.path} to={item.path} className={styles.card}>
-                    <span className={styles.cardIcon}>
-                      <Icon name={item.icon} />
-                    </span>
-                    <span className={styles.cardBody}>
-                      <span className={styles.cardTitle}>{item.title}</span>
-                      <span className={styles.cardText}>{item.description}</span>
-                      {count > 0 && (
-                        <span className={styles.cardCount}>
-                          <Icon name="fa-solid fa-download" /> {count}{' '}
-                          {count === 1 ? 'файл' : count < 5 ? 'файла' : 'файлов'}
-                        </span>
-                      )}
-                    </span>
-                    <Icon name="fa-solid fa-arrow-right" className={styles.cardArrow} />
-                  </Link>
-                );
-              })}
+            <div className={styles.disciplineGrid}>
+              {DISCIPLINES.map((discipline) => (
+                <Link key={discipline.id} to={`/disciplines/${discipline.id}`} className={styles.disciplineCard}>
+                  <span className={styles.disciplineIcon}>
+                    <Icon name={discipline.icon} />
+                  </span>
+
+                  <span className={styles.disciplineTitle}>{discipline.title}</span>
+                  {discipline.meta && <span className={styles.disciplineMeta}>{discipline.meta}</span>}
+                  <span className={styles.disciplineText}>{discipline.description}</span>
+
+                  <span className={styles.disciplineFooter}>
+                    {discipline.groups.map((group) => (
+                      <span key={group.type} className={styles.chip}>
+                        {group.title}
+                      </span>
+                    ))}
+                  </span>
+
+                  <span className={styles.disciplineCount}>
+                    <Icon name="fa-solid fa-download" /> {discipline.fileCount}
+                  </span>
+                </Link>
+              ))}
             </div>
           </section>
-        ))
+
+          <section className={styles.block}>
+            <h2 className={styles.blockTitle}>Активности</h2>
+            <div className={styles.cards}>
+              {ACTIVITIES.map((section) => (
+                <Link key={section.id} to={`/activities/${section.id}`} className={styles.card}>
+                  <span className={styles.cardIcon}>
+                    <Icon name={section.icon} />
+                  </span>
+                  <span className={styles.cardBody}>
+                    <span className={styles.cardTitle}>{section.title}</span>
+                    <span className={styles.cardText}>{section.menuHint ?? section.description}</span>
+                  </span>
+                  <Icon name="fa-solid fa-arrow-right" className={styles.cardArrow} />
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.block}>
+            <h2 className={styles.blockTitle}>О лаборатории</h2>
+            <div className={styles.cards}>
+              {ABOUT.map((section) => (
+                <Link key={section.id} to={`/about/${section.id}`} className={styles.card}>
+                  <span className={styles.cardIcon}>
+                    <Icon name={section.icon} />
+                  </span>
+                  <span className={styles.cardBody}>
+                    <span className={styles.cardTitle}>{section.title}</span>
+                    <span className={styles.cardText}>{section.menuHint ?? section.description}</span>
+                  </span>
+                  <Icon name="fa-solid fa-arrow-right" className={styles.cardArrow} />
+                </Link>
+              ))}
+            </div>
+          </section>
+        </>
       )}
 
       {previewFile && <FilePreviewModal file={previewFile} onClose={() => setPreviewFile(null)} />}

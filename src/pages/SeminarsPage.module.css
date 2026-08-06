@@ -1,0 +1,268 @@
+/* Страница научного семинара: расписание + аннотации. */
+
+.page {
+  animation: fadeIn 0.22s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nextBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: var(--dept-accent);
+  color: #1f2933;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.block {
+  margin-bottom: 2rem;
+}
+
+.blockTitle {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--dept-border);
+}
+
+.blockHint {
+  margin: 0 0 0.9rem;
+  color: var(--dept-muted);
+  font-size: 0.92rem;
+  max-width: 80ch;
+}
+
+/* --- Расписание --- */
+
+.tableWrapper {
+  background: var(--dept-card);
+  border: 1px solid var(--dept-border);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-sm);
+  overflow-x: auto;
+  margin-top: 0.9rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--dept-card-alt);
+  color: var(--dept-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--dept-border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--dept-border);
+  vertical-align: top;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Ближайшее заседание выделено рамкой и фоном */
+.rowNext td {
+  background: var(--dept-card-accent);
+  box-shadow: inset 3px 0 0 var(--dept-accent);
+}
+
+.rowPast td {
+  color: var(--dept-muted);
+}
+
+.rowPast .title {
+  color: var(--dept-muted);
+  font-weight: 500;
+}
+
+.colDate {
+  width: 12.5rem;
+}
+
+.colType {
+  width: 12rem;
+}
+
+.colSpeaker {
+  width: 12rem;
+  color: var(--dept-muted);
+}
+
+.date {
+  display: block;
+  font-weight: 600;
+  color: var(--dept-heading);
+  white-space: nowrap;
+}
+
+.rowPast .date {
+  color: var(--dept-muted);
+  font-weight: 500;
+}
+
+.nextMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--dept-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.pastMark {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--dept-muted);
+}
+
+.title {
+  font-weight: 600;
+  color: var(--dept-ink);
+  line-height: 1.4;
+}
+
+/* --- Виды докладов --- */
+
+.type {
+  display: inline-block;
+  padding: 0.16em 0.65em;
+  border-radius: 999px;
+  border: 1px solid var(--dept-border);
+  background: var(--dept-surface);
+  color: var(--dept-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.type_report {
+  background: var(--status-open-bg);
+  border-color: var(--status-open-border);
+  color: var(--status-open-fg);
+}
+
+.type_reading {
+  background: var(--status-soon-bg);
+  border-color: var(--status-soon-border);
+  color: var(--status-soon-fg);
+}
+
+.type_lecture {
+  background: var(--dept-navy);
+  border-color: var(--dept-navy);
+  color: #fff;
+}
+
+.type_workshop {
+  background: var(--dept-card-accent);
+  border-color: var(--dept-border-strong);
+  color: var(--dept-navy-light);
+}
+
+.type_other {
+  background: var(--status-done-bg);
+  border-color: var(--status-done-border);
+  color: var(--status-done-fg);
+}
+
+.legend {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.legendHint {
+  color: var(--dept-muted);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* На узких экранах таблица становится списком карточек */
+@media (max-width: 720px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: auto;
+  }
+
+  .table tr {
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid var(--dept-border);
+  }
+
+  .table td {
+    padding: 0.15rem 0;
+    border: 0;
+  }
+
+  .rowNext td {
+    box-shadow: none;
+    background: none;
+  }
+
+  .rowNext {
+    background: var(--dept-card-accent);
+    box-shadow: inset 3px 0 0 var(--dept-accent);
+  }
+
+  .colDate,
+  .colType,
+  .colSpeaker {
+    width: auto;
+  }
+
+  .colSpeaker::before {
+    content: 'Выступающий: ';
+  }
+}

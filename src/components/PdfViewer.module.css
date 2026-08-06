@@ -1,0 +1,53 @@
+/* Встроенный просмотр PDF на странице. */
+
+.wrapper {
+  background: var(--dept-card);
+  border: 1px solid var(--dept-border);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-sm);
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.95rem;
+  border-bottom: 1px solid var(--dept-border);
+  background: var(--dept-card-alt);
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--dept-heading);
+  min-width: 0;
+}
+
+.titleIcon {
+  color: #c0392b;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  height: min(70vh, 780px);
+  border: 0;
+  background: var(--dept-surface);
+}
+
+@media (max-width: 575.98px) {
+  .frame {
+    height: 62vh;
+  }
+}
