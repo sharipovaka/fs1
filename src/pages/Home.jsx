@@ -113,7 +113,6 @@ export default function Home() {
 
                   <span className={styles.disciplineTitle}>{discipline.title}</span>
                   {discipline.meta && <span className={styles.disciplineMeta}>{discipline.meta}</span>}
-                  <span className={styles.disciplineText}>{discipline.description}</span>
 
                   <span className={styles.disciplineFooter}>
                     {discipline.groups.map((group) => (

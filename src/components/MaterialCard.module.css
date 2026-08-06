@@ -43,6 +43,12 @@
 .main {
   flex: 1 1 auto;
   min-width: 0;
+  /*
+   * Карточка живёт и на всю ширину страницы, и в узкой колонке рядом
+   * с сайдбаром. Поэтому перенос строки файла зависит от ширины самой
+   * карточки, а не окна браузера.
+   */
+  container-type: inline-size;
 }
 
 .header {
@@ -238,7 +244,7 @@
 
 /* --- Адаптив --- */
 
-@media (max-width: 860px) {
+@container (max-width: 640px) {
   .file {
     flex-wrap: wrap;
   }
@@ -250,6 +256,24 @@
   .fileActions {
     flex-basis: 100%;
     padding-left: 2.7rem;
+  }
+}
+
+/* Запасной вариант для браузеров без контейнерных запросов */
+@supports not (container-type: inline-size) {
+  @media (max-width: 1100px) {
+    .file {
+      flex-wrap: wrap;
+    }
+
+    .fileInfo {
+      flex-basis: calc(100% - 2.7rem);
+    }
+
+    .fileActions {
+      flex-basis: 100%;
+      padding-left: 2.7rem;
+    }
   }
 }
 

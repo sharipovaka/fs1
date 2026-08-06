@@ -15,52 +15,25 @@
   }
 }
 
-/* --- Якорные ссылки на блоки --- */
+/* --- Макет: сайдбар и содержимое --- */
 
-.anchors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 1.5rem;
+.layout {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
 }
 
-.anchor {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--dept-border);
-  border-radius: 999px;
-  background: var(--dept-card);
-  color: var(--dept-ink);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: border-color 0.14s ease, color 0.14s ease, background-color 0.14s ease;
+.content {
+  min-width: 0;
 }
 
-.anchor:hover {
-  border-color: var(--dept-navy-light);
-  color: var(--dept-navy-light);
-  background: var(--dept-card-accent);
-}
-
-.anchorIcon {
-  color: var(--dept-navy-light);
-  font-size: 0.9em;
-}
-
-.anchorCount {
-  display: inline-grid;
-  place-items: center;
-  min-width: 1.35rem;
-  height: 1.35rem;
-  padding: 0 0.35rem;
-  border-radius: 999px;
-  background: var(--dept-surface);
-  color: var(--dept-muted);
-  font-size: 0.75rem;
-  font-weight: 600;
+/* Ниже 992px сайдбар встаёт над материалами полосой ссылок */
+@media (max-width: 991.98px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
 }
 
 /* --- Блок материалов --- */

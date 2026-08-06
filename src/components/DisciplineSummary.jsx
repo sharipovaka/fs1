@@ -5,8 +5,9 @@ import styles from './DisciplineSummary.module.css';
 /**
  * Сводка в начале страницы дисциплины.
  *
- * Отвечает на три вопроса, с которыми студент заходит на страницу:
- * что это за курс, что вообще есть на странице и когда ближайший срок сдачи.
+ * Отвечает на два вопроса, с которыми студент заходит на страницу:
+ * что это за курс и когда ближайший срок сдачи. Навигация по блокам
+ * вынесена в боковую панель, поэтому здесь её нет.
  * Ближайший срок вычисляется по датам в браузере, поэтому «осталось 5 дней»
  * не устаревает между пересборками сайта.
  */
@@ -43,21 +44,6 @@ export default function DisciplineSummary({ discipline }) {
           {discipline.fileCount} файлов в {discipline.groups.length}{' '}
           {discipline.groups.length === 1 ? 'блоке' : 'блоках'}
         </p>
-      </div>
-
-      <div className={styles.column}>
-        <h2 className={styles.columnTitle}>Что на странице</h2>
-        <ul className={styles.contents}>
-          {discipline.groups.map((group) => (
-            <li key={group.type}>
-              <a className={styles.contentLink} href={`#${group.type}`}>
-                <Icon name={group.icon} className={styles.contentIcon} />
-                <span className={styles.contentTitle}>{group.title}</span>
-                <span className={styles.contentCount}>{group.fileCount}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div className={styles.column}>

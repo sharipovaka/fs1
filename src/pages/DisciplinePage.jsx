@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
+import DisciplineSidebar from '../components/DisciplineSidebar.jsx';
 import DisciplineSummary from '../components/DisciplineSummary.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import SectionHero from '../components/SectionHero.jsx';
@@ -38,28 +39,33 @@ export default function DisciplinePage() {
       />
 
       {hasMaterials ? (
-        <>
-          {/* Сводка: что за курс, что на странице и когда ближайший срок */}
-          <DisciplineSummary discipline={discipline} />
+        // Слева навигация по блокам, справа сами материалы
+        <div className={styles.layout}>
+          <DisciplineSidebar discipline={discipline} />
 
-          {discipline.groups.map((group) => (
-            <section key={group.type} id={group.type} className={styles.group}>
-              <div className={styles.groupHeader}>
-                <h2 className={styles.groupTitle}>
-                  <Icon name={group.icon} className={styles.groupIcon} />
-                  {group.title}
-                </h2>
-                {group.description && <p className={styles.groupDescription}>{group.description}</p>}
-              </div>
+          <div className={styles.content}>
+            {/* Сводка: коротко о курсе и ближайший срок сдачи */}
+            <DisciplineSummary discipline={discipline} />
 
-              <div className={styles.cards}>
-                {group.items.map((item) => (
-                  <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
-                ))}
-              </div>
-            </section>
-          ))}
-        </>
+            {discipline.groups.map((group) => (
+              <section key={group.type} id={group.type} className={styles.group}>
+                <div className={styles.groupHeader}>
+                  <h2 className={styles.groupTitle}>
+                    <Icon name={group.icon} className={styles.groupIcon} />
+                    {group.title}
+                  </h2>
+                  {group.description && <p className={styles.groupDescription}>{group.description}</p>}
+                </div>
+
+                <div className={styles.cards}>
+                  {group.items.map((item) => (
+                    <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
       ) : (
         <p className={styles.empty}>
           Материалы по этой дисциплине пока не опубликованы. Загляните позже
