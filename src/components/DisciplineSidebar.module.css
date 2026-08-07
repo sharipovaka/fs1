@@ -101,8 +101,9 @@
 }
 
 /*
- * На узких экранах сайдбар превращается в горизонтальную полосу ссылок
- * над содержимым: вертикальная колонка там только отняла бы место.
+ * На узких экранах панель встаёт над материалами. Горизонтальную прокрутку
+ * не используем: часть разделов оказывалась за краем экрана, и их приходилось
+ * листать вбок. Вместо этого — сетка кнопок: все разделы видны сразу.
  */
 @media (max-width: 991.98px) {
   .sidebar {
@@ -111,25 +112,35 @@
   }
 
   .nav {
-    padding: 0.7rem 0.75rem;
+    padding: 0.75rem 0.8rem;
   }
 
   .list {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 0.35rem;
-    padding-bottom: 0.15rem;
-    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
   }
 
   .link {
-    white-space: nowrap;
     border: 1px solid var(--dept-border);
-    border-radius: 999px;
+    border-radius: 10px;
+    padding: 0.6rem 0.7rem;
   }
 
   .linkActive {
     border-color: var(--dept-navy);
+  }
+
+  .linkTitle {
+    /* Длинные названия переносятся, а не обрезаются */
+    white-space: normal;
+    line-height: 1.25;
+  }
+}
+
+/* На совсем узких экранах — по одному разделу в строке */
+@media (max-width: 419.98px) {
+  .list {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

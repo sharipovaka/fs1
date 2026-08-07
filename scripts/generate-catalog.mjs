@@ -206,6 +206,35 @@ function describeFile(relPath, fileMeta = {}, role = {}) {
   };
 }
 
+/**
+ * Метка факультета у работы.
+ *
+ * В _meta.json пишут «faculty»: «мт» либо список [«фн», «мт»].
+ * Пустое значение означает, что материал общий для всех факультетов.
+ * Здесь коды приводятся к тем, что перечислены в catalog/site.json.
+ */
+function normalizeFaculties(value, known) {
+  if (!value) return [];
+  const list = Array.isArray(value) ? value : [value];
+
+  return list
+    .map((entry) => {
+      const key = String(entry).trim().toLowerCase();
+      const found = known.find(
+        (faculty) =>
+          faculty.id.toLowerCase() === key ||
+          (faculty.short ?? '').toLowerCase() === key ||
+          faculty.title.toLowerCase() === key
+      );
+      if (!found) {
+        console.warn(`  неизвестный факультет «${entry}» — проверьте список в catalog/site.json`);
+        return null;
+      }
+      return found.id;
+    })
+    .filter(Boolean);
+}
+
 function finalizeItem(item) {
   return {
     ...item,
@@ -221,7 +250,7 @@ function finalizeItem(item) {
  * затем остальные файлы группируются по именам: «tr-01-usloviya» и
  * «tr-01-varianty» попадают в одну работу «Типовой расчёт № 1».
  */
-function collectFolder(folderRel) {
+function collectFolder(folderRel, faculties = []) {
   const dir = join(FILES_DIR, folderRel);
   const meta = readJson(join(dir, META_FILE_NAME), {}) ?? {};
   const files = listFiles(dir);
@@ -294,6 +323,7 @@ function collectFolder(folderRel) {
         course: entry.meta.course,
         semester: entry.meta.semester,
         deadline: entry.meta.deadline ?? '',
+        faculties: normalizeFaculties(entry.meta.faculty, faculties),
         // Дата сдачи в формате ГГГГ-ММ-ДД: по ней сайт сам считает,
         // сколько осталось, и подставляет метку статуса.
         due: entry.meta.due ?? '',
@@ -327,7 +357,7 @@ const disciplines = site.disciplines.map((discipline) => {
     const folderRel = `disciplines/${discipline.id}/${type.id}`;
     if (!existsSync(join(FILES_DIR, folderRel))) continue;
 
-    const { items, description } = collectFolder(folderRel);
+    const { items, description } = collectFolder(folderRel, site.faculties ?? []);
     if (!items.length) continue;
 
     items.forEach((item) => item.files.forEach((f) => known.add(f.path)));
@@ -345,8 +375,15 @@ const disciplines = site.disciplines.map((discipline) => {
     });
   }
 
+  // Факультеты, которые вообще встречаются в материалах дисциплины:
+  // по ним страница строит переключатель. Если ни у одной работы метки нет,
+  // переключатель не нужен и не показывается.
+  const usedFaculties = (site.faculties ?? [])
+    .map((faculty) => faculty.id)
+    .filter((id) => groups.some((group) => group.items.some((item) => item.faculties.includes(id))));
+
   totalFiles += fileCount;
-  return { ...discipline, groups, fileCount };
+  return { ...discipline, groups, fileCount, faculties: usedFaculties };
 });
 
 /** Плоские разделы: активности и «О лаборатории». */
@@ -354,7 +391,7 @@ function buildFlatSections(list, prefix) {
   return list.map((section) => {
     const folderRel = `${prefix}/${section.id}`;
     const { items, description } = existsSync(join(FILES_DIR, folderRel))
-      ? collectFolder(folderRel)
+      ? collectFolder(folderRel, site.faculties ?? [])
       : { items: [], description: '' };
 
     items.forEach((item) => item.files.forEach((f) => known.add(f.path)));
@@ -389,7 +426,7 @@ for (const path of walkAll(FILES_DIR)) {
 
 writeFileSync(
   OUT_FILE,
-  `${JSON.stringify({ types: site.types, disciplines, activities, about, totals: { files: totalFiles, items: totalItems } }, null, 2)}\n`,
+  `${JSON.stringify({ types: site.types, faculties: site.faculties ?? [], disciplines, activities, about, totals: { files: totalFiles, items: totalItems } }, null, 2)}\n`,
   'utf8'
 );
 

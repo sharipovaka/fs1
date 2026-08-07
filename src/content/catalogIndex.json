@@ -31,6 +31,33 @@
       "description": "Условия типовых расчётов, варианты и материалы для самопроверки."
     }
   ],
+  "faculties": [
+    {
+      "id": "fn",
+      "title": "ФН — Фундаментальные науки",
+      "short": "ФН"
+    },
+    {
+      "id": "mt",
+      "title": "МТ — Машиностроительные технологии",
+      "short": "МТ"
+    },
+    {
+      "id": "iu",
+      "title": "ИУ — Информатика и системы управления",
+      "short": "ИУ"
+    },
+    {
+      "id": "rk",
+      "title": "РК — Робототехника и комплексная автоматизация",
+      "short": "РК"
+    },
+    {
+      "id": "sm",
+      "title": "СМ — Специальное машиностроение",
+      "short": "СМ"
+    }
+  ],
   "disciplines": [
     {
       "id": "calculus",
@@ -54,6 +81,7 @@
               "kind": "Рабочая программа",
               "title": "Математический анализ",
               "deadline": "утверждена на 2025/26 учебный год",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "действует",
@@ -97,6 +125,7 @@
               "number": 4,
               "title": "Формула Тейлора",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "опубликована",
@@ -130,6 +159,7 @@
               "kind": "Ноутбук",
               "title": "Численный эксперимент к лекции 4",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "опубликован",
@@ -172,6 +202,7 @@
               "kind": "Методические указания",
               "title": "Числовые ряды: исследование на сходимость",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -206,6 +237,7 @@
               "kind": "Список литературы",
               "title": "Что читать по курсу",
               "deadline": "основные и дополнительные источники по разделам",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -251,6 +283,9 @@
               "course": 1,
               "semester": 1,
               "deadline": "6-я учебная неделя",
+              "faculties": [
+                "fn"
+              ],
               "due": "2026-10-14",
               "status": "",
               "statusLabel": "",
@@ -308,6 +343,9 @@
               "course": 1,
               "semester": 1,
               "deadline": "12-я учебная неделя",
+              "faculties": [
+                "fn"
+              ],
               "due": "2026-11-25",
               "status": "",
               "statusLabel": "",
@@ -376,12 +414,74 @@
               ],
               "hasPreview": true,
               "thumb": "previews/disciplines/calculus/tasks/tr-02-usloviya.png"
+            },
+            {
+              "id": "disciplines-calculus-tasks-dz-01",
+              "kind": "Домашнее задание",
+              "number": 1,
+              "title": "Производная в прикладных задачах",
+              "deadline": "10-я учебная неделя",
+              "faculties": [
+                "mt"
+              ],
+              "due": "2026-11-11",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/tasks/dz-01-mt-usloviya.tex",
+                  "name": "dz-01-mt-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4115,
+                  "label": "Условия задач: приложения производной к задачам механики и технологии",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/calculus/tasks/dz-01-mt-usloviya.pdf",
+                    "thumb": "previews/disciplines/calculus/tasks/dz-01-mt-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/calculus/tasks/dz-01-mt-usloviya.pdf",
+                    "name": "dz-01-mt-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 159659,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/calculus/tasks/dz-01-mt-varianty.csv",
+                  "name": "dz-01-mt-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 919,
+                  "label": "Данные 25 вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/tasks/dz-01-mt-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/tasks/dz-01-mt-varianty.csv",
+                    "name": "dz-01-mt-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 919,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/tasks/dz-01-mt-usloviya.png"
             }
           ],
-          "fileCount": 5
+          "fileCount": 7
         }
       ],
-      "fileCount": 10
+      "fileCount": 12,
+      "faculties": [
+        "fn",
+        "mt"
+      ]
     },
     {
       "id": "linear-algebra",
@@ -406,6 +506,7 @@
               "number": 7,
               "title": "Собственные значения и собственные векторы",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "опубликована",
@@ -448,6 +549,7 @@
               "kind": "Методические указания",
               "title": "Метод Гаусса: решение систем линейных уравнений",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -482,6 +584,7 @@
               "kind": "Список литературы",
               "title": "Что читать по курсу",
               "deadline": "основные и дополнительные источники по разделам",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -527,6 +630,7 @@
               "course": 1,
               "semester": 1,
               "deadline": "9-я учебная неделя",
+              "faculties": [],
               "due": "2026-11-05",
               "status": "",
               "statusLabel": "",
@@ -584,6 +688,7 @@
               "course": 1,
               "semester": 1,
               "deadline": "15-я учебная неделя",
+              "faculties": [],
               "due": "2026-12-17",
               "status": "",
               "statusLabel": "",
@@ -637,7 +742,8 @@
           "fileCount": 4
         }
       ],
-      "fileCount": 7
+      "fileCount": 7,
+      "faculties": []
     },
     {
       "id": "discrete-math",
@@ -661,6 +767,7 @@
               "kind": "Методические указания",
               "title": "Графы: обход и характеристики",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -695,6 +802,7 @@
               "kind": "Список литературы",
               "title": "Что читать по курсу",
               "deadline": "основные и дополнительные источники по разделам",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -740,6 +848,7 @@
               "course": 1,
               "semester": 2,
               "deadline": "10-я учебная неделя",
+              "faculties": [],
               "due": "2027-04-15",
               "status": "",
               "statusLabel": "",
@@ -793,7 +902,8 @@
           "fileCount": 2
         }
       ],
-      "fileCount": 4
+      "fileCount": 4,
+      "faculties": []
     },
     {
       "id": "teorver",
@@ -817,6 +927,7 @@
               "kind": "Методические указания",
               "title": "Случайные величины: как не ошибиться в модели",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -851,6 +962,7 @@
               "kind": "Список литературы",
               "title": "Что читать по курсу",
               "deadline": "основные и дополнительные источники по разделам",
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
@@ -896,6 +1008,7 @@
               "course": 2,
               "semester": 4,
               "deadline": "9-я учебная неделя",
+              "faculties": [],
               "due": "2027-04-08",
               "status": "",
               "statusLabel": "",
@@ -949,7 +1062,8 @@
           "fileCount": 2
         }
       ],
-      "fileCount": 4
+      "fileCount": 4,
+      "faculties": []
     },
     {
       "id": "common",
@@ -973,6 +1087,7 @@
               "kind": "Календарный график",
               "title": "График учебного процесса 2025/26",
               "deadline": "осенний и весенний семестры",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "действует",
@@ -1006,6 +1121,7 @@
               "kind": "Учебный план",
               "title": "Распределение дисциплин по семестрам",
               "deadline": "прикладная математика и информатика, бакалавриат",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "действует",
@@ -1048,6 +1164,7 @@
               "kind": "Ресурсы",
               "title": "Открытые библиотеки и онлайн-инструменты",
               "deadline": "15 проверенных ресурсов",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "проверено",
@@ -1081,6 +1198,7 @@
               "kind": "Список литературы",
               "title": "Учебники и задачники по дисциплинам",
               "deadline": "основная и дополнительная литература по шести дисциплинам",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "актуален",
@@ -1114,6 +1232,7 @@
               "kind": "Справочник",
               "title": "Краткий справочник формул",
               "deadline": "две колонки на одной странице — удобно печатать",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "актуален",
@@ -1157,6 +1276,7 @@
               "kind": "Шаблон",
               "title": "Курсовая работа (LaTeX)",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "актуален",
@@ -1191,6 +1311,7 @@
               "kind": "Требования",
               "title": "Требования к оформлению работ",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "актуальны",
@@ -1224,6 +1345,7 @@
               "kind": "Шаблон",
               "title": "Вычислительный отчёт (Jupyter)",
               "deadline": "",
+              "faculties": [],
               "due": "",
               "status": "open",
               "statusLabel": "актуален",
@@ -1256,7 +1378,8 @@
           "fileCount": 3
         }
       ],
-      "fileCount": 8
+      "fileCount": 8,
+      "faculties": []
     }
   ],
   "activities": [
@@ -1272,6 +1395,7 @@
           "kind": "Шаблон",
           "title": "Отчёт по практике",
           "deadline": "сдать в течение недели после окончания",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "актуален",
@@ -1325,6 +1449,7 @@
           "kind": "Справочник",
           "title": "Базы практики",
           "deadline": "выбрать за месяц до начала",
+          "faculties": [],
           "due": "",
           "status": "soon",
           "statusLabel": "идёт распределение",
@@ -1368,6 +1493,7 @@
           "kind": "Архив",
           "title": "Результаты 2023–2025",
           "deadline": "",
+          "faculties": [],
           "due": "",
           "status": "done",
           "statusLabel": "архив",
@@ -1401,6 +1527,7 @@
           "kind": "Программа",
           "title": "Конференция «Студенческая весна» 2026",
           "deadline": "15–16 апреля 2026, корпус А",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "приём заявок открыт",
@@ -1434,6 +1561,7 @@
           "kind": "Шаблон",
           "title": "Тезисы доклада",
           "deadline": "прислать до 20 марта 2026",
+          "faculties": [],
           "due": "",
           "status": "soon",
           "statusLabel": "скоро дедлайн",
@@ -1478,6 +1606,7 @@
           "kind": "Шаблон",
           "title": "Тезисы доклада на семинаре",
           "deadline": "прислать за неделю до заседания",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "актуален",
@@ -1512,6 +1641,7 @@
           "kind": "Аннотации",
           "title": "Аннотации докладов семестра",
           "deadline": "осенний семестр 2026/27",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "актуальны",
@@ -1546,6 +1676,7 @@
           "kind": "Материалы доклада",
           "title": "Разностные схемы: демонстрация",
           "deadline": "",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "опубликованы",
@@ -1589,6 +1720,7 @@
           "kind": "Шаблон",
           "title": "Презентация в Beamer",
           "deadline": "",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "актуален",
@@ -1623,6 +1755,7 @@
           "kind": "Материалы",
           "title": "Графики для доклада",
           "deadline": "",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "опубликованы",
@@ -1656,6 +1789,7 @@
           "kind": "Чек-лист",
           "title": "Подготовка доклада",
           "deadline": "начать за две недели",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "актуален",
@@ -1699,6 +1833,7 @@
           "kind": "Информационное письмо",
           "title": "XXIV студенческая конференция «Математика и её приложения»",
           "deadline": "тезисы до 20 марта 2026",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "приём открыт",
@@ -1732,6 +1867,7 @@
           "kind": "Шаблон",
           "title": "Тезисы для конференции",
           "deadline": "",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "актуален",
@@ -1766,6 +1902,7 @@
           "kind": "Календарь",
           "title": "Конференции 2026 года",
           "deadline": "ближайший дедлайн — 20 марта",
+          "faculties": [],
           "due": "",
           "status": "soon",
           "statusLabel": "скоро дедлайн",
@@ -1811,6 +1948,7 @@
           "kind": "Статья",
           "title": "Методический семинар на кафедре «Высшая математика»",
           "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "опубликована",
@@ -1844,6 +1982,7 @@
           "kind": "Статья",
           "title": "Преподаватели кафедры на фронтах Великой Отечественной войны",
           "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
+          "faculties": [],
           "due": "",
           "status": "open",
           "statusLabel": "опубликована",
@@ -1877,7 +2016,7 @@
     }
   ],
   "totals": {
-    "files": 50,
-    "items": 42
+    "files": 52,
+    "items": 43
   }
 }

@@ -8,6 +8,7 @@
 import catalogIndex from './content/catalogIndex.json';
 
 export const TYPES = catalogIndex.types;
+export const FACULTIES = catalogIndex.faculties ?? [];
 export const DISCIPLINES = catalogIndex.disciplines;
 export const ACTIVITIES = catalogIndex.activities;
 export const ABOUT = catalogIndex.about;
@@ -102,4 +103,20 @@ export function getAllMaterials() {
   }
 
   return result;
+}
+
+/**
+ * Материалы для выбранного факультета.
+ *
+ * Работы без метки факультета считаются общими и остаются видны всегда:
+ * конспекты, учебники и шаблоны нужны студентам любого факультета.
+ */
+export function forFaculty(items, faculty) {
+  if (!faculty) return items;
+  return items.filter((item) => !item.faculties?.length || item.faculties.includes(faculty));
+}
+
+/** Читаемое название факультета по коду. */
+export function facultyTitle(id) {
+  return FACULTIES.find((faculty) => faculty.id === id)?.short ?? id;
 }

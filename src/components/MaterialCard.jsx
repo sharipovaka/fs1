@@ -1,5 +1,6 @@
 import { assetUrl, colabUrl, downloadUrl, githubUrl } from '../repoConfig.js';
 import { describeDue } from '../deadlines.js';
+import { facultyTitle } from '../catalog.js';
 import styles from './MaterialCard.module.css';
 import Icon from './Icon.jsx';
 
@@ -68,6 +69,12 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           <div className={styles.badges}>
             {sectionLabel && <span className={`${styles.badge} ${styles.badgeSection}`}>{sectionLabel}</span>}
             {item.discipline && <span className={`${styles.badge} ${styles.badgeDiscipline}`}>{item.discipline}</span>}
+            {/* Метка факультета — только у работ, которые читаются не всем */}
+            {item.faculties?.map((id) => (
+              <span key={id} className={`${styles.badge} ${styles.badgeFaculty}`}>
+                {facultyTitle(id)}
+              </span>
+            ))}
             {item.course && <span className={styles.badge}>{item.course} курс</span>}
             {item.semester && <span className={styles.badge}>{item.semester} семестр</span>}
             {statusLabel && (

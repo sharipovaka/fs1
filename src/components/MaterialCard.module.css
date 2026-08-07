@@ -309,3 +309,10 @@
 .deadlineNote {
   color: var(--dept-muted);
 }
+
+/* Метка факультета: работа читается не для всех */
+.badgeFaculty {
+  background: var(--dept-accent);
+  border-color: var(--dept-accent-dark);
+  color: #3d2c05;
+}
