@@ -1,0 +1,37 @@
+{
+  "_comment": "Описания материалов этой папки. Всё необязательно: без файла работы всё равно появятся на сайте, названия возьмутся из имён файлов.",
+  "items": {
+    "coursework": {
+      "kind": "Шаблон",
+      "title": "Курсовая работа (LaTeX)",
+      "status": "open",
+      "statusLabel": "актуален"
+    },
+    "report-template": {
+      "kind": "Шаблон",
+      "title": "Вычислительный отчёт (Jupyter)",
+      "status": "open",
+      "statusLabel": "актуален"
+    },
+    "formatting-requirements": {
+      "kind": "Требования",
+      "title": "Требования к оформлению работ",
+      "status": "open",
+      "statusLabel": "актуальны"
+    }
+  },
+  "files": {
+    "coursework.tex": {
+      "label": "Исходник LaTeX: титульный лист, окружения теорем, оглавление, библиография",
+      "primary": true
+    },
+    "report-template.ipynb": {
+      "label": "Заготовка ноутбука с обязательной структурой разделов",
+      "primary": true
+    },
+    "formatting-requirements.md": {
+      "label": "Параметры страницы, формулы, рисунки, список литературы, чек-лист",
+      "primary": true
+    }
+  }
+}

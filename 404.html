@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лаборатория математики ФН1</title>
+    <script>
+      /*
+       * Перехват «глубоких» ссылок на GitHub Pages.
+       *
+       * Пользователь открыл https://user.github.io/math-department/disciplines/plans —
+       * такого файла на сервере нет, GitHub Pages отдаёт этот 404.html.
+       * Мы кодируем путь в query-строку и переходим на index.html того же проекта;
+       * встречный скрипт в index.html восстановит адрес через history.replaceState.
+       *
+       * pathSegmentsToKeep = 1 — количество сегментов пути, относящихся к самому
+       * репозиторию (для https://user.github.io/<repository>/ это 1).
+       * Для публикации на корневом домене поставьте 0.
+       */
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(pathSegmentsToKeep)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

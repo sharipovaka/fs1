@@ -1,0 +1,88 @@
+<section id="графики-для-доклада-как-оформить-чтобы-читалось-из-зала" class="cell markdown">
+<h1>Графики для доклада: как оформить, чтобы читалось из зала</h1>
+<p><strong>Лаборатория математики ФН1</strong></p>
+<p>Ноутбук показывает, как готовить иллюстрации для презентации: крупный шрифт, подписанные оси, экспорт в векторный формат. Открывается в Google Colab, дополнительная установка пакетов не нужна.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Единый стиль для всех графиков доклада.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Шрифт крупный: то, что мелко на экране ноутбука, из зала не видно вовсе.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>PRESENTATION_STYLE <span class="op">=</span> {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;figure.figsize&quot;</span>: (<span class="dv">8</span>, <span class="dv">5</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;figure.dpi&quot;</span>: <span class="dv">120</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;font.size&quot;</span>: <span class="dv">16</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;axes.titlesize&quot;</span>: <span class="dv">18</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;axes.labelsize&quot;</span>: <span class="dv">16</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;lines.linewidth&quot;</span>: <span class="fl">2.5</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;grid.alpha&quot;</span>: <span class="fl">0.3</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;legend.frameon&quot;</span>: <span class="va">False</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;savefig.bbox&quot;</span>: <span class="st">&quot;tight&quot;</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(PRESENTATION_STYLE)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Фирменная палитра: тёмно-синий и золотой</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>NAVY, ACCENT, GREY <span class="op">=</span> <span class="st">&quot;#123a5f&quot;</span>, <span class="st">&quot;#e0a92e&quot;</span>, <span class="st">&quot;#8a97a3&quot;</span></span></code></pre></div>
+</div>
+<section id="1-график-сходимости-в-логарифмическом-масштабе" class="cell markdown">
+<h2>1. График сходимости в логарифмическом масштабе</h2>
+<p>Стандартная иллюстрация для доклада по численным методам: рядом с расчётными точками показывается опорная прямая ожидаемого порядка.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> np.array([<span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.025</span>, <span class="fl">0.0125</span>, <span class="fl">0.00625</span>])</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> np.array([<span class="fl">2.1e-3</span>, <span class="fl">5.3e-4</span>, <span class="fl">1.3e-4</span>, <span class="fl">3.3e-5</span>, <span class="fl">8.2e-6</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ax.loglog(h, error, <span class="st">&quot;o-&quot;</span>, color<span class="op">=</span>NAVY, label<span class="op">=</span><span class="st">&quot;расчёт&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ax.loglog(h, error[<span class="dv">0</span>] <span class="op">*</span> (h <span class="op">/</span> h[<span class="dv">0</span>]) <span class="op">**</span> <span class="dv">2</span>, <span class="st">&quot;--&quot;</span>, color<span class="op">=</span>GREY, label<span class="op">=</span><span class="vs">r&quot;опорная </span><span class="dv">$</span><span class="vs">O</span><span class="kw">(</span><span class="vs">h</span><span class="dv">^</span><span class="vs">2</span><span class="kw">)</span><span class="dv">$</span><span class="vs">&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&quot;шаг сетки $h$&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&quot;погрешность $</span><span class="ch">\\</span><span class="st">max|u - u_h|$&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&quot;Сходимость разностной схемы&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">&quot;both&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>observed <span class="op">=</span> np.log2(error[:<span class="op">-</span><span class="dv">1</span>] <span class="op">/</span> error[<span class="dv">1</span>:])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;наблюдаемый порядок:&quot;</span>, np.<span class="bu">round</span>(observed, <span class="dv">2</span>))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+</div>
+<section id="2-сравнение-методов-на-одном-поле" class="cell markdown">
+<h2>2. Сравнение методов на одном поле</h2>
+<p>Не больше трёх-четырёх кривых на график: пятая уже не различается из зала.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>iterations <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">26</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.semilogy(iterations, <span class="fl">0.9</span><span class="op">**</span>iterations, color<span class="op">=</span>NAVY, label<span class="op">=</span><span class="st">&quot;простая итерация&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.semilogy(iterations, <span class="fl">0.6</span><span class="op">**</span>iterations, color<span class="op">=</span>ACCENT, label<span class="op">=</span><span class="st">&quot;сопряжённые градиенты&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.semilogy(iterations, <span class="fl">0.3</span><span class="op">**</span>iterations, color<span class="op">=</span>GREY, label<span class="op">=</span><span class="st">&quot;с предобуславливателем&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&quot;номер итерации&quot;</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&quot;норма невязки&quot;</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&quot;Скорость сходимости итерационных методов&quot;</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">&quot;both&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+</div>
+<section id="3-экспорт-в-презентацию" class="cell markdown">
+<h2>3. Экспорт в презентацию</h2>
+<p>Для Beamer и PowerPoint сохраняйте векторный PDF: он не размывается на проекторе при любом масштабе.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">&quot;convergence.pdf&quot;</span>)   <span class="co"># вектор — для LaTeX/Beamer</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">&quot;convergence.png&quot;</span>, dpi<span class="op">=</span><span class="dv">300</span>)  <span class="co"># растр 300 dpi — для PowerPoint</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Файлы сохранены. В Colab их можно скачать через панель «Файлы» слева.&quot;</span>)</span></code></pre></div>
+</div>
+<section id="чек-лист-для-каждого-графика" class="cell markdown">
+<h2>Чек-лист для каждого графика</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />подписаны обе оси, указаны единицы измерения;</label></li>
+<li><label><input type="checkbox" />шрифт не мельче 16 pt при итоговом размере на слайде;</label></li>
+<li><label><input type="checkbox" />кривые различимы не только по цвету (тип линии, маркеры);</label></li>
+<li><label><input type="checkbox" />легенда не перекрывает данные;</label></li>
+<li><label><input type="checkbox" />масштаб осей выбран осознанно (логарифмический для степенных зависимостей);</label></li>
+<li><label><input type="checkbox" />есть заголовок либо подпись под рисунком в тексте.</label></li>
+</ul>
+</section>
