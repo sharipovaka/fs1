@@ -63,6 +63,21 @@
   font-size: 0.85em;
 }
 
+/* Сколько материалов в разделе — видно до прокрутки */
+.groupCount {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--dept-surface);
+  border: 1px solid var(--dept-border);
+  color: var(--dept-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .groupDescription {
   margin: 0.35rem 0 0;
   color: var(--dept-muted);

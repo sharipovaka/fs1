@@ -18,7 +18,6 @@ export default function DisciplineSummary({ discipline }) {
   const facts = [
     discipline.course && { icon: 'fa-solid fa-graduation-cap', text: discipline.course },
     discipline.semester && { icon: 'fa-solid fa-calendar-days', text: discipline.semester },
-    discipline.control && { icon: 'fa-solid fa-circle-check', text: discipline.control },
   ].filter(Boolean);
 
   return (

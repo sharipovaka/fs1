@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { Navigate, useLocation, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
@@ -15,45 +15,29 @@ import styles from './DisciplinePage.module.css';
 /**
  * Страница дисциплины — основная страница сайта.
  *
- * Слева боковая панель с разделами, справа открытый раздел: описание
- * и карточки материалов со скачиванием, просмотром и Colab. Одновременно
- * показывается только один раздел, поэтому страница остаётся короткой.
- *
- * Какой раздел открыт, определяет адрес: /disciplines/calculus#tasks.
- * Без якоря открывается первый раздел.
+ * Все разделы выведены подряд: студент сразу видит, что вообще есть
+ * у дисциплины, и ничего не нужно раскрывать. Боковая панель показывает
+ * список разделов, подсвечивает текущий при прокрутке и позволяет
+ * перепрыгнуть к нужному одним нажатием.
  */
 export default function DisciplinePage() {
   const { id } = useParams();
-  const { hash } = useLocation();
   const discipline = getDiscipline(id);
   const [previewFile, setPreviewFile] = useState(null);
   const [faculty, setFaculty] = useState(readFaculty);
-  const previousType = useRef(null);
 
   const chooseFaculty = (value) => {
     setFaculty(value);
     saveFaculty(value);
   };
 
-  // Якорь из адреса; если такого раздела нет — открываем первый
-  const requested = decodeURIComponent(hash.replace('#', ''));
-  const activeGroup = discipline
-    ? discipline.groups.find((group) => group.type === requested) ?? discipline.groups[0]
-    : null;
-
-  const visibleItems = activeGroup ? forFaculty(activeGroup.items, faculty) : [];
-
-  // При переключении раздела возвращаем к началу: иначе, если страница была
-  // прокручена, новый раздел откроется где-то выше видимой области.
-  // Хук объявлен до выхода по редиректу — их число не должно меняться между рендерами.
-  useEffect(() => {
-    const type = activeGroup?.type ?? null;
-    if (previousType.current && previousType.current !== type) window.scrollTo(0, 0);
-    previousType.current = type;
-  }, [activeGroup?.type]);
-
   // Неизвестная дисциплина — отправляем на первую, чтобы не показывать 404
   if (!discipline) return <Navigate to={`/disciplines/${DISCIPLINES[0].id}`} replace />;
+
+  // Разделы с учётом выбранного факультета; пустые после фильтра не показываем
+  const groups = discipline.groups
+    .map((group) => ({ ...group, items: forFaculty(group.items, faculty) }))
+    .filter((group) => group.items.length > 0);
 
   return (
     <div className={styles.page}>
@@ -65,10 +49,13 @@ export default function DisciplinePage() {
         fileCount={discipline.fileCount}
       />
 
-      {activeGroup ? (
-        // Слева навигация по разделам, справа открытый раздел
+      {discipline.groups.length > 0 ? (
+        // Слева навигация по разделам, справа сами разделы друг за другом
         <div className={styles.layout}>
-          <DisciplineSidebar discipline={discipline} activeType={activeGroup.type} />
+          <DisciplineSidebar
+            discipline={discipline}
+            visibleTypes={groups.map((group) => group.type)}
+          />
 
           <div className={styles.content}>
             {/* Сводка: коротко о курсе и ближайший срок сдачи */}
@@ -83,30 +70,33 @@ export default function DisciplinePage() {
               />
             )}
 
-            <section className={styles.group}>
-              <div className={styles.groupHeader}>
-                <h2 className={styles.groupTitle}>
-                  <Icon name={activeGroup.icon} className={styles.groupIcon} />
-                  {activeGroup.title}
-                </h2>
-                {activeGroup.description && (
-                  <p className={styles.groupDescription}>{activeGroup.description}</p>
-                )}
-              </div>
+            {groups.length > 0 ? (
+              groups.map((group) => (
+                <section key={group.type} id={group.type} className={styles.group}>
+                  <div className={styles.groupHeader}>
+                    <h2 className={styles.groupTitle}>
+                      <Icon name={group.icon} className={styles.groupIcon} />
+                      {group.title}
+                      <span className={styles.groupCount}>{group.items.length}</span>
+                    </h2>
+                    {group.description && (
+                      <p className={styles.groupDescription}>{group.description}</p>
+                    )}
+                  </div>
 
-              <div className={styles.cards}>
-                {visibleItems.length > 0 ? (
-                  visibleItems.map((item) => (
-                    <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
-                  ))
-                ) : (
-                  <p className={styles.empty}>
-                    Для выбранного факультета в этом разделе материалов нет.
-                    Нажмите «Все», чтобы увидеть остальные.
-                  </p>
-                )}
-              </div>
-            </section>
+                  <div className={styles.cards}>
+                    {group.items.map((item) => (
+                      <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
+                    ))}
+                  </div>
+                </section>
+              ))
+            ) : (
+              <p className={styles.empty}>
+                Для выбранного факультета материалов нет. Нажмите «Все»,
+                чтобы увидеть остальные.
+              </p>
+            )}
           </div>
         </div>
       ) : (
