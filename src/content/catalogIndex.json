@@ -112,6 +112,32 @@
       "faculties": []
     },
     {
+      "id": "analytic-geometry",
+      "title": "Аналитическая геометрия",
+      "short": "Аналит. геометрия",
+      "icon": "fa-solid fa-draw-polygon",
+      "meta": "1 курс · 1 семестр",
+      "description": "Векторная алгебра, прямая и плоскость, кривые и поверхности второго порядка, преобразования координат.",
+      "course": "1 курс",
+      "semester": "1 семестр",
+      "groups": [],
+      "fileCount": 0,
+      "faculties": []
+    },
+    {
+      "id": "machine-learning",
+      "title": "Машинное обучение",
+      "short": "Машинное обучение",
+      "icon": "fa-solid fa-brain",
+      "meta": "3 курс · 6 семестр",
+      "description": "Методы обучения с учителем и без, регрессия и классификация, оценка качества моделей, оптимизация и регуляризация.",
+      "course": "3 курс",
+      "semester": "6 семестр",
+      "groups": [],
+      "fileCount": 0,
+      "faculties": []
+    },
+    {
       "id": "common",
       "title": "Общие материалы",
       "short": "Общее",
@@ -261,8 +287,8 @@
       "id": "seminars",
       "title": "Семинары",
       "icon": "fa-solid fa-chalkboard-user",
-      "description": "Научный семинар лаборатории. Заседания проходят по средам в 16:30 в аудитории 312. Участие свободное — приходите послушать или выступить.",
-      "menuHint": "Расписание заседаний и аннотации докладов.",
+      "description": "Открытый учебно-научный семинар кафедры. Цель — формирование научной и математической культуры среди студентов и аспирантов, обсуждение актуальных вопросов современных разделов математики и их применения к прикладным задачам. Приглашаются студенты, аспиранты и преподаватели.",
+      "menuHint": "Расписание докладов и аннотации.",
       "items": [],
       "fileCount": 0
     },
@@ -272,8 +298,112 @@
       "icon": "fa-solid fa-microphone-lines",
       "description": "Как подготовить студенческий доклад: структура выступления, оформление слайдов, критерии оценивания.",
       "menuHint": "Чек-лист, шаблон презентации, оформление графиков.",
-      "items": [],
-      "fileCount": 0
+      "items": [
+        {
+          "id": "activities-reports-beamer-presentation",
+          "kind": "Шаблон",
+          "title": "Презентация в Beamer",
+          "deadline": "",
+          "faculties": [],
+          "due": "",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/reports/beamer-presentation.tex",
+              "name": "beamer-presentation.tex",
+              "ext": "tex",
+              "format": "LaTeX",
+              "size": 4460,
+              "label": "Готовая структура слайдов в фирменных цветах лаборатории",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "previews/activities/reports/beamer-presentation.pdf",
+                "thumb": "previews/activities/reports/beamer-presentation.png"
+              },
+              "download": {
+                "path": "files/activities/reports/beamer-presentation.tex",
+                "name": "beamer-presentation.tex",
+                "format": "LaTeX",
+                "size": 4460,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/reports/beamer-presentation.png"
+        },
+        {
+          "id": "activities-reports-plots-for-presentation",
+          "kind": "Материалы",
+          "title": "Графики для доклада",
+          "deadline": "",
+          "faculties": [],
+          "due": "",
+          "status": "open",
+          "statusLabel": "опубликованы",
+          "files": [
+            {
+              "path": "activities/reports/plots-for-presentation.ipynb",
+              "name": "plots-for-presentation.ipynb",
+              "ext": "ipynb",
+              "format": "Jupyter Notebook",
+              "size": 6034,
+              "label": "Стиль, палитра, логарифмические шкалы, экспорт в вектор",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/reports/plots-for-presentation.html"
+              },
+              "download": {
+                "path": "files/activities/reports/plots-for-presentation.ipynb",
+                "name": "plots-for-presentation.ipynb",
+                "format": "Jupyter Notebook",
+                "size": 6034,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        },
+        {
+          "id": "activities-reports-report-checklist",
+          "kind": "Чек-лист",
+          "title": "Подготовка доклада",
+          "deadline": "начать за две недели",
+          "faculties": [],
+          "due": "",
+          "status": "open",
+          "statusLabel": "актуален",
+          "files": [
+            {
+              "path": "activities/reports/report-checklist.md",
+              "name": "report-checklist.md",
+              "ext": "md",
+              "format": "Markdown",
+              "size": 3876,
+              "label": "Сроки, структура выступления по слайдам, критерии оценивания",
+              "primary": true,
+              "preview": {
+                "type": "html",
+                "path": "previews/activities/reports/report-checklist.html"
+              },
+              "download": {
+                "path": "files/activities/reports/report-checklist.md",
+                "name": "report-checklist.md",
+                "format": "Markdown",
+                "size": 3876,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": null
+        }
+      ],
+      "fileCount": 3
     },
     {
       "id": "conferences",
@@ -366,7 +496,7 @@
     }
   ],
   "totals": {
-    "files": 5,
-    "items": 5
+    "files": 8,
+    "items": 8
   }
 }

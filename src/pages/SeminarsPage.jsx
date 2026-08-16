@@ -64,20 +64,33 @@ export default function SeminarsPage() {
   return (
     <div className={styles.page}>
       <SectionHero
-        title="Научный семинар"
+        title={seminars.title}
         icon="fa-solid fa-chalkboard-user"
-        meta={`${seminars.time} · ${seminars.place} · ${seminars.semester}`}
+        meta={`${seminars.place} · ${seminars.time}`}
         description={section?.description}
       >
-        {nextSession && (
+        {nextSession ? (
           <span className={styles.nextBadge}>
             <Icon name="fa-solid fa-calendar-day" /> Ближайшее заседание — {formatDate(nextSession.date)}
+            {nextSession.time ? `, ${nextSession.time}` : ''}
+          </span>
+        ) : (
+          <span className={styles.pendingBadge}>
+            <Icon name="fa-solid fa-calendar-day" /> Расписание на следующий семестр уточняется
           </span>
         )}
       </SectionHero>
 
       <section className={styles.block}>
         <h2 className={styles.blockTitle}>Расписание заседаний</h2>
+
+        {/* Пока расписание не составлено, здесь объясняется, чего ждать */}
+        {seminars.notice && (
+          <p className={styles.notice}>
+            <Icon name="fa-solid fa-circle-exclamation" className={styles.noticeIcon} />
+            {seminars.notice}
+          </p>
+        )}
 
         <div className={styles.tableWrapper}>
           <table className={styles.table}>
@@ -101,7 +114,10 @@ export default function SeminarsPage() {
                     className={`${isNext ? styles.rowNext : ''} ${isPast ? styles.rowPast : ''}`}
                   >
                     <td className={styles.colDate}>
-                      <span className={styles.date}>{formatDate(session.date)}</span>
+                      <span className={styles.date}>
+                        {formatDate(session.date)}
+                        {session.time && <span className={styles.time}>, {session.time}</span>}
+                      </span>
                       {isNext && (
                         <span className={styles.nextMark}>
                           <Icon name="fa-solid fa-hourglass-half" /> следующее
