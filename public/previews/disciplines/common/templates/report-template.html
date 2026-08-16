@@ -1,0 +1,84 @@
+<section id="тема-вычислительной-работы" class="cell markdown">
+<h1>Тема вычислительной работы</h1>
+<p><strong>Лаборатория математики ФН1</strong></p>
+<table>
+<tbody>
+<tr>
+<td>Студент</td>
+<td>Фамилия И. О.</td>
+</tr>
+<tr>
+<td>Группа</td>
+<td>ФН1-11Б</td>
+</tr>
+<tr>
+<td>Дисциплина</td>
+<td>Численные методы</td>
+</tr>
+<tr>
+<td>Руководитель</td>
+<td>должность, Фамилия И. О.</td>
+</tr>
+<tr>
+<td>Дата сдачи</td>
+<td>ДД.ММ.ГГГГ</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Замените заголовки-заглушки своим текстом. Структура разделов менять нельзя.</p>
+</blockquote>
+</section>
+<section id="1-постановка-задачи" class="cell markdown">
+<h2>1. Постановка задачи</h2>
+<p>Приведите строгую математическую формулировку. Например:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>u</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>φ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>u</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>u</mi><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{\partial u}{\partial t} = a^2\frac{\partial^2 u}{\partial x^2},\qquad
+u(x, 0) = \varphi(x),\qquad u(0,t) = u(L,t) = 0.</annotation></semantics></math></p>
+<p>Укажите, что дано, что требуется найти и в каком смысле понимается решение.</p>
+</section>
+<section id="2-метод-решения" class="cell markdown">
+<h2>2. Метод решения</h2>
+<p>Опишите алгоритм: расчётные формулы, условие устойчивости, порядок аппроксимации, оценку вычислительной сложности.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">&quot;figure.figsize&quot;</span>: (<span class="dv">9</span>, <span class="dv">5</span>), <span class="st">&quot;font.size&quot;</span>: <span class="dv">12</span>, <span class="st">&quot;grid.alpha&quot;</span>: <span class="fl">0.3</span>})</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Параметры задачи вынесите в отдельную ячейку — «магических чисел» в коде быть не должно.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># коэффициент температуропроводности</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># длина отрезка</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">0.1</span>      <span class="co"># время расчёта</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>N_X <span class="op">=</span> <span class="dv">51</span>     <span class="co"># узлов по пространству</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>N_T <span class="op">=</span> <span class="dv">2000</span>   <span class="co"># шагов по времени</span></span></code></pre></div>
+</div>
+<section id="3-реализация" class="cell markdown">
+<h2>3. Реализация</h2>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve(a<span class="op">=</span>A, length<span class="op">=</span>L, t_end<span class="op">=</span>T, n_x<span class="op">=</span>N_X, n_t<span class="op">=</span>N_T):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Краткое описание: что принимает, что возвращает.&quot;&quot;&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(<span class="st">&quot;Замените заглушку своей реализацией&quot;</span>)</span></code></pre></div>
+</div>
+<section id="4-численный-эксперимент" class="cell markdown">
+<h2>4. Численный эксперимент</h2>
+<p>Приведите таблицу сходимости и графики. У каждого графика должны быть подписаны оси и указаны единицы измерения.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Таблица сходимости: измельчайте сетку и оценивайте наблюдаемый порядок точности</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># p = log2(err[h] / err[h/2])</span></span></code></pre></div>
+</div>
+<div class="cell markdown">
+<h2 id="5-выводы">5. Выводы</h2>
+<ol>
+<li>Сопоставьте наблюдаемый порядок точности с теоретической оценкой.</li>
+<li>Укажите границы применимости метода.</li>
+<li>Отметьте, что осталось за рамками работы.</li>
+</ol>
+<h2 id="литература">Литература</h2>
+<ol>
+<li>Самарский А. А. Теория разностных схем. — М.: Наука.</li>
+<li>Калиткин Н. Н. Численные методы. — М.: Наука.</li>
+</ol>
+</div>

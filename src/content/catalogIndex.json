@@ -120,8 +120,121 @@
       "description": "То, что нужно независимо от предмета: учебный план, календарный график, шаблоны курсовых и отчётов, требования к оформлению, справочники и открытые ресурсы.",
       "course": "",
       "semester": "",
-      "groups": [],
-      "fileCount": 0,
+      "groups": [
+        {
+          "type": "templates",
+          "title": "Шаблоны",
+          "icon": "fa-solid fa-file-code",
+          "description": "Заготовки работ и требования к оформлению.",
+          "items": [
+            {
+              "id": "disciplines-common-templates-coursework",
+              "kind": "Шаблон",
+              "title": "Курсовая работа (LaTeX)",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "актуален",
+              "files": [
+                {
+                  "path": "disciplines/common/templates/coursework.tex",
+                  "name": "coursework.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 4647,
+                  "label": "Исходник LaTeX: титульный лист, окружения теорем, оглавление, библиография",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/common/templates/coursework.pdf",
+                    "thumb": "previews/disciplines/common/templates/coursework.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/templates/coursework.tex",
+                    "name": "coursework.tex",
+                    "format": "LaTeX",
+                    "size": 4647,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/common/templates/coursework.png"
+            },
+            {
+              "id": "disciplines-common-templates-formatting-requirements",
+              "kind": "Требования",
+              "title": "Требования к оформлению работ",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "актуальны",
+              "files": [
+                {
+                  "path": "disciplines/common/templates/formatting-requirements.md",
+                  "name": "formatting-requirements.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 3738,
+                  "label": "Параметры страницы, формулы, рисунки, список литературы, чек-лист",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/templates/formatting-requirements.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/templates/formatting-requirements.md",
+                    "name": "formatting-requirements.md",
+                    "format": "Markdown",
+                    "size": 3738,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-common-templates-report-template",
+              "kind": "Шаблон",
+              "title": "Вычислительный отчёт (Jupyter)",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "актуален",
+              "files": [
+                {
+                  "path": "disciplines/common/templates/report-template.ipynb",
+                  "name": "report-template.ipynb",
+                  "ext": "ipynb",
+                  "format": "Jupyter Notebook",
+                  "size": 4606,
+                  "label": "Заготовка ноутбука с обязательной структурой разделов",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/templates/report-template.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/templates/report-template.ipynb",
+                    "name": "report-template.ipynb",
+                    "format": "Jupyter Notebook",
+                    "size": 4606,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 3
+        }
+      ],
+      "fileCount": 3,
       "faculties": []
     }
   ],
@@ -253,7 +366,7 @@
     }
   ],
   "totals": {
-    "files": 2,
-    "items": 2
+    "files": 5,
+    "items": 5
   }
 }
