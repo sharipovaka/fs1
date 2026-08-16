@@ -4,6 +4,7 @@
  *   .md, .ipynb → HTML-фрагмент (pandoc, формулы в MathML — без внешних библиотек)
  *   .csv        → HTML-таблица (собственный парсер, без зависимостей)
  *   .tex        → скомпилированный PDF (pdflatex) + PNG-миниатюра первой страницы
+ *   .pdf        → PNG-миниатюра первой страницы (сам файл уже готов)
  *
  * Результат складывается рядом с исходной структурой:
  *   public/files/disciplines/templates/coursework.tex
@@ -262,6 +263,15 @@ for (const source of walk(FILES_DIR)) {
     const target = `${withoutExt}.html`;
     if (isStale(source, target)) done = previewWithPandoc(source, target, 'ipynb');
     else skipped += 1;
+  } else if (ext === '.pdf') {
+    // Готовый PDF, загруженный преподавателем: компилировать нечего,
+    // но миниатюра нужна — по ней работа узнаётся в карточке.
+    const pngTarget = `${withoutExt}.png`;
+    if (isStale(source, pngTarget)) {
+      ensureDir(pngTarget);
+      done = makeThumbnail(source, pngTarget);
+      if (!done) console.warn(`  миниатюру создать не удалось: ${rel}`);
+    } else skipped += 1;
   } else if (ext === '.tex') {
     const pdfTarget = `${withoutExt}.pdf`;
     const pngTarget = `${withoutExt}.png`;

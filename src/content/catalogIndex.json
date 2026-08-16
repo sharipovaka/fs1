@@ -56,6 +56,11 @@
       "id": "sm",
       "title": "СМ — Специальное машиностроение",
       "short": "СМ"
+    },
+    {
+      "id": "sgn",
+      "title": "СГН — Социальные и гуманитарные науки",
+      "short": "СГН"
     }
   ],
   "disciplines": [
@@ -70,7 +75,8 @@
       "semester": "1–2 семестры",
       "groups": [],
       "fileCount": 0,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
     },
     {
       "id": "linear-algebra",
@@ -83,7 +89,8 @@
       "semester": "1 семестр",
       "groups": [],
       "fileCount": 0,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
     },
     {
       "id": "discrete-math",
@@ -96,7 +103,8 @@
       "semester": "2 семестр",
       "groups": [],
       "fileCount": 0,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
     },
     {
       "id": "teorver",
@@ -109,7 +117,8 @@
       "semester": "4 семестр",
       "groups": [],
       "fileCount": 0,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
     },
     {
       "id": "analytic-geometry",
@@ -122,7 +131,8 @@
       "semester": "1 семестр",
       "groups": [],
       "fileCount": 0,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
     },
     {
       "id": "machine-learning",
@@ -135,7 +145,153 @@
       "semester": "6 семестр",
       "groups": [],
       "fileCount": 0,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
+    },
+    {
+      "id": "mathematics",
+      "title": "Математика",
+      "short": "Математика",
+      "icon": "fa-solid fa-calculator",
+      "meta": "1 и 3 семестры",
+      "description": "Общий курс математики: элементарные функции, пределы и непрерывность, дифференциальное исчисление и исследование функций. Материалы разложены по семестрам.",
+      "course": "1–2 курс",
+      "semester": "1 и 3 семестры",
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-mathematics-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Элементарные функции",
+              "semester": 1,
+              "deadline": "32 варианта",
+              "faculties": [
+                "sgn"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/mathematics/tasks/tr-01-usloviya.pdf",
+                  "name": "tr-01-usloviya.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 130096,
+                  "label": "Область определения, чётность, эскизы графиков элементарных функций с асимптотами",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/mathematics/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/mathematics/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/mathematics/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 130096,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/mathematics/tasks/tr-01-usloviya.png"
+            },
+            {
+              "id": "disciplines-mathematics-tasks-tr-02",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "Пределы и непрерывность",
+              "semester": 1,
+              "deadline": "30 вариантов, три задачи",
+              "faculties": [
+                "sgn"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/mathematics/tasks/tr-02-usloviya.pdf",
+                  "name": "tr-02-usloviya.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 458861,
+                  "label": "Предел последовательности по определению, вычисление пределов функций, точки разрыва",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/mathematics/tasks/tr-02-usloviya.pdf",
+                    "thumb": "previews/disciplines/mathematics/tasks/tr-02-usloviya.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/mathematics/tasks/tr-02-usloviya.pdf",
+                    "name": "tr-02-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 458861,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/mathematics/tasks/tr-02-usloviya.png"
+            },
+            {
+              "id": "disciplines-mathematics-tasks-tr-03",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "Исследование функций и ряд Тейлора",
+              "semester": 1,
+              "deadline": "36 вариантов",
+              "faculties": [
+                "sgn"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/mathematics/tasks/tr-03-usloviya.pdf",
+                  "name": "tr-03-usloviya.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 1897507,
+                  "label": "Разложение в ряд Тейлора с остатком в форме Пеано, полное исследование функций и построение графиков",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/mathematics/tasks/tr-03-usloviya.pdf",
+                    "thumb": "previews/disciplines/mathematics/tasks/tr-03-usloviya.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/mathematics/tasks/tr-03-usloviya.pdf",
+                    "name": "tr-03-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 1897507,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/mathematics/tasks/tr-03-usloviya.png"
+            }
+          ],
+          "fileCount": 3
+        }
+      ],
+      "fileCount": 3,
+      "faculties": [
+        "sgn"
+      ],
+      "semesters": [
+        1
+      ]
     },
     {
       "id": "common",
@@ -261,7 +417,8 @@
         }
       ],
       "fileCount": 3,
-      "faculties": []
+      "faculties": [],
+      "semesters": []
     }
   ],
   "activities": [
@@ -443,7 +600,8 @@
               "primary": true,
               "preview": {
                 "type": "pdf",
-                "path": "files/about/history/metodicheskiy-seminar-2018.pdf"
+                "path": "files/about/history/metodicheskiy-seminar-2018.pdf",
+                "thumb": "previews/about/history/metodicheskiy-seminar-2018.png"
               },
               "download": {
                 "path": "files/about/history/metodicheskiy-seminar-2018.pdf",
@@ -455,7 +613,7 @@
             }
           ],
           "hasPreview": true,
-          "thumb": null
+          "thumb": "previews/about/history/metodicheskiy-seminar-2018.png"
         },
         {
           "id": "about-history-prepodavateli-frontoviki-2018",
@@ -477,7 +635,8 @@
               "primary": true,
               "preview": {
                 "type": "pdf",
-                "path": "files/about/history/prepodavateli-frontoviki-2018.pdf"
+                "path": "files/about/history/prepodavateli-frontoviki-2018.pdf",
+                "thumb": "previews/about/history/prepodavateli-frontoviki-2018.png"
               },
               "download": {
                 "path": "files/about/history/prepodavateli-frontoviki-2018.pdf",
@@ -489,14 +648,14 @@
             }
           ],
           "hasPreview": true,
-          "thumb": null
+          "thumb": "previews/about/history/prepodavateli-frontoviki-2018.png"
         }
       ],
       "fileCount": 2
     }
   ],
   "totals": {
-    "files": 8,
-    "items": 8
+    "files": 11,
+    "items": 11
   }
 }

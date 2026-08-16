@@ -5,11 +5,11 @@ import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
 import DisciplineSidebar from '../components/DisciplineSidebar.jsx';
 import DisciplineSummary from '../components/DisciplineSummary.jsx';
-import FacultyFilter from '../components/FacultyFilter.jsx';
+import MaterialFilters from '../components/MaterialFilters.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import SectionHero from '../components/SectionHero.jsx';
-import { DISCIPLINES, forFaculty, getDiscipline } from '../catalog.js';
-import { readFaculty, saveFaculty } from '../facultyChoice.js';
+import { DISCIPLINES, getDiscipline, visibleItems } from '../catalog.js';
+import { readChoice, saveChoice } from '../studentChoice.js';
 import { materials } from '../plural.js';
 import styles from './DisciplinePage.module.css';
 
@@ -25,19 +25,19 @@ export default function DisciplinePage() {
   const { id } = useParams();
   const discipline = getDiscipline(id);
   const [previewFile, setPreviewFile] = useState(null);
-  const [faculty, setFaculty] = useState(readFaculty);
+  const [choice, setChoice] = useState(readChoice);
 
-  const chooseFaculty = (value) => {
-    setFaculty(value);
-    saveFaculty(value);
+  const chooseFilters = (value) => {
+    setChoice(value);
+    saveChoice(value);
   };
 
   // Неизвестная дисциплина — отправляем на первую, чтобы не показывать 404
   if (!discipline) return <Navigate to={`/disciplines/${DISCIPLINES[0].id}`} replace />;
 
-  // Разделы с учётом выбранного факультета; пустые после фильтра не показываем
+  // Разделы с учётом факультета и семестра; пустые после фильтра не показываем
   const groups = discipline.groups
-    .map((group) => ({ ...group, items: forFaculty(group.items, faculty) }))
+    .map((group) => ({ ...group, items: visibleItems(group.items, choice) }))
     .filter((group) => group.items.length > 0);
 
   return (
@@ -62,14 +62,15 @@ export default function DisciplinePage() {
             {/* Сводка: коротко о курсе и ближайший срок сдачи */}
             <DisciplineSummary discipline={discipline} />
 
-            {/* Одна дисциплина читается на разных факультетах по разным программам */}
-            {discipline.faculties?.length > 0 && (
-              <FacultyFilter
-                available={discipline.faculties}
-                value={faculty}
-                onChange={chooseFaculty}
-              />
-            )}
+            {/* Одна дисциплина читается на разных факультетах по разным
+                программам и растянута на несколько семестров */}
+            <MaterialFilters
+              faculties={discipline.faculties}
+              semesters={discipline.semesters}
+              value={choice}
+              onChange={chooseFilters}
+            />
+
 
             {groups.length > 0 ? (
               groups.map((group) => (
@@ -99,8 +100,8 @@ export default function DisciplinePage() {
               ))
             ) : (
               <p className={styles.empty}>
-                Для выбранного факультета материалов нет. Нажмите «Все»,
-                чтобы увидеть остальные.
+                Для выбранного факультета и семестра материалов нет.
+                Нажмите «Все», чтобы увидеть остальные.
               </p>
             )}
           </div>

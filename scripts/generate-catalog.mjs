@@ -150,7 +150,15 @@ function findPreview(relPath) {
   const html = `${withoutExt}.html`;
   if (existsSync(join(PREVIEWS_DIR, html))) return { type: 'html', path: `previews/${html}` };
 
-  if (extname(relPath).toLowerCase() === '.pdf') return { type: 'pdf', path: `files/${relPath}` };
+  // Готовый PDF: сам файл и есть предпросмотр, миниатюра лежит рядом в previews/
+  if (extname(relPath).toLowerCase() === '.pdf') {
+    const thumb = `${withoutExt}.png`;
+    return {
+      type: 'pdf',
+      path: `files/${relPath}`,
+      ...(existsSync(join(PREVIEWS_DIR, thumb)) ? { thumb: `previews/${thumb}` } : {}),
+    };
+  }
 
   return null;
 }
@@ -375,15 +383,24 @@ const disciplines = site.disciplines.map((discipline) => {
     });
   }
 
-  // Факультеты, которые вообще встречаются в материалах дисциплины:
-  // по ним страница строит переключатель. Если ни у одной работы метки нет,
-  // переключатель не нужен и не показывается.
+  // Признаки, по которым на странице строятся переключатели.
+  // Если у работ дисциплины признак не проставлен, переключателя не будет.
   const usedFaculties = (site.faculties ?? [])
     .map((faculty) => faculty.id)
     .filter((id) => groups.some((group) => group.items.some((item) => item.faculties.includes(id))));
 
+  // Семестры: одна дисциплина может читаться в первом и третьем семестрах
+  // разными работами — их нужно уметь разделить.
+  const usedSemesters = [
+    ...new Set(
+      groups.flatMap((group) =>
+        group.items.map((item) => item.semester).filter((value) => value !== undefined && value !== '')
+      )
+    ),
+  ].sort((a, b) => Number(a) - Number(b));
+
   totalFiles += fileCount;
-  return { ...discipline, groups, fileCount, faculties: usedFaculties };
+  return { ...discipline, groups, fileCount, faculties: usedFaculties, semesters: usedSemesters };
 });
 
 /** Плоские разделы: активности и «О лаборатории». */

@@ -1,10 +1,6 @@
-/* Переключатель факультета над материалами раздела. */
+/* Переключатели факультета и семестра над материалами дисциплины. */
 
 .panel {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.85rem;
   padding: 0.7rem 0.95rem;
   margin-bottom: 1rem;
   background: var(--dept-card);
@@ -13,10 +9,25 @@
   box-shadow: var(--dept-shadow-sm);
 }
 
+/* Каждый признак — своя строка: «Факультет: …», «Семестр: …» */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.85rem;
+}
+
+.row + .row {
+  margin-top: 0.55rem;
+  padding-top: 0.55rem;
+  border-top: 1px dashed var(--dept-border);
+}
+
 .label {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-width: 7.5rem;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--dept-muted);
@@ -66,14 +77,13 @@
 }
 
 .hint {
-  flex: 1 1 14rem;
-  margin: 0;
+  margin: 0.55rem 0 0;
   font-size: 0.82rem;
   color: var(--dept-muted);
 }
 
 @media (max-width: 575.98px) {
-  .hint {
-    flex-basis: 100%;
+  .label {
+    min-width: 0;
   }
 }

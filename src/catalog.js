@@ -106,14 +106,21 @@ export function getAllMaterials() {
 }
 
 /**
- * Материалы для выбранного факультета.
+ * Материалы для выбранного факультета и семестра.
  *
- * Работы без метки факультета считаются общими и остаются видны всегда:
- * конспекты, учебники и шаблоны нужны студентам любого факультета.
+ * Работы без метки считаются общими и остаются видны всегда: конспекты,
+ * учебники и шаблоны нужны студентам любого факультета и в любом семестре.
+ * Отфильтровываются только те работы, у которых метка есть и она чужая.
+ *
+ * @param {Array}  items
+ * @param {object} choice { faculty, semester } — пустое значение означает «все»
  */
-export function forFaculty(items, faculty) {
-  if (!faculty) return items;
-  return items.filter((item) => !item.faculties?.length || item.faculties.includes(faculty));
+export function visibleItems(items, { faculty = '', semester = '' } = {}) {
+  return items.filter((item) => {
+    if (faculty && item.faculties?.length && !item.faculties.includes(faculty)) return false;
+    if (semester && item.semester && String(item.semester) !== String(semester)) return false;
+    return true;
+  });
 }
 
 /** Читаемое название факультета по коду. */
