@@ -1,5 +1,6 @@
 import Icon from './Icon.jsx';
 import { upcomingDeadlines } from '../deadlines.js';
+import { files, plural } from '../plural.js';
 import styles from './DisciplineSummary.module.css';
 
 /**
@@ -40,8 +41,8 @@ export default function DisciplineSummary({ discipline }) {
 
         <p className={styles.total}>
           <Icon name="fa-solid fa-download" className={styles.factIcon} />
-          {discipline.fileCount} файлов в {discipline.groups.length}{' '}
-          {discipline.groups.length === 1 ? 'блоке' : 'блоках'}
+          {files(discipline.fileCount)} в {discipline.groups.length}{' '}
+          {plural(discipline.groups.length, 'разделе', 'разделах', 'разделах')}
         </p>
       </div>
 

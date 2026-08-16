@@ -7,6 +7,8 @@
  * страницы, поэтому «осталось 3 дня» всегда актуально.
  */
 
+import { plural } from './plural.js';
+
 const MONTHS = [
   'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
   'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',
@@ -34,15 +36,7 @@ export function formatDate(iso) {
   return `${day} ${MONTHS[month - 1]} ${year}`;
 }
 
-/** Склонение слова «день» по числу. */
-function plural(days) {
-  const last = days % 10;
-  const twoLast = days % 100;
-  if (twoLast >= 11 && twoLast <= 14) return 'дней';
-  if (last === 1) return 'день';
-  if (last >= 2 && last <= 4) return 'дня';
-  return 'дней';
-}
+
 
 /**
  * Разбор срока сдачи.
@@ -67,7 +61,7 @@ export function describeDue(due) {
       date: formatDate(due),
       daysLeft,
       status: 'soon',
-      label: `осталось ${daysLeft} ${plural(daysLeft)}`,
+      label: `осталось ${daysLeft} ${plural(daysLeft, 'день', 'дня', 'дней')}`,
     };
   }
   return { date: formatDate(due), daysLeft, status: 'open', label: 'приём открыт' };

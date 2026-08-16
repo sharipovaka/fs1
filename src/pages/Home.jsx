@@ -5,6 +5,7 @@ import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import { ABOUT, ACTIVITIES, DISCIPLINES, TOTALS, filterItems, getAllMaterials } from '../catalog.js';
+import { files } from '../plural.js';
 import styles from './Home.module.css';
 
 /** Подсказки под строкой поиска — самые частые запросы. */
@@ -31,11 +32,17 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
+      {/* Предупреждение о том, что наполнение сайта ещё идёт */}
+      <p className={styles.notice} role="status">
+        <Icon name="fa-solid fa-wrench" className={styles.noticeIcon} />
+        Сайт находится в разработке — материалы пополняются.
+      </p>
+
       <section className={styles.hero}>
         <h1 className={styles.heroTitle}>Лаборатория математики ФН1</h1>
         <p className={styles.heroText}>
           Учебные материалы по дисциплинам кафедры: планы, конспекты, литература,
-          шаблоны работ и условия типовых расчётов. Всего {TOTALS.files} файлов —
+          шаблоны работ и условия типовых расчётов. Всего {files(TOTALS.files)} —
           найдите нужный и скачайте.
         </p>
 

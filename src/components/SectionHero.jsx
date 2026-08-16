@@ -1,4 +1,5 @@
 import Icon from './Icon.jsx';
+import { files } from '../plural.js';
 import styles from './SectionHero.module.css';
 
 /**
@@ -37,8 +38,7 @@ export default function SectionHero({ title, icon, description, meta, fileCount,
         <div className={styles.extras}>
           {fileCount > 0 && (
             <span className={styles.counter}>
-              <Icon name="fa-solid fa-download" /> {fileCount}{' '}
-              {fileCount === 1 ? 'файл' : fileCount < 5 ? 'файла' : 'файлов'} для скачивания
+              <Icon name="fa-solid fa-download" /> {files(fileCount)} для скачивания
             </span>
           )}
           {children}

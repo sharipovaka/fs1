@@ -360,3 +360,23 @@
     padding: 1.5rem 1.15rem 1.35rem;
   }
 }
+
+/* Предупреждение о том, что сайт ещё наполняется. Первое, что видит посетитель. */
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  padding: 0.7rem 1.05rem;
+  border: 1px solid var(--status-soon-border);
+  border-radius: var(--dept-radius);
+  background: var(--status-soon-bg);
+  color: var(--status-soon-fg);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.noticeIcon {
+  flex: 0 0 auto;
+  font-size: 0.95em;
+}

@@ -10,6 +10,7 @@ import MaterialCard from '../components/MaterialCard.jsx';
 import SectionHero from '../components/SectionHero.jsx';
 import { DISCIPLINES, forFaculty, getDiscipline } from '../catalog.js';
 import { readFaculty, saveFaculty } from '../facultyChoice.js';
+import { materials } from '../plural.js';
 import styles from './DisciplinePage.module.css';
 
 /**
@@ -81,14 +82,7 @@ export default function DisciplinePage() {
                         <Icon name={group.icon} />
                       </span>
                       {group.title}
-                      <span className={styles.groupCount}>
-                        {group.items.length}{' '}
-                        {group.items.length === 1
-                          ? 'материал'
-                          : group.items.length < 5
-                            ? 'материала'
-                            : 'материалов'}
-                      </span>
+                      <span className={styles.groupCount}>{materials(group.items.length)}</span>
                     </h2>
                   </div>
 
