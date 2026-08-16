@@ -36,50 +36,76 @@
   }
 }
 
-/* --- Блок материалов --- */
+/* --- Раздел материалов --- */
 
 .group {
-  margin-bottom: 2rem;
-  /* Чтобы заголовок не прятался под фиксированным навбаром при переходе по якорю */
-  scroll-margin-top: calc(var(--dept-navbar-height) + 1rem);
+  margin-bottom: 2.75rem;
+  /* Чтобы заголовок не прятался под шапкой при переходе по ссылке из панели */
+  scroll-margin-top: calc(var(--dept-navbar-height) + 0.75rem);
 }
 
+/* Разделительная черта между соседними разделами: при прокрутке
+   сразу видно, что один раздел закончился и начался следующий */
+.group + .group {
+  border-top: 1px solid var(--dept-border);
+  padding-top: 1.75rem;
+}
+
+.group:last-child {
+  margin-bottom: 1rem;
+}
+
+/*
+ * Шапка раздела прилипает к верху страницы. Пока листаешь длинный список
+ * материалов, название раздела остаётся перед глазами и разделы
+ * не сливаются друг с другом.
+ */
 .groupHeader {
-  margin-bottom: 0.9rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 2px solid var(--dept-border);
+  position: sticky;
+  top: calc(var(--dept-navbar-height) + 0.5rem);
+  z-index: 3;
+  /* Непрозрачный фон страницы, иначе карточки просвечивают сквозь шапку */
+  background: var(--dept-surface);
+  padding: 0.55rem 0 0.5rem;
+  margin-bottom: 0.7rem;
+  border-bottom: 2px solid var(--dept-border-strong);
 }
 
 .groupTitle {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
-.groupIcon {
-  color: var(--dept-navy-light);
-  font-size: 0.85em;
-}
-
-/* Сколько материалов в разделе — видно до прокрутки */
-.groupCount {
-  display: inline-grid;
+/* Иконка в цветном квадрате — заголовок раздела заметен боковым зрением */
+.groupIconBox {
+  flex: 0 0 auto;
+  display: grid;
   place-items: center;
-  min-width: 1.5rem;
-  height: 1.5rem;
-  padding: 0 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--dept-navy);
+  color: var(--dept-accent);
+  font-size: 0.95rem;
+}
+
+.groupCount {
+  margin-left: auto;
+  padding: 0.15rem 0.65rem;
   border-radius: 999px;
-  background: var(--dept-surface);
+  background: var(--dept-card);
   border: 1px solid var(--dept-border);
   color: var(--dept-muted);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .groupDescription {
-  margin: 0.35rem 0 0;
+  margin: 0 0 0.9rem;
   color: var(--dept-muted);
   font-size: 0.92rem;
   max-width: 80ch;

@@ -73,16 +73,28 @@ export default function DisciplinePage() {
             {groups.length > 0 ? (
               groups.map((group) => (
                 <section key={group.type} id={group.type} className={styles.group}>
+                  {/* Шапка прилипает к верху: при прокрутке всегда видно,
+                      какой раздел сейчас перед глазами */}
                   <div className={styles.groupHeader}>
                     <h2 className={styles.groupTitle}>
-                      <Icon name={group.icon} className={styles.groupIcon} />
+                      <span className={styles.groupIconBox} aria-hidden="true">
+                        <Icon name={group.icon} />
+                      </span>
                       {group.title}
-                      <span className={styles.groupCount}>{group.items.length}</span>
+                      <span className={styles.groupCount}>
+                        {group.items.length}{' '}
+                        {group.items.length === 1
+                          ? 'материал'
+                          : group.items.length < 5
+                            ? 'материала'
+                            : 'материалов'}
+                      </span>
                     </h2>
-                    {group.description && (
-                      <p className={styles.groupDescription}>{group.description}</p>
-                    )}
                   </div>
+
+                  {group.description && (
+                    <p className={styles.groupDescription}>{group.description}</p>
+                  )}
 
                   <div className={styles.cards}>
                     {group.items.map((item) => (
