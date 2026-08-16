@@ -29,6 +29,18 @@
   ],
   "types": [
     {
+      "id": "tasks",
+      "title": "Задания",
+      "icon": "fa-solid fa-square-root-variable",
+      "description": "Условия типовых расчётов, варианты и материалы для самопроверки."
+    },
+    {
+      "id": "library",
+      "title": "Учебники и методички",
+      "icon": "fa-solid fa-book-bookmark",
+      "description": "Что читать по курсу и методические указания кафедры."
+    },
+    {
       "id": "plans",
       "title": "Планы",
       "icon": "fa-solid fa-list-check",
@@ -41,22 +53,10 @@
       "description": "Опорные конспекты лекций и материалы к ним."
     },
     {
-      "id": "library",
-      "title": "Учебники и методички",
-      "icon": "fa-solid fa-book-bookmark",
-      "description": "Что читать по курсу и методические указания кафедры."
-    },
-    {
       "id": "templates",
       "title": "Шаблоны",
       "icon": "fa-solid fa-file-code",
       "description": "Заготовки работ и требования к оформлению."
-    },
-    {
-      "id": "tasks",
-      "title": "Задания",
-      "icon": "fa-solid fa-square-root-variable",
-      "description": "Условия типовых расчётов, варианты и материалы для самопроверки."
     }
   ],
   "disciplines": [

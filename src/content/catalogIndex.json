@@ -1,6 +1,18 @@
 {
   "types": [
     {
+      "id": "tasks",
+      "title": "Задания",
+      "icon": "fa-solid fa-square-root-variable",
+      "description": "Условия типовых расчётов, варианты и материалы для самопроверки."
+    },
+    {
+      "id": "library",
+      "title": "Учебники и методички",
+      "icon": "fa-solid fa-book-bookmark",
+      "description": "Что читать по курсу и методические указания кафедры."
+    },
+    {
       "id": "plans",
       "title": "Планы",
       "icon": "fa-solid fa-list-check",
@@ -13,22 +25,10 @@
       "description": "Опорные конспекты лекций и материалы к ним."
     },
     {
-      "id": "library",
-      "title": "Учебники и методички",
-      "icon": "fa-solid fa-book-bookmark",
-      "description": "Что читать по курсу и методические указания кафедры."
-    },
-    {
       "id": "templates",
       "title": "Шаблоны",
       "icon": "fa-solid fa-file-code",
       "description": "Заготовки работ и требования к оформлению."
-    },
-    {
-      "id": "tasks",
-      "title": "Задания",
-      "icon": "fa-solid fa-square-root-variable",
-      "description": "Условия типовых расчётов, варианты и материалы для самопроверки."
     }
   ],
   "faculties": [
@@ -70,205 +70,6 @@
       "semester": "1–2 семестры",
       "control": "экзамен",
       "groups": [
-        {
-          "type": "plans",
-          "title": "Планы",
-          "icon": "fa-solid fa-list-check",
-          "description": "Рабочая программа, распределение часов и формы контроля.",
-          "items": [
-            {
-              "id": "disciplines-calculus-plans-rpd-matematicheskiy-analiz",
-              "kind": "Рабочая программа",
-              "title": "Математический анализ",
-              "deadline": "утверждена на 2025/26 учебный год",
-              "faculties": [],
-              "due": "",
-              "status": "open",
-              "statusLabel": "действует",
-              "files": [
-                {
-                  "path": "disciplines/calculus/plans/rpd-matematicheskiy-analiz.md",
-                  "name": "rpd-matematicheskiy-analiz.md",
-                  "ext": "md",
-                  "format": "Markdown",
-                  "size": 4493,
-                  "label": "Цели, результаты обучения, содержание разделов, фонд оценочных средств",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/calculus/plans/rpd-matematicheskiy-analiz.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/calculus/plans/rpd-matematicheskiy-analiz.md",
-                    "name": "rpd-matematicheskiy-analiz.md",
-                    "format": "Markdown",
-                    "size": 4493,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            }
-          ],
-          "fileCount": 1
-        },
-        {
-          "type": "notes",
-          "title": "Конспекты",
-          "icon": "fa-solid fa-pen-nib",
-          "description": "Опорные конспекты лекций и материалы к ним.",
-          "items": [
-            {
-              "id": "disciplines-calculus-notes-lecture-04",
-              "kind": "Лекция",
-              "number": 4,
-              "title": "Формула Тейлора",
-              "deadline": "",
-              "faculties": [],
-              "due": "",
-              "status": "open",
-              "statusLabel": "опубликована",
-              "files": [
-                {
-                  "path": "disciplines/calculus/notes/lecture-04-taylor.md",
-                  "name": "lecture-04-taylor.md",
-                  "ext": "md",
-                  "format": "Markdown",
-                  "size": 2585,
-                  "label": "Конспект: формы остаточного члена, опорные разложения",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/calculus/notes/lecture-04-taylor.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/calculus/notes/lecture-04-taylor.md",
-                    "name": "lecture-04-taylor.md",
-                    "format": "Markdown",
-                    "size": 2585,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-calculus-notes-taylor-series",
-              "kind": "Ноутбук",
-              "title": "Численный эксперимент к лекции 4",
-              "deadline": "",
-              "faculties": [],
-              "due": "",
-              "status": "open",
-              "statusLabel": "опубликован",
-              "files": [
-                {
-                  "path": "disciplines/calculus/notes/taylor-series.ipynb",
-                  "name": "taylor-series.ipynb",
-                  "ext": "ipynb",
-                  "format": "Jupyter Notebook",
-                  "size": 4482,
-                  "label": "Проверка оценки остатка и графики частичных сумм",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/calculus/notes/taylor-series.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/calculus/notes/taylor-series.ipynb",
-                    "name": "taylor-series.ipynb",
-                    "format": "Jupyter Notebook",
-                    "size": 4482,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            }
-          ],
-          "fileCount": 2
-        },
-        {
-          "type": "library",
-          "title": "Учебники и методички",
-          "icon": "fa-solid fa-book-bookmark",
-          "description": "Что читать по курсу и методические указания кафедры.",
-          "items": [
-            {
-              "id": "disciplines-calculus-library-metodichka-ryady",
-              "kind": "Методические указания",
-              "title": "Числовые ряды: исследование на сходимость",
-              "deadline": "",
-              "faculties": [],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/calculus/library/metodichka-ryady.tex",
-                  "name": "metodichka-ryady.tex",
-                  "ext": "tex",
-                  "format": "LaTeX",
-                  "size": 3484,
-                  "label": "Схема проверки признаков, типичные ошибки, разобранный пример",
-                  "primary": true,
-                  "preview": {
-                    "type": "pdf",
-                    "path": "previews/disciplines/calculus/library/metodichka-ryady.pdf",
-                    "thumb": "previews/disciplines/calculus/library/metodichka-ryady.png"
-                  },
-                  "download": {
-                    "path": "previews/disciplines/calculus/library/metodichka-ryady.pdf",
-                    "name": "metodichka-ryady.pdf",
-                    "format": "PDF",
-                    "size": 152081,
-                    "compiled": true
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": "previews/disciplines/calculus/library/metodichka-ryady.png"
-            },
-            {
-              "id": "disciplines-calculus-library-uchebniki",
-              "kind": "Список литературы",
-              "title": "Что читать по курсу",
-              "deadline": "основные и дополнительные источники по разделам",
-              "faculties": [],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/calculus/library/uchebniki.md",
-                  "name": "uchebniki.md",
-                  "ext": "md",
-                  "format": "Markdown",
-                  "size": 2635,
-                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/calculus/library/uchebniki.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/calculus/library/uchebniki.md",
-                    "name": "uchebniki.md",
-                    "format": "Markdown",
-                    "size": 2635,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            }
-          ],
-          "fileCount": 2
-        },
         {
           "type": "tasks",
           "title": "Задания",
@@ -475,6 +276,205 @@
             }
           ],
           "fileCount": 7
+        },
+        {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-calculus-library-metodichka-ryady",
+              "kind": "Методические указания",
+              "title": "Числовые ряды: исследование на сходимость",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/library/metodichka-ryady.tex",
+                  "name": "metodichka-ryady.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 3484,
+                  "label": "Схема проверки признаков, типичные ошибки, разобранный пример",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/calculus/library/metodichka-ryady.pdf",
+                    "thumb": "previews/disciplines/calculus/library/metodichka-ryady.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/calculus/library/metodichka-ryady.pdf",
+                    "name": "metodichka-ryady.pdf",
+                    "format": "PDF",
+                    "size": 152081,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/library/metodichka-ryady.png"
+            },
+            {
+              "id": "disciplines-calculus-library-uchebniki",
+              "kind": "Список литературы",
+              "title": "Что читать по курсу",
+              "deadline": "основные и дополнительные источники по разделам",
+              "faculties": [],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/library/uchebniki.md",
+                  "name": "uchebniki.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2635,
+                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/library/uchebniki.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/library/uchebniki.md",
+                    "name": "uchebniki.md",
+                    "format": "Markdown",
+                    "size": 2635,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
+        {
+          "type": "plans",
+          "title": "Планы",
+          "icon": "fa-solid fa-list-check",
+          "description": "Рабочая программа, распределение часов и формы контроля.",
+          "items": [
+            {
+              "id": "disciplines-calculus-plans-rpd-matematicheskiy-analiz",
+              "kind": "Рабочая программа",
+              "title": "Математический анализ",
+              "deadline": "утверждена на 2025/26 учебный год",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "действует",
+              "files": [
+                {
+                  "path": "disciplines/calculus/plans/rpd-matematicheskiy-analiz.md",
+                  "name": "rpd-matematicheskiy-analiz.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 4493,
+                  "label": "Цели, результаты обучения, содержание разделов, фонд оценочных средств",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/plans/rpd-matematicheskiy-analiz.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/plans/rpd-matematicheskiy-analiz.md",
+                    "name": "rpd-matematicheskiy-analiz.md",
+                    "format": "Markdown",
+                    "size": 4493,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 1
+        },
+        {
+          "type": "notes",
+          "title": "Конспекты",
+          "icon": "fa-solid fa-pen-nib",
+          "description": "Опорные конспекты лекций и материалы к ним.",
+          "items": [
+            {
+              "id": "disciplines-calculus-notes-lecture-04",
+              "kind": "Лекция",
+              "number": 4,
+              "title": "Формула Тейлора",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "опубликована",
+              "files": [
+                {
+                  "path": "disciplines/calculus/notes/lecture-04-taylor.md",
+                  "name": "lecture-04-taylor.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2585,
+                  "label": "Конспект: формы остаточного члена, опорные разложения",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/notes/lecture-04-taylor.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/notes/lecture-04-taylor.md",
+                    "name": "lecture-04-taylor.md",
+                    "format": "Markdown",
+                    "size": 2585,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-calculus-notes-taylor-series",
+              "kind": "Ноутбук",
+              "title": "Численный эксперимент к лекции 4",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "опубликован",
+              "files": [
+                {
+                  "path": "disciplines/calculus/notes/taylor-series.ipynb",
+                  "name": "taylor-series.ipynb",
+                  "ext": "ipynb",
+                  "format": "Jupyter Notebook",
+                  "size": 4482,
+                  "label": "Проверка оценки остатка и графики частичных сумм",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/calculus/notes/taylor-series.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/notes/taylor-series.ipynb",
+                    "name": "taylor-series.ipynb",
+                    "format": "Jupyter Notebook",
+                    "size": 4482,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
         }
       ],
       "fileCount": 12,
@@ -494,128 +494,6 @@
       "semester": "1 семестр",
       "control": "экзамен",
       "groups": [
-        {
-          "type": "notes",
-          "title": "Конспекты",
-          "icon": "fa-solid fa-pen-nib",
-          "description": "Опорные конспекты лекций и материалы к ним.",
-          "items": [
-            {
-              "id": "disciplines-linear-algebra-notes-lecture-07",
-              "kind": "Лекция",
-              "number": 7,
-              "title": "Собственные значения и собственные векторы",
-              "deadline": "",
-              "faculties": [],
-              "due": "",
-              "status": "open",
-              "statusLabel": "опубликована",
-              "files": [
-                {
-                  "path": "disciplines/linear-algebra/notes/lecture-07-linear-algebra.md",
-                  "name": "lecture-07-linear-algebra.md",
-                  "ext": "md",
-                  "format": "Markdown",
-                  "size": 3633,
-                  "label": "Конспект: характеристическое уравнение, диагонализация, приложения",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/linear-algebra/notes/lecture-07-linear-algebra.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/linear-algebra/notes/lecture-07-linear-algebra.md",
-                    "name": "lecture-07-linear-algebra.md",
-                    "format": "Markdown",
-                    "size": 3633,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            }
-          ],
-          "fileCount": 1
-        },
-        {
-          "type": "library",
-          "title": "Учебники и методички",
-          "icon": "fa-solid fa-book-bookmark",
-          "description": "Что читать по курсу и методические указания кафедры.",
-          "items": [
-            {
-              "id": "disciplines-linear-algebra-library-metodichka-slau",
-              "kind": "Методические указания",
-              "title": "Метод Гаусса: решение систем линейных уравнений",
-              "deadline": "",
-              "faculties": [],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/linear-algebra/library/metodichka-slau.tex",
-                  "name": "metodichka-slau.tex",
-                  "ext": "tex",
-                  "format": "LaTeX",
-                  "size": 3619,
-                  "label": "Порядок действий, разбор случаев с параметром, что проверять",
-                  "primary": true,
-                  "preview": {
-                    "type": "pdf",
-                    "path": "previews/disciplines/linear-algebra/library/metodichka-slau.pdf",
-                    "thumb": "previews/disciplines/linear-algebra/library/metodichka-slau.png"
-                  },
-                  "download": {
-                    "path": "previews/disciplines/linear-algebra/library/metodichka-slau.pdf",
-                    "name": "metodichka-slau.pdf",
-                    "format": "PDF",
-                    "size": 103290,
-                    "compiled": true
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": "previews/disciplines/linear-algebra/library/metodichka-slau.png"
-            },
-            {
-              "id": "disciplines-linear-algebra-library-uchebniki",
-              "kind": "Список литературы",
-              "title": "Что читать по курсу",
-              "deadline": "основные и дополнительные источники по разделам",
-              "faculties": [],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/linear-algebra/library/uchebniki.md",
-                  "name": "uchebniki.md",
-                  "ext": "md",
-                  "format": "Markdown",
-                  "size": 2413,
-                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/linear-algebra/library/uchebniki.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/linear-algebra/library/uchebniki.md",
-                    "name": "uchebniki.md",
-                    "format": "Markdown",
-                    "size": 2413,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            }
-          ],
-          "fileCount": 2
-        },
         {
           "type": "tasks",
           "title": "Задания",
@@ -740,6 +618,128 @@
             }
           ],
           "fileCount": 4
+        },
+        {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-linear-algebra-library-metodichka-slau",
+              "kind": "Методические указания",
+              "title": "Метод Гаусса: решение систем линейных уравнений",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/library/metodichka-slau.tex",
+                  "name": "metodichka-slau.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 3619,
+                  "label": "Порядок действий, разбор случаев с параметром, что проверять",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/linear-algebra/library/metodichka-slau.pdf",
+                    "thumb": "previews/disciplines/linear-algebra/library/metodichka-slau.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/linear-algebra/library/metodichka-slau.pdf",
+                    "name": "metodichka-slau.pdf",
+                    "format": "PDF",
+                    "size": 103290,
+                    "compiled": true
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/linear-algebra/library/metodichka-slau.png"
+            },
+            {
+              "id": "disciplines-linear-algebra-library-uchebniki",
+              "kind": "Список литературы",
+              "title": "Что читать по курсу",
+              "deadline": "основные и дополнительные источники по разделам",
+              "faculties": [],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/library/uchebniki.md",
+                  "name": "uchebniki.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2413,
+                  "label": "Учебники и задачники с указанием, что читать к каждому разделу",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/linear-algebra/library/uchebniki.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/linear-algebra/library/uchebniki.md",
+                    "name": "uchebniki.md",
+                    "format": "Markdown",
+                    "size": 2413,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
+        },
+        {
+          "type": "notes",
+          "title": "Конспекты",
+          "icon": "fa-solid fa-pen-nib",
+          "description": "Опорные конспекты лекций и материалы к ним.",
+          "items": [
+            {
+              "id": "disciplines-linear-algebra-notes-lecture-07",
+              "kind": "Лекция",
+              "number": 7,
+              "title": "Собственные значения и собственные векторы",
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "опубликована",
+              "files": [
+                {
+                  "path": "disciplines/linear-algebra/notes/lecture-07-linear-algebra.md",
+                  "name": "lecture-07-linear-algebra.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 3633,
+                  "label": "Конспект: характеристическое уравнение, диагонализация, приложения",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/linear-algebra/notes/lecture-07-linear-algebra.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/linear-algebra/notes/lecture-07-linear-algebra.md",
+                    "name": "lecture-07-linear-algebra.md",
+                    "format": "Markdown",
+                    "size": 3633,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 1
         }
       ],
       "fileCount": 7,
@@ -756,6 +756,73 @@
       "semester": "2 семестр",
       "control": "зачёт",
       "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-discrete-math-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Множества, отношения, графы",
+              "course": 1,
+              "semester": 2,
+              "deadline": "10-я учебная неделя",
+              "faculties": [],
+              "due": "2027-04-15",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/discrete-math/tasks/tr-01-usloviya.tex",
+                  "name": "tr-01-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 5264,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 168635,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/discrete-math/tasks/tr-01-varianty.csv",
+                  "name": "tr-01-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 741,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/discrete-math/tasks/tr-01-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/discrete-math/tasks/tr-01-varianty.csv",
+                    "name": "tr-01-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 741,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.png"
+            }
+          ],
+          "fileCount": 2
+        },
         {
           "type": "library",
           "title": "Учебники и методички",
@@ -833,73 +900,6 @@
             }
           ],
           "fileCount": 2
-        },
-        {
-          "type": "tasks",
-          "title": "Задания",
-          "icon": "fa-solid fa-square-root-variable",
-          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
-          "items": [
-            {
-              "id": "disciplines-discrete-math-tasks-tr-01",
-              "kind": "Типовой расчёт",
-              "number": 1,
-              "title": "Множества, отношения, графы",
-              "course": 1,
-              "semester": 2,
-              "deadline": "10-я учебная неделя",
-              "faculties": [],
-              "due": "2027-04-15",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/discrete-math/tasks/tr-01-usloviya.tex",
-                  "name": "tr-01-usloviya.tex",
-                  "ext": "tex",
-                  "format": "LaTeX",
-                  "size": 5264,
-                  "label": "Условия задач",
-                  "primary": true,
-                  "preview": {
-                    "type": "pdf",
-                    "path": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.pdf",
-                    "thumb": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.png"
-                  },
-                  "download": {
-                    "path": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.pdf",
-                    "name": "tr-01-usloviya.pdf",
-                    "format": "PDF",
-                    "size": 168635,
-                    "compiled": true
-                  }
-                },
-                {
-                  "path": "disciplines/discrete-math/tasks/tr-01-varianty.csv",
-                  "name": "tr-01-varianty.csv",
-                  "ext": "csv",
-                  "format": "CSV-таблица",
-                  "size": 741,
-                  "label": "Данные вариантов",
-                  "primary": false,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/discrete-math/tasks/tr-01-varianty.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/discrete-math/tasks/tr-01-varianty.csv",
-                    "name": "tr-01-varianty.csv",
-                    "format": "CSV-таблица",
-                    "size": 741,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": "previews/disciplines/discrete-math/tasks/tr-01-usloviya.png"
-            }
-          ],
-          "fileCount": 2
         }
       ],
       "fileCount": 4,
@@ -916,6 +916,73 @@
       "semester": "4 семестр",
       "control": "экзамен",
       "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-teorver-tasks-tr-01",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "Случайные события и вероятность",
+              "course": 2,
+              "semester": 4,
+              "deadline": "9-я учебная неделя",
+              "faculties": [],
+              "due": "2027-04-08",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/teorver/tasks/tr-01-usloviya.tex",
+                  "name": "tr-01-usloviya.tex",
+                  "ext": "tex",
+                  "format": "LaTeX",
+                  "size": 5261,
+                  "label": "Условия задач",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "previews/disciplines/teorver/tasks/tr-01-usloviya.pdf",
+                    "thumb": "previews/disciplines/teorver/tasks/tr-01-usloviya.png"
+                  },
+                  "download": {
+                    "path": "previews/disciplines/teorver/tasks/tr-01-usloviya.pdf",
+                    "name": "tr-01-usloviya.pdf",
+                    "format": "PDF",
+                    "size": 179631,
+                    "compiled": true
+                  }
+                },
+                {
+                  "path": "disciplines/teorver/tasks/tr-01-varianty.csv",
+                  "name": "tr-01-varianty.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 1504,
+                  "label": "Данные вариантов",
+                  "primary": false,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/teorver/tasks/tr-01-varianty.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/teorver/tasks/tr-01-varianty.csv",
+                    "name": "tr-01-varianty.csv",
+                    "format": "CSV-таблица",
+                    "size": 1504,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/teorver/tasks/tr-01-usloviya.png"
+            }
+          ],
+          "fileCount": 2
+        },
         {
           "type": "library",
           "title": "Учебники и методички",
@@ -993,73 +1060,6 @@
             }
           ],
           "fileCount": 2
-        },
-        {
-          "type": "tasks",
-          "title": "Задания",
-          "icon": "fa-solid fa-square-root-variable",
-          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
-          "items": [
-            {
-              "id": "disciplines-teorver-tasks-tr-01",
-              "kind": "Типовой расчёт",
-              "number": 1,
-              "title": "Случайные события и вероятность",
-              "course": 2,
-              "semester": 4,
-              "deadline": "9-я учебная неделя",
-              "faculties": [],
-              "due": "2027-04-08",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/teorver/tasks/tr-01-usloviya.tex",
-                  "name": "tr-01-usloviya.tex",
-                  "ext": "tex",
-                  "format": "LaTeX",
-                  "size": 5261,
-                  "label": "Условия задач",
-                  "primary": true,
-                  "preview": {
-                    "type": "pdf",
-                    "path": "previews/disciplines/teorver/tasks/tr-01-usloviya.pdf",
-                    "thumb": "previews/disciplines/teorver/tasks/tr-01-usloviya.png"
-                  },
-                  "download": {
-                    "path": "previews/disciplines/teorver/tasks/tr-01-usloviya.pdf",
-                    "name": "tr-01-usloviya.pdf",
-                    "format": "PDF",
-                    "size": 179631,
-                    "compiled": true
-                  }
-                },
-                {
-                  "path": "disciplines/teorver/tasks/tr-01-varianty.csv",
-                  "name": "tr-01-varianty.csv",
-                  "ext": "csv",
-                  "format": "CSV-таблица",
-                  "size": 1504,
-                  "label": "Данные вариантов",
-                  "primary": false,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/teorver/tasks/tr-01-varianty.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/teorver/tasks/tr-01-varianty.csv",
-                    "name": "tr-01-varianty.csv",
-                    "format": "CSV-таблица",
-                    "size": 1504,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": "previews/disciplines/teorver/tasks/tr-01-usloviya.png"
-            }
-          ],
-          "fileCount": 2
         }
       ],
       "fileCount": 4,
@@ -1076,83 +1076,6 @@
       "semester": "",
       "control": "",
       "groups": [
-        {
-          "type": "plans",
-          "title": "Планы",
-          "icon": "fa-solid fa-list-check",
-          "description": "Рабочая программа, распределение часов и формы контроля.",
-          "items": [
-            {
-              "id": "disciplines-common-plans-kalendarnyj-grafik",
-              "kind": "Календарный график",
-              "title": "График учебного процесса 2025/26",
-              "deadline": "осенний и весенний семестры",
-              "faculties": [],
-              "due": "",
-              "status": "open",
-              "statusLabel": "действует",
-              "files": [
-                {
-                  "path": "disciplines/common/plans/kalendarnyj-grafik.md",
-                  "name": "kalendarnyj-grafik.md",
-                  "ext": "md",
-                  "format": "Markdown",
-                  "size": 2070,
-                  "label": "Сроки выдачи и сдачи работ, контрольные, сессии, практика",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/common/plans/kalendarnyj-grafik.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/common/plans/kalendarnyj-grafik.md",
-                    "name": "kalendarnyj-grafik.md",
-                    "format": "Markdown",
-                    "size": 2070,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-common-plans-uchebnyj-plan",
-              "kind": "Учебный план",
-              "title": "Распределение дисциплин по семестрам",
-              "deadline": "прикладная математика и информатика, бакалавриат",
-              "faculties": [],
-              "due": "",
-              "status": "open",
-              "statusLabel": "действует",
-              "files": [
-                {
-                  "path": "disciplines/common/plans/uchebnyj-plan.csv",
-                  "name": "uchebnyj-plan.csv",
-                  "ext": "csv",
-                  "format": "CSV-таблица",
-                  "size": 1209,
-                  "label": "Часы, зачётные единицы и формы контроля по 12 дисциплинам",
-                  "primary": true,
-                  "preview": {
-                    "type": "html",
-                    "path": "previews/disciplines/common/plans/uchebnyj-plan.html"
-                  },
-                  "download": {
-                    "path": "files/disciplines/common/plans/uchebnyj-plan.csv",
-                    "name": "uchebnyj-plan.csv",
-                    "format": "CSV-таблица",
-                    "size": 1209,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": null
-            }
-          ],
-          "fileCount": 2
-        },
         {
           "type": "library",
           "title": "Учебники и методички",
@@ -1264,6 +1187,83 @@
             }
           ],
           "fileCount": 3
+        },
+        {
+          "type": "plans",
+          "title": "Планы",
+          "icon": "fa-solid fa-list-check",
+          "description": "Рабочая программа, распределение часов и формы контроля.",
+          "items": [
+            {
+              "id": "disciplines-common-plans-kalendarnyj-grafik",
+              "kind": "Календарный график",
+              "title": "График учебного процесса 2025/26",
+              "deadline": "осенний и весенний семестры",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "действует",
+              "files": [
+                {
+                  "path": "disciplines/common/plans/kalendarnyj-grafik.md",
+                  "name": "kalendarnyj-grafik.md",
+                  "ext": "md",
+                  "format": "Markdown",
+                  "size": 2070,
+                  "label": "Сроки выдачи и сдачи работ, контрольные, сессии, практика",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/plans/kalendarnyj-grafik.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/plans/kalendarnyj-grafik.md",
+                    "name": "kalendarnyj-grafik.md",
+                    "format": "Markdown",
+                    "size": 2070,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-common-plans-uchebnyj-plan",
+              "kind": "Учебный план",
+              "title": "Распределение дисциплин по семестрам",
+              "deadline": "прикладная математика и информатика, бакалавриат",
+              "faculties": [],
+              "due": "",
+              "status": "open",
+              "statusLabel": "действует",
+              "files": [
+                {
+                  "path": "disciplines/common/plans/uchebnyj-plan.csv",
+                  "name": "uchebnyj-plan.csv",
+                  "ext": "csv",
+                  "format": "CSV-таблица",
+                  "size": 1209,
+                  "label": "Часы, зачётные единицы и формы контроля по 12 дисциплинам",
+                  "primary": true,
+                  "preview": {
+                    "type": "html",
+                    "path": "previews/disciplines/common/plans/uchebnyj-plan.html"
+                  },
+                  "download": {
+                    "path": "files/disciplines/common/plans/uchebnyj-plan.csv",
+                    "name": "uchebnyj-plan.csv",
+                    "format": "CSV-таблица",
+                    "size": 1209,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": null
+            }
+          ],
+          "fileCount": 2
         },
         {
           "type": "templates",
