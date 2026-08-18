@@ -36,12 +36,13 @@
 ├── vite.config.js                 # base (publicPath), outDir: build
 ├── package.json                   # homepage, скрипты build/deploy
 ├── .github/workflows/deploy.yml   # автосборка и публикация при push в main
+├── assets/llama.png               # рисунок талисмана — исходник логотипа и иконок
 ├── catalog/                       # необязательные описания работ
 │   ├── disciplines.json           # папка → название дисциплины
 │   ├── disciplines-plans.json     notes, templates, tasks
 │   └── activities-practice.json   spring, seminars, reports, conferences
 ├── scripts/
-│   ├── generate-icons.mjs         # PNG-иконки для PWA (без зависимостей)
+│   ├── generate-icons.mjs         # логотип и иконки из assets/llama.png (без зависимостей)
 │   ├── generate-previews.mjs      # предпросмотр: pandoc + pdflatex → public/previews
 │   ├── generate-catalog.mjs       # catalog/ + public/files → src/content/catalogIndex.json
 │   └── generate-icon-set.mjs      # набор SVG-иконок по факту использования
@@ -53,8 +54,8 @@
 │   │   └── activities/{practice,spring,seminars,reports,conferences}/
 │   ├── previews/                  # предпросмотр (генерируется, коммитится)
 │   ├── manifest.json              # PWA-манифест
-│   ├── favicon.svg                # фавиконка
-│   ├── logo.svg                   # логотип в навбаре
+│   ├── favicon.png                # фавиконка
+│   ├── logo.png                   # логотип в навбаре
 │   ├── icons/icon-192.png,
 │   │         icon-512.png         # иконки приложения
 │   ├── 404.html                   # SPA-редирект для «глубоких» ссылок
@@ -392,6 +393,31 @@ push в `main` и делает всё сам: ставит Node, pandoc и TeX L
 и предупредит об этом. Если такой иконки нет в бесплатном наборе,
 сборка завершится с ошибкой — так, например, нашлась несуществующая `fa-podium`.
 
+### Логотип
+
+Талисман лаборатории — лама в очках и зелёном свитере. Исходный рисунок лежит
+в [assets/llama.png](../assets/llama.png) (прозрачный фон, 234×394); всё остальное
+делает `npm run icons`:
+
+| Файл | Что это | Размер |
+| --- | --- | ---: |
+| `public/logo.png` | круглый значок в навбаре | 192 px |
+| `public/favicon.png` | значок вкладки браузера | 64 px |
+| `public/icons/icon-192.png`, `icon-512.png` | иконки приложения: значок на тёмно-синей плитке | 192 и 512 px |
+
+Значок круглый и с зелёным ободом не для красоты: навбар тёмно-синий, страница
+светлая, а круг с ободом одинаково читается на обоих фонах и не сливается
+с ними на 40 пикселях.
+
+Скрипт [scripts/generate-icons.mjs](../scripts/generate-icons.mjs) сам читает
+и пишет PNG (zlib + фильтры строк), поэтому графических библиотек не требует
+и работает на сборочном сервере. Раскладка задана долями в начале файла:
+`RING_WIDTH` — толщина обода, `ART_WIDTH` и `ART_TOP` — размер и положение
+рисунка в круге, `TILE_ART` — доля плитки под значок (поля нужны Android:
+«маскируемые» иконки он обрезает по своей форме). Чтобы сменить талисмана,
+достаточно положить другой рисунок в `assets/llama.png` и выполнить
+`npm run icons`.
+
 ## Публикация на GitHub Pages
 
 1. Проект уже настроен на репозиторий **`sharipovaka/fs1`**:
@@ -434,9 +460,8 @@ GitHub Pages — статический хостинг: он ничего не �
 standalone`, цвета темы и иконки 192/512 px (включая `maskable`). Service worker
 намеренно не подключён — сайт статический, материалы обновляются пересборкой.
 
-Иконки генерируются скриптом `npm run icons`: PNG собирается вручную из чанков
-IHDR/IDAT/IEND, поэтому графические библиотеки не нужны. Чтобы изменить рисунок,
-поправьте функцию `curveY()` и палитру в `scripts/generate-icons.mjs`.
+Иконки генерируются скриптом `npm run icons` из рисунка талисмана — см.
+[Логотип](#логотип).
 
 ## Особенности реализации
 

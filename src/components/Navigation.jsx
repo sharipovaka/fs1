@@ -58,7 +58,7 @@ export default function Navigation() {
 
   // Ресурсы из папки public адресуются относительно BASE_URL,
   // иначе при публикации в подпапке GitHub Pages логотип не загрузится.
-  const logoSrc = `${import.meta.env.BASE_URL}logo.svg`;
+  const logoSrc = `${import.meta.env.BASE_URL}logo.png`;
 
   return (
     <nav
@@ -69,7 +69,7 @@ export default function Navigation() {
       <div className="container">
         {/* Логотип и название лаборатории — ссылка на главную */}
         <Link className={`navbar-brand ${styles.brand}`} to="/">
-          <img src={logoSrc} alt="" width="36" height="36" className={styles.logo} />
+          <img src={logoSrc} alt="" width="40" height="40" className={styles.logo} />
           <span className={styles.brandText}>
             <span className={styles.brandTitle}>Лаборатория математики ФН1</span>
             <span className={styles.brandSubtitle}>учебные материалы и активности</span>
