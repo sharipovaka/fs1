@@ -16,12 +16,41 @@
 }
 
 .hero {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
   background: linear-gradient(120deg, var(--dept-brand-from) 0%, var(--dept-brand-to) 100%);
   color: #fff;
   border-radius: var(--dept-radius);
   padding: 2rem 2rem 1.75rem;
   margin-bottom: 1.75rem;
   box-shadow: var(--dept-shadow-md);
+}
+
+.heroBody {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Талисман рядом с поиском. На планшете он меньше, на телефоне убран
+   совсем: там дорога каждая строка над строкой поиска. */
+.heroMascot {
+  height: 11.5rem;
+  width: 10rem;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1199.98px) {
+  .heroMascot {
+    height: 9rem;
+    width: 8rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .heroMascot {
+    display: none;
+  }
 }
 
 .heroTitle {
@@ -136,15 +165,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-}
-
-.empty {
-  padding: 2rem 1.25rem;
-  text-align: center;
-  color: var(--dept-muted);
-  background: var(--dept-card);
-  border: 1px dashed var(--dept-border);
-  border-radius: var(--dept-radius);
 }
 
 /* --- Блоки главной --- */

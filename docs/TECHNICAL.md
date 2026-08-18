@@ -36,7 +36,9 @@
 ├── vite.config.js                 # base (publicPath), outDir: build
 ├── package.json                   # homepage, скрипты build/deploy
 ├── .github/workflows/deploy.yml   # автосборка и публикация при push в main
-├── assets/llama.png               # рисунок талисмана — исходник логотипа и иконок
+├── assets/                        # исходники картинок, на сайт не копируются
+│   ├── llama.png                  # талисман — исходник логотипа и иконок
+│   └── mascot/*.png               # он же в разных позах — для страниц
 ├── catalog/                       # необязательные описания работ
 │   ├── disciplines.json           # папка → название дисциплины
 │   ├── disciplines-plans.json     notes, templates, tasks
@@ -58,6 +60,7 @@
 │   ├── logo.png                   # логотип в навбаре
 │   ├── icons/icon-192.png,
 │   │         icon-512.png         # иконки приложения
+│   ├── mascot/*.png               # картинки талисмана (генерируются)
 │   ├── 404.html                   # SPA-редирект для «глубоких» ссылок
 │   └── .nojekyll                  # отключает Jekyll на GitHub Pages
 └── src/
@@ -67,38 +70,36 @@
     ├── navConfig.js               # структура меню (единый источник правды)
     ├── repoConfig.js              # координаты репозитория для ссылок GitHub/Colab
     ├── catalog.js                 # чтение каталога, поиск и фильтрация
+    ├── studentChoice.js           # выбор факультета и семестра (localStorage)
+    ├── deadlines.js               # состояние срока сдачи по датам
+    ├── plural.js                  # склонение счётчиков: «3 файла», «5 файлов»
     ├── theme.jsx                  # переключение светлой и тёмной темы
     ├── iconSet.generated.js       # контуры используемых иконок (генерируется)
     ├── components/
     │   ├── Layout.jsx / .module.css            # навбар + крошки + контент + подвал
     │   ├── Navigation.jsx / .module.css        # панель навигации с Dropdown
-    │   ├── SectionPage.jsx / .module.css       # страница раздела: каталог + методичка
-    │   ├── CatalogFilters.jsx / .module.css    # поиск и кнопки фильтров
+    │   ├── SectionHero.jsx / .module.css       # шапка раздела
+    │   ├── DisciplineSidebar.jsx / .module.css # список разделов дисциплины сбоку
+    │   ├── DisciplineSummary.jsx / .module.css # «коротко» и ближайший срок сдачи
+    │   ├── MaterialFilters.jsx / .module.css   # переключатели факультета и семестра
     │   ├── MaterialCard.jsx / .module.css      # карточка работы со списком файлов
     │   ├── FilePreviewModal.jsx / .module.css  # окно предпросмотра файла
-    │   └── MaterialFrame.jsx / .module.css     # <iframe srcdoc> для HTML-материалов
+    │   ├── MaterialFrame.jsx / .module.css     # <iframe srcdoc> для HTML-материалов
+    │   ├── PdfViewer.jsx / .module.css         # просмотр PDF внутри окна
+    │   ├── Mascot.jsx / .module.css            # талисман лаборатории
+    │   ├── EmptyState.jsx / .module.css        # «здесь пока пусто» с талисманом
+    │   └── Icon.jsx                            # инлайновая SVG-иконка
     ├── pages/
-    │   ├── Home.jsx / .module.css         # главная со сквозным поиском
-    │   ├── NotFound.jsx / .module.css     # 404
-    │   ├── disciplines/
-    │   │   ├── DisciplinePlans.jsx
-    │   │   ├── DisciplineNotes.jsx
-    │   │   ├── DisciplineLibrary.jsx
-    │   │   ├── DisciplineTemplates.jsx
-    │   │   └── DisciplineTasks.jsx
-    │   └── activities/
-    │       ├── ActivitiesPractice.jsx
-    │       ├── ActivitiesSpring.jsx
-    │       ├── ActivitiesSeminars.jsx
-    │       ├── ActivitiesReports.jsx
-    │       └── ActivitiesConferences.jsx
+    │   ├── Home.jsx / .module.css          # главная со сквозным поиском
+    │   ├── DisciplinePage.jsx / .module.css # дисциплина: все разделы подряд
+    │   ├── ActivityPage.jsx                # раздел активностей (стили общие)
+    │   ├── SeminarsPage.jsx / .module.css  # семинары с расписанием
+    │   ├── HistoryPage.jsx / .module.css   # о лаборатории
+    │   └── NotFound.jsx / .module.css      # 404
     └── content/
         ├── buildSrcDoc.js         # подготовка HTML к подстановке в srcdoc
-        ├── catalogIndex.json      # генерируется автоматически, править не нужно
-        └── html/                  # методические указания разделов
-            ├── plans.html   notes.html   templates.html  tasks.html
-            ├── practice.html spring.html seminars.html
-            └── reports.html conferences.html
+        ├── seminars.json          # расписание семинаров
+        └── catalogIndex.json      # генерируется автоматически, править не нужно
 ```
 
 ## Маршруты
@@ -393,7 +394,7 @@ push в `main` и делает всё сам: ставит Node, pandoc и TeX L
 и предупредит об этом. Если такой иконки нет в бесплатном наборе,
 сборка завершится с ошибкой — так, например, нашлась несуществующая `fa-podium`.
 
-### Логотип
+### Логотип и талисман
 
 Талисман лаборатории — лама в очках и зелёном свитере. Исходный рисунок лежит
 в [assets/llama.png](../assets/llama.png) (прозрачный фон, 234×394); всё остальное
@@ -417,6 +418,28 @@ push в `main` и делает всё сам: ставит Node, pandoc и TeX L
 «маскируемые» иконки он обрезает по своей форме). Чтобы сменить талисмана,
 достаточно положить другой рисунок в `assets/llama.png` и выполнить
 `npm run icons`.
+
+Кроме значка лама живёт на самих страницах — рисунки из `assets/mascot/`
+тот же скрипт уменьшает до высоты 320 px и складывает в `public/mascot/`:
+
+| Картинка | Где стоит |
+| --- | --- |
+| `study.png` | шапка главной; «материалы готовятся» в пустом разделе |
+| `search.png` | поиск ничего не нашёл |
+| `think.png` | по выбранному факультету и семестру работ нет |
+| `question.png` | страница 404 |
+
+Показывает их компонент [Mascot.jsx](../src/components/Mascot.jsx), а блок
+«здесь пока пусто» целиком — [EmptyState.jsx](../src/components/EmptyState.jsx).
+Пустая страница без объяснения выглядит как поломка, поэтому там всегда есть
+подсказка, что делать дальше.
+
+Две мелочи, которые стоят того, чтобы их не потерять. Картинки не помечены
+`loading="lazy"`: блоки с ними и так рисуются только тогда, когда пусто,
+а в шапке главной ленивая загрузка мешает — картинка видна сразу. И высота,
+и ширина заданы стилями: пока PNG грузится, место под него уже занято,
+и страница не дёргается. Размер файлов держит `MASCOT_COLOR_STEP` —
+огрубление цвета вдвое уменьшает PNG, а на глаз незаметно.
 
 ## Публикация на GitHub Pages
 
@@ -461,7 +484,7 @@ standalone`, цвета темы и иконки 192/512 px (включая `mas
 намеренно не подключён — сайт статический, материалы обновляются пересборкой.
 
 Иконки генерируются скриптом `npm run icons` из рисунка талисмана — см.
-[Логотип](#логотип).
+[Логотип и талисман](#логотип-и-талисман).
 
 ## Особенности реализации
 

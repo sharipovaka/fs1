@@ -1,0 +1,50 @@
+/* Блок «здесь пока пусто»: картинка слева, объяснение справа. */
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--dept-card);
+  border: 1px dashed var(--dept-border);
+  border-radius: var(--dept-radius);
+}
+
+.image {
+  height: 9rem;
+  width: 8rem;
+}
+
+.body {
+  max-width: 42ch;
+}
+
+.title {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 650;
+  color: var(--dept-ink);
+}
+
+.text {
+  margin: 0;
+  color: var(--dept-muted);
+  line-height: 1.55;
+}
+
+/* На узком экране картинка встаёт над текстом, иначе строки становятся
+   слишком короткими и текст рвётся по два слова. */
+@media (max-width: 575.98px) {
+  .empty {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .image {
+    height: 7.5rem;
+    width: 7rem;
+  }
+}

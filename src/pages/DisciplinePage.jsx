@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
+import EmptyState from '../components/EmptyState.jsx';
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
 import DisciplineSidebar from '../components/DisciplineSidebar.jsx';
@@ -99,18 +100,18 @@ export default function DisciplinePage() {
                 </section>
               ))
             ) : (
-              <p className={styles.empty}>
+              <EmptyState mascot="think" title="Здесь пока пусто">
                 Для выбранного факультета и семестра материалов нет.
                 Нажмите «Все», чтобы увидеть остальные.
-              </p>
+              </EmptyState>
             )}
           </div>
         </div>
       ) : (
-        <p className={styles.empty}>
-          Материалы по этой дисциплине пока не опубликованы. Загляните позже
+        <EmptyState mascot="study" title="Материалы готовятся">
+          По этой дисциплине пока ничего не опубликовано. Загляните позже
           или спросите преподавателя.
-        </p>
+        </EmptyState>
       )}
 
       {previewFile && <FilePreviewModal file={previewFile} onClose={() => setPreviewFile(null)} />}

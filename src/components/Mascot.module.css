@@ -1,0 +1,11 @@
+/* Талисман лаборатории. Высоту задаёт место, где картинка стоит. */
+
+.mascot {
+  display: block;
+  height: 10rem;
+  width: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}

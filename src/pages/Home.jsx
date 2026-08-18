@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import EmptyState from '../components/EmptyState.jsx';
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
+import Mascot from '../components/Mascot.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import { ABOUT, ACTIVITIES, DISCIPLINES, TOTALS, filterItems, getAllMaterials } from '../catalog.js';
 import { files } from '../plural.js';
@@ -39,43 +41,49 @@ export default function Home() {
       </p>
 
       <section className={styles.hero}>
-        <h1 className={styles.heroTitle}>Лаборатория математики ФН1</h1>
-        <p className={styles.heroText}>
-          Учебные материалы по дисциплинам кафедры: планы, конспекты, литература,
-          шаблоны работ и условия типовых расчётов. Всего {files(TOTALS.files)} —
-          найдите нужный и скачайте.
-        </p>
+        <div className={styles.heroBody}>
+          <h1 className={styles.heroTitle}>Лаборатория математики ФН1</h1>
+          <p className={styles.heroText}>
+            Учебные материалы по дисциплинам кафедры: планы, конспекты, литература,
+            шаблоны работ и условия типовых расчётов. Всего {files(TOTALS.files)} —
+            найдите нужный и скачайте.
+          </p>
 
-        <div className={styles.searchWrapper}>
-          <Icon name="fa-solid fa-magnifying-glass" className={styles.searchIcon} />
-          <input
-            type="search"
-            className={styles.search}
-            placeholder="Например: типовой расчёт 1 линейная алгебра"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            aria-label="Поиск по всем материалам лаборатории"
-          />
-          {isSearching && (
-            <button
-              type="button"
-              className={styles.searchClear}
-              onClick={() => setQuery('')}
-              aria-label="Очистить поиск"
-            >
-              <Icon name="fa-solid fa-xmark" />
-            </button>
-          )}
+          <div className={styles.searchWrapper}>
+            <Icon name="fa-solid fa-magnifying-glass" className={styles.searchIcon} />
+            <input
+              type="search"
+              className={styles.search}
+              placeholder="Например: типовой расчёт 1 линейная алгебра"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              aria-label="Поиск по всем материалам лаборатории"
+            />
+            {isSearching && (
+              <button
+                type="button"
+                className={styles.searchClear}
+                onClick={() => setQuery('')}
+                aria-label="Очистить поиск"
+              >
+                <Icon name="fa-solid fa-xmark" />
+              </button>
+            )}
+          </div>
+
+          <div className={styles.quick}>
+            <span className={styles.quickLabel}>Часто ищут:</span>
+            {QUICK_QUERIES.map((item) => (
+              <button key={item} type="button" className={styles.quickChip} onClick={() => setQuery(item)}>
+                {item}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className={styles.quick}>
-          <span className={styles.quickLabel}>Часто ищут:</span>
-          {QUICK_QUERIES.map((item) => (
-            <button key={item} type="button" className={styles.quickChip} onClick={() => setQuery(item)}>
-              {item}
-            </button>
-          ))}
-        </div>
+        {/* Талисман лаборатории — на узком экране прячется, чтобы
+            не отнимать место у поиска */}
+        <Mascot name="study" className={styles.heroMascot} />
       </section>
 
       {isSearching ? (
@@ -96,9 +104,9 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <p className={styles.empty}>
+            <EmptyState mascot="search">
               Попробуйте другой запрос — например, название дисциплины или номер работы.
-            </p>
+            </EmptyState>
           )}
         </section>
       ) : (

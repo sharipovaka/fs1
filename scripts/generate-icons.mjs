@@ -1,10 +1,11 @@
 /**
- * Логотип и иконки сайта из рисунка талисмана лаборатории — ламы.
+ * Логотип, иконки и картинки талисмана лаборатории — ламы.
  *
  *   assets/llama.png  → public/logo.png            логотип в навбаре
  *                     → public/favicon.png         значок вкладки браузера
  *                     → public/icons/icon-192.png  иконка приложения (ярлык на телефоне)
  *                     → public/icons/icon-512.png
+ *   assets/mascot/*.png → public/mascot/*.png      иллюстрации страниц, уменьшенные
  *
  * Логотип — круглый значок: лама на светлом поле, обод фирменного зелёного
  * цвета (он же цвет свитера ламы). Иконка приложения — тот же значок
@@ -16,13 +17,19 @@
  * Запуск:  npm run icons
  */
 import { deflateSync, inflateSync } from 'node:zlib';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(ROOT, 'assets', 'llama.png');
+const MASCOT_DIR = join(ROOT, 'assets', 'mascot');
 const PUBLIC_DIR = join(ROOT, 'public');
+
+// Иллюстрации на страницах показываются высотой примерно 160 px,
+// с запасом на экраны с удвоенной плотностью точек
+const MASCOT_HEIGHT = 320;
+const MASCOT_COLOR_STEP = 16; // огрубление цвета: вдвое меньше файл, на глаз незаметно
 
 // Палитра (см. src/index.css и сам рисунок)
 const NAVY_DARK = [13, 43, 69];
@@ -70,7 +77,13 @@ function chunk(type, data) {
   return Buffer.concat([length, typeAndData, crc]);
 }
 
-/** Кодирует картинку {width, height, data (RGBA)} в PNG. */
+/**
+ * Кодирует картинку {width, height, data (RGBA)} в PNG.
+ *
+ * Перед сжатием каждая строка предсказывается по соседям — это «фильтры» PNG.
+ * Какой из них выгоднее, зависит от рисунка, поэтому пробуются все пять
+ * и остаётся тот, после которого файл получился меньше.
+ */
 function encodePng({ width, height, data }) {
   const ihdr = Buffer.alloc(13);
   ihdr.writeUInt32BE(width, 0);
@@ -81,18 +94,44 @@ function encodePng({ width, height, data }) {
   ihdr[11] = 0; // фильтрация
   ihdr[12] = 0; // без интерлейсинга
 
-  // Каждая строка предваряется байтом фильтра (0 — без фильтра).
-  const raw = Buffer.alloc(height * (width * 4 + 1));
-  for (let y = 0; y < height; y += 1) {
-    const rowStart = y * (width * 4 + 1);
-    raw[rowStart] = 0;
-    Buffer.from(data.buffer, data.byteOffset + y * width * 4, width * 4).copy(raw, rowStart + 1);
+  const stride = width * 4;
+
+  /** Готовит поток строк, отфильтрованных одним и тем же способом. */
+  const filtered = (filter) => {
+    const raw = Buffer.alloc(height * (stride + 1));
+    for (let y = 0; y < height; y += 1) {
+      const row = data.subarray(y * stride, (y + 1) * stride);
+      const previous = y > 0 ? data.subarray((y - 1) * stride, y * stride) : null;
+      const rowStart = y * (stride + 1);
+      raw[rowStart] = filter;
+
+      for (let i = 0; i < stride; i += 1) {
+        const left = i >= 4 ? row[i - 4] : 0;
+        const up = previous ? previous[i] : 0;
+        const upLeft = previous && i >= 4 ? previous[i - 4] : 0;
+
+        let value = row[i];
+        if (filter === 1) value -= left;
+        else if (filter === 2) value -= up;
+        else if (filter === 3) value -= (left + up) >> 1;
+        else if (filter === 4) value -= paeth(left, up, upLeft);
+
+        raw[rowStart + 1 + i] = value & 0xff;
+      }
+    }
+    return deflateSync(raw, { level: 9 });
+  };
+
+  let best = null;
+  for (let filter = 0; filter <= 4; filter += 1) {
+    const packed = filtered(filter);
+    if (!best || packed.length < best.length) best = packed;
   }
 
   return Buffer.concat([
     Buffer.from(SIGNATURE),
     chunk('IHDR', ihdr),
-    chunk('IDAT', deflateSync(raw, { level: 9 })),
+    chunk('IDAT', best),
     chunk('IEND', Buffer.alloc(0)),
   ]);
 }
@@ -257,6 +296,26 @@ function resize(image, width, height) {
 }
 
 /**
+ * Огрубляет цвета до шага `step`.
+ *
+ * Рисунок талисмана плоский, на глаз разница незаметна, а файл после этого
+ * вдвое меньше: одинаковых байтов становится больше, и zlib сжимает плотнее.
+ * Полностью прозрачные и полностью непрозрачные точки остаются такими же,
+ * иначе по краю рисунка появляется грязь.
+ */
+function posterize(image, step) {
+  const { data } = image;
+  for (let i = 0; i < data.length; i += 4) {
+    for (let c = 0; c < 3; c += 1) data[i + c] = Math.min(255, Math.round(data[i + c] / step) * step);
+    const alpha = data[i + 3];
+    if (alpha > 250) data[i + 3] = 255;
+    else if (alpha < 6) data[i + 3] = 0;
+    else data[i + 3] = Math.round(alpha / step) * step;
+  }
+  return image;
+}
+
+/**
  * Круглый значок: лама на светлом поле с зелёным ободом.
  * Всё за пределами круга прозрачно, поэтому значок одинаково хорош
  * и на тёмном навбаре, и на светлой странице.
@@ -379,4 +438,22 @@ for (const [name, image] of files) {
   const png = encodePng(image);
   writeFileSync(file, png);
   console.log(`  ${name} — ${image.width}×${image.height}, ${(png.length / 1024).toFixed(1)} КБ`);
+}
+
+// Картинки талисмана: те же рисунки, уменьшенные до размера, в котором
+// показываются на страницах. Исходники остаются в assets/ и на сайт не едут.
+if (existsSync(MASCOT_DIR)) {
+  for (const name of readdirSync(MASCOT_DIR).sort()) {
+    if (!name.endsWith('.png')) continue;
+
+    const source = decodePng(readFileSync(join(MASCOT_DIR, name)));
+    const height = Math.min(MASCOT_HEIGHT, source.height);
+    const width = Math.max(1, Math.round((source.width * height) / source.height));
+    const file = join(PUBLIC_DIR, 'mascot', name);
+
+    mkdirSync(dirname(file), { recursive: true });
+    const png = encodePng(posterize(resize(source, width, height), MASCOT_COLOR_STEP));
+    writeFileSync(file, png);
+    console.log(`  mascot/${name} — ${width}×${height}, ${(png.length / 1024).toFixed(1)} КБ`);
+  }
 }

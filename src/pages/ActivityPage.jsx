@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
+import EmptyState from '../components/EmptyState.jsx';
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import SectionHero from '../components/SectionHero.jsx';
@@ -35,7 +36,9 @@ export default function ActivityPage() {
           ))}
         </div>
       ) : (
-        <p className={styles.empty}>Материалы этого раздела пока не опубликованы.</p>
+        <EmptyState mascot="study" title="Материалы готовятся">
+          В этом разделе пока ничего не опубликовано. Загляните позже.
+        </EmptyState>
       )}
 
       {previewFile && <FilePreviewModal file={previewFile} onClose={() => setPreviewFile(null)} />}
