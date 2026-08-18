@@ -32,24 +32,44 @@
   min-width: 0;
 }
 
-/* Талисман рядом с поиском. На планшете он меньше, на телефоне убран
-   совсем: там дорога каждая строка над строкой поиска. */
-.heroMascot {
-  height: 11.5rem;
-  width: 10rem;
-  margin-right: 0.5rem;
+/* Логотип лаборатории рядом с поиском. Размер задан и по высоте,
+   и по ширине: пока картинка грузится, место под неё уже занято
+   и страница не дёргается. */
+.heroLogo {
+  flex: 0 0 auto;
+  display: block;
+  box-sizing: border-box;
+  height: 15rem;
+  width: 10.5rem;
+  padding: 0.9rem 1rem;
+  object-fit: contain;
+  /* Логотип нарисован для светлого фона: тёмно-коричневая надпись
+     на тёмно-синем читалась бы плохо, поэтому под ним светлая плашка. */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--dept-radius);
+  box-shadow: var(--dept-shadow-sm);
 }
 
-@media (max-width: 1199.98px) {
-  .heroMascot {
-    height: 9rem;
-    width: 8rem;
+@media (max-width: 991.98px) {
+  .heroLogo {
+    height: 12rem;
+    width: 8.5rem;
   }
 }
 
+/* На телефоне логотип переезжает наверх: в строку он там не помещается,
+   а прятать фирменный знак с главной не хочется. */
 @media (max-width: 767.98px) {
-  .heroMascot {
-    display: none;
+  .hero {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .heroLogo {
+    height: 10.5rem;
+    width: 7.5rem;
+    margin: 0;
   }
 }
 

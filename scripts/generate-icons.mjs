@@ -6,6 +6,7 @@
  *                     → public/icons/icon-192.png  иконка приложения (ярлык на телефоне)
  *                     → public/icons/icon-512.png
  *   assets/mascot/*.png → public/mascot/*.png      иллюстрации страниц, уменьшенные
+ *   assets/lama-logo.png → public/logo-full.png    полный логотип с надписью (шапка главной)
  *
  * Логотип — круглый значок: лама на светлом поле, обод фирменного зелёного
  * цвета (он же цвет свитера ламы). Иконка приложения — тот же значок
@@ -24,12 +25,14 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(ROOT, 'assets', 'llama.png');
 const MASCOT_DIR = join(ROOT, 'assets', 'mascot');
+const FULL_LOGO = join(ROOT, 'assets', 'lama-logo.png');
 const PUBLIC_DIR = join(ROOT, 'public');
 
 // Иллюстрации на страницах показываются высотой примерно 160 px,
 // с запасом на экраны с удвоенной плотностью точек
 const MASCOT_HEIGHT = 320;
 const MASCOT_COLOR_STEP = 16; // огрубление цвета: вдвое меньше файл, на глаз незаметно
+const FULL_LOGO_HEIGHT = 440; // в шапке главной он около 210 px
 
 // Палитра (см. src/index.css и сам рисунок)
 const NAVY_DARK = [13, 43, 69];
@@ -438,6 +441,19 @@ for (const [name, image] of files) {
   const png = encodePng(image);
   writeFileSync(file, png);
   console.log(`  ${name} — ${image.width}×${image.height}, ${(png.length / 1024).toFixed(1)} КБ`);
+}
+
+// Полный логотип лаборатории — лама с надписью «Лаборатория LaMa математики».
+// Исходник нарисован в векторе (assets/lama-logo.svg), в assets/lama-logo.png
+// лежит его отрисовка в большом размере.
+if (existsSync(FULL_LOGO)) {
+  const source = decodePng(readFileSync(FULL_LOGO));
+  const height = Math.min(FULL_LOGO_HEIGHT, source.height);
+  const width = Math.max(1, Math.round((source.width * height) / source.height));
+  const png = encodePng(posterize(resize(source, width, height), MASCOT_COLOR_STEP));
+
+  writeFileSync(join(PUBLIC_DIR, 'logo-full.png'), png);
+  console.log(`  logo-full.png — ${width}×${height}, ${(png.length / 1024).toFixed(1)} КБ`);
 }
 
 // Картинки талисмана: те же рисунки, уменьшенные до размера, в котором

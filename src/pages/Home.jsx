@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import EmptyState from '../components/EmptyState.jsx';
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
-import Mascot from '../components/Mascot.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
 import { ABOUT, ACTIVITIES, DISCIPLINES, TOTALS, filterItems, getAllMaterials } from '../catalog.js';
 import { files } from '../plural.js';
@@ -81,9 +80,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Талисман лаборатории — на узком экране прячется, чтобы
-            не отнимать место у поиска */}
-        <Mascot name="study" className={styles.heroMascot} />
+        {/* Логотип лаборатории. На узком экране встаёт над заголовком —
+            см. flex-direction в стилях */}
+        <img
+          className={styles.heroLogo}
+          src={`${import.meta.env.BASE_URL}logo-full.png`}
+          alt=""
+          aria-hidden="true"
+        />
       </section>
 
       {isSearching ? (
