@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 import Navigation from './Navigation.jsx';
+import UpdateNotice from './UpdateNotice.jsx';
 import { findSection } from '../navConfig.js';
 import styles from './Layout.module.css';
 import Icon from './Icon.jsx';
@@ -10,7 +11,8 @@ const SITE_TITLE = 'Лаборатория математики ФН1';
 
 /**
  * Общая обёртка страниц: фиксированный навбар, «хлебные крошки»,
- * контейнер контента (<Outlet />) и подвал.
+ * контейнер контента (<Outlet />) и подвал. Поверх всего — плашка
+ * о новой версии сайта, если страница открыта давно.
  * Здесь же обновляются заголовок вкладки и позиция прокрутки при смене маршрута.
  */
 export default function Layout() {
@@ -30,6 +32,7 @@ export default function Layout() {
   return (
     <div className={styles.shell}>
       <Navigation />
+      <UpdateNotice />
 
       <main className={styles.main}>
         <div className="container">
