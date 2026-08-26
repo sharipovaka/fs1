@@ -64,6 +64,18 @@ export default function Layout() {
               <Icon name="fa-solid fa-square-root-variable" className="me-2" />
               {SITE_TITLE} · учебные материалы и активности
             </p>
+            <p className="mb-0">
+              <a
+                className={styles.footerLink}
+                href="https://library.bmstu.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="fa-solid fa-book" className="me-2" />
+                Электронная библиотека МГТУ
+              </a>
+            </p>
+
             <p className="mb-0 text-white-50">
               Сайт опубликован на GitHub&nbsp;Pages · собран на React&nbsp;+&nbsp;Bootstrap&nbsp;5
             </p>

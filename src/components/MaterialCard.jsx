@@ -23,10 +23,20 @@ function formatSize(bytes) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} МБ`;
 }
 
+/** Адрес сайта из ссылки: «https://library.bmstu.ru/» → «library.bmstu.ru». */
+function linkHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
 /**
  * Карточка учебного материала: заголовок работы, её признаки (дисциплина, курс,
  * сроки) и список файлов с кнопками действий. У заглушки — работы, объявленной
- * до того, как готов файл, — вместо списка стоит пометка «файлы появятся позже».
+ * до того, как готов файл, — вместо списка стоит пометка «файлы появятся позже»,
+ * у внешнего ресурса — кнопка «Открыть» и адрес сайта.
  *
  * Это основной элемент сайта: студент находит нужную работу по заголовку
  * и скачивает файл, не открывая никаких промежуточных страниц.
@@ -81,6 +91,8 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           </div>
         </header>
 
+        {item.description && <p className={styles.description}>{item.description}</p>}
+
         {(due || item.deadline) && (
           <p className={styles.deadline}>
             <Icon name="fa-regular fa-clock" />{' '}
@@ -89,9 +101,22 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           </p>
         )}
 
-        {/* Работа объявлена, а файла ещё нет: карточка показывает,
-            что появится в разделе, но скачивать пока нечего */}
-        {item.placeholder ? (
+        {/* Внешний ресурс: файла у нас нет, есть ссылка наружу */}
+        {item.link ? (
+          <p className={styles.linkRow}>
+            <a
+              className={`btn btn-sm btn-primary ${styles.action}`}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="fa-solid fa-arrow-up-right-from-square" />
+              <span>Открыть</span>
+            </a>
+            {/* Адрес виден заранее: понятно, куда уводит ссылка */}
+            <span className={styles.linkHost}>{linkHost(item.link)}</span>
+          </p>
+        ) : item.placeholder ? (
           <p className={styles.placeholder}>
             <Icon name="fa-solid fa-hourglass-half" /> Файлы появятся позже — работа готовится.
           </p>

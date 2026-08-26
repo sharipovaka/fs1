@@ -327,3 +327,26 @@
   color: var(--dept-muted);
   font-size: 0.92rem;
 }
+
+/* Пояснение к работе — строкой под заголовком. */
+.description {
+  margin: 0.35rem 0 0;
+  color: var(--dept-muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+/* Внешний ресурс: кнопка «Открыть» и адрес сайта рядом. */
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0 0;
+}
+
+.linkHost {
+  color: var(--dept-muted);
+  font-size: 0.88rem;
+  font-family: var(--dept-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+}

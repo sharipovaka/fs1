@@ -46,6 +46,17 @@
   font-size: 0.875rem;
 }
 
+.footerLink {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.footerLink:hover {
+  color: var(--dept-accent);
+  border-bottom-color: var(--dept-accent);
+}
+
 .footerRow {
   display: flex;
   flex-wrap: wrap;

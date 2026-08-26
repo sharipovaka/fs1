@@ -10,7 +10,8 @@
  * Названия дисциплин, порядок блоков и описания задаются в catalog/site.json.
  * Описания конкретных работ — в необязательном _meta.json рядом с файлами.
  * Всё, что не описано, распознаётся по именам файлов. Работу можно объявить
- * и до того, как файл готов: «"placeholder": true» в _meta.json.
+ * и до того, как файл готов: «"placeholder": true» в _meta.json, а вместо
+ * файла указать ссылку наружу: «"url": "https://…"».
  *
  * Результат: src/content/catalogIndex.json
  * Запуск: npm run catalog
@@ -268,6 +269,21 @@ function collectFolder(folderRel, faculties = []) {
 
   // 1. Заглушки и работы с явно перечисленными файлами
   for (const [key, itemMeta] of Object.entries(meta.items ?? {})) {
+    // Внешний ресурс: вместо файла ссылка — «"url": "https://…"».
+    // Так на страницу попадают электронная библиотека, сторонние задачники
+    // и прочее, что лежит не у нас. Такие карточки идут в конце раздела.
+    if (itemMeta.url) {
+      items.push({
+        key,
+        meta: itemMeta,
+        files: [],
+        link: itemMeta.url,
+        order: 100,
+        number: itemMeta.number ?? null,
+      });
+      continue;
+    }
+
     // Заглушка — работа объявлена, файлов ещё нет: «"placeholder": true»
     // в _meta.json. Так в разделе заранее видно, что в нём будет.
     // Когда файл загружен, строчку из _meta.json можно убрать —
@@ -347,6 +363,9 @@ function collectFolder(folderRel, faculties = []) {
         kind: entry.meta.kind ?? (entry.code ? KIND_BY_CODE[entry.code] : 'Материал'),
         number: entry.meta.number ?? entry.number ?? undefined,
         title: entry.meta.title ?? entry.files[0]?.label ?? '',
+        description: entry.meta.description ?? '',
+        // Ссылка наружу вместо файлов
+        link: entry.link ?? '',
         // Заглушка: карточка есть, скачивать пока нечего
         placeholder: Boolean(entry.placeholder),
         course: entry.meta.course,

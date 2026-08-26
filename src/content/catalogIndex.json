@@ -90,6 +90,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -107,6 +109,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -124,6 +128,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -141,6 +147,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -158,6 +166,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -175,6 +185,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -200,6 +212,8 @@
               "id": "disciplines-calculus-plans-plan-lekciy-ibm-1sem",
               "kind": "Календарный план",
               "title": "Лекции",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "17 лекций, два модуля",
@@ -239,6 +253,8 @@
               "id": "disciplines-calculus-plans-plan-seminarov-ibm-1sem",
               "kind": "Календарный план",
               "title": "Семинарские занятия",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "24 занятия, задачи и домашние задания",
@@ -308,6 +324,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -325,6 +343,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -342,6 +362,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -359,6 +381,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -376,6 +400,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -393,6 +419,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -437,6 +465,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -454,6 +484,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -471,6 +503,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -488,6 +522,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -505,6 +541,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -522,6 +560,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -566,6 +606,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -583,6 +625,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -600,6 +644,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -617,6 +663,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -634,6 +682,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -651,6 +701,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -695,6 +747,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -712,6 +766,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -729,6 +785,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -746,6 +804,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -763,6 +823,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -780,6 +842,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
+              "description": "",
+              "link": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -824,6 +888,8 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "Элементарные функции",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "32 варианта",
@@ -864,6 +930,8 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "Пределы и непрерывность",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "30 вариантов, три задачи",
@@ -904,6 +972,8 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "Исследование функций и ряд Тейлора",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "36 вариантов",
@@ -962,6 +1032,31 @@
       "semester": "",
       "groups": [
         {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-common-library-library-bmstu",
+              "kind": "Внешний ресурс",
+              "title": "Электронная библиотека МГТУ им. Н. Э. Баумана",
+              "description": "Учебники, методички и подписные базы: поиск по каталогу, доступ к полным текстам — по учётной записи университета.",
+              "link": "https://library.bmstu.ru/",
+              "placeholder": false,
+              "deadline": "",
+              "faculties": [],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        },
+        {
           "type": "templates",
           "title": "Шаблоны",
           "icon": "fa-solid fa-file-code",
@@ -971,6 +1066,8 @@
               "id": "disciplines-common-templates-coursework",
               "kind": "Шаблон",
               "title": "Курсовая работа (LaTeX)",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1007,6 +1104,8 @@
               "id": "disciplines-common-templates-formatting-requirements",
               "kind": "Требования",
               "title": "Требования к оформлению работ",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1042,6 +1141,8 @@
               "id": "disciplines-common-templates-report-template",
               "kind": "Шаблон",
               "title": "Вычислительный отчёт (Jupyter)",
+              "description": "",
+              "link": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1103,6 +1204,8 @@
           "id": "activities-reports-beamer-presentation",
           "kind": "Шаблон",
           "title": "Презентация в Beamer",
+          "description": "",
+          "link": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1139,6 +1242,8 @@
           "id": "activities-reports-plots-for-presentation",
           "kind": "Материалы",
           "title": "Графики для доклада",
+          "description": "",
+          "link": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1174,6 +1279,8 @@
           "id": "activities-reports-report-checklist",
           "kind": "Чек-лист",
           "title": "Подготовка доклада",
+          "description": "",
+          "link": "",
           "placeholder": false,
           "deadline": "начать за две недели",
           "faculties": [],
@@ -1248,6 +1355,8 @@
           "id": "about-history-metodicheskiy-seminar-2018",
           "kind": "Статья",
           "title": "Методический семинар на кафедре «Высшая математика»",
+          "description": "",
+          "link": "",
           "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
           "faculties": [],
@@ -1284,6 +1393,8 @@
           "id": "about-history-prepodavateli-frontoviki-2018",
           "kind": "Статья",
           "title": "Преподаватели кафедры на фронтах Великой Отечественной войны",
+          "description": "",
+          "link": "",
           "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
           "faculties": [],
@@ -1322,6 +1433,6 @@
   ],
   "totals": {
     "files": 13,
-    "items": 43
+    "items": 44
   }
 }
