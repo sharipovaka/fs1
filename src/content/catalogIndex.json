@@ -1314,8 +1314,48 @@
       "icon": "fa-solid fa-briefcase",
       "description": "Учебная, производственная и преддипломная практика: базы, сроки, отчётность.",
       "menuHint": "Базы практики, шаблон отчёта и бланк дневника.",
-      "items": [],
-      "fileCount": 0
+      "items": [
+        {
+          "id": "activities-practice-zadachi-praktika-3-kurs",
+          "kind": "Задания",
+          "title": "Задачи производственной практики, 3 курс",
+          "description": "Двадцать четыре задачи по шести направлениям: синхронизация АФМ-осцилляторов, цифровая обработка сигналов и вибродиагностика, интерактивные лекции, ряды Фурье и сглаживание эффекта Гиббса, уравнения математической физики, теория аналитических функций.",
+          "link": "",
+          "placeholder": false,
+          "course": 3,
+          "deadline": "у каждой задачи указана сложность и требования к отчёту",
+          "faculties": [],
+          "due": "",
+          "status": "",
+          "statusLabel": "",
+          "files": [
+            {
+              "path": "activities/practice/zadachi-praktika-3-kurs.pdf",
+              "name": "zadachi-praktika-3-kurs.pdf",
+              "ext": "pdf",
+              "format": "PDF",
+              "size": 501198,
+              "label": "Сводная таблица тем, постановки задач, требования к коду и отчёту, правила использования языковых моделей",
+              "primary": true,
+              "preview": {
+                "type": "pdf",
+                "path": "files/activities/practice/zadachi-praktika-3-kurs.pdf",
+                "thumb": "previews/activities/practice/zadachi-praktika-3-kurs.png"
+              },
+              "download": {
+                "path": "files/activities/practice/zadachi-praktika-3-kurs.pdf",
+                "name": "zadachi-praktika-3-kurs.pdf",
+                "format": "PDF",
+                "size": 501198,
+                "compiled": false
+              }
+            }
+          ],
+          "hasPreview": true,
+          "thumb": "previews/activities/practice/zadachi-praktika-3-kurs.png"
+        }
+      ],
+      "fileCount": 1
     },
     {
       "id": "conferences",
@@ -1416,7 +1456,7 @@
     }
   ],
   "totals": {
-    "files": 13,
-    "items": 43
+    "files": 14,
+    "items": 44
   }
 }
