@@ -19,13 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Лицензия распространяется на код сайта: исходники в src/, сборочные скрипты
-в scripts/, настройки и документацию.
-
-Учебные материалы в public/files (методические указания, календарные планы,
-условия работ, учебники) под неё не подпадают — права на них принадлежат
-их авторам и издателям и передаются только на тех условиях, на которых
-эти файлы выложены.
