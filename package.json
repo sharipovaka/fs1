@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "SPA Лаборатории математики ФН1: каталог учебных материалов на React + React Router + Bootstrap 5",
   "homepage": "https://sharipovaka.github.io/fs1/",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "previews": "node scripts/generate-previews.mjs",
