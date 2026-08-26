@@ -25,7 +25,7 @@ public/files/
 │   │   ├── plans/            ← блок «Планы»
 │   │   ├── notes/            ← блок «Конспекты»
 │   │   └── templates/        ← блок «Шаблоны»
-│   ├── linear-algebra/       ← линейная алгебра
+│   ├── algebra-geometry/    ← аналитическая геометрия и линейная алгебра
 │   ├── discrete-math/        ← дискретная математика
 │   ├── teorver/              ← теория вероятностей
 │   └── common/               ← общие материалы для всех дисциплин
@@ -50,7 +50,7 @@ public/files/
 Например, условия нового типового расчёта по линейной алгебре.
 
 1. Откройте https://github.com/sharipovaka/fs1
-2. Пройдите по папкам: `public` → `files` → `disciplines` → `linear-algebra` → `tasks`
+2. Пройдите по папкам: `public` → `files` → `disciplines` → `algebra-geometry` → `tasks`
 3. Нажмите **Add file → Upload files**
 4. Перетащите файл в окно
 5. Внизу нажмите зелёную кнопку **Commit changes**
@@ -103,7 +103,7 @@ public/files/
 
 Чтобы его создать или изменить:
 
-1. Зайдите в папку, например `public/files/linear-algebra/tasks/`
+1. Зайдите в папку, например `public/files/disciplines/algebra-geometry/tasks/`
 2. Если файла `_meta.json` нет — **Add file → Create new file**, имя `_meta.json`
 3. Если есть — нажмите на него, затем на карандаш ✏️
 4. Впишите текст по образцу ниже и нажмите **Commit changes**

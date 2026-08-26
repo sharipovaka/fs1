@@ -52,9 +52,8 @@
 │   └── generate-icon-set.mjs      # набор SVG-иконок по факту использования
 ├── public/                        # копируется в build как есть
 │   ├── files/                     # сами файлы разделов
-│   │   ├── disciplines/{plans,notes,templates,tasks}/
-│   │   │   └── tasks/{linear-algebra,calculus,discrete-math,teorver}/
-│   │   │       └── _meta.json     # необязательные уточнения к папке
+│   │   ├── disciplines/<дисциплина>/{plans,notes,library,templates,tasks}/
+│   │   │   └── _meta.json         # необязательные уточнения к папке
 │   │   └── activities/{practice,spring,seminars,reports,conferences}/
 │   ├── previews/                  # предпросмотр (генерируется, коммитится)
 │   ├── manifest.json              # PWA-манифест
@@ -195,9 +194,9 @@ npm run icons     # перегенерировать PNG-иконки PWA
   "status": "open",
   "statusLabel": "приём открыт",
   "files": [
-    { "path": "disciplines/tasks/linear-algebra/tr-01-usloviya.md",
+    { "path": "disciplines/algebra-geometry/tasks/tr-01-usloviya.md",
       "label": "Условия задач", "primary": true },
-    { "path": "disciplines/tasks/linear-algebra/tr-01-varianty.csv",
+    { "path": "disciplines/algebra-geometry/tasks/tr-01-varianty.csv",
       "label": "Данные 25 вариантов" }
   ]
 }

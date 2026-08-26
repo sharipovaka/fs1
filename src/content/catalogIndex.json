@@ -74,10 +74,10 @@
       "title": "Математический анализ",
       "short": "Матанализ",
       "icon": "fa-solid fa-infinity",
-      "meta": "1 курс · 1–2 семестры",
-      "description": "Пределы, дифференциальное и интегральное исчисление, ряды, функции нескольких переменных. Базовый курс, на который опираются почти все дисциплины кафедры.",
+      "meta": "1 курс · 1 семестр",
+      "description": "Пределы и непрерывность, дифференциальное исчисление функции одной переменной, формула Тейлора, исследование функций, комплексные числа. Базовый курс, на который опираются почти все дисциплины кафедры.",
       "course": "1 курс",
-      "semester": "1–2 семестры",
+      "semester": "1 семестр",
       "groups": [
         {
           "type": "tasks",
@@ -189,22 +189,111 @@
             }
           ],
           "fileCount": 0
+        },
+        {
+          "type": "plans",
+          "title": "Планы",
+          "icon": "fa-solid fa-list-check",
+          "description": "Рабочая программа, распределение часов и формы контроля.",
+          "items": [
+            {
+              "id": "disciplines-calculus-plans-plan-lekciy-ibm-1sem",
+              "kind": "Календарный план",
+              "title": "Лекции",
+              "placeholder": false,
+              "semester": 1,
+              "deadline": "17 лекций, два модуля",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/plans/plan-lekciy-ibm-1sem.pdf",
+                  "name": "plan-lekciy-ibm-1sem.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 129806,
+                  "label": "Темы лекций по модулям: элементарные функции и пределы, дифференциальное исчисление функции одной переменной",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/calculus/plans/plan-lekciy-ibm-1sem.pdf",
+                    "thumb": "previews/disciplines/calculus/plans/plan-lekciy-ibm-1sem.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/plans/plan-lekciy-ibm-1sem.pdf",
+                    "name": "plan-lekciy-ibm-1sem.pdf",
+                    "format": "PDF",
+                    "size": 129806,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/plans/plan-lekciy-ibm-1sem.png"
+            },
+            {
+              "id": "disciplines-calculus-plans-plan-seminarov-ibm-1sem",
+              "kind": "Календарный план",
+              "title": "Семинарские занятия",
+              "placeholder": false,
+              "semester": 1,
+              "deadline": "24 занятия, задачи и домашние задания",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/calculus/plans/plan-seminarov-ibm-1sem.pdf",
+                  "name": "plan-seminarov-ibm-1sem.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 286665,
+                  "label": "Задачи к каждому занятию по Ефимову — Демидовичу, домашние задания и список контрольных мероприятий",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/calculus/plans/plan-seminarov-ibm-1sem.pdf",
+                    "thumb": "previews/disciplines/calculus/plans/plan-seminarov-ibm-1sem.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/calculus/plans/plan-seminarov-ibm-1sem.pdf",
+                    "name": "plan-seminarov-ibm-1sem.pdf",
+                    "format": "PDF",
+                    "size": 286665,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/calculus/plans/plan-seminarov-ibm-1sem.png"
+            }
+          ],
+          "fileCount": 2
         }
       ],
-      "fileCount": 0,
+      "fileCount": 2,
       "faculties": [
         "mt",
         "ibm"
       ],
-      "semesters": []
+      "semesters": [
+        1
+      ]
     },
     {
-      "id": "linear-algebra",
-      "title": "Линейная алгебра",
-      "short": "Линал",
+      "id": "algebra-geometry",
+      "title": "Аналитическая геометрия и линейная алгебра",
+      "short": "Геометрия и алгебра",
       "icon": "fa-solid fa-vector-square",
       "meta": "1 курс · 1 семестр",
-      "description": "Матрицы и определители, системы линейных уравнений, линейные пространства и операторы, квадратичные формы, аналитическая геометрия.",
+      "description": "Векторная алгебра, прямая и плоскость, кривые и поверхности второго порядка; матрицы и определители, системы линейных уравнений, линейные пространства и операторы, квадратичные формы.",
       "course": "1 курс",
       "semester": "1 семестр",
       "groups": [
@@ -215,7 +304,7 @@
           "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
           "items": [
             {
-              "id": "disciplines-linear-algebra-tasks-tr-01-ibm",
+              "id": "disciplines-algebra-geometry-tasks-tr-01-ibm",
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
@@ -232,7 +321,7 @@
               "thumb": null
             },
             {
-              "id": "disciplines-linear-algebra-tasks-tr-01-mt",
+              "id": "disciplines-algebra-geometry-tasks-tr-01-mt",
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "",
@@ -249,7 +338,7 @@
               "thumb": null
             },
             {
-              "id": "disciplines-linear-algebra-tasks-tr-02-ibm",
+              "id": "disciplines-algebra-geometry-tasks-tr-02-ibm",
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
@@ -266,7 +355,7 @@
               "thumb": null
             },
             {
-              "id": "disciplines-linear-algebra-tasks-tr-02-mt",
+              "id": "disciplines-algebra-geometry-tasks-tr-02-mt",
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "",
@@ -283,7 +372,7 @@
               "thumb": null
             },
             {
-              "id": "disciplines-linear-algebra-tasks-tr-03-ibm",
+              "id": "disciplines-algebra-geometry-tasks-tr-03-ibm",
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
@@ -300,7 +389,7 @@
               "thumb": null
             },
             {
-              "id": "disciplines-linear-algebra-tasks-tr-03-mt",
+              "id": "disciplines-algebra-geometry-tasks-tr-03-mt",
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
@@ -559,135 +648,6 @@
             },
             {
               "id": "disciplines-teorver-tasks-tr-03-mt",
-              "kind": "Типовой расчёт",
-              "number": 3,
-              "title": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "mt"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            }
-          ],
-          "fileCount": 0
-        }
-      ],
-      "fileCount": 0,
-      "faculties": [
-        "mt",
-        "ibm"
-      ],
-      "semesters": []
-    },
-    {
-      "id": "analytic-geometry",
-      "title": "Аналитическая геометрия",
-      "short": "Аналит. геометрия",
-      "icon": "fa-solid fa-draw-polygon",
-      "meta": "1 курс · 1 семестр",
-      "description": "Векторная алгебра, прямая и плоскость, кривые и поверхности второго порядка, преобразования координат.",
-      "course": "1 курс",
-      "semester": "1 семестр",
-      "groups": [
-        {
-          "type": "tasks",
-          "title": "Задания",
-          "icon": "fa-solid fa-square-root-variable",
-          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
-          "items": [
-            {
-              "id": "disciplines-analytic-geometry-tasks-tr-01-ibm",
-              "kind": "Типовой расчёт",
-              "number": 1,
-              "title": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "ibm"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-analytic-geometry-tasks-tr-01-mt",
-              "kind": "Типовой расчёт",
-              "number": 1,
-              "title": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "mt"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-analytic-geometry-tasks-tr-02-ibm",
-              "kind": "Типовой расчёт",
-              "number": 2,
-              "title": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "ibm"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-analytic-geometry-tasks-tr-02-mt",
-              "kind": "Типовой расчёт",
-              "number": 2,
-              "title": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "mt"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-analytic-geometry-tasks-tr-03-ibm",
-              "kind": "Типовой расчёт",
-              "number": 3,
-              "title": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "ibm"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-analytic-geometry-tasks-tr-03-mt",
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "",
@@ -1361,7 +1321,7 @@
     }
   ],
   "totals": {
-    "files": 11,
-    "items": 47
+    "files": 13,
+    "items": 43
   }
 }
