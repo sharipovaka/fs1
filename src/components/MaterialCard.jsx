@@ -48,16 +48,13 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
 
   return (
     <article className={`${styles.card} ${item.placeholder ? styles.cardPlaceholder : ''}`} id={item.id}>
+      {/* Миниатюра первой страницы — только чтобы узнать работу в лицо.
+          Нажимать не на что: за файлом идут кнопки «Скачать» и «Просмотр»,
+          а нажатие на картинку открывало голый PNG без них. */}
       {item.thumb && (
-        <a
-          className={styles.thumbLink}
-          href={assetUrl(item.thumb)}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Открыть изображение целиком"
-        >
+        <div className={styles.thumbBox}>
           <img className={styles.thumb} src={assetUrl(item.thumb)} alt="" loading="lazy" />
-        </a>
+        </div>
       )}
 
       <div className={styles.main}>

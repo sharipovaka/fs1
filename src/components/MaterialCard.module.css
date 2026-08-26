@@ -17,7 +17,7 @@
 }
 
 /* Миниатюра: верхняя часть скомпилированной страницы */
-.thumbLink {
+.thumbBox {
   flex: 0 0 auto;
   display: block;
   width: 132px;
@@ -26,12 +26,6 @@
   border-radius: 8px;
   overflow: hidden;
   background: var(--dept-surface);
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-
-.thumbLink:hover {
-  transform: translateY(-2px);
-  border-color: var(--dept-navy-light);
 }
 
 .thumb {
@@ -284,7 +278,7 @@
     padding: 1rem;
   }
 
-  .thumbLink {
+  .thumbBox {
     width: 108px;
   }
 
