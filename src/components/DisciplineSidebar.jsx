@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Icon from './Icon.jsx';
-import { DISCIPLINES } from '../catalog.js';
 import styles from './DisciplineSidebar.module.css';
 
 /**
@@ -13,7 +11,8 @@ import styles from './DisciplineSidebar.module.css';
  * сразу перепрыгнуть к нужному. Раздел, который сейчас на экране,
  * подсвечивается при прокрутке.
  *
- * Снизу — переход к другим дисциплинам без возврата в меню.
+ * Счётчик у раздела — число работ, а не файлов: у объявленной работы
+ * файлов может ещё не быть.
  *
  * @param {object} props
  * @param {object} props.discipline текущая дисциплина из каталога
@@ -47,8 +46,6 @@ export default function DisciplineSidebar({ discipline, visibleTypes }) {
     // Пересобираем наблюдение, когда меняется набор разделов
   }, [groups.map((group) => group.type).join(',')]);
 
-  const others = DISCIPLINES.filter((item) => item.id !== discipline.id);
-
   return (
     <aside className={styles.sidebar}>
       <nav className={styles.nav} aria-label="Разделы дисциплины">
@@ -65,26 +62,11 @@ export default function DisciplineSidebar({ discipline, visibleTypes }) {
                 >
                   <Icon name={group.icon} className={styles.linkIcon} />
                   <span className={styles.linkTitle}>{group.title}</span>
-                  <span className={styles.count}>{group.fileCount}</span>
+                  <span className={styles.count}>{group.items.length}</span>
                 </a>
               </li>
             );
           })}
-        </ul>
-      </nav>
-
-      <nav className={styles.nav} aria-label="Другие дисциплины">
-        <p className={styles.caption}>Другие дисциплины</p>
-        <ul className={styles.list}>
-          {others.map((item) => (
-            <li key={item.id}>
-              <Link to={`/disciplines/${item.id}`} className={styles.link}>
-                <Icon name={item.icon} className={styles.linkIcon} />
-                <span className={styles.linkTitle}>{item.short ?? item.title}</span>
-                <span className={styles.count}>{item.fileCount}</span>
-              </Link>
-            </li>
-          ))}
         </ul>
       </nav>
     </aside>

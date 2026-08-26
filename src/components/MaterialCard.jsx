@@ -25,7 +25,8 @@ function formatSize(bytes) {
 
 /**
  * Карточка учебного материала: заголовок работы, её признаки (дисциплина, курс,
- * сроки) и список файлов с кнопками действий.
+ * сроки) и список файлов с кнопками действий. У заглушки — работы, объявленной
+ * до того, как готов файл, — вместо списка стоит пометка «файлы появятся позже».
  *
  * Это основной элемент сайта: студент находит нужную работу по заголовку
  * и скачивает файл, не открывая никаких промежуточных страниц.
@@ -46,7 +47,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
   const statusLabel = due?.label ?? item.statusLabel;
 
   return (
-    <article className={styles.card} id={item.id}>
+    <article className={`${styles.card} ${item.placeholder ? styles.cardPlaceholder : ''}`} id={item.id}>
       {item.thumb && (
         <a
           className={styles.thumbLink}
@@ -63,7 +64,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
         <header className={styles.header}>
           <div className={styles.headingBlock}>
             <p className={styles.kind}>{heading}</p>
-            <h3 className={styles.title}>{item.title}</h3>
+            {item.title && <h3 className={styles.title}>{item.title}</h3>}
           </div>
 
           <div className={styles.badges}>
@@ -91,6 +92,13 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           </p>
         )}
 
+        {/* Работа объявлена, а файла ещё нет: карточка показывает,
+            что появится в разделе, но скачивать пока нечего */}
+        {item.placeholder ? (
+          <p className={styles.placeholder}>
+            <Icon name="fa-solid fa-hourglass-half" /> Файлы появятся позже — работа готовится.
+          </p>
+        ) : (
         <ul className={styles.files}>
           {item.files.map((file) => (
             <li key={file.path} className={`${styles.file} ${file.primary ? styles.filePrimary : ''}`}>
@@ -164,6 +172,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
             </li>
           ))}
         </ul>
+        )}
       </div>
     </article>
   );

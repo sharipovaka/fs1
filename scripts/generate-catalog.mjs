@@ -9,7 +9,8 @@
  *
  * Названия дисциплин, порядок блоков и описания задаются в catalog/site.json.
  * Описания конкретных работ — в необязательном _meta.json рядом с файлами.
- * Всё, что не описано, распознаётся по именам файлов.
+ * Всё, что не описано, распознаётся по именам файлов. Работу можно объявить
+ * и до того, как файл готов: «"placeholder": true» в _meta.json.
  *
  * Результат: src/content/catalogIndex.json
  * Запуск: npm run catalog
@@ -265,8 +266,26 @@ function collectFolder(folderRel, faculties = []) {
   const used = new Set();
   const items = [];
 
-  // 1. Работы с явно перечисленными файлами
+  // 1. Заглушки и работы с явно перечисленными файлами
   for (const [key, itemMeta] of Object.entries(meta.items ?? {})) {
+    // Заглушка — работа объявлена, файлов ещё нет: «"placeholder": true»
+    // в _meta.json. Так в разделе заранее видно, что в нём будет.
+    // Когда файл загружен, строчку из _meta.json можно убрать —
+    // работа соберётся по имени файла, как обычно.
+    if (itemMeta.placeholder) {
+      const parsed = parseFileName(key);
+      items.push({
+        key,
+        meta: itemMeta,
+        files: [],
+        placeholder: true,
+        order: parsed.code ? KIND_ORDER.indexOf(parsed.code) : 99,
+        number: itemMeta.number ?? parsed.number,
+        code: parsed.code,
+      });
+      continue;
+    }
+
     if (!Array.isArray(itemMeta.files)) continue;
 
     const collected = itemMeta.files
@@ -327,7 +346,9 @@ function collectFolder(folderRel, faculties = []) {
         id: `${folderRel}/${entry.key}`.replace(/[^\w-]+/g, '-'),
         kind: entry.meta.kind ?? (entry.code ? KIND_BY_CODE[entry.code] : 'Материал'),
         number: entry.meta.number ?? entry.number ?? undefined,
-        title: entry.meta.title ?? entry.files[0].label,
+        title: entry.meta.title ?? entry.files[0]?.label ?? '',
+        // Заглушка: карточка есть, скачивать пока нечего
+        placeholder: Boolean(entry.placeholder),
         course: entry.meta.course,
         semester: entry.meta.semester,
         deadline: entry.meta.deadline ?? '',

@@ -316,3 +316,20 @@
   border-color: var(--dept-accent-dark);
   color: #3d2c05;
 }
+
+/* Заглушка: работа объявлена, файлов ещё нет. Карточка приглушена,
+   рамка пунктирная — видно, что скачивать пока нечего. */
+.cardPlaceholder {
+  border-style: dashed;
+  box-shadow: none;
+  background: transparent;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.35rem 0 0;
+  color: var(--dept-muted);
+  font-size: 0.92rem;
+}

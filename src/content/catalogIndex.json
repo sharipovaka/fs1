@@ -58,6 +58,11 @@
       "short": "СМ"
     },
     {
+      "id": "ibm",
+      "title": "ИБМ — Инженерный бизнес и менеджмент",
+      "short": "ИБМ"
+    },
+    {
       "id": "sgn",
       "title": "СГН — Социальные и гуманитарные науки",
       "short": "СГН"
@@ -73,9 +78,124 @@
       "description": "Пределы, дифференциальное и интегральное исчисление, ряды, функции нескольких переменных. Базовый курс, на который опираются почти все дисциплины кафедры.",
       "course": "1 курс",
       "semester": "1–2 семестры",
-      "groups": [],
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-calculus-tasks-tr-01-ibm",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-calculus-tasks-tr-01-mt",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-calculus-tasks-tr-02-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-calculus-tasks-tr-02-mt",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-calculus-tasks-tr-03-ibm",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-calculus-tasks-tr-03-mt",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        }
+      ],
       "fileCount": 0,
-      "faculties": [],
+      "faculties": [
+        "mt",
+        "ibm"
+      ],
       "semesters": []
     },
     {
@@ -87,9 +207,124 @@
       "description": "Матрицы и определители, системы линейных уравнений, линейные пространства и операторы, квадратичные формы, аналитическая геометрия.",
       "course": "1 курс",
       "semester": "1 семестр",
-      "groups": [],
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-01-ibm",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-01-mt",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-02-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-02-mt",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-03-ibm",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-linear-algebra-tasks-tr-03-mt",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        }
+      ],
       "fileCount": 0,
-      "faculties": [],
+      "faculties": [
+        "mt",
+        "ibm"
+      ],
       "semesters": []
     },
     {
@@ -101,9 +336,124 @@
       "description": "Множества и отношения, комбинаторика, теория графов, булевы функции. Основа для курсов программирования и алгоритмов.",
       "course": "1 курс",
       "semester": "2 семестр",
-      "groups": [],
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-discrete-math-tasks-tr-01-ibm",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-discrete-math-tasks-tr-01-mt",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-discrete-math-tasks-tr-02-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-discrete-math-tasks-tr-02-mt",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-discrete-math-tasks-tr-03-ibm",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-discrete-math-tasks-tr-03-mt",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        }
+      ],
       "fileCount": 0,
-      "faculties": [],
+      "faculties": [
+        "mt",
+        "ibm"
+      ],
       "semesters": []
     },
     {
@@ -115,9 +465,124 @@
       "description": "Случайные события и величины, распределения, предельные теоремы, основы математической статистики и обработки данных.",
       "course": "2 курс",
       "semester": "4 семестр",
-      "groups": [],
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-teorver-tasks-tr-01-ibm",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-teorver-tasks-tr-01-mt",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-teorver-tasks-tr-02-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-teorver-tasks-tr-02-mt",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-teorver-tasks-tr-03-ibm",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-teorver-tasks-tr-03-mt",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        }
+      ],
       "fileCount": 0,
-      "faculties": [],
+      "faculties": [
+        "mt",
+        "ibm"
+      ],
       "semesters": []
     },
     {
@@ -129,9 +594,124 @@
       "description": "Векторная алгебра, прямая и плоскость, кривые и поверхности второго порядка, преобразования координат.",
       "course": "1 курс",
       "semester": "1 семестр",
-      "groups": [],
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-analytic-geometry-tasks-tr-01-ibm",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-analytic-geometry-tasks-tr-01-mt",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-analytic-geometry-tasks-tr-02-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-analytic-geometry-tasks-tr-02-mt",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-analytic-geometry-tasks-tr-03-ibm",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-analytic-geometry-tasks-tr-03-mt",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        }
+      ],
       "fileCount": 0,
-      "faculties": [],
+      "faculties": [
+        "mt",
+        "ibm"
+      ],
       "semesters": []
     },
     {
@@ -143,9 +723,124 @@
       "description": "Методы обучения с учителем и без, регрессия и классификация, оценка качества моделей, оптимизация и регуляризация.",
       "course": "3 курс",
       "semester": "6 семестр",
-      "groups": [],
+      "groups": [
+        {
+          "type": "tasks",
+          "title": "Задания",
+          "icon": "fa-solid fa-square-root-variable",
+          "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
+          "items": [
+            {
+              "id": "disciplines-machine-learning-tasks-tr-01-ibm",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-machine-learning-tasks-tr-01-mt",
+              "kind": "Типовой расчёт",
+              "number": 1,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-machine-learning-tasks-tr-02-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-machine-learning-tasks-tr-02-mt",
+              "kind": "Типовой расчёт",
+              "number": 2,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-machine-learning-tasks-tr-03-ibm",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "ibm"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-machine-learning-tasks-tr-03-mt",
+              "kind": "Типовой расчёт",
+              "number": 3,
+              "title": "",
+              "placeholder": true,
+              "deadline": "",
+              "faculties": [
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            }
+          ],
+          "fileCount": 0
+        }
+      ],
       "fileCount": 0,
-      "faculties": [],
+      "faculties": [
+        "mt",
+        "ibm"
+      ],
       "semesters": []
     },
     {
@@ -169,6 +864,7 @@
               "kind": "Типовой расчёт",
               "number": 1,
               "title": "Элементарные функции",
+              "placeholder": false,
               "semester": 1,
               "deadline": "32 варианта",
               "faculties": [
@@ -208,6 +904,7 @@
               "kind": "Типовой расчёт",
               "number": 2,
               "title": "Пределы и непрерывность",
+              "placeholder": false,
               "semester": 1,
               "deadline": "30 вариантов, три задачи",
               "faculties": [
@@ -247,6 +944,7 @@
               "kind": "Типовой расчёт",
               "number": 3,
               "title": "Исследование функций и ряд Тейлора",
+              "placeholder": false,
               "semester": 1,
               "deadline": "36 вариантов",
               "faculties": [
@@ -313,6 +1011,7 @@
               "id": "disciplines-common-templates-coursework",
               "kind": "Шаблон",
               "title": "Курсовая работа (LaTeX)",
+              "placeholder": false,
               "deadline": "",
               "faculties": [],
               "due": "",
@@ -348,6 +1047,7 @@
               "id": "disciplines-common-templates-formatting-requirements",
               "kind": "Требования",
               "title": "Требования к оформлению работ",
+              "placeholder": false,
               "deadline": "",
               "faculties": [],
               "due": "",
@@ -382,6 +1082,7 @@
               "id": "disciplines-common-templates-report-template",
               "kind": "Шаблон",
               "title": "Вычислительный отчёт (Jupyter)",
+              "placeholder": false,
               "deadline": "",
               "faculties": [],
               "due": "",
@@ -442,6 +1143,7 @@
           "id": "activities-reports-beamer-presentation",
           "kind": "Шаблон",
           "title": "Презентация в Beamer",
+          "placeholder": false,
           "deadline": "",
           "faculties": [],
           "due": "",
@@ -477,6 +1179,7 @@
           "id": "activities-reports-plots-for-presentation",
           "kind": "Материалы",
           "title": "Графики для доклада",
+          "placeholder": false,
           "deadline": "",
           "faculties": [],
           "due": "",
@@ -511,6 +1214,7 @@
           "id": "activities-reports-report-checklist",
           "kind": "Чек-лист",
           "title": "Подготовка доклада",
+          "placeholder": false,
           "deadline": "начать за две недели",
           "faculties": [],
           "due": "",
@@ -584,6 +1288,7 @@
           "id": "about-history-metodicheskiy-seminar-2018",
           "kind": "Статья",
           "title": "Методический семинар на кафедре «Высшая математика»",
+          "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
           "faculties": [],
           "due": "",
@@ -619,6 +1324,7 @@
           "id": "about-history-prepodavateli-frontoviki-2018",
           "kind": "Статья",
           "title": "Преподаватели кафедры на фронтах Великой Отечественной войны",
+          "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
           "faculties": [],
           "due": "",
@@ -656,6 +1362,6 @@
   ],
   "totals": {
     "files": 11,
-    "items": 11
+    "items": 47
   }
 }
