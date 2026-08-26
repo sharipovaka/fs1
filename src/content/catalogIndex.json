@@ -1353,6 +1353,22 @@
           ],
           "hasPreview": true,
           "thumb": "previews/activities/practice/zadachi-praktika-3-kurs.png"
+        },
+        {
+          "id": "activities-practice-shablon-otcheta-overleaf",
+          "kind": "Шаблон",
+          "title": "Шаблон отчёта по практике (Overleaf)",
+          "description": "Это просто шаблон — образец оформления: титульный лист, структура разделов, подписи рисунков и таблиц, список литературы. Содержание в нём условное, его нужно заменить своим. Ссылка открывает проект для чтения; чтобы работать со своей копией, нажмите Menu → Copy Project.",
+          "link": "https://www.overleaf.com/read/yqrqdjhxyttg#447de7",
+          "placeholder": false,
+          "deadline": "",
+          "faculties": [],
+          "due": "",
+          "status": "",
+          "statusLabel": "",
+          "files": [],
+          "hasPreview": false,
+          "thumb": null
         }
       ],
       "fileCount": 1
@@ -1457,6 +1473,6 @@
   ],
   "totals": {
     "files": 14,
-    "items": 44
+    "items": 45
   }
 }
