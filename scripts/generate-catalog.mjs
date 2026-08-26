@@ -483,7 +483,7 @@ for (const path of walkAll(FILES_DIR)) {
 
 writeFileSync(
   OUT_FILE,
-  `${JSON.stringify({ types: site.types, faculties: site.faculties ?? [], disciplines, activities, about, totals: { files: totalFiles, items: totalItems } }, null, 2)}\n`,
+  `${JSON.stringify({ types: site.types, faculties: site.faculties ?? [], links: site.links ?? [], disciplines, activities, about, totals: { files: totalFiles, items: totalItems } }, null, 2)}\n`,
   'utf8'
 );
 

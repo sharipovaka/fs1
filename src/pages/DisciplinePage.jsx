@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import EmptyState from '../components/EmptyState.jsx';
+import ExternalLinks from '../components/ExternalLinks.jsx';
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
 import DisciplineSidebar from '../components/DisciplineSidebar.jsx';
@@ -62,6 +63,9 @@ export default function DisciplinePage() {
           <div className={styles.content}>
             {/* Сводка: коротко о курсе и ближайший срок сдачи */}
             <DisciplineSummary discipline={discipline} />
+
+            {/* Того, чего нет у нас, ищут в библиотеке — ссылка сразу наверху */}
+            <ExternalLinks />
 
             {/* Одна дисциплина читается на разных факультетах по разным
                 программам и растянута на несколько семестров */}

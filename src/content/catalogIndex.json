@@ -68,6 +68,15 @@
       "short": "СГН"
     }
   ],
+  "links": [
+    {
+      "id": "library",
+      "title": "Электронная библиотека МГТУ",
+      "hint": "учебники, методички и подписные базы",
+      "icon": "fa-solid fa-book",
+      "url": "https://library.bmstu.ru/"
+    }
+  ],
   "disciplines": [
     {
       "id": "calculus",
@@ -1032,31 +1041,6 @@
       "semester": "",
       "groups": [
         {
-          "type": "library",
-          "title": "Учебники и методички",
-          "icon": "fa-solid fa-book-bookmark",
-          "description": "Что читать по курсу и методические указания кафедры.",
-          "items": [
-            {
-              "id": "disciplines-common-library-library-bmstu",
-              "kind": "Внешний ресурс",
-              "title": "Электронная библиотека МГТУ им. Н. Э. Баумана",
-              "description": "Учебники, методички и подписные базы: поиск по каталогу, доступ к полным текстам — по учётной записи университета.",
-              "link": "https://library.bmstu.ru/",
-              "placeholder": false,
-              "deadline": "",
-              "faculties": [],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            }
-          ],
-          "fileCount": 0
-        },
-        {
           "type": "templates",
           "title": "Шаблоны",
           "icon": "fa-solid fa-file-code",
@@ -1433,6 +1417,6 @@
   ],
   "totals": {
     "files": 13,
-    "items": 44
+    "items": 43
   }
 }
