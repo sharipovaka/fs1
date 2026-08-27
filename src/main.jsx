@@ -19,6 +19,18 @@ import { ThemeProvider } from './theme.jsx';
  */
 const basename = import.meta.env.BASE_URL;
 
+/*
+ * Кнопка «Обновить» на плашке об устаревшей версии приводит сюда с меткой
+ * ?updated=… — она нужна только для того, чтобы браузер сходил за свежей
+ * страницей, а не достал её из кэша. Дальше метка бесполезна и лишь мозолит
+ * глаза в адресной строке, поэтому убираем её, не перезагружая страницу.
+ */
+if (typeof window !== 'undefined' && window.location.search.includes('updated=')) {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('updated');
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>

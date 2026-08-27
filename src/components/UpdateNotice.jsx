@@ -4,6 +4,21 @@ import Icon from './Icon.jsx';
 import { hasNewVersion } from '../appVersion.js';
 import styles from './UpdateNotice.module.css';
 
+/**
+ * Уводит на главную и грузит её заново.
+ *
+ * Обычная перезагрузка оставила бы студента на той же странице, а её могло
+ * и не остаться — раздел переименован, работа переехала. Метка `updated`
+ * нужна, чтобы браузер не отдал главную из кэша: именно кэш и сделал
+ * страницу устаревшей. Метка убирается из адреса сразу после загрузки —
+ * см. src/main.jsx.
+ */
+function reloadFromHome() {
+  const home = `${import.meta.env.BASE_URL}?updated=${Date.now()}`;
+  // replace, а не assign: устаревшая страница не должна остаться в истории
+  window.location.replace(home);
+}
+
 /** Как часто спрашивать сервер о новой версии. */
 const INTERVAL = 5 * 60 * 1000;
 /** Чаще этого не проверяем, даже если вкладку дёргают туда-сюда. */
@@ -14,7 +29,7 @@ const COOLDOWN = 60 * 1000;
  *
  * Преподаватель загружает файл, сайт пересобирается, а у студента вкладка
  * уже открыта — и он до десяти минут видит прежнюю версию (см. appVersion.js).
- * Плашка показывает, что вышла новая, и предлагает перезагрузить страницу.
+ * Плашка показывает, что вышла новая, и предлагает открыть сайт заново.
  * Сама ничего не перезагружает: человек может дочитывать страницу.
  */
 export default function UpdateNotice() {
@@ -58,7 +73,12 @@ export default function UpdateNotice() {
 
       <span className={styles.text}>Сайт обновился — страница устарела.</span>
 
-      <button type="button" className={styles.reload} onClick={() => window.location.reload()}>
+      <button
+        type="button"
+        className={styles.reload}
+        title="Открыть главную страницу заново"
+        onClick={reloadFromHome}
+      >
         Обновить
       </button>
 
