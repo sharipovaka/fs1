@@ -36,7 +36,8 @@ function linkHost(url) {
  * Карточка учебного материала: заголовок работы, её признаки (дисциплина, курс,
  * сроки) и список файлов с кнопками действий. У заглушки — работы, объявленной
  * до того, как готов файл, — вместо списка стоит пометка «файлы появятся позже»,
- * у внешнего ресурса — кнопка «Открыть» и адрес сайта.
+ * у внешнего ресурса — кнопка «Открыть» и адрес сайта, у книги из списка
+ * литературы — ссылка на каталог библиотеки, а под ней файл, если он есть.
  *
  * Это основной элемент сайта: студент находит нужную работу по заголовку
  * и скачивает файл, не открывая никаких промежуточных страниц.
@@ -98,6 +99,29 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
             <Icon name="fa-regular fa-clock" />{' '}
             {due ? `сдать до ${due.date}` : item.deadline}
             {due && item.deadline && <span className={styles.deadlineNote}> · {item.deadline}</span>}
+          </p>
+        )}
+
+        {/* Книга из списка литературы: сначала каталог библиотеки, следом файл.
+            Если файла нет — на его месте неактивная пометка, чтобы место
+            в карточке не пустовало и было понятно, где книгу искать. */}
+        {item.catalog && (
+          <p className={styles.libraryRow}>
+            <a
+              className={`btn btn-sm btn-outline-primary ${styles.action}`}
+              href={item.catalog}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="fa-solid fa-book" />
+              <span>В каталоге библиотеки</span>
+            </a>
+
+            {item.files.length === 0 && (
+              <span className={styles.noFile}>
+                <Icon name="fa-regular fa-file" /> файла нет — читать в библиотеке
+              </span>
+            )}
           </p>
         )}
 

@@ -81,10 +81,10 @@
     {
       "id": "calculus",
       "title": "Математический анализ",
-      "short": "Матанализ",
+      "short": "Мат.ан.",
       "icon": "fa-solid fa-infinity",
       "meta": "1 курс · 1 семестр",
-      "description": "Пределы и непрерывность, дифференциальное исчисление функции одной переменной, формула Тейлора, исследование функций, комплексные числа. Базовый курс, на который опираются почти все дисциплины кафедры.",
+      "description": "",
       "course": "1 курс",
       "semester": "1 семестр",
       "groups": [
@@ -101,6 +101,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -120,6 +121,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -139,6 +141,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -158,6 +161,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -177,6 +181,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -196,6 +201,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -223,6 +229,7 @@
               "title": "Лекции",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "17 лекций, два модуля",
@@ -264,6 +271,7 @@
               "title": "Семинарские занятия",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "24 занятия, задачи и домашние задания",
@@ -315,10 +323,10 @@
     {
       "id": "algebra-geometry",
       "title": "Аналитическая геометрия и линейная алгебра",
-      "short": "Геометрия и алгебра",
+      "short": "Ан.геом. и лин.ал.",
       "icon": "fa-solid fa-vector-square",
       "meta": "1 курс · 1 семестр",
-      "description": "Векторная алгебра, прямая и плоскость, кривые и поверхности второго порядка; матрицы и определители, системы линейных уравнений, линейные пространства и операторы, квадратичные формы.",
+      "description": "",
       "course": "1 курс",
       "semester": "1 семестр",
       "groups": [
@@ -335,6 +343,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -354,6 +363,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -373,6 +383,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -392,6 +403,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -411,6 +423,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -430,6 +443,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -444,9 +458,140 @@
             }
           ],
           "fileCount": 0
+        },
+        {
+          "type": "library",
+          "title": "Учебники и методички",
+          "icon": "fa-solid fa-book-bookmark",
+          "description": "Что читать по курсу и методические указания кафедры.",
+          "items": [
+            {
+              "id": "disciplines-algebra-geometry-library-01-kanatnikov-krishchenko",
+              "kind": "Учебник",
+              "title": "Канатников А. Н., Крищенко А. П. Аналитическая геометрия",
+              "description": "Учебник для втузов под редакцией В. С. Зарубина и А. П. Крищенко. Основной учебник кафедры.",
+              "link": "",
+              "catalog": "https://library.bmstu.ru/Catalog/Details/577137",
+              "placeholder": false,
+              "deadline": "",
+              "faculties": [
+                "ibm",
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-algebra-geometry-library-02-efimov-demidovich",
+              "kind": "Задачник",
+              "title": "Сборник задач по математике для втузов. Часть 1",
+              "description": "Линейная алгебра и основы математического анализа. Под редакцией А. В. Ефимова и Б. П. Демидовича.",
+              "link": "",
+              "catalog": "https://library.bmstu.ru/Catalog/Details/48280",
+              "placeholder": false,
+              "deadline": "",
+              "faculties": [
+                "ibm",
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-algebra-geometry-library-03-kletenik",
+              "kind": "Задачник",
+              "title": "Клетеник Д. В. Сборник задач по аналитической геометрии",
+              "description": "",
+              "link": "",
+              "catalog": "https://library.bmstu.ru/Catalog/Details/557964",
+              "placeholder": false,
+              "deadline": "",
+              "faculties": [
+                "ibm",
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-algebra-geometry-library-04-beklemishev",
+              "kind": "Учебник",
+              "title": "Беклемишев Д. В. Курс аналитической геометрии и линейной алгебры",
+              "description": "",
+              "link": "",
+              "catalog": "https://library.bmstu.ru/Catalog/Details/Lan/519924",
+              "placeholder": false,
+              "deadline": "",
+              "faculties": [
+                "ibm",
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [],
+              "hasPreview": false,
+              "thumb": null
+            },
+            {
+              "id": "disciplines-algebra-geometry-library-05-sobolev-tomashpolskiy",
+              "kind": "Методические указания",
+              "title": "Соболев С. К., Томашпольский В. Я. Прямые и плоскости",
+              "description": "Методические указания к решению задач по аналитической геометрии: уравнения прямых и плоскостей, их взаимное расположение, разобранные примеры и задачи с ответами.",
+              "link": "",
+              "catalog": "https://library.bmstu.ru/Catalog/Details/367288",
+              "placeholder": false,
+              "deadline": "",
+              "faculties": [
+                "ibm",
+                "mt"
+              ],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/algebra-geometry/library/sobolev-pryamye-i-ploskosti.pdf",
+                  "name": "sobolev-pryamye-i-ploskosti.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 1060706,
+                  "label": "МГТУ им. Н. Э. Баумана, 2012 — 74 страницы: теория, разобранные примеры, задачи для самостоятельного решения с ответами",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/library/sobolev-pryamye-i-ploskosti.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/library/sobolev-pryamye-i-ploskosti.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/library/sobolev-pryamye-i-ploskosti.pdf",
+                    "name": "sobolev-pryamye-i-ploskosti.pdf",
+                    "format": "PDF",
+                    "size": 1060706,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/algebra-geometry/library/sobolev-pryamye-i-ploskosti.png"
+            }
+          ],
+          "fileCount": 1
         }
       ],
-      "fileCount": 0,
+      "fileCount": 1,
       "faculties": [
         "mt",
         "ibm"
@@ -458,10 +603,10 @@
       "title": "Дискретная математика",
       "short": "Дискретка",
       "icon": "fa-solid fa-circle-nodes",
-      "meta": "1 курс · 2 семестр",
-      "description": "Множества и отношения, комбинаторика, теория графов, булевы функции. Основа для курсов программирования и алгоритмов.",
-      "course": "1 курс",
-      "semester": "2 семестр",
+      "meta": "3 курс · 5 семестр",
+      "description": "",
+      "course": "3 курс",
+      "semester": "5 семестр",
       "groups": [
         {
           "type": "tasks",
@@ -476,6 +621,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -495,6 +641,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -514,6 +661,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -533,6 +681,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -552,6 +701,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -571,6 +721,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -600,7 +751,7 @@
       "short": "Теорвер",
       "icon": "fa-solid fa-dice-five",
       "meta": "2 курс · 4 семестр",
-      "description": "Случайные события и величины, распределения, предельные теоремы, основы математической статистики и обработки данных.",
+      "description": "",
       "course": "2 курс",
       "semester": "4 семестр",
       "groups": [
@@ -617,6 +768,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -636,6 +788,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -655,6 +808,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -674,6 +828,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -693,6 +848,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -712,6 +868,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -740,10 +897,10 @@
       "title": "Машинное обучение",
       "short": "Машинное обучение",
       "icon": "fa-solid fa-brain",
-      "meta": "3 курс · 6 семестр",
-      "description": "Методы обучения с учителем и без, регрессия и классификация, оценка качества моделей, оптимизация и регуляризация.",
-      "course": "3 курс",
-      "semester": "6 семестр",
+      "meta": "7 семестр",
+      "description": "",
+      "course": "4 курс",
+      "semester": "7 семестр",
       "groups": [
         {
           "type": "tasks",
@@ -758,6 +915,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -777,6 +935,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -796,6 +955,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -815,6 +975,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -834,6 +995,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -853,6 +1015,7 @@
               "title": "",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -882,7 +1045,7 @@
       "short": "Математика",
       "icon": "fa-solid fa-calculator",
       "meta": "1 и 3 семестры",
-      "description": "Общий курс математики: элементарные функции, пределы и непрерывность, дифференциальное исчисление и исследование функций. Материалы разложены по семестрам.",
+      "description": "",
       "course": "1–2 курс",
       "semester": "1 и 3 семестры",
       "groups": [
@@ -899,6 +1062,7 @@
               "title": "Элементарные функции",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "32 варианта",
@@ -941,6 +1105,7 @@
               "title": "Пределы и непрерывность",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "30 вариантов, три задачи",
@@ -983,6 +1148,7 @@
               "title": "Исследование функций и ряд Тейлора",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "36 вариантов",
@@ -1052,6 +1218,7 @@
               "title": "Курсовая работа (LaTeX)",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1090,6 +1257,7 @@
               "title": "Требования к оформлению работ",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1127,6 +1295,7 @@
               "title": "Вычислительный отчёт (Jupyter)",
               "description": "",
               "link": "",
+              "catalog": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1190,6 +1359,7 @@
           "title": "Презентация в Beamer",
           "description": "",
           "link": "",
+          "catalog": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1228,6 +1398,7 @@
           "title": "Графики для доклада",
           "description": "",
           "link": "",
+          "catalog": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1265,6 +1436,7 @@
           "title": "Подготовка доклада",
           "description": "",
           "link": "",
+          "catalog": "",
           "placeholder": false,
           "deadline": "начать за две недели",
           "faculties": [],
@@ -1321,6 +1493,7 @@
           "title": "Задачи производственной практики, 3 курс",
           "description": "Двадцать четыре задачи по шести направлениям: синхронизация АФМ-осцилляторов, цифровая обработка сигналов и вибродиагностика, интерактивные лекции, ряды Фурье и сглаживание эффекта Гиббса, уравнения математической физики, теория аналитических функций.",
           "link": "",
+          "catalog": "",
           "placeholder": false,
           "course": 3,
           "deadline": "у каждой задачи указана сложность и требования к отчёту",
@@ -1360,6 +1533,7 @@
           "title": "Шаблон отчёта по практике (Overleaf)",
           "description": "Это просто шаблон — образец оформления: титульный лист, структура разделов, подписи рисунков и таблиц, список литературы. Содержание в нём условное, его нужно заменить своим. Ссылка открывает проект для чтения; чтобы работать со своей копией, нажмите Menu → Copy Project.",
           "link": "https://www.overleaf.com/read/yqrqdjhxyttg#447de7",
+          "catalog": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1397,6 +1571,7 @@
           "title": "Методический семинар на кафедре «Высшая математика»",
           "description": "",
           "link": "",
+          "catalog": "",
           "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
           "faculties": [],
@@ -1435,6 +1610,7 @@
           "title": "Преподаватели кафедры на фронтах Великой Отечественной войны",
           "description": "",
           "link": "",
+          "catalog": "",
           "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
           "faculties": [],
@@ -1472,7 +1648,7 @@
     }
   ],
   "totals": {
-    "files": 14,
-    "items": 45
+    "files": 15,
+    "items": 50
   }
 }

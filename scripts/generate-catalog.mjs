@@ -10,8 +10,9 @@
  * Названия дисциплин, порядок блоков и описания задаются в catalog/site.json.
  * Описания конкретных работ — в необязательном _meta.json рядом с файлами.
  * Всё, что не описано, распознаётся по именам файлов. Работу можно объявить
- * и до того, как файл готов: «"placeholder": true» в _meta.json, а вместо
- * файла указать ссылку наружу: «"url": "https://…"».
+ * и до того, как файл готов: «"placeholder": true» в _meta.json; вместо файла
+ * можно указать ссылку наружу («"url": "https://…"»), а книге из списка
+ * литературы — ссылку на каталог библиотеки («"catalog": "https://…"»).
  *
  * Результат: src/content/catalogIndex.json
  * Запуск: npm run catalog
@@ -302,7 +303,14 @@ function collectFolder(folderRel, faculties = []) {
       continue;
     }
 
-    if (!Array.isArray(itemMeta.files)) continue;
+    // Книга из списка литературы: ссылка на каталог библиотеки, файла может
+    // и не быть — тогда карточка честно говорит, что читать её надо там.
+    if (!Array.isArray(itemMeta.files)) {
+      if (itemMeta.catalog) {
+        items.push({ key, meta: itemMeta, files: [], order: -1, number: itemMeta.number ?? null });
+      }
+      continue;
+    }
 
     const collected = itemMeta.files
       .map((name) => {
@@ -366,6 +374,8 @@ function collectFolder(folderRel, faculties = []) {
         description: entry.meta.description ?? '',
         // Ссылка наружу вместо файлов
         link: entry.link ?? '',
+        // Карточка книги: ссылка на каталог библиотеки рядом с файлом
+        catalog: entry.meta.catalog ?? '',
         // Заглушка: карточка есть, скачивать пока нечего
         placeholder: Boolean(entry.placeholder),
         course: entry.meta.course,
