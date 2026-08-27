@@ -347,9 +347,51 @@
           "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
           "items": [
             {
-              "id": "disciplines-algebra-geometry-tasks-dz-2025-ibm",
+              "id": "disciplines-algebra-geometry-tasks-dz-2025-opredeliteli",
               "kind": "Типовой расчёт",
               "number": 1,
+              "title": "Определители",
+              "description": "Индивидуальное домашнее задание по определителям, 27 вариантов. Файл общий для всех групп.",
+              "link": "",
+              "catalog": "",
+              "layout": "",
+              "placeholder": false,
+              "deadline": "",
+              "note": "",
+              "faculties": [],
+              "due": "",
+              "status": "",
+              "statusLabel": "",
+              "files": [
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-Определители.pdf",
+                  "name": "2025-Определители.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 127890,
+                  "label": "27 вариантов: свой — по номеру в списке группы",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-Определители.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-Определители.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-Определители.pdf",
+                    "name": "2025-Определители.pdf",
+                    "format": "PDF",
+                    "size": 127890,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/algebra-geometry/tasks/2025-Определители.png"
+            },
+            {
+              "id": "disciplines-algebra-geometry-tasks-dz-2025-ibm",
+              "kind": "Типовой расчёт",
+              "number": 2,
               "title": "Векторная алгебра и аналитическая геометрия",
               "description": "Индивидуальное домашнее задание 2025 года. Выберите свою группу — в файле 40 вариантов, ваш номер по списку группы.",
               "link": "",
@@ -813,7 +855,7 @@
             {
               "id": "disciplines-algebra-geometry-tasks-dz-2025-mt",
               "kind": "Типовой расчёт",
-              "number": 1,
+              "number": 2,
               "title": "Векторная алгебра и аналитическая геометрия",
               "description": "Индивидуальное домашнее задание 2025 года. Выберите свою группу — в файле 40 вариантов, ваш номер по списку группы.",
               "link": "",
@@ -1294,47 +1336,6 @@
               ],
               "hasPreview": true,
               "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ1-11.png"
-            },
-            {
-              "id": "disciplines-algebra-geometry-tasks-dz-2025-opredeliteli",
-              "kind": "Типовой расчёт",
-              "title": "Определители",
-              "description": "Индивидуальное домашнее задание по определителям, 27 вариантов. Файл общий для всех групп.",
-              "link": "",
-              "catalog": "",
-              "layout": "",
-              "placeholder": false,
-              "deadline": "",
-              "note": "",
-              "faculties": [],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [
-                {
-                  "path": "disciplines/algebra-geometry/tasks/2025-Определители.pdf",
-                  "name": "2025-Определители.pdf",
-                  "ext": "pdf",
-                  "format": "PDF",
-                  "size": 127890,
-                  "label": "27 вариантов: свой — по номеру в списке группы",
-                  "primary": true,
-                  "preview": {
-                    "type": "pdf",
-                    "path": "files/disciplines/algebra-geometry/tasks/2025-Определители.pdf",
-                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-Определители.png"
-                  },
-                  "download": {
-                    "path": "files/disciplines/algebra-geometry/tasks/2025-Определители.pdf",
-                    "name": "2025-Определители.pdf",
-                    "format": "PDF",
-                    "size": 127890,
-                    "compiled": false
-                  }
-                }
-              ],
-              "hasPreview": true,
-              "thumb": "previews/disciplines/algebra-geometry/tasks/2025-Определители.png"
             }
           ],
           "fileCount": 44
