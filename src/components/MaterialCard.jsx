@@ -102,9 +102,7 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           </p>
         )}
 
-        {/* Книга из списка литературы: сначала каталог библиотеки, следом файл.
-            Если файла нет — на его месте неактивная пометка, чтобы место
-            в карточке не пустовало и было понятно, где книгу искать. */}
+        {/* Книга из списка литературы: сначала каталог библиотеки, следом файл */}
         {item.catalog && (
           <p className={styles.libraryRow}>
             <a
@@ -116,12 +114,6 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
               <Icon name="fa-solid fa-book" />
               <span>В каталоге библиотеки</span>
             </a>
-
-            {item.files.length === 0 && (
-              <span className={styles.noFile}>
-                <Icon name="fa-regular fa-file" /> файла нет — читать в библиотеке
-              </span>
-            )}
           </p>
         )}
 

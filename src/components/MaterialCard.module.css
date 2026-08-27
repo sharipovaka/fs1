@@ -351,7 +351,7 @@
   font-family: var(--dept-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
 }
 
-/* Книга из списка литературы: каталог библиотеки и пометка об отсутствии файла. */
+/* Книга из списка литературы: ссылка на каталог библиотеки. */
 .libraryRow {
   display: flex;
   align-items: center;
@@ -360,7 +360,3 @@
   margin: 0.6rem 0 0;
 }
 
-.noFile {
-  color: var(--dept-muted);
-  font-size: 0.88rem;
-}

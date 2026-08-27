@@ -102,13 +102,6 @@
   white-space: nowrap;
 }
 
-/* Место файла, когда файла нет: не ссылка и не кнопка */
-.noFile {
-  color: var(--dept-muted);
-  font-size: 0.86rem;
-  white-space: nowrap;
-}
-
 /* На узком экране действия переезжают под название */
 @media (max-width: 767.98px) {
   .row {

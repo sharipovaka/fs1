@@ -51,9 +51,8 @@ export default function LiteratureList({ items, onPreview }) {
                 </a>
               )}
 
-              {/* Файла может не быть — тогда на его месте неактивная пометка:
-                  видно, что книга есть, просто читать её надо в библиотеке */}
-              {file ? (
+              {/* Файла может не быть — тогда справа остаётся одна ссылка на каталог */}
+              {file && (
                 <span className={styles.fileActions}>
                   <a
                     className={`btn btn-sm btn-primary ${styles.action}`}
@@ -76,8 +75,6 @@ export default function LiteratureList({ items, onPreview }) {
                     </button>
                   )}
                 </span>
-              ) : (
-                <span className={styles.noFile}>файла нет</span>
               )}
             </div>
           </li>

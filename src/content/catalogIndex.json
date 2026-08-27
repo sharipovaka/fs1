@@ -68,15 +68,6 @@
       "short": "СГН"
     }
   ],
-  "links": [
-    {
-      "id": "library",
-      "title": "Электронная библиотека МГТУ",
-      "hint": "учебники, методички и подписные базы",
-      "icon": "fa-solid fa-book",
-      "url": "https://library.bmstu.ru/"
-    }
-  ],
   "disciplines": [
     {
       "id": "calculus",

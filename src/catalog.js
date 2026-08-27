@@ -9,8 +9,6 @@ import catalogIndex from './content/catalogIndex.json';
 
 export const TYPES = catalogIndex.types;
 export const FACULTIES = catalogIndex.faculties ?? [];
-/** Полезные ссылки наружу — задаются в catalog/site.json. */
-export const LINKS = catalogIndex.links ?? [];
 export const DISCIPLINES = catalogIndex.disciplines;
 export const ACTIVITIES = catalogIndex.activities;
 export const ABOUT = catalogIndex.about;
