@@ -55,10 +55,9 @@ export default function DisciplinePage() {
       {discipline.groups.length > 0 ? (
         // Слева навигация по разделам, справа сами разделы друг за другом
         <div className={styles.layout}>
-          <DisciplineSidebar
-            discipline={discipline}
-            visibleTypes={groups.map((group) => group.type)}
-          />
+          {/* Панели передаём уже отфильтрованные разделы: иначе счётчик
+              показывает все работы, а на странице видна только часть */}
+          <DisciplineSidebar groups={groups} />
 
           <div className={styles.content}>
             {/* Сводка: коротко о курсе и ближайший срок сдачи */}

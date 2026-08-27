@@ -345,7 +345,7 @@
               "catalog": "",
               "layout": "groups",
               "placeholder": false,
-              "deadline": "21 групп, по 40 вариантов",
+              "deadline": "21 группа, в каждой 40 вариантов",
               "faculties": [
                 "ibm"
               ],
@@ -808,7 +808,7 @@
               "catalog": "",
               "layout": "groups",
               "placeholder": false,
-              "deadline": "22 групп, по 40 вариантов",
+              "deadline": "22 группы, в каждой 40 вариантов",
               "faculties": [
                 "mt"
               ],

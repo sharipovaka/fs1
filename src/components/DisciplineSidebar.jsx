@@ -15,11 +15,9 @@ import styles from './DisciplineSidebar.module.css';
  * файлов может ещё не быть.
  *
  * @param {object} props
- * @param {object} props.discipline текущая дисциплина из каталога
- * @param {string[]} props.visibleTypes разделы, оставшиеся после фильтра факультета
+ * @param {object[]} props.groups разделы после фильтра по факультету и семестру
  */
-export default function DisciplineSidebar({ discipline, visibleTypes }) {
-  const groups = discipline.groups.filter((group) => visibleTypes.includes(group.type));
+export default function DisciplineSidebar({ groups }) {
   const [activeType, setActiveType] = useState(groups[0]?.type ?? '');
 
   // Подсветка раздела, который сейчас на экране
