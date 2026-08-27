@@ -1,96 +1,93 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#123a5f" />
-    <meta
-      name="description"
-      content="Лаборатория математики ФН1: учебные планы, конспекты лекций, шаблоны работ, задания, практика, семинары, доклады и конференции."
-    />
-
-    <!--
-      Карточка ссылки в мессенджерах и соцсетях: без неё Telegram, ВК и WhatsApp
-      показывают голый адрес. Здесь нужны абсолютные адреса — превью собирают
-      по ним со стороны, /fs1/ не подойдёт. При переезде в другой
-      репозиторий поменяйте домен вместе с тремя адресами из README.
-    -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Лаборатория математики ФН1" />
-    <meta property="og:title" content="Лаборатория математики ФН1" />
-    <meta
-      property="og:description"
-      content="Учебные материалы кафедры ФН1 МГТУ им. Н. Э. Баумана: планы, конспекты, литература, типовые расчёты, практика."
-    />
-    <meta property="og:url" content="https://sharipovaka.github.io/fs1/" />
-    <meta property="og:image" content="https://sharipovaka.github.io/fs1/social-card.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="ru_RU" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Иконки и PWA-манифест. /fs1/ подставляется Vite и равен /<repository>/ -->
-    <link rel="icon" type="image/png" href="/fs1/favicon.png" />
-    <link rel="apple-touch-icon" href="/fs1/icons/icon-192.png" />
-    <link rel="manifest" href="/fs1/manifest.json" />
-
-    <title>Лаборатория математики ФН1</title>
-
-    <!--
-      Тема применяется до загрузки бандла, иначе при тёмной теме
-      на долю секунды мелькает светлый фон.
-      Тот же ключ читает и пишет src/theme.jsx.
-    -->
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem('fn1-theme');
-          var theme =
-            stored === 'light' || stored === 'dark'
-              ? stored
-              : window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light';
-          var root = document.documentElement;
-          root.setAttribute('data-theme', theme);
-          root.setAttribute('data-bs-theme', theme);
-        } catch (error) {
-          document.documentElement.setAttribute('data-theme', 'light');
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Сайт переехал — кафедра ФН1</title>
+    <meta name="robots" content="noindex" />
+    <!-- Запасной путь: если скрипт не отработал, браузер уйдёт сам через три секунды -->
+    <meta http-equiv="refresh" content="3; url=https://bmstu-fs1.github.io/fs1/" />
+    <link rel="canonical" href="https://bmstu-fs1.github.io/fs1/" />
+    <link rel="icon" href="logo.png" />
+    <style>
+      :root {
+        --navy: #0d2b45;
+        --navy-light: #1d5688;
+        --ink: #1f2933;
+        --muted: #667685;
+        --surface: #f5f7fa;
+        --card: #ffffff;
+        --border: #dde3ea;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --navy: #7db8ea;
+          --navy-light: #7db8ea;
+          --ink: #e3eaf2;
+          --muted: #93a2b1;
+          --surface: #10151b;
+          --card: #1a212a;
+          --border: #26303c;
         }
-      })();
-    </script>
-
-    <!--
-      SPA-роутинг на GitHub Pages.
-      GitHub Pages отдаёт статику и не знает про маршруты вида /disciplines/plans,
-      поэтому при прямом заходе/обновлении страницы возвращается 404.html.
-      Тот скрипт кодирует исходный путь в query-строку и редиректит на index.html,
-      а этот код восстанавливает адрес обратно через history.replaceState —
-      React Router получает корректный URL. Приём работает до загрузки бандла.
-    -->
-    <script>
-      (function () {
-        var search = window.location.search;
-        if (search[1] !== '/') return;
-        var decoded = search
-          .slice(1)
-          .split('&')
-          .map(function (part) {
-            return part.replace(/~and~/g, '&');
-          })
-          .join('?');
-        window.history.replaceState(
-          null,
-          null,
-          window.location.pathname.slice(0, -1) + decoded + window.location.hash
-        );
-      })();
-    </script>
-    <script type="module" crossorigin src="/fs1/assets/index-B_0sCYzl.js"></script>
-    <link rel="stylesheet" crossorigin href="/fs1/assets/index-B6BSKwhr.css">
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: var(--surface);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.55;
+      }
+      .card {
+        max-width: 520px;
+        width: 100%;
+        padding: 32px 28px;
+        text-align: center;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(18, 58, 95, 0.1);
+      }
+      img { width: 96px; height: 96px; border-radius: 20px; }
+      h1 { margin: 18px 0 8px; font-size: 1.35rem; color: var(--navy); }
+      p { margin: 0 0 16px; color: var(--muted); }
+      a.go {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: var(--navy-light);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        word-break: break-all;
+      }
+      .hint { margin: 16px 0 0; font-size: 0.85rem; }
+    </style>
   </head>
   <body>
-    <noscript>Для работы сайта лаборатории требуется включённый JavaScript.</noscript>
-    <div id="root"></div>
+    <div class="card">
+      <img src="logo.png" alt="" />
+      <h1>Сайт переехал</h1>
+      <p>Материалы кафедры ФН1 теперь живут по новому адресу.</p>
+      <a class="go" id="go" href="https://bmstu-fs1.github.io/fs1/">bmstu-fs1.github.io/fs1</a>
+      <p class="hint">Сейчас откроем его автоматически. Обновите закладку, чтобы больше не заходить сюда.</p>
+    </div>
+
+    <script>
+      // Тот же путь на новом адресе: студент со старой ссылки на конкретную
+      // работу попадёт на неё же, а не на главную. Префикс /fs1/ совпадает,
+      // поэтому достаточно поменять имя сайта.
+      (function () {
+        var target = 'https://bmstu-fs1.github.io' + location.pathname + location.search + location.hash;
+        document.getElementById('go').href = target;
+        // replace, а не assign: «назад» не должно возвращать на переехавшую страницу
+        location.replace(target);
+      })();
+    </script>
   </body>
 </html>

@@ -1,44 +1,93 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <title>Лаборатория математики ФН1</title>
-    <script>
-      /*
-       * Перехват «глубоких» ссылок на GitHub Pages.
-       *
-       * Пользователь открыл https://user.github.io/math-department/disciplines/plans —
-       * такого файла на сервере нет, GitHub Pages отдаёт этот 404.html.
-       * Мы кодируем путь в query-строку и переходим на index.html того же проекта;
-       * встречный скрипт в index.html восстановит адрес через history.replaceState.
-       *
-       * pathSegmentsToKeep = 1 — количество сегментов пути, относящихся к самому
-       * репозиторию (для https://user.github.io/<repository>/ это 1).
-       * Для публикации на корневом домене поставьте 0.
-       */
-      var pathSegmentsToKeep = 1;
-
-      var l = window.location;
-      l.replace(
-        l.protocol +
-          '//' +
-          l.hostname +
-          (l.port ? ':' + l.port : '') +
-          l.pathname
-            .split('/')
-            .slice(0, 1 + pathSegmentsToKeep)
-            .join('/') +
-          '/?/' +
-          l.pathname
-            .slice(1)
-            .split('/')
-            .slice(pathSegmentsToKeep)
-            .join('/')
-            .replace(/&/g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash
-      );
-    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Сайт переехал — кафедра ФН1</title>
+    <meta name="robots" content="noindex" />
+    <!-- Запасной путь: если скрипт не отработал, браузер уйдёт сам через три секунды -->
+    <meta http-equiv="refresh" content="3; url=https://bmstu-fs1.github.io/fs1/" />
+    <link rel="canonical" href="https://bmstu-fs1.github.io/fs1/" />
+    <link rel="icon" href="logo.png" />
+    <style>
+      :root {
+        --navy: #0d2b45;
+        --navy-light: #1d5688;
+        --ink: #1f2933;
+        --muted: #667685;
+        --surface: #f5f7fa;
+        --card: #ffffff;
+        --border: #dde3ea;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --navy: #7db8ea;
+          --navy-light: #7db8ea;
+          --ink: #e3eaf2;
+          --muted: #93a2b1;
+          --surface: #10151b;
+          --card: #1a212a;
+          --border: #26303c;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: var(--surface);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.55;
+      }
+      .card {
+        max-width: 520px;
+        width: 100%;
+        padding: 32px 28px;
+        text-align: center;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(18, 58, 95, 0.1);
+      }
+      img { width: 96px; height: 96px; border-radius: 20px; }
+      h1 { margin: 18px 0 8px; font-size: 1.35rem; color: var(--navy); }
+      p { margin: 0 0 16px; color: var(--muted); }
+      a.go {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: var(--navy-light);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        word-break: break-all;
+      }
+      .hint { margin: 16px 0 0; font-size: 0.85rem; }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="card">
+      <img src="logo.png" alt="" />
+      <h1>Сайт переехал</h1>
+      <p>Материалы кафедры ФН1 теперь живут по новому адресу.</p>
+      <a class="go" id="go" href="https://bmstu-fs1.github.io/fs1/">bmstu-fs1.github.io/fs1</a>
+      <p class="hint">Сейчас откроем его автоматически. Обновите закладку, чтобы больше не заходить сюда.</p>
+    </div>
+
+    <script>
+      // Тот же путь на новом адресе: студент со старой ссылки на конкретную
+      // работу попадёт на неё же, а не на главную. Префикс /fs1/ совпадает,
+      // поэтому достаточно поменять имя сайта.
+      (function () {
+        var target = 'https://bmstu-fs1.github.io' + location.pathname + location.search + location.hash;
+        document.getElementById('go').href = target;
+        // replace, а не assign: «назад» не должно возвращать на переехавшую страницу
+        location.replace(target);
+      })();
+    </script>
+  </body>
 </html>
