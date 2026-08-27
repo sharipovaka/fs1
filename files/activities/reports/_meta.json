@@ -1,0 +1,38 @@
+{
+  "_comment": "Описания материалов этой папки. Всё необязательно.",
+  "items": {
+    "report-checklist": {
+      "kind": "Чек-лист",
+      "title": "Подготовка доклада",
+      "note": "начать за две недели",
+      "status": "open",
+      "statusLabel": "актуален"
+    },
+    "beamer-presentation": {
+      "kind": "Шаблон",
+      "title": "Презентация в Beamer",
+      "status": "open",
+      "statusLabel": "актуален"
+    },
+    "plots-for-presentation": {
+      "kind": "Материалы",
+      "title": "Графики для доклада",
+      "status": "open",
+      "statusLabel": "опубликованы"
+    }
+  },
+  "files": {
+    "report-checklist.md": {
+      "label": "Сроки, структура выступления по слайдам, критерии оценивания",
+      "primary": true
+    },
+    "beamer-presentation.tex": {
+      "label": "Готовая структура слайдов в фирменных цветах лаборатории",
+      "primary": true
+    },
+    "plots-for-presentation.ipynb": {
+      "label": "Стиль, палитра, логарифмические шкалы, экспорт в вектор",
+      "primary": true
+    }
+  }
+}
