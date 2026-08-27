@@ -73,7 +73,6 @@
     {
       "id": "calculus",
       "title": "Математический анализ",
-      "short": "Мат.ан.",
       "icon": "fa-solid fa-infinity",
       "meta": "1 курс · 1 семестр",
       "description": "",
@@ -82,8 +81,8 @@
     },
     {
       "id": "algebra-geometry",
+      "aliases": ["linear-algebra", "analytic-geometry"],
       "title": "Аналитическая геометрия и линейная алгебра",
-      "short": "Ан.геом. и лин.ал.",
       "icon": "fa-solid fa-vector-square",
       "meta": "1 курс · 1 семестр",
       "description": "",
@@ -93,7 +92,6 @@
     {
       "id": "discrete-math",
       "title": "Дискретная математика",
-      "short": "Дискретка",
       "icon": "fa-solid fa-circle-nodes",
       "meta": "3 курс · 5 семестр",
       "description": "",
@@ -103,7 +101,6 @@
     {
       "id": "teorver",
       "title": "Теория вероятностей",
-      "short": "Теорвер",
       "icon": "fa-solid fa-dice-five",
       "meta": "2 курс · 4 семестр",
       "description": "",
@@ -113,7 +110,6 @@
     {
       "id": "machine-learning",
       "title": "Машинное обучение",
-      "short": "Машинное обучение",
       "icon": "fa-solid fa-brain",
       "meta": "7 семестр",
       "description": "",
@@ -123,7 +119,6 @@
     {
       "id": "mathematics",
       "title": "Математика",
-      "short": "Математика",
       "icon": "fa-solid fa-calculator",
       "meta": "1 и 3 семестры",
       "description": "",
@@ -133,7 +128,6 @@
     {
       "id": "common",
       "title": "Общие материалы",
-      "short": "Общее",
       "icon": "fa-solid fa-folder-open",
       "meta": "для всех дисциплин",
       "description": "То, что нужно независимо от предмета: учебный план, календарный график, шаблоны курсовых и отчётов, требования к оформлению, справочники и открытые ресурсы.",

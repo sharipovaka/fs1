@@ -94,6 +94,14 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
 
         {item.description && <p className={styles.description}>{item.description}</p>}
 
+        {/* Заметка к работе — сколько вариантов, из чего состоит. Часы рядом
+            с ней сбивали бы с толку: это не срок сдачи */}
+        {item.note && (
+          <p className={styles.note}>
+            <Icon name="fa-solid fa-circle-info" /> {item.note}
+          </p>
+        )}
+
         {(due || item.deadline) && (
           <p className={styles.deadline}>
             <Icon name="fa-regular fa-clock" />{' '}

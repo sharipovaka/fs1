@@ -19,6 +19,19 @@ export function getDiscipline(id) {
   return DISCIPLINES.find((item) => item.id === id) ?? null;
 }
 
+/**
+ * Дисциплина по прежнему адресу.
+ *
+ * Разделы объединяются и переименовываются, а ссылки на них остаются
+ * в чатах и презентациях: «Линейная алгебра» превратилась в «Аналитическую
+ * геометрию и линейную алгебру». Прежние адреса перечислены в catalog/site.json
+ * (поле `aliases`), и старая ссылка приводит куда нужно, а не на первую попавшуюся
+ * дисциплину.
+ */
+export function getDisciplineByAlias(id) {
+  return DISCIPLINES.find((item) => item.aliases?.includes(id)) ?? null;
+}
+
 /** Раздел «Активностей» по идентификатору. */
 export function getActivity(id) {
   return ACTIVITIES.find((item) => item.id === id) ?? null;
@@ -80,7 +93,7 @@ export function getAllMaterials() {
           ...item,
           discipline: discipline.title,
           groupTitle: group.title,
-          sectionTitle: `${discipline.short ?? discipline.title} · ${group.title}`,
+          sectionTitle: `${discipline.title} · ${group.title}`,
           sectionPath: `/disciplines/${discipline.id}#${group.type}`,
         });
       }

@@ -390,6 +390,9 @@ function collectFolder(folderRel, faculties = []) {
         course: entry.meta.course,
         semester: entry.meta.semester,
         deadline: entry.meta.deadline ?? '',
+        // Заметка к работе: сколько вариантов, из чего состоит. Это не срок
+        // сдачи, поэтому и поле отдельное — иначе рядом с ней рисуются часы.
+        note: entry.meta.note ?? '',
         faculties: normalizeFaculties(entry.meta.faculty, faculties),
         // Дата сдачи в формате ГГГГ-ММ-ДД: по ней сайт сам считает,
         // сколько осталось, и подставляет метку статуса.
@@ -459,7 +462,15 @@ const disciplines = site.disciplines.map((discipline) => {
   ].sort((a, b) => Number(a) - Number(b));
 
   totalFiles += fileCount;
-  return { ...discipline, groups, fileCount, faculties: usedFaculties, semesters: usedSemesters };
+  return {
+    ...discipline,
+    // Прежние адреса дисциплины: по ним старые ссылки доедут до нового раздела
+    aliases: discipline.aliases ?? [],
+    groups,
+    fileCount,
+    faculties: usedFaculties,
+    semesters: usedSemesters,
+  };
 });
 
 /** Плоские разделы: активности и «О лаборатории». */

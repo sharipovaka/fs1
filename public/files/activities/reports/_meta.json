@@ -4,7 +4,7 @@
     "report-checklist": {
       "kind": "Чек-лист",
       "title": "Подготовка доклада",
-      "deadline": "начать за две недели",
+      "note": "начать за две недели",
       "status": "open",
       "statusLabel": "актуален"
     },

@@ -72,12 +72,12 @@
     {
       "id": "calculus",
       "title": "Математический анализ",
-      "short": "Мат.ан.",
       "icon": "fa-solid fa-infinity",
       "meta": "1 курс · 1 семестр",
       "description": "",
       "course": "1 курс",
       "semester": "1 семестр",
+      "aliases": [],
       "groups": [
         {
           "type": "tasks",
@@ -96,6 +96,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -117,6 +118,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -138,6 +140,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -159,6 +162,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -180,6 +184,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -201,6 +206,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -230,7 +236,8 @@
               "layout": "",
               "placeholder": false,
               "semester": 1,
-              "deadline": "17 лекций, два модуля",
+              "deadline": "",
+              "note": "17 лекций, два модуля",
               "faculties": [
                 "ibm"
               ],
@@ -273,7 +280,8 @@
               "layout": "",
               "placeholder": false,
               "semester": 1,
-              "deadline": "24 занятия, задачи и домашние задания",
+              "deadline": "",
+              "note": "24 занятия, задачи и домашние задания",
               "faculties": [
                 "ibm"
               ],
@@ -321,8 +329,11 @@
     },
     {
       "id": "algebra-geometry",
+      "aliases": [
+        "linear-algebra",
+        "analytic-geometry"
+      ],
       "title": "Аналитическая геометрия и линейная алгебра",
-      "short": "Ан.геом. и лин.ал.",
       "icon": "fa-solid fa-vector-square",
       "meta": "1 курс · 1 семестр",
       "description": "",
@@ -345,7 +356,8 @@
               "catalog": "",
               "layout": "groups",
               "placeholder": false,
-              "deadline": "21 группа, в каждой 40 вариантов",
+              "deadline": "",
+              "note": "21 группа, в каждой 40 вариантов",
               "faculties": [
                 "ibm"
               ],
@@ -808,7 +820,8 @@
               "catalog": "",
               "layout": "groups",
               "placeholder": false,
-              "deadline": "22 группы, в каждой 40 вариантов",
+              "deadline": "",
+              "note": "22 группы, в каждой 40 вариантов",
               "faculties": [
                 "mt"
               ],
@@ -1292,6 +1305,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [],
               "due": "",
               "status": "",
@@ -1341,6 +1355,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm",
                 "mt"
@@ -1362,6 +1377,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm",
                 "mt"
@@ -1383,6 +1399,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm",
                 "mt"
@@ -1404,6 +1421,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm",
                 "mt"
@@ -1425,6 +1443,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm",
                 "mt"
@@ -1472,12 +1491,12 @@
     {
       "id": "discrete-math",
       "title": "Дискретная математика",
-      "short": "Дискретка",
       "icon": "fa-solid fa-circle-nodes",
       "meta": "3 курс · 5 семестр",
       "description": "",
       "course": "3 курс",
       "semester": "5 семестр",
+      "aliases": [],
       "groups": [
         {
           "type": "tasks",
@@ -1496,6 +1515,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1517,6 +1537,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1538,6 +1559,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1559,6 +1581,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1580,6 +1603,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1601,6 +1625,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1625,12 +1650,12 @@
     {
       "id": "teorver",
       "title": "Теория вероятностей",
-      "short": "Теорвер",
       "icon": "fa-solid fa-dice-five",
       "meta": "2 курс · 4 семестр",
       "description": "",
       "course": "2 курс",
       "semester": "4 семестр",
+      "aliases": [],
       "groups": [
         {
           "type": "tasks",
@@ -1649,6 +1674,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1670,6 +1696,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1691,6 +1718,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1712,6 +1740,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1733,6 +1762,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1754,6 +1784,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1778,12 +1809,12 @@
     {
       "id": "machine-learning",
       "title": "Машинное обучение",
-      "short": "Машинное обучение",
       "icon": "fa-solid fa-brain",
       "meta": "7 семестр",
       "description": "",
       "course": "4 курс",
       "semester": "7 семестр",
+      "aliases": [],
       "groups": [
         {
           "type": "tasks",
@@ -1802,6 +1833,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1823,6 +1855,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1844,6 +1877,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1865,6 +1899,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1886,6 +1921,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "ibm"
               ],
@@ -1907,6 +1943,7 @@
               "layout": "",
               "placeholder": true,
               "deadline": "",
+              "note": "",
               "faculties": [
                 "mt"
               ],
@@ -1931,12 +1968,12 @@
     {
       "id": "mathematics",
       "title": "Математика",
-      "short": "Математика",
       "icon": "fa-solid fa-calculator",
       "meta": "1 и 3 семестры",
       "description": "",
       "course": "1–2 курс",
       "semester": "1 и 3 семестры",
+      "aliases": [],
       "groups": [
         {
           "type": "tasks",
@@ -1955,7 +1992,8 @@
               "layout": "",
               "placeholder": false,
               "semester": 1,
-              "deadline": "32 варианта",
+              "deadline": "",
+              "note": "32 варианта",
               "faculties": [
                 "sgn"
               ],
@@ -1999,7 +2037,8 @@
               "layout": "",
               "placeholder": false,
               "semester": 1,
-              "deadline": "30 вариантов, три задачи",
+              "deadline": "",
+              "note": "30 вариантов, три задачи",
               "faculties": [
                 "sgn"
               ],
@@ -2043,7 +2082,8 @@
               "layout": "",
               "placeholder": false,
               "semester": 1,
-              "deadline": "36 вариантов",
+              "deadline": "",
+              "note": "36 вариантов",
               "faculties": [
                 "sgn"
               ],
@@ -2091,12 +2131,12 @@
     {
       "id": "common",
       "title": "Общие материалы",
-      "short": "Общее",
       "icon": "fa-solid fa-folder-open",
       "meta": "для всех дисциплин",
       "description": "То, что нужно независимо от предмета: учебный план, календарный график, шаблоны курсовых и отчётов, требования к оформлению, справочники и открытые ресурсы.",
       "course": "",
       "semester": "",
+      "aliases": [],
       "groups": [
         {
           "type": "templates",
@@ -2114,6 +2154,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [],
               "due": "",
               "status": "open",
@@ -2154,6 +2195,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [],
               "due": "",
               "status": "open",
@@ -2193,6 +2235,7 @@
               "layout": "",
               "placeholder": false,
               "deadline": "",
+              "note": "",
               "faculties": [],
               "due": "",
               "status": "open",
@@ -2258,6 +2301,7 @@
           "layout": "",
           "placeholder": false,
           "deadline": "",
+          "note": "",
           "faculties": [],
           "due": "",
           "status": "open",
@@ -2298,6 +2342,7 @@
           "layout": "",
           "placeholder": false,
           "deadline": "",
+          "note": "",
           "faculties": [],
           "due": "",
           "status": "open",
@@ -2336,7 +2381,8 @@
           "catalog": "",
           "layout": "",
           "placeholder": false,
-          "deadline": "начать за две недели",
+          "deadline": "",
+          "note": "начать за две недели",
           "faculties": [],
           "due": "",
           "status": "open",
@@ -2395,7 +2441,8 @@
           "layout": "",
           "placeholder": false,
           "course": 3,
-          "deadline": "у каждой задачи указана сложность и требования к отчёту",
+          "deadline": "",
+          "note": "у каждой задачи указана сложность и требования к отчёту",
           "faculties": [],
           "due": "",
           "status": "",
@@ -2436,6 +2483,7 @@
           "layout": "",
           "placeholder": false,
           "deadline": "",
+          "note": "",
           "faculties": [],
           "due": "",
           "status": "",
@@ -2474,7 +2522,8 @@
           "catalog": "",
           "layout": "",
           "placeholder": false,
-          "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
+          "deadline": "",
+          "note": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
           "faculties": [],
           "due": "",
           "status": "open",
@@ -2514,7 +2563,8 @@
           "catalog": "",
           "layout": "",
           "placeholder": false,
-          "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
+          "deadline": "",
+          "note": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
           "faculties": [],
           "due": "",
           "status": "open",

@@ -9,8 +9,9 @@ import DisciplineSidebar from '../components/DisciplineSidebar.jsx';
 import DisciplineSummary from '../components/DisciplineSummary.jsx';
 import MaterialFilters from '../components/MaterialFilters.jsx';
 import MaterialCard from '../components/MaterialCard.jsx';
+import NotFound from './NotFound.jsx';
 import SectionHero from '../components/SectionHero.jsx';
-import { DISCIPLINES, getDiscipline, visibleItems } from '../catalog.js';
+import { getDiscipline, getDisciplineByAlias, visibleItems } from '../catalog.js';
 import { readChoice, saveChoice } from '../studentChoice.js';
 import { materials } from '../plural.js';
 import styles from './DisciplinePage.module.css';
@@ -34,8 +35,13 @@ export default function DisciplinePage() {
     saveChoice(value);
   };
 
-  // Неизвестная дисциплина — отправляем на первую, чтобы не показывать 404
-  if (!discipline) return <Navigate to={`/disciplines/${DISCIPLINES[0].id}`} replace />;
+  if (!discipline) {
+    // Раздел переименовали или объединили с другим — старая ссылка ведёт туда,
+    // куда переехали материалы. Если адрес незнаком совсем, честнее показать
+    // «раздел не найден», чем молча открыть первую попавшуюся дисциплину.
+    const moved = getDisciplineByAlias(id);
+    return moved ? <Navigate to={`/disciplines/${moved.id}`} replace /> : <NotFound />;
+  }
 
   // Разделы с учётом факультета и семестра; пустые после фильтра не показываем
   const groups = discipline.groups

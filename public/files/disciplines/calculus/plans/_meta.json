@@ -4,16 +4,16 @@
     "plan-lekciy-ibm-1sem": {
       "kind": "Календарный план",
       "title": "Лекции",
+      "note": "17 лекций, два модуля",
       "faculty": "ибм",
-      "semester": 1,
-      "deadline": "17 лекций, два модуля"
+      "semester": 1
     },
     "plan-seminarov-ibm-1sem": {
       "kind": "Календарный план",
       "title": "Семинарские занятия",
+      "note": "24 занятия, задачи и домашние задания",
       "faculty": "ибм",
-      "semester": 1,
-      "deadline": "24 занятия, задачи и домашние задания"
+      "semester": 1
     }
   },
   "files": {

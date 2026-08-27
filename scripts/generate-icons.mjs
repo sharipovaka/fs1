@@ -7,6 +7,7 @@
  *                     → public/icons/icon-512.png
  *   assets/mascot/*.png → public/mascot/*.png      иллюстрации страниц, уменьшенные
  *   assets/lama-logo.png → public/logo-full.png    полный логотип с надписью (шапка главной)
+ *   assets/social-card.png → public/social-card.png картинка для ссылки в мессенджерах
  *
  * Логотип — круглый значок: лама на светлом поле, обод фирменного зелёного
  * цвета (он же цвет свитера ламы). Иконка приложения — тот же значок
@@ -26,6 +27,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(ROOT, 'assets', 'llama.png');
 const MASCOT_DIR = join(ROOT, 'assets', 'mascot');
 const FULL_LOGO = join(ROOT, 'assets', 'lama-logo.png');
+const SOCIAL_CARD = join(ROOT, 'assets', 'social-card.png');
 const PUBLIC_DIR = join(ROOT, 'public');
 
 // Иллюстрации на страницах показываются высотой примерно 160 px,
@@ -454,6 +456,14 @@ if (existsSync(FULL_LOGO)) {
 
   writeFileSync(join(PUBLIC_DIR, 'logo-full.png'), png);
   console.log(`  logo-full.png — ${width}×${height}, ${(png.length / 1024).toFixed(1)} КБ`);
+}
+
+// Картинка для ссылки в мессенджерах: 1200×630, как ждут Telegram и ВК.
+// Огрубление цвета здесь не применяется — фон градиентный, на нём пошли бы полосы.
+if (existsSync(SOCIAL_CARD)) {
+  const png = encodePng(decodePng(readFileSync(SOCIAL_CARD)));
+  writeFileSync(join(PUBLIC_DIR, 'social-card.png'), png);
+  console.log(`  social-card.png — ${(png.length / 1024).toFixed(1)} КБ`);
 }
 
 // Картинки талисмана: те же рисунки, уменьшенные до размера, в котором
