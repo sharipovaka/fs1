@@ -363,8 +363,15 @@ function collectFolder(folderRel, faculties = []) {
   }
 
   // 3. Приводим к виду, который ждёт интерфейс
+  // Работы с номером идут по возрастанию, а всё, что без номера, — после них:
+  // «Типовой расчёт № 1» логично видеть раньше отдельного задания без номера.
+  const numberOf = (item) =>
+    item.number === undefined || item.number === null || item.number === ''
+      ? Number.MAX_SAFE_INTEGER
+      : Number(item.number);
+
   const result = items
-    .sort((a, b) => a.order - b.order || (a.number ?? 0) - (b.number ?? 0) || a.key.localeCompare(b.key, 'ru'))
+    .sort((a, b) => a.order - b.order || numberOf(a) - numberOf(b) || a.key.localeCompare(b.key, 'ru'))
     .map((entry) =>
       finalizeItem({
         id: `${folderRel}/${entry.key}`.replace(/[^\w-]+/g, '-'),
