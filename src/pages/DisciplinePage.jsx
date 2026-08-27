@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import EmptyState from '../components/EmptyState.jsx';
+import LiteratureList from '../components/LiteratureList.jsx';
 import ExternalLinks from '../components/ExternalLinks.jsx';
 import FilePreviewModal from '../components/FilePreviewModal.jsx';
 import Icon from '../components/Icon.jsx';
@@ -96,10 +97,22 @@ export default function DisciplinePage() {
                     <p className={styles.groupDescription}>{group.description}</p>
                   )}
 
+                  {/* Книги показываются плотным списком, всё остальное —
+                      карточками: у работы есть сроки, варианты и файлы,
+                      у книги — только название и где её взять */}
+                  {group.items.some((item) => item.catalog) && (
+                    <LiteratureList
+                      items={group.items.filter((item) => item.catalog)}
+                      onPreview={setPreviewFile}
+                    />
+                  )}
+
                   <div className={styles.cards}>
-                    {group.items.map((item) => (
-                      <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
-                    ))}
+                    {group.items
+                      .filter((item) => !item.catalog)
+                      .map((item) => (
+                        <MaterialCard key={item.id} item={item} onPreview={setPreviewFile} />
+                      ))}
                   </div>
                 </section>
               ))
