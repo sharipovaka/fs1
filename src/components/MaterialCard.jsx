@@ -117,8 +117,24 @@ export default function MaterialCard({ item, onPreview, sectionLabel }) {
           </p>
         )}
 
-        {/* Внешний ресурс: файла у нас нет, есть ссылка наружу */}
-        {item.link ? (
+        {/* Свой файл у каждой учебной группы: списком это два десятка строк,
+            поэтому показываем плитками — студент ищет глазами свою группу */}
+        {item.layout === 'groups' && item.files.length > 0 ? (
+          <div className={styles.groups}>
+            {item.files.map((file) => (
+              <a
+                key={file.path}
+                className={styles.group}
+                href={assetUrl(file.download.path)}
+                download={file.download.name}
+                title={`${file.download.name} · ${formatSize(file.download.size)}`}
+              >
+                <Icon name="fa-solid fa-download" className={styles.groupIcon} />
+                {file.label || file.download.name}
+              </a>
+            ))}
+          </div>
+        ) : item.link ? (
           <p className={styles.linkRow}>
             <a
               className={`btn btn-sm btn-primary ${styles.action}`}

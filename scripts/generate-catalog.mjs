@@ -376,6 +376,8 @@ function collectFolder(folderRel, faculties = []) {
         link: entry.link ?? '',
         // Карточка книги: ссылка на каталог библиотеки рядом с файлом
         catalog: entry.meta.catalog ?? '',
+        // «groups» — файлы показываются плитками по группам, а не списком
+        layout: entry.meta.layout ?? '',
         // Заглушка: карточка есть, скачивать пока нечего
         placeholder: Boolean(entry.placeholder),
         course: entry.meta.course,

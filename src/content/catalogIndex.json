@@ -93,6 +93,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -113,6 +114,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -133,6 +135,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -153,6 +156,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -173,6 +177,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -193,6 +198,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -221,6 +227,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "17 лекций, два модуля",
@@ -263,6 +270,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "24 занятия, задачи и домашние задания",
@@ -328,127 +336,992 @@
           "description": "Условия типовых расчётов, варианты и материалы для самопроверки.",
           "items": [
             {
-              "id": "disciplines-algebra-geometry-tasks-tr-01-ibm",
+              "id": "disciplines-algebra-geometry-tasks-dz-2025-ibm",
               "kind": "Типовой расчёт",
-              "number": 1,
-              "title": "",
-              "description": "",
+              "title": "Векторная алгебра и аналитическая геометрия",
+              "description": "Индивидуальное домашнее задание 2025 года. Выберите свою группу — в файле 40 вариантов, ваш номер по списку группы.",
               "link": "",
               "catalog": "",
-              "placeholder": true,
-              "deadline": "",
+              "layout": "groups",
+              "placeholder": false,
+              "deadline": "21 групп, по 40 вариантов",
               "faculties": [
                 "ibm"
               ],
               "due": "",
               "status": "",
               "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
+              "files": [
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ1-11Б.pdf",
+                  "name": "2025-ИБМ1-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 327785,
+                  "label": "ИБМ1-11Б",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ1-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ1-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ1-11Б.pdf",
+                    "name": "2025-ИБМ1-11Б.pdf",
+                    "format": "PDF",
+                    "size": 327785,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ1-12Б.pdf",
+                  "name": "2025-ИБМ1-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329183,
+                  "label": "ИБМ1-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ1-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ1-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ1-12Б.pdf",
+                    "name": "2025-ИБМ1-12Б.pdf",
+                    "format": "PDF",
+                    "size": 329183,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ2-11Б.pdf",
+                  "name": "2025-ИБМ2-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329082,
+                  "label": "ИБМ2-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ2-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ2-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ2-11Б.pdf",
+                    "name": "2025-ИБМ2-11Б.pdf",
+                    "format": "PDF",
+                    "size": 329082,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ2-12Б.pdf",
+                  "name": "2025-ИБМ2-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328729,
+                  "label": "ИБМ2-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ2-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ2-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ2-12Б.pdf",
+                    "name": "2025-ИБМ2-12Б.pdf",
+                    "format": "PDF",
+                    "size": 328729,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ3-11Б.pdf",
+                  "name": "2025-ИБМ3-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329719,
+                  "label": "ИБМ3-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ3-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-11Б.pdf",
+                    "name": "2025-ИБМ3-11Б.pdf",
+                    "format": "PDF",
+                    "size": 329719,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ3-12Б.pdf",
+                  "name": "2025-ИБМ3-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329435,
+                  "label": "ИБМ3-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ3-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-12Б.pdf",
+                    "name": "2025-ИБМ3-12Б.pdf",
+                    "format": "PDF",
+                    "size": 329435,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ3-13Б.pdf",
+                  "name": "2025-ИБМ3-13Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328532,
+                  "label": "ИБМ3-13Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-13Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ3-13Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-13Б.pdf",
+                    "name": "2025-ИБМ3-13Б.pdf",
+                    "format": "PDF",
+                    "size": 328532,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ3-14Б.pdf",
+                  "name": "2025-ИБМ3-14Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328255,
+                  "label": "ИБМ3-14Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-14Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ3-14Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-14Б.pdf",
+                    "name": "2025-ИБМ3-14Б.pdf",
+                    "format": "PDF",
+                    "size": 328255,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ3-15Б.pdf",
+                  "name": "2025-ИБМ3-15Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329164,
+                  "label": "ИБМ3-15Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-15Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ3-15Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ3-15Б.pdf",
+                    "name": "2025-ИБМ3-15Б.pdf",
+                    "format": "PDF",
+                    "size": 329164,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ4-11Б.pdf",
+                  "name": "2025-ИБМ4-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329656,
+                  "label": "ИБМ4-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ4-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ4-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ4-11Б.pdf",
+                    "name": "2025-ИБМ4-11Б.pdf",
+                    "format": "PDF",
+                    "size": 329656,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ4-12Б.pdf",
+                  "name": "2025-ИБМ4-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329600,
+                  "label": "ИБМ4-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ4-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ4-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ4-12Б.pdf",
+                    "name": "2025-ИБМ4-12Б.pdf",
+                    "format": "PDF",
+                    "size": 329600,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ4-13Б.pdf",
+                  "name": "2025-ИБМ4-13Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329807,
+                  "label": "ИБМ4-13Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ4-13Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ4-13Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ4-13Б.pdf",
+                    "name": "2025-ИБМ4-13Б.pdf",
+                    "format": "PDF",
+                    "size": 329807,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ5-11Б.pdf",
+                  "name": "2025-ИБМ5-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329196,
+                  "label": "ИБМ5-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ5-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ5-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ5-11Б.pdf",
+                    "name": "2025-ИБМ5-11Б.pdf",
+                    "format": "PDF",
+                    "size": 329196,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ5-12Б.pdf",
+                  "name": "2025-ИБМ5-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328491,
+                  "label": "ИБМ5-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ5-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ5-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ5-12Б.pdf",
+                    "name": "2025-ИБМ5-12Б.pdf",
+                    "format": "PDF",
+                    "size": 328491,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ6-11Б.pdf",
+                  "name": "2025-ИБМ6-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329029,
+                  "label": "ИБМ6-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ6-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-11Б.pdf",
+                    "name": "2025-ИБМ6-11Б.pdf",
+                    "format": "PDF",
+                    "size": 329029,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ6-12Б.pdf",
+                  "name": "2025-ИБМ6-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329702,
+                  "label": "ИБМ6-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ6-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-12Б.pdf",
+                    "name": "2025-ИБМ6-12Б.pdf",
+                    "format": "PDF",
+                    "size": 329702,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ6-13Б.pdf",
+                  "name": "2025-ИБМ6-13Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328711,
+                  "label": "ИБМ6-13Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-13Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ6-13Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-13Б.pdf",
+                    "name": "2025-ИБМ6-13Б.pdf",
+                    "format": "PDF",
+                    "size": 328711,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ6-14Б.pdf",
+                  "name": "2025-ИБМ6-14Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328708,
+                  "label": "ИБМ6-14Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-14Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ6-14Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ6-14Б.pdf",
+                    "name": "2025-ИБМ6-14Б.pdf",
+                    "format": "PDF",
+                    "size": 328708,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ7-11Б.pdf",
+                  "name": "2025-ИБМ7-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329571,
+                  "label": "ИБМ7-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ7-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ7-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ7-11Б.pdf",
+                    "name": "2025-ИБМ7-11Б.pdf",
+                    "format": "PDF",
+                    "size": 329571,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ7-12Б.pdf",
+                  "name": "2025-ИБМ7-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 329535,
+                  "label": "ИБМ7-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ7-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ7-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ7-12Б.pdf",
+                    "name": "2025-ИБМ7-12Б.pdf",
+                    "format": "PDF",
+                    "size": 329535,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-ИБМ7-13Б.pdf",
+                  "name": "2025-ИБМ7-13Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 328986,
+                  "label": "ИБМ7-13Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ7-13Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ7-13Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-ИБМ7-13Б.pdf",
+                    "name": "2025-ИБМ7-13Б.pdf",
+                    "format": "PDF",
+                    "size": 328986,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/algebra-geometry/tasks/2025-ИБМ1-11Б.png"
             },
             {
-              "id": "disciplines-algebra-geometry-tasks-tr-01-mt",
+              "id": "disciplines-algebra-geometry-tasks-dz-2025-mt",
               "kind": "Типовой расчёт",
-              "number": 1,
-              "title": "",
-              "description": "",
+              "title": "Векторная алгебра и аналитическая геометрия",
+              "description": "Индивидуальное домашнее задание 2025 года. Выберите свою группу — в файле 40 вариантов, ваш номер по списку группы.",
               "link": "",
               "catalog": "",
-              "placeholder": true,
-              "deadline": "",
+              "layout": "groups",
+              "placeholder": false,
+              "deadline": "22 групп, по 40 вариантов",
               "faculties": [
                 "mt"
               ],
               "due": "",
               "status": "",
               "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
+              "files": [
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ1-11.pdf",
+                  "name": "2025-МТ1-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306361,
+                  "label": "МТ1-11",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ1-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ1-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ1-11.pdf",
+                    "name": "2025-МТ1-11.pdf",
+                    "format": "PDF",
+                    "size": 306361,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ1-12.pdf",
+                  "name": "2025-МТ1-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306807,
+                  "label": "МТ1-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ1-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ1-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ1-12.pdf",
+                    "name": "2025-МТ1-12.pdf",
+                    "format": "PDF",
+                    "size": 306807,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ2-11.pdf",
+                  "name": "2025-МТ2-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307203,
+                  "label": "МТ2-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ2-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ2-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ2-11.pdf",
+                    "name": "2025-МТ2-11.pdf",
+                    "format": "PDF",
+                    "size": 307203,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ2-12.pdf",
+                  "name": "2025-МТ2-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307917,
+                  "label": "МТ2-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ2-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ2-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ2-12.pdf",
+                    "name": "2025-МТ2-12.pdf",
+                    "format": "PDF",
+                    "size": 307917,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ3-11.pdf",
+                  "name": "2025-МТ3-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306842,
+                  "label": "МТ3-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ3-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ3-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ3-11.pdf",
+                    "name": "2025-МТ3-11.pdf",
+                    "format": "PDF",
+                    "size": 306842,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ3-12.pdf",
+                  "name": "2025-МТ3-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307073,
+                  "label": "МТ3-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ3-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ3-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ3-12.pdf",
+                    "name": "2025-МТ3-12.pdf",
+                    "format": "PDF",
+                    "size": 307073,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ4-11Б.pdf",
+                  "name": "2025-МТ4-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307264,
+                  "label": "МТ4-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ4-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ4-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ4-11Б.pdf",
+                    "name": "2025-МТ4-11Б.pdf",
+                    "format": "PDF",
+                    "size": 307264,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ5-11.pdf",
+                  "name": "2025-МТ5-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306575,
+                  "label": "МТ5-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ5-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ5-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ5-11.pdf",
+                    "name": "2025-МТ5-11.pdf",
+                    "format": "PDF",
+                    "size": 306575,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ5-12.pdf",
+                  "name": "2025-МТ5-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307702,
+                  "label": "МТ5-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ5-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ5-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ5-12.pdf",
+                    "name": "2025-МТ5-12.pdf",
+                    "format": "PDF",
+                    "size": 307702,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ6-11.pdf",
+                  "name": "2025-МТ6-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 308117,
+                  "label": "МТ6-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ6-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ6-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ6-11.pdf",
+                    "name": "2025-МТ6-11.pdf",
+                    "format": "PDF",
+                    "size": 308117,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ7-11.pdf",
+                  "name": "2025-МТ7-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307263,
+                  "label": "МТ7-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ7-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ7-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ7-11.pdf",
+                    "name": "2025-МТ7-11.pdf",
+                    "format": "PDF",
+                    "size": 307263,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ7-12.pdf",
+                  "name": "2025-МТ7-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307267,
+                  "label": "МТ7-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ7-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ7-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ7-12.pdf",
+                    "name": "2025-МТ7-12.pdf",
+                    "format": "PDF",
+                    "size": 307267,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ8-11Б.pdf",
+                  "name": "2025-МТ8-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 308094,
+                  "label": "МТ8-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ8-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ8-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ8-11Б.pdf",
+                    "name": "2025-МТ8-11Б.pdf",
+                    "format": "PDF",
+                    "size": 308094,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ8-12Б.pdf",
+                  "name": "2025-МТ8-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 308206,
+                  "label": "МТ8-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ8-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ8-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ8-12Б.pdf",
+                    "name": "2025-МТ8-12Б.pdf",
+                    "format": "PDF",
+                    "size": 308206,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ10-11.pdf",
+                  "name": "2025-МТ10-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307177,
+                  "label": "МТ10-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ10-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ10-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ10-11.pdf",
+                    "name": "2025-МТ10-11.pdf",
+                    "format": "PDF",
+                    "size": 307177,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ10-12.pdf",
+                  "name": "2025-МТ10-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306528,
+                  "label": "МТ10-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ10-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ10-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ10-12.pdf",
+                    "name": "2025-МТ10-12.pdf",
+                    "format": "PDF",
+                    "size": 306528,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ11-11Б.pdf",
+                  "name": "2025-МТ11-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307446,
+                  "label": "МТ11-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ11-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ11-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ11-11Б.pdf",
+                    "name": "2025-МТ11-11Б.pdf",
+                    "format": "PDF",
+                    "size": 307446,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ11-12Б.pdf",
+                  "name": "2025-МТ11-12Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 308577,
+                  "label": "МТ11-12Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ11-12Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ11-12Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ11-12Б.pdf",
+                    "name": "2025-МТ11-12Б.pdf",
+                    "format": "PDF",
+                    "size": 308577,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ11-13Б.pdf",
+                  "name": "2025-МТ11-13Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306896,
+                  "label": "МТ11-13Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ11-13Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ11-13Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ11-13Б.pdf",
+                    "name": "2025-МТ11-13Б.pdf",
+                    "format": "PDF",
+                    "size": 306896,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ12-11.pdf",
+                  "name": "2025-МТ12-11.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 307487,
+                  "label": "МТ12-11",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ12-11.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ12-11.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ12-11.pdf",
+                    "name": "2025-МТ12-11.pdf",
+                    "format": "PDF",
+                    "size": 307487,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ12-12.pdf",
+                  "name": "2025-МТ12-12.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 306648,
+                  "label": "МТ12-12",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ12-12.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ12-12.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ12-12.pdf",
+                    "name": "2025-МТ12-12.pdf",
+                    "format": "PDF",
+                    "size": 306648,
+                    "compiled": false
+                  }
+                },
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-МТ13-11Б.pdf",
+                  "name": "2025-МТ13-11Б.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 308966,
+                  "label": "МТ13-11Б",
+                  "primary": false,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ13-11Б.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ13-11Б.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-МТ13-11Б.pdf",
+                    "name": "2025-МТ13-11Б.pdf",
+                    "format": "PDF",
+                    "size": 308966,
+                    "compiled": false
+                  }
+                }
+              ],
+              "hasPreview": true,
+              "thumb": "previews/disciplines/algebra-geometry/tasks/2025-МТ1-11.png"
             },
             {
-              "id": "disciplines-algebra-geometry-tasks-tr-02-ibm",
+              "id": "disciplines-algebra-geometry-tasks-dz-2025-opredeliteli",
               "kind": "Типовой расчёт",
-              "number": 2,
-              "title": "",
-              "description": "",
+              "title": "Определители",
+              "description": "Индивидуальное домашнее задание по определителям, 27 вариантов. Файл общий для всех групп.",
               "link": "",
               "catalog": "",
-              "placeholder": true,
+              "layout": "",
+              "placeholder": false,
               "deadline": "",
-              "faculties": [
-                "ibm"
-              ],
+              "faculties": [],
               "due": "",
               "status": "",
               "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-algebra-geometry-tasks-tr-02-mt",
-              "kind": "Типовой расчёт",
-              "number": 2,
-              "title": "",
-              "description": "",
-              "link": "",
-              "catalog": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "mt"
+              "files": [
+                {
+                  "path": "disciplines/algebra-geometry/tasks/2025-Определители.pdf",
+                  "name": "2025-Определители.pdf",
+                  "ext": "pdf",
+                  "format": "PDF",
+                  "size": 127890,
+                  "label": "27 вариантов: свой — по номеру в списке группы",
+                  "primary": true,
+                  "preview": {
+                    "type": "pdf",
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-Определители.pdf",
+                    "thumb": "previews/disciplines/algebra-geometry/tasks/2025-Определители.png"
+                  },
+                  "download": {
+                    "path": "files/disciplines/algebra-geometry/tasks/2025-Определители.pdf",
+                    "name": "2025-Определители.pdf",
+                    "format": "PDF",
+                    "size": 127890,
+                    "compiled": false
+                  }
+                }
               ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-algebra-geometry-tasks-tr-03-ibm",
-              "kind": "Типовой расчёт",
-              "number": 3,
-              "title": "",
-              "description": "",
-              "link": "",
-              "catalog": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "ibm"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
-            },
-            {
-              "id": "disciplines-algebra-geometry-tasks-tr-03-mt",
-              "kind": "Типовой расчёт",
-              "number": 3,
-              "title": "",
-              "description": "",
-              "link": "",
-              "catalog": "",
-              "placeholder": true,
-              "deadline": "",
-              "faculties": [
-                "mt"
-              ],
-              "due": "",
-              "status": "",
-              "statusLabel": "",
-              "files": [],
-              "hasPreview": false,
-              "thumb": null
+              "hasPreview": true,
+              "thumb": "previews/disciplines/algebra-geometry/tasks/2025-Определители.png"
             }
           ],
-          "fileCount": 0
+          "fileCount": 44
         },
         {
           "type": "library",
@@ -463,6 +1336,7 @@
               "description": "Основной учебник кафедры, под редакцией В. С. Зарубина и А. П. Крищенко.",
               "link": "",
               "catalog": "https://library.bmstu.ru/Catalog/Details/577137",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [
@@ -483,6 +1357,7 @@
               "description": "Линейная алгебра и основы математического анализа.",
               "link": "",
               "catalog": "https://library.bmstu.ru/Catalog/Details/48280",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [
@@ -503,6 +1378,7 @@
               "description": "",
               "link": "",
               "catalog": "https://library.bmstu.ru/Catalog/Details/557964",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [
@@ -523,6 +1399,7 @@
               "description": "",
               "link": "",
               "catalog": "https://library.bmstu.ru/Catalog/Details/Lan/519924",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [
@@ -543,6 +1420,7 @@
               "description": "Уравнения прямых и плоскостей, их взаимное расположение, примеры и задачи с ответами.",
               "link": "",
               "catalog": "https://library.bmstu.ru/Catalog/Details/367288",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [
@@ -582,7 +1460,7 @@
           "fileCount": 1
         }
       ],
-      "fileCount": 1,
+      "fileCount": 45,
       "faculties": [
         "mt",
         "ibm"
@@ -613,6 +1491,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -633,6 +1512,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -653,6 +1533,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -673,6 +1554,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -693,6 +1575,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -713,6 +1596,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -760,6 +1644,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -780,6 +1665,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -800,6 +1686,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -820,6 +1707,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -840,6 +1728,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -860,6 +1749,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -907,6 +1797,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -927,6 +1818,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -947,6 +1839,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -967,6 +1860,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -987,6 +1881,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -1007,6 +1902,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": true,
               "deadline": "",
               "faculties": [
@@ -1054,6 +1950,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "32 варианта",
@@ -1097,6 +1994,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "30 вариантов, три задачи",
@@ -1140,6 +2038,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "semester": 1,
               "deadline": "36 вариантов",
@@ -1210,6 +2109,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1249,6 +2149,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1287,6 +2188,7 @@
               "description": "",
               "link": "",
               "catalog": "",
+              "layout": "",
               "placeholder": false,
               "deadline": "",
               "faculties": [],
@@ -1351,6 +2253,7 @@
           "description": "",
           "link": "",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1390,6 +2293,7 @@
           "description": "",
           "link": "",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1428,6 +2332,7 @@
           "description": "",
           "link": "",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "deadline": "начать за две недели",
           "faculties": [],
@@ -1485,6 +2390,7 @@
           "description": "Двадцать четыре задачи по шести направлениям: синхронизация АФМ-осцилляторов, цифровая обработка сигналов и вибродиагностика, интерактивные лекции, ряды Фурье и сглаживание эффекта Гиббса, уравнения математической физики, теория аналитических функций.",
           "link": "",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "course": 3,
           "deadline": "у каждой задачи указана сложность и требования к отчёту",
@@ -1525,6 +2431,7 @@
           "description": "Это просто шаблон — образец оформления: титульный лист, структура разделов, подписи рисунков и таблиц, список литературы. Содержание в нём условное, его нужно заменить своим. Ссылка открывает проект для чтения; чтобы работать со своей копией, нажмите Menu → Copy Project.",
           "link": "https://www.overleaf.com/read/yqrqdjhxyttg#447de7",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "deadline": "",
           "faculties": [],
@@ -1563,6 +2470,7 @@
           "description": "",
           "link": "",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 7 · С.К. Соболев, В.Я. Томашпольский",
           "faculties": [],
@@ -1602,6 +2510,7 @@
           "description": "",
           "link": "",
           "catalog": "",
+          "layout": "",
           "placeholder": false,
           "deadline": "Гуманитарный вестник, 2018, вып. 4 · В.Я. Томашпольский",
           "faculties": [],
@@ -1639,7 +2548,7 @@
     }
   ],
   "totals": {
-    "files": 15,
-    "items": 50
+    "files": 59,
+    "items": 47
   }
 }
